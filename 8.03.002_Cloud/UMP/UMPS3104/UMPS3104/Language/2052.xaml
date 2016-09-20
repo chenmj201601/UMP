@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <!--简体-->
+    <s:String x:Key="ChangeLan">切换语言</s:String>
+    <s:String x:Key="AccountLogin">用户登录</s:String>
+    <s:String x:Key="ServerSetting">服务器设置</s:String>
+    <s:String x:Key="User">用户</s:String>
+    <s:String x:Key="PassWord">密码</s:String>
+    <s:String x:Key="LanguageSetting">语言选择</s:String>
+    <s:String x:Key="ServerAddress">地址</s:String>
+    <s:String x:Key="ServerPort">端口</s:String>
+    <s:String x:Key="Save">保存</s:String>
+    <s:String x:Key="Close">关闭</s:String>
+    <s:String x:Key="Minimize">最小化</s:String>
+    <s:String x:Key="Login">登录</s:String>
+    <s:String x:Key="Setting">选项</s:String>
+    
+    <!--Message-->
+    <s:String x:Key="SaveSucessed">保存成功</s:String>
+    <s:String x:Key="ServerInfoIsNull">请输入正确的服务器地址、端口，并保存</s:String>
+    <s:String x:Key="InfoSave">请点击保存按钮</s:String>
+    <s:String x:Key="CheckServerInfo">正在验证服务器地址、端口</s:String>
+    <s:String x:Key="Loading">登录验证中</s:String>
+    <s:String x:Key="AccountInfoIsNull">账户名、密码为空</s:String>
+    <s:String x:Key="CheckCertificate">检查证书安装情况</s:String>
+    <s:String x:Key="CertificateIsExist">证书安装正常</s:String>
+    <s:String x:Key="SaveSetting">设置保存中</s:String>
+    <s:String x:Key="SettingSaved">设置保存成功</s:String>
+
+    <!--Error-->
+    <s:String x:Key="LoseXmlFile">UMPClientInit.xml文件不存在</s:String>
+    <s:String x:Key="ServerInfoIsError">服务器地址、端口错误，连接失败</s:String>
+    <s:String x:Key="AddressIsError">请输入正确的服务器地址</s:String>
+    <s:String x:Key="PortIsError">请输入正确的端口</s:String>
+    <s:String x:Key="ClientError">请联系VoiceCyber售后解决问题</s:String>
+    <s:String x:Key="E01A01">查找租户信息失败</s:String>
+    <s:String x:Key="E01A02">租户不存在</s:String>
+    <s:String x:Key="E01A03">取租户唯一编码失败</s:String>
+    <s:String x:Key="E01A04">租户不在允许的租赁时间范围内</s:String>
+    <s:String x:Key="E01A11">获取安全策略信息失败</s:String>
+    <s:String x:Key="E01A21">获取用户信息失败</s:String>
+    <s:String x:Key="E01A22">用户处于锁定状态(管理员锁)</s:String>
+    <s:String x:Key="E01A23">用户处于删除状态</s:String>
+    <s:String x:Key="E01A24">用户处于非活动状态</s:String>
+    <s:String x:Key="E01A25">用户处于非允许登录时间范围内</s:String>
+    <s:String x:Key="E01A26">用户名或密码错误</s:String>
+    <s:String x:Key="E01A27">用户处于锁定状态(违反安全策略锁)</s:String>
+    <s:String x:Key="E01A28">锁定用户(违反安全策略锁)</s:String>
+    <s:String x:Key="E01A31">获取用户历史登录流水信息失败</s:String>
+    <s:String x:Key="E01A32">该用户已经在其他机器上登录</s:String>
+    <s:String x:Key="E01A33">强制登录系统失败</s:String>
+    <s:String x:Key="E01A41">同一计算机尝试登录次数超过系统设置阀值</s:String>
+    <s:String x:Key="E01A51">系统分配登录流水号失败</s:String>
+    <s:String x:Key="E01A52">将登录信息写入数据库失败</s:String>
+    <s:String x:Key="E01A99">租户不存在</s:String>
+</ResourceDictionary>

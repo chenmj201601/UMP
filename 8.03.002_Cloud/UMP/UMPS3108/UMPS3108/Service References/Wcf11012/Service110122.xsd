@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.voicecyber.com/UMP/Services/2015/03" elementFormDefault="qualified" targetNamespace="http://www.voicecyber.com/UMP/Services/2015/03" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://192.168.6.7:8082/WCFServices/Service11012.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Communications" />
+  <xs:element name="DoOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Communications" minOccurs="0" name="webRequest" nillable="true" type="q1:WebRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Communications" minOccurs="0" name="DoOperationResult" nillable="true" type="q2:WebReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

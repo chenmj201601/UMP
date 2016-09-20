@@ -1,0 +1,98 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1112.UCDomainModifyPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1112;component/Themes/Default/UMPS1112/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{DynamicResource FormStyle}">
+            <Border.Resources>
+                
+            </Border.Resources>
+            <Grid IsSharedSizeScope="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="ColumnTitle"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="LabelDomainName" Content="DomainName"></Label>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="LabelUserName" Content="User Name"></Label>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="LabelUserPassword" Content="Password"></Label>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="LabelIsAutoLogin" Content="IsAutoLogin"></Label>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="LabelDescription" Content="Description"></Label>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                        <TextBox Name="TxtDomainName"></TextBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource FormItemValue}">
+                        <TextBox Name="TxtUserName"></TextBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" Style="{DynamicResource FormItemValue}">
+                        <PasswordBox x:Name="PassBoxUserPassword"></PasswordBox>
+                    </Border>
+
+                    <Border Grid.Column="1" Grid.Row="3" Style="{DynamicResource FormItemValue}">
+                        <CheckBox x:Name="CheckDomainActiveLogin" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="4">
+                        <TextBox Grid.Column="1" x:Name="TexDomainDescription" Height="100" Margin="5" 
+                         VerticalScrollBarVisibility="Auto" MaxWidth="220"  TextWrapping="Wrap"></TextBox>
+                    </Border>
+                </Grid>
+               
+            </Grid>
+        </Border>
+      
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnConfirm" Content="Confirm" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

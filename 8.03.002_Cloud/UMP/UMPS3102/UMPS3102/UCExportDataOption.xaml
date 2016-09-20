@@ -1,0 +1,63 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3102.UCExportDataOption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Style="{DynamicResource UCExportDataOption}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3102/UCExportDataOption.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{DynamicResource BorderMain}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                    <RadioButton Name="RadioCurrentSelected" GroupName="GroupType" Content="Current selected records"></RadioButton>
+                </Border>
+                <Border Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                    <RadioButton Name="RadioCurrentPage" GroupName="GroupType" Content="Current page"></RadioButton>
+                </Border>
+                <Border Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                    <RadioButton Name="RadioAllPage" GroupName="GroupType" Content="All page"></RadioButton>
+                </Border>
+                <Border Grid.Row="3" Style="{DynamicResource FormBorderItem}">
+                    <CheckBox Name="CbRemember" Content="Remember current settings"></CheckBox>
+                </Border>
+                <Border Grid.Row="4" Style="{DynamicResource FormBorderItem}">
+                    <CheckBox Name="CbNotShow" Content="Not show not time"></CheckBox>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnApply" Content="Apply" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

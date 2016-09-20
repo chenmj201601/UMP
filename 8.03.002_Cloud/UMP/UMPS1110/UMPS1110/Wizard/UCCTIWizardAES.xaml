@@ -1,0 +1,97 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1110.Wizard.UCCTIWizardAES"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             xmlns:local="clr-namespace:UMPS1110"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="400" Width="400" Height="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LabCTIIP" Margin="5" Grid.Column="1" Grid.Row="1" Height="30">CTI IP:</Label>
+        <vcc:IPv4AddressTextBox Name="IPTextBox" Grid.Column="2" Grid.Row="1" Margin="5" Background="White"
+                                BorderThickness="0"></vcc:IPv4AddressTextBox>
+
+        <Label x:Name="LabCTIPort" Margin="5" Grid.Column="1" Grid.Row="2" Height="30">CTI Port:</Label>
+        <TextBox x:Name="TexPort" Margin="5" Grid.Column="2" Grid.Row="2" Height="30" Width="185"></TextBox>
+
+        <Label x:Name="LabPBXIP" Margin="5" Grid.Column="1" Grid.Row="3" Height="30">PBX IP:</Label>
+        <vcc:IPv4AddressTextBox Name="IPTexPBX" Margin="5" Grid.Column="2" Grid.Row="3" Height="30"
+                                Background="White"  BorderThickness="0"></vcc:IPv4AddressTextBox>
+
+        <Label x:Name="LabServiceName" Margin="5" Grid.Column="1" Grid.Row="4" Height="30">Service Name:</Label>
+        <!--<ComboBox x:Name="CombServiceName" Margin="5" Grid.Column="2" Grid.Row="4" Height="30"></ComboBox>-->
+        <TextBox x:Name="CombServiceName" Margin="5" Grid.Column="2" Grid.Row="4" Width="185"></TextBox>
+
+        <Label x:Name="LabConnectName" Margin="5" Grid.Column="1" Grid.Row="5" Height="30">Connect Name:</Label>
+        <TextBox x:Name="TexConnectName" Margin="5" Grid.Column="2" Grid.Row="5" Height="30" Width="185"></TextBox>
+
+        <Label x:Name="LabDMCC" Margin="5" Grid.Column="1" Grid.Row="6" Height="30">Use DMCC:</Label>
+        <Grid Grid.Column="2" Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="RadBDMCCYes" Margin="5" Grid.Column="0" VerticalAlignment="Center" VerticalContentAlignment="Center">Yes</RadioButton>
+            <RadioButton x:Name="RadBDMCCNo" Margin="5" VerticalAlignment="Center" Grid.Column="1"
+                         VerticalContentAlignment="Center">No</RadioButton>
+        </Grid>
+
+        <Label x:Name="LabSSL" Margin="5" Grid.Column="1" Grid.Row="7" Height="30">Use SSL:</Label>
+        <Grid Grid.Column="2" Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="RadBSSLYes" Margin="5" Grid.Column="0" VerticalAlignment="Center" VerticalContentAlignment="Center">Yes</RadioButton>
+            <RadioButton x:Name="RadBSSLNo" Margin="5" VerticalAlignment="Center" Grid.Column="1"
+                         VerticalContentAlignment="Center">No</RadioButton>
+        </Grid>
+
+        <Label x:Name="LabEdition" Margin="5" Grid.Column="1" Grid.Row="8" Height="30">Edition:</Label>
+        <ComboBox x:Name="CombEdition" Margin="5" Grid.Column="2" Grid.Row="8" Width="185"></ComboBox>
+        
+        <Label x:Name="LabAgreenment" Margin="5" Grid.Column="1" Grid.Row="9" Height="30">Agreenment:</Label>
+        <TextBox x:Name="TexAgreenment" Margin="5" Grid.Column="2" Grid.Row="9" Height="30" Width="185"></TextBox>
+        
+        <Label x:Name="LabLoginName" Margin="5" Grid.Column="1" Grid.Row="10" Height="30">Login Name:</Label>
+        <TextBox x:Name="TexLoginName" Margin="5" Grid.Column="2" Grid.Row="10" Height="30" Width="185"></TextBox>
+        
+        <Label x:Name="LabPassword" Margin="5" Grid.Column="1" Grid.Row="11" Height="30">Login Password:</Label>
+        <PasswordBox x:Name="PasswordLogin" Margin="5" Grid.Column="2" Grid.Row="11" Height="30" Width="185"></PasswordBox>
+
+        <Grid Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButBack" Margin="5" Height="30" Width="80" Grid.Column="1">Back</Button>
+            <Button x:Name="ButnPrevious" Margin="5" Height="30"  Width="80" Grid.Column="2">Previous</Button>
+            <Button x:Name="ButNext" Margin="5" Height="30" Width="80" Grid.Column="3">Next</Button>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

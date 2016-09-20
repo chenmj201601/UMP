@@ -1,0 +1,78 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1206.UCWidgetSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" Style="{DynamicResource UCWidgetSettingStyle}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1206;component/Themes/Default/UMPS1206/UCWidgetSetting.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="3"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TabControl Name="TabControlAvaliable" Grid.Column="0" Style="{DynamicResource TabControlStyle}">
+                    <TabItem Name="TabAvaliable" Header="Avaliable Widgets" Style="{DynamicResource TabItemStyle}">
+                        <ListBox Name="ListBoxAvaliable"
+                                 Style="{DynamicResource ListBoxWidgetStyle}"
+                                 ItemContainerStyle="{DynamicResource ListBoxItemWidgetStyle}"
+                                 ItemTemplate="{DynamicResource WidgetItemTemplate}">
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        <RowDefinition Height="50*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Name="BtnAdd" Grid.Row="0" Content=">" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+                    <Button Name="BtnRemove" Grid.Row="1" Content="&lt;" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+                </Grid>
+                <TabControl Name="TabControlMyWidgets" Grid.Column="2" Style="{DynamicResource TabControlStyle}">
+                    <TabItem Name="TabLeftWidgets" Header="My Left Widgets" Style="{DynamicResource TabItemStyle}">
+                        <ListBox Name="ListBoxLeft"
+                                 Style="{DynamicResource ListBoxWidgetStyle}"
+                                 ItemContainerStyle="{DynamicResource ListBoxItemWidgetStyle}"
+                                 ItemTemplate="{DynamicResource WidgetItemTemplate}">
+                        </ListBox>
+                    </TabItem>
+                    <TabItem Name="TabCenterWidget" Header="My Center Widgets" Style="{DynamicResource TabItemStyle}">
+                        <ListBox Name="ListBoxCenter"
+                                 Style="{DynamicResource ListBoxWidgetStyle}"
+                                 ItemContainerStyle="{DynamicResource ListBoxItemWidgetStyle}"
+                                 ItemTemplate="{DynamicResource WidgetItemTemplate}">
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+            <Border Grid.Row="1" Background="{DynamicResource SystemBrush3}" Height="3" Margin="10,0"></Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="BtnConfirm" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Content="Confirm"></Button>
+                <Button Name="BtnCancel" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Content="Cancel"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</umpc:UMPUserControl>

@@ -1,0 +1,98 @@
+﻿<umpc:UMPMainPage x:Class="UMPDemo.DemoMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="DemoMainPage" Style="{DynamicResource DemoMainPage}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPDemo/DemoMainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <umpc:UMPPage.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform></TranslateTransform>
+            <ScaleTransform></ScaleTransform>
+            <RotateTransform></RotateTransform>
+        </TransformGroup>
+    </umpc:UMPPage.RenderTransform>
+    <Grid>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" Name="GridLeft"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Name="BorderLeftBg" Style="{DynamicResource BorderLeftBg}"></Border>
+                    <Border Name="BorderLeft" Style="{DynamicResource BorderLeft}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Name="BorderBasicOpt" Grid.Row="0" Style="{DynamicResource BorderBasicOpt}">
+                                <Expander Name="ExpBasicOpt" Header="Basic Operations" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                    <StackPanel Name="PanelBasicOpts" Orientation="Vertical"></StackPanel>
+                                </Expander>
+                            </Border>
+                            <Border Name="BorderOtherPosition" Grid.Row="1" Style="{DynamicResource BorderOtherPosition}">
+                                <Expander Name="ExpOtherPos" Header="Other Position" VerticalAlignment="Top" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                </Expander>
+                            </Border>
+                            <Border Name="BorderDetail" Grid.Row="2" Style="{DynamicResource BorderDetail}">
+                                <umpc:ObjectDetailViewer x:Name="ObjectDetail"></umpc:ObjectDetailViewer>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                <Grid Grid.Column="2">
+                    <Border Name="BorderMain" Style="{DynamicResource BorderMain}">
+                        <DockPanel LastChildFill="True">
+                            <Border Name="BorderToolBar" DockPanel.Dock="Top" Style="{DynamicResource ToolBarStyle}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="3" Name="PanelToolButton" 
+                                                    Orientation="Horizontal" Margin="0,0,5,0"></StackPanel>
+                                </Grid>
+                            </Border>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="120"></RowDefinition>
+                                    <RowDefinition Height="200"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <umpc:TreeObjectViewer Grid.Row="0" x:Name="TreeViewObjects"></umpc:TreeObjectViewer>
+                                <umpc:UMPMediaPlayer  x:Name="MediaPlayer" Grid.Row="1" State="11111111111"></umpc:UMPMediaPlayer>
+                                <TextBox Name="TxtMsg" Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
+                                             AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                                <vcc:CustomWaiter Grid.Row="3" x:Name="CustomWaiter"
+                                                  Style="{DynamicResource CustomWaiterStyle}"></vcc:CustomWaiter>
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+            <umpc:PopupPanel x:Name="PopupPanel"
+                                     IsOpen="False"
+                                     Style="{DynamicResource PopupInfo}">
+            </umpc:PopupPanel>
+        </Grid>
+    </Grid>
+</umpc:UMPMainPage>

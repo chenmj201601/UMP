@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="UMP.Tools.LanguageMaintenance.LanguageTranslatorMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Converter="clr-namespace:UMP.Tools.PublicClasses"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800" Background="Transparent">
+    <UserControl.Resources>
+        <Converter:LanguageListViewItemSearchConverter x:Key="IsSearchConverter"/>
+        <Converter:LanguageListViewItemDataChangeConverter x:Key="IsDataChangeConverter"/>
+        <Converter:LanguageListViewItemTipChangeConverter x:Key="IsTipChangeConverter"/>
+
+        <DataTemplate x:Key="RowsIDTemplate">
+            <DockPanel LastChildFill="True" HorizontalAlignment="Stretch">
+                <Label Height="26" Content="{Binding IntItemIndex}" Style="{DynamicResource LabelNormalStyle}" HorizontalContentAlignment="Center"/>
+            </DockPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MessageIDTemplate">
+            <DockPanel LastChildFill="True" HorizontalAlignment="Stretch">
+                <Label Height="26" Content="{Binding MessageID}" Style="{DynamicResource LabelNormalStyle}"/>
+            </DockPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MessageContentTextTemplate">
+            <DockPanel LastChildFill="True" HorizontalAlignment="Stretch">
+                <TextBox Name="TextBoxContentText" IsReadOnly="True" Height="26" Text="{Binding MessageContentText}" Tag="{Binding}" Style="{DynamicResource TextBoxNormalStyle}" BorderThickness="0" Background="Transparent" TextChanged="TextBoxTextChanged" GotFocus="TextBoxGotFocus" MouseDoubleClick="TextBoxMouseDoubleClick">
+                    <TextBox.Foreground>
+                        <Binding Path="DataChangeStatus" Converter="{StaticResource IsDataChangeConverter}"/>
+                    </TextBox.Foreground>
+                </TextBox>
+            </DockPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MessageTipDisplayTemplate">
+            <DockPanel LastChildFill="True" HorizontalAlignment="Stretch">
+                <TextBox Name="TextBoxTipDisplay" IsReadOnly="True" Height="26" Text="{Binding MessageTipDisplay}" Tag="{Binding}" Style="{DynamicResource TextBoxNormalStyle}" BorderThickness="0" Background="Transparent" TextChanged="TextBoxTextChanged" GotFocus="TextBoxGotFocus" MouseDoubleClick="TextBoxMouseDoubleClick">
+                    <TextBox.Foreground>
+                        <Binding Path="TipChangeStatus" Converter="{StaticResource IsTipChangeConverter}"/>
+                    </TextBox.Foreground>
+                </TextBox>
+            </DockPanel>
+        </DataTemplate>
+        
+    </UserControl.Resources>
+    <Grid Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="28"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0">
+            <ListView Name="ListViewLanguagePackageDetail" Margin="0" Tag="L001" SelectionMode="Single" Background="Transparent">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <Binding Path="SearchStatus" Converter="{StaticResource IsSearchConverter}"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="55" CellTemplate="{StaticResource RowsIDTemplate}">
+                            <GridViewColumnHeader x:Name="RowsIDColumnHeader" Tag="C001" Style="{DynamicResource GridViewColumnHeaderNormalStyle}" Height="26" Content="#" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                        </GridViewColumn>
+                        <GridViewColumn Width="150" CellTemplate="{StaticResource MessageIDTemplate}">
+                            <GridViewColumnHeader x:Name="MessageIDColumnHeader" Tag="C002" Style="{DynamicResource GridViewColumnHeaderNormalStyle}" Height="26" Content=" Message ID" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn>
+                        <GridViewColumn Width="450" CellTemplate="{StaticResource MessageContentTextTemplate}">
+                            <GridViewColumnHeader x:Name="MessageContentTextColumnHeader" Tag="C003" Style="{DynamicResource GridViewColumnHeaderNormalStyle}" Height="26" Content=" Message Content" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn>
+                        <GridViewColumn Width="200" CellTemplate="{StaticResource MessageTipDisplayTemplate}">
+                            <GridViewColumnHeader x:Name="MessageTipDisplayColumnHeader" Tag="C004" Style="{DynamicResource GridViewColumnHeaderNormalStyle}" Height="26" Content=" Message Tip" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0">
+            <DockPanel Margin="0" FlowDirection="RightToLeft" VerticalAlignment="Center" LastChildFill="True">
+                <Button HorizontalAlignment="Left" Margin="2,0,0,0" x:Name="ButtonSearchClear" Width="24" Height="24" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Tag="SearchC">
+                    <Image Name="ImageSearchClear" Margin="2"/>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="2,0,0,0" x:Name="ButtonSearchNext" Width="24" Height="24" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Tag="SearchN">
+                    <Image Name="ImageSearchNext" Margin="2"/>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="2,0,0,0" x:Name="ButtonSearchPre" Width="24" Height="24" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Tag="SearchP">
+                    <Image Name="ImageSearchPre" Margin="2"/>
+                </Button>
+                <Button HorizontalAlignment="Right" Margin="2,0,0,0" x:Name="ButtonSearchBegin" Width="24" Height="24" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Tag="SearchB">
+                    <Image Name="ImageSearchBegin" Margin="2"/>
+                </Button>
+
+                <TextBox Name="TexBoxSearchBody" Margin="2,1,0,0" Height="26" VerticalAlignment="Top" Style="{DynamicResource TextBoxNormalStyle}" FlowDirection="LeftToRight">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="WhiteSmoke" Opacity="0.2"/>
+                    </TextBox.Background>
+                </TextBox>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

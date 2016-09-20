@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="UMPS3108.exe" version="8.03.002.2" publicKeyToken="cfe17d82f72a167b" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="UMPS3108" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+    <commandLine file="UMPS3108.exe" parameters="" />
+    <hostInBrowser xmlns="urn:schemas-microsoft-com:asm.v3" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="Internet" Description="Default rights given to Internet applications" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC 清单选项
+            如果希望更改 Windows 用户帐户控制级别，请用以下节点之一替换 
+            requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            如果您希望利用文件和注册表虚拟化提供
+            向后兼容性，请删除 requestedExecutionLevel 节点。
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common31081.dll" size="15872">
+      <assemblyIdentity name="Common31081" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>TsOt2/zryRXRUOrhu5k5awqpbLg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Practices.Prism.dll" size="153416">
+      <assemblyIdentity name="Microsoft.Practices.Prism" version="4.1.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>gkrRF05cL8XGiwTmjDnDXhv06BI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Practices.ServiceLocation.dll" size="29760">
+      <assemblyIdentity name="Microsoft.Practices.ServiceLocation" version="1.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>oCY+xhQ10e5MGKkqBqw+osQutzA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PFShareClassesC.dll" size="14336">
+      <assemblyIdentity name="PFShareClassesC" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>QYTYSexUsFmga+zif9PfznW5IvA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UMPCommon.dll" size="55808">
+      <assemblyIdentity name="UMPCommon" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>B1jEUQytnKo1w92zofNyCJI8SuI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UMPCommunications.dll" size="40960">
+      <assemblyIdentity name="UMPCommunications" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>PS9mPeJ45GHmZNSXIXfMSXxcvsE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UMPControls.dll" size="435200">
+      <assemblyIdentity name="UMPControls" version="8.3.1.2" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>iZ651LWsgAUYvt7luHf4c0DdwTQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UMPEncryptionC.dll" size="41472">
+      <assemblyIdentity name="UMPEncryptionC" version="8.2.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Mdd8nMwan5o33i59KZafvmb8JHQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UMPS3108.exe" size="439200">
+      <assemblyIdentity name="UMPS3108" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>pmIDq9bkyM+1AXMYmZ2+5RUTYMU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VCCommon.dll" size="45568">
+      <assemblyIdentity name="VCCommon" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>PyUaSVrX0JNEUqHJWA6eAdMnHTQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VCCustomControls.dll" size="542208">
+      <assemblyIdentity name="VCCustomControls" version="8.3.2.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>4SoACEdUu+mLT1a9+1zY8drOChU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="UMPS3108.exe.config" size="1037">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TZ4UYqFo7M05/iGXu05U2rDwhmw=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=UMP.Apps" issuerKeyHash="ed69315ff92c4e6fdf8f6c0980fa0eea859c1be4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>QNr9AB/4NkVmiq6xDJncqnAH7Uc=</DigestValue></Reference></SignedInfo><SignatureValue>hWsiE177qZAhy+LI00NgCyjrroARX6SGlkaj6z2CoWeN0IJ6/l7JFk36X0fcPAAOcDWK89ykMz12BeOCM52mSKOAz/F8ER4YkNImw7c3gXu8neSyuiDnr8n0yI77NUIo+BmO0ksFl/XVO3smpZMfbF/QFqWoMUmQmnFDrp2tM9U=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0iZxS4+Me6KuU0grjqczqJVx9GIZI0byQa+Bv97OHWPS+euggKaEuyJX/al1tdiQ4cBhOVSdFgfOVg9zl56PIjA80SiRSWIV+4Ntx3Vwz1tSeeSzlK7oGHH+D5Yqsln5l0Ro4Cp0JVuSNNsoonyp759iHbW7Bnm7QLT/UHH2Uq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="47ed0770aadc990cb1ae8a664536f81f00fdda40" Description="" Url=""><as:assemblyIdentity name="UMPS3108.exe" version="8.03.002.2" publicKeyToken="cfe17d82f72a167b" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=UMP.Apps</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>4nRou16SYYMjZNtbcg2GDaHLzfE=</DigestValue></Reference></SignedInfo><SignatureValue>e7DLosNPIvZnLhAdHJ8KlpTlM8MLG/93F/zrnuzqPQmISrTrlaITK9NyjLIa5DmvGSGhX60AQ55vQN9aiGXcP1pCMaoi78L47x8VMh1f63Nw5HWyA8caV5hxdL193KHw3Iia65B44fsC9PIuFSPjy/AMM3aEee+1FUcGZDiktl4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0iZxS4+Me6KuU0grjqczqJVx9GIZI0byQa+Bv97OHWPS+euggKaEuyJX/al1tdiQ4cBhOVSdFgfOVg9zl56PIjA80SiRSWIV+4Ntx3Vwz1tSeeSzlK7oGHH+D5Yqsln5l0Ro4Cp0JVuSNNsoonyp759iHbW7Bnm7QLT/UHH2Uq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8zCCAVygAwIBAgIQboAFsQQUoKtKACD3mBp6hzANBgkqhkiG9w0BAQ0FADATMREwDwYDVQQDEwhVTVAuQXBwczAeFw0xMzEyMzExNjAwMDBaFw0yODEyMzAxNjAwMDBaMBMxETAPBgNVBAMTCFVNUC5BcHBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSJnFLj4x7oq5TSCuOpzOolXH0YhkjRvJBr4G/3s4dY9L566CApoS7Ilf9qXW12JDhwGE5VJ0WB85WD3OXno8iMDzRKJFJYhX7g23HdXDPW1J55LOUrugYcf4PliqyWfmXRGjgKnQlW5I02yiifKnvn2IdtbsGebtAtP9QcfZSrQIDAQABo0gwRjBEBgNVHQEEPTA7gBDci5NNcnRX1Ro3jO/cHkxToRUwEzERMA8GA1UEAxMIVU1QLkFwcHOCEG6ABbEEFKCrSgAg95gaeocwDQYJKoZIhvcNAQENBQADgYEArWmZxfmdCRbpWAfYJyHz85Q4L914DiisdstOvDeiBgdaXWTBPeWHO0MKqrLqiuQmNxr/lOdhHOl+P/H6nQh2mzmEfttgar9GDJms/uoa8GeuMVQgTqPY1cI0FK222b7qXeEzEUnqloLsHsMG4xaaJ1gcvAsw49CEnhGXrknUaZI=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

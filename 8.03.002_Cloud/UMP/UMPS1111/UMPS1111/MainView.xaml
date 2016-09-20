@@ -1,0 +1,96 @@
+﻿<umpc:UMPMainView x:Class="UMPS1111.MainView"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1111;component/Themes/Default/UMPS1111/MainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" Name="GridLeft"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Name="BorderMain" Style="{DynamicResource BorderMain}">
+                        <DockPanel LastChildFill="True">
+                            <Border Name="BorderToolBar" DockPanel.Dock="Top" Style="{DynamicResource ToolBarStyle}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Name="PanelToolButton" Orientation="Horizontal" Margin="0,0,5,0">
+                                        <Label x:Name="LabRent"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2" Name="AddButton" Orientation="Horizontal" Margin="0,0,5,0">
+                                        <Button x:Name="ButtonAdd" Background="{DynamicResource SystemBrush9}" BorderThickness="2" BorderBrush="{DynamicResource SystemBrush8}"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="3" Name="DeleteButton" Orientation="Horizontal" Margin="0,0,5,0">
+                                        <Button x:Name="ButtonDelete" Background="{DynamicResource SystemBrush9}" BorderThickness="2" BorderBrush="{DynamicResource SystemBrush8}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <!--<RowDefinition Height="30"></RowDefinition>-->
+                                </Grid.RowDefinitions>
+                                <TreeView Grid.Row="0" x:Name="TreeViewObjects" SelectedItemChanged="TreeView_SelectedItemChanged"
+                                          Style="{DynamicResource TreeStyle}"
+                                          ItemContainerStyle="{DynamicResource TreeItemStyle}"
+                                          ItemTemplate="{DynamicResource TreeItemTemplate}">
+                                </TreeView>
+                                <!--<vcc:CustomWaiter Grid.Row="1" x:Name="CustomWaiter"
+                                                  Style="{DynamicResource CustomWaiterStyle}"></vcc:CustomWaiter>-->
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                <Grid Grid.Column="2">
+                    <Border Name="BorderLeftBg" Style="{DynamicResource BorderLeftBg}"></Border>
+                    <Border Name="BorderLeft" Style="{DynamicResource BorderLeft}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Name="BorderBasicOpt" Grid.Row="0" Style="{DynamicResource BorderBasicOpt}">
+                                <ComboBox Name="ComboResource"></ComboBox>
+                            </Border>
+                            <Border Name="BorderOtherPosition" Grid.Row="1" Style="{DynamicResource BorderOtherPosition}">
+                                <!--<ListView Name="LVResources" SelectionMode="Extended" Style="{DynamicResource ListViewRecord}"
+                                                                          ItemContainerStyle="{DynamicResource ListViewItemRecord}"></ListView>-->
+                                <ListBox x:Name="ListBoxReources" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                             Background="Transparent" BorderThickness="0" MouseLeftButtonUp="ListBoxItem_MouseDown"
+                                         ItemTemplate="{DynamicResource ListBoxItemTemplate}">
+                                </ListBox>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+            </Grid>
+
+            <umpc:PopupPanel x:Name="PopupPanel"
+                                     IsOpen="False"
+                                     Style="{DynamicResource PopupInfo}">
+            </umpc:PopupPanel>
+        </Grid>
+    </Grid>
+</umpc:UMPMainView>

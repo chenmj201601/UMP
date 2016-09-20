@@ -1,0 +1,406 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3107.TaskSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="440" d:DesignWidth="660">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TreeViewObjects" TargetType="{x:Type vcc:CheckableTree}">
+                <Setter Property="IsShowIcon" Value="True"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type vcc:CheckableTree}">
+                            <Border Name="BorderPanel"
+                            CornerRadius="1"
+                            BorderThickness="0"
+                            Background="{TemplateBinding Background}">
+                                <vcc:FrictionScrollViewer HorizontalScrollBarVisibility="Hidden"
+                                                    VerticalScrollBarVisibility="Auto"
+                                                    Padding="5">
+                                    <ItemsPresenter></ItemsPresenter>
+                                </vcc:FrictionScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <HierarchicalDataTemplate x:Key="ObjectItemTemplate" DataType="{x:Type vcc:CheckableTreeItem}"
+                              ItemsSource="{Binding Children}">
+                <TextBlock Text="{Binding Name}"></TextBlock>
+            </HierarchicalDataTemplate>
+
+            <Style x:Key="TreeViewItemObject" TargetType="{x:Type vcc:CheckableTreeItem}">
+                <Setter Property="Padding" Value="2,3" />
+                <Setter Property="Margin" Value="2"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                <Setter Property="IsChecked" Value="{Binding IsChecked}"></Setter>
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                <Setter Property="ToolTip" Value="{Binding Description}"></Setter>
+                <Setter Property="Icon" Value="{Binding Icon}"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type vcc:CheckableTreeItem}">
+                            <StackPanel>
+                                <Border Name="Bd"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Padding="{TemplateBinding Padding}">
+                                    <StackPanel Name="PART_Header" Orientation="Horizontal">
+                                        <ToggleButton x:Name="Expander" 
+                                          Style="{DynamicResource ExpandCollaspToggleStyle}" 
+                                          IsChecked="{Binding Path=IsExpanded,
+                                                     RelativeSource={RelativeSource AncestorType={x:Type vcc:CheckableTreeItem}}}"
+                                          ClickMode="Press"/>
+                                        <CheckBox IsChecked="{Binding IsChecked}" Tag="{Binding }"  VerticalAlignment="Center" />
+                                        <Image Width="16" Height="16" VerticalAlignment="Center" Source="{Binding Icon,Mode=OneTime,IsAsync=True}"></Image>
+                                        <ContentPresenter Content="{Binding Name, Mode=OneTime}" Margin="2,0" />
+                                    </StackPanel>
+                                </Border>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="15,0,0,0" />
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="HasItems" Value="false">
+                                    <Setter TargetName="Expander"
+                                  Property="Visibility"
+                                  Value="Hidden" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="false" />
+                                        <Condition Property="Width" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header"
+                                  Property="MinWidth"
+                                  Value="75" />
+                                </MultiTrigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="false" />
+                                        <Condition Property="Height" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header"
+                                  Property="MinHeight"
+                                  Value="19" />
+                                </MultiTrigger>
+                                <Trigger Property="IsExpanded" Value="false">
+                                    <Setter TargetName="ItemsHost"
+                                    Property="Visibility"
+                                    Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Bd" Property="Background"
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                                    <Setter TargetName="PART_Header" Property="Control.Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsExpanded" Value="True">
+                                    <Setter TargetName="ItemsHost" Property="Visibility" Value="Visible"></Setter>
+                                </Trigger>
+                                <Trigger SourceName="Bd" Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" 
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                                    <Setter TargetName="PART_Header" Property="Control.Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3107/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Name="tabTask" Grid.Row="0" Style="{DynamicResource TabControlCondition}">
+            <TabItem Header="Task Setting" Name="taskSetting" Style="{DynamicResource ConditionTabItem}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Grid Width="650">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="113"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="160"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Column="0" Grid.Row="0"  Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbTaskName" Content="Task Name"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0"  Style="{DynamicResource FormItemValue}" >
+                            <TextBox Name="tbTaskName"/>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="0"  Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbTaskType" Content="Task Type"/>
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="0"  Style="{DynamicResource FormItemValue}" >
+                            <ComboBox Name="cbTaskType">
+                                <ComboBoxItem Name="cbTaskType0" Content="Check Task"/>
+                                <!--<ComboBoxItem Name="cbTaskType1" Content="Recheck Task"/>
+                            <ComboBoxItem Name="cbTaskType2" Content="Smart Task"/>-->
+                            </ComboBox>
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbTaskRemark" Content="Task Remarks"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" >
+                            <TextBox Name="tbTaskRemark" TextWrapping="Wrap" AcceptsReturn="True" MaxWidth="500" MaxHeight="80" MaxLength="150"/>
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbTIsUse" Content="Is Use"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3" Style="{DynamicResource FormItemTitle}" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <RadioButton Name="yesUse" Content="Yes" Width="60" Grid.Column="0" GroupName="Use"/>
+                                <RadioButton Name="noUse" Content="No" Width="60" Grid.Column="1" GroupName="Use"/>
+                            </Grid>
+                        </Border>
+
+                        <!--<Border Grid.Column="2" Grid.Row="3" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="lbIsShare" Content="Is Share"/>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="3" Style="{DynamicResource FormItemTitle}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Name="yesShare" Content="Yes" Width="60" Grid.Column="0" GroupName="Share"/>
+                            <RadioButton Name="noShare" Content="No" Width="60" Grid.Column="1" GroupName="Share"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormItemTitle}" >
+                        <Label Name="lbIsAverage" Content="Is Average"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="4" Style="{DynamicResource FormItemTitle}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Name="yesAverage" Content="Yes" Width="60" Grid.Column="0" GroupName="Average"/>
+                            <RadioButton Name="noAverage" Content="No" Width="60" Grid.Column="1" GroupName="Average"/>
+                        </Grid>
+                    </Border>
+                    
+                    <Border Grid.Column="2" Grid.Row="4" Style="{DynamicResource FormItemTitle}" >
+                        <Label Name="lbRecordDispose" Content="Is Dispose"/>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="4" Style="{DynamicResource FormItemTitle}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Name="yesDispose" Content="Yes" Width="60" Grid.Column="0" GroupName="Dispose" IsEnabled="{Binding ElementName= yesAverage,Path=IsChecked}"/>
+                            <RadioButton Name="noDispose" Content="No" Width="80" Grid.Column="1" GroupName="Dispose" IsEnabled="{Binding ElementName= yesAverage,Path=IsChecked}"/>
+                        </Grid>
+                    </Border>-->
+
+                        <Border Grid.Column="0" Grid.Row="5" Style="{DynamicResource FormItemTitle}" Grid.ColumnSpan="2" >
+                            <Label Name="lbTaskCondition" Content="Task Query Condition"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5" Style="{DynamicResource FormItemValue}" >
+                            <ComboBox Name="cbTaskCondition"/>
+                        </Border>
+
+                        <Border Grid.Column="2" Grid.Row="5" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbTaskDeadline" Content="Task Deadline"/>
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="5" Style="{DynamicResource FormItemValue}" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Name="tbDeadline" KeyDown="tbDeadline_KeyDown" Grid.Column="0" InputMethod.IsInputMethodEnabled="False"/>
+                                <Label Name="lbDeadline" Width="40" Content="Days" Grid.Column="1"/>
+                            </Grid>
+
+                        </Border>
+
+                        <Expander Header="Select QA" Name="epSA" Grid.ColumnSpan="5" Grid.Row="6" >
+                            <vcc:CheckableTree x:Name="TvTaskObjects" Style="{DynamicResource TreeViewObjects}"
+                                                                                   ItemTemplate="{DynamicResource ObjectItemTemplate}"
+                                                                                   ItemContainerStyle="{DynamicResource TreeViewItemObject}">
+                            </vcc:CheckableTree>
+                        </Expander>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="Allot Rate" Name="allotRate" Style="{DynamicResource ConditionTabItem}">
+                <Grid Width="650">
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="350"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                                <CheckBox Grid.Row="0" Name="ckDataGrid" Content="Set Duration Rate?"/>
+                            </Border>
+
+                            <DataGrid Grid.Row="1" IsEnabled="{Binding ElementName=ckDataGrid,Path=IsChecked}" Name="dataGrid" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="1" Binding="{Binding DurationMin}"/>
+                                    <DataGridTextColumn Header="2" Binding="{Binding DurationMax}"/>
+                                    <DataGridTextColumn Header="3" Binding="{Binding Rate}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Border>
+
+                    <!--<Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>-->
+
+                    <!--<Border Grid.Row="2"/>-->
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Operation Cycle Time" Name="operationTime" Style="{DynamicResource ConditionTabItem}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Grid Width="650">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="134"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbRunFreq" Content="Run Freq"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                            <ComboBox Name="cbRunFreq" SelectionChanged="cbRunFreq_SelectionChanged">
+                                <ComboBoxItem Name="cbRunFreq0" Content="Every Day"/>
+                                <ComboBoxItem Name="cbRunFreq1" Content="Every Week"/>
+                                <ComboBoxItem Name="cbRunFreq2" Content="Every Month"/>
+                                <ComboBoxItem Name="cbRunFreq3" Content="Every Season"/>
+                                <ComboBoxItem Name="cbRunFreq4" Content="Every Year"/>
+                            </ComboBox>
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbRunTime" Content="Run Time"/>
+                        </Border>
+                        <vcc:MaskedTextBox Name="txRuntime" Grid.Column="1" Grid.Row="1" Margin="5,0" Height="26"
+                               Text="{Binding Value01,RelativeSource={RelativeSource TemplatedParent}}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Mask="00:00:00"></vcc:MaskedTextBox>
+
+                        <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbFreqRunWeekTime" Content="Every Week"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2" Style="{DynamicResource FormItemValue}">
+                            <ComboBox Name="cbFreqWeekTime" Height="25" Margin="0,0,-0.4,-0.2" VerticalAlignment="Bottom" >
+                                <ComboBoxItem Content="Monday" Name="cbFreqWeekTime0"/>
+                                <ComboBoxItem Content="Tuesday" Name="cbFreqWeekTime1"/>
+                                <ComboBoxItem Content="Wednesday" Name="cbFreqWeekTime2"/>
+                                <ComboBoxItem Content="Thursday" Name="cbFreqWeekTime3"/>
+                                <ComboBoxItem Content="Friday" Name="cbFreqWeekTime4"/>
+                                <ComboBoxItem Content="Saturday" Name="cbFreqWeekTime5"/>
+                                <ComboBoxItem Content="Sunday" Name="cbFreqWeekTime6"/>
+                            </ComboBox>
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbFreqRunMonthTime" Content="Every Month"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3" Style="{DynamicResource FormItemValue}">
+                            <ComboBox Name="cbFreqMonthTime" />
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbFirstRunSeasonTime" Content="Every Season"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4" Style="{DynamicResource FormItemValue}">
+                            <TextBox Name="tbFirstRunSeasonTime" KeyDown="tbDeadline_KeyDown" InputMethod.IsInputMethodEnabled="False"/>
+                        </Border>
+
+                        <!--<Border Grid.Column="0" Grid.Row="5" Style="{DynamicResource FormItemTitle}" >
+                        <Label Name="lbSecondRunSeasonTime" Content="Second Season"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="5" Style="{DynamicResource FormItemValue}">
+                        <TextBox Name="tbSecondRunSeasonTime" KeyDown="tbDeadline_KeyDown"/>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="6" Style="{DynamicResource FormItemTitle}" >
+                        <Label Name="lbThirdRunSeasonTime" Content="Third Season"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="6" Style="{DynamicResource FormItemValue}">
+                        <TextBox Name="tbThirdRunSeasonTime" KeyDown="tbDeadline_KeyDown"/>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="7" Style="{DynamicResource FormItemTitle}" >
+                        <Label Name="lbFourthRunSeasonTime" Content="Fourth Season"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="7" Style="{DynamicResource FormItemValue}">
+                        <TextBox Name="tbFourthRunSeasonTime" KeyDown="tbDeadline_KeyDown"/>
+                    </Border>-->
+
+                        <Border Grid.Column="0" Grid.Row="5" Style="{DynamicResource FormItemTitle}" >
+                            <Label Name="lbFreqRunYearTime" Content="Every Year"/>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5" Style="{DynamicResource FormItemValue}">
+                            <TextBox Name="tbFreqRunYearTime" KeyDown="tbDeadline_KeyDown" InputMethod.IsInputMethodEnabled="False"/>
+                        </Border>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnConfirm" Content="Confirm" Click="BtnConfirm_Click"></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close" Click="BtnClose_Click"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

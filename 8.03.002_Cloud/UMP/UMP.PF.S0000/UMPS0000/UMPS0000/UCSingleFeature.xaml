@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="UMPS0000.UCSingleFeature"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:YoungContols="clr-namespace:PFShareControls;assembly=PFShareControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="108" d:DesignWidth="64" Background="Transparent" Initialized="UserControl_Initialized">
+    <UserControl.Resources>
+        <YoungContols:FeatureMagnetIcoChangeConverter x:Key="ImageChangedConverter"/>
+    </UserControl.Resources>
+    <Grid x:Name="GridUCSingleFeature" Style="{DynamicResource GridUCSingleFeatureStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Transparent"/>
+        <Image Grid.Row="0" x:Name="ImageFeature" Source="{Binding StrFeatureImageSource,Converter={StaticResource ImageChangedConverter}}" Margin="2" Stretch="Fill"/>
+        <TextBlock Name="TextBlockSingleFeatureDesc"  Grid.Row="2" Style="{DynamicResource TextBlockSingleFeatureDescStyle}" Text="{Binding Path=StrFeatureContent}"/>
+    </Grid>
+</UserControl>

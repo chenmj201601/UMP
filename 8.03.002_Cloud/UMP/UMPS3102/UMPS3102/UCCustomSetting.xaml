@@ -1,0 +1,312 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3102.UCCustomSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Style="{DynamicResource UCCustomSetting}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3102;component/Themes/Default/UMPS3102/UCCustomSetting.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TabControl Name="TabControlSetting" Grid.Row="0" Style="{DynamicResource TabControlStyle}">
+                
+                <TabItem Name="TabBasic" Header="Basic" Tag="0" Style="{DynamicResource TabItemStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="BasicLbPageSize" Text="Page Size"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" MinWidth="80"
+                                Style="{DynamicResource FormBorderValue}">
+                            <ComboBox Name="BasicComboPageSize">
+                                <ComboBoxItem Content="50" Tag="50"></ComboBoxItem>
+                                <ComboBoxItem Content="100" Tag="100"></ComboBoxItem>
+                                <ComboBoxItem Content="200" Tag="200"></ComboBoxItem>
+                                <ComboBoxItem Content="500" Tag="500"></ComboBoxItem>
+                                <ComboBoxItem Content="1000" Tag="1000"></ComboBoxItem>
+                            </ComboBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="BasicLbMaxRecords" Text="Max Records"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" MinWidth="80"
+                                Style="{DynamicResource FormBorderValue}">
+                            <ComboBox Name="BasicComboMaxRecords">
+                                <ComboBoxItem Content="20000" Tag="20000"></ComboBoxItem>
+                                <ComboBoxItem Content="50000" Tag="50000"></ComboBoxItem>
+                                <ComboBoxItem Content="100000" Tag="100000"></ComboBoxItem>
+                                <ComboBoxItem Content="1000000" Tag="1000000"></ComboBoxItem>
+                            </ComboBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="BasicCbSkipConditionPanel" Content="Skip condition panel when QuickQuery"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="BasicCbSkipPasswordPanel" Content="Skip password panel if password remember"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="BasicCbQueryVoiceRecord" Content="Query voice record"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="BasicCbQueryScreenRecord" Content="Query screen record"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="BasicCbAutoRelativePlay" Content="Auto relative play"></CheckBox>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="TabColumnSetting" Header="Record Column" Tag="1" Style="{DynamicResource TabItemStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListView Name="ColumnLvColumns"></ListView>
+                        <Grid Grid.Column="1" Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50*"></RowDefinition>
+                                <RowDefinition Height="50*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Button Name="ColumnBtnUp" Grid.Row="0" Style="{DynamicResource ImageButtonStyle}">
+                                <Image Stretch="Uniform" Width="20" Height="20" Source="/UMPS3102;component/Themes/Default/UMPS3102/Images/up.ico"></Image>
+                            </Button>
+                            <Button Name="ColumnBtnDown" Grid.Row="1" Style="{DynamicResource ImageButtonStyle}">
+                                <Image Stretch="Uniform" Width="20" Height="20" Source="/UMPS3102;component/Themes/Default/UMPS3102/Images/down.ico"></Image>
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormBorderItem}">
+                                <TextBlock Name="ColumnLbColumnName"></TextBlock>
+                            </Border>
+                            <Border Grid.Column="1" Width="100" Style="{DynamicResource FormBorderValue}">
+                                <CheckBox Name="ColumnCbIsVisible" Content="Is visible"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="2" Width="50" Style="{DynamicResource FormBorderValue}">
+                                <TextBox Name="ColumnTxtWidth"></TextBox>
+                            </Border>
+                            <Border Grid.Column="3" Width="80" Style="{DynamicResource FormBorderValue}">
+                                <Button Name="ColumnBtnApply" Style="{DynamicResource ImageButtonStyle}" ToolTip="Set">
+                                    <Image Stretch="Uniform" Width="20" Height="20" Source="/UMPS3102;component/Themes/Default/UMPS3102/Images/done.png"></Image>
+                                </Button>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="TabCustomCondition" Header="Select Condition" Tag="2" Style="{DynamicResource TabItemStyle}">
+                </TabItem>
+
+                <TabItem Name="TabDataExport" Header="Data Export" Tag="3" Style="{DynamicResource TabItemStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                            <RadioButton Name="ExportDataRadioCurrentSelected" GroupName="GroupType" Content="Current selected records"></RadioButton>
+                        </Border>
+                        <Border Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                            <RadioButton Name="ExportDataRadioCurrentPage" GroupName="GroupType" Content="Current page"></RadioButton>
+                        </Border>
+                        <Border Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                            <RadioButton Name="ExportDataRadioAllPage" GroupName="GroupType" Content="All page"></RadioButton>
+                        </Border>
+                        <Border Grid.Row="3" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportDataCbRemember" Content="Remember current settings"></CheckBox>
+                        </Border>
+                        <Border Grid.Row="4" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportDataCbNotShow" Content="Not show not time"></CheckBox>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="TabRecordExport" Header="Record Export" Tag="4" Style="{DynamicResource TabItemStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportRecordCbRemember" Content="Remember"></CheckBox>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportRecordCbNotShow" Content="Not show next time"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="ExportRecordLbSaveDir" Text="Save directory"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" 
+                                    Style="{DynamicResource FormBorderValue}">
+                            <TextBox Name="ExportRecordTxtSaveDir" IsReadOnly="True"></TextBox>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2" Style="{DynamicResource FormBorderValue}">
+                            <Button Name="ExportRecordBtnBrowser" Width="30" Content="..."></Button>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportRecordCbIgnorePathFormat" Content="Convert to PCM (G.729)"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="ExportRecordLbPathForm" Text="Path format"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" 
+                                    Style="{DynamicResource FormBorderValue}">
+                            <TextBox Name="ExportRecordTxtPathFormat"></TextBox>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4" Style="{DynamicResource FormBorderValue}">
+                            <Button Name="ExportRecordBtnSelect" Width="30" Content=">"></Button>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Style="{DynamicResource FormBorderItem}">
+                            <CheckBox Name="ExportRecordCbEncryptRecord" Content="Encrypt record"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="6" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="ExportRecordLbEncryptPassword" Text="Path format"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6" HorizontalAlignment="Stretch" 
+                                    Style="{DynamicResource FormBorderValue}">
+                            <PasswordBox Name="ExportRecordTxtEncryptPassword"></PasswordBox>
+                        </Border>
+                        <Grid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbConvertPCM" Content="Convert to PCM (G.729)"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbDecryptFile" Content="Decrypt File"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbGenerateDB" Content="Generate Database"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbReplaceFile" Content="Replace File"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbExportVoice" Content="Export Voice"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                                <CheckBox Name="ExportRecordCbExportScreen" Content="Export Screen"></CheckBox>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                
+                <TabItem Name="TabBookmarkRank" Header="Bookmark Rank" Tag="5" Style="{DynamicResource TabItemStyle}">
+                    
+                </TabItem>
+
+                <TabItem Name="TabPlayScreen" Header="Screen Play" Tag="6" Style="{DynamicResource TabItemStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="PlayScreenCbNoPlay" Content="Never Play"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
+                                Style="{DynamicResource FormBorderValue}">
+                            <CheckBox Name="PlayScreenCbTopMost" Content="Window Top Most"></CheckBox>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                            <TextBlock Name="PlayScreenLbScale" Text="Initialize Scale ( % ) "></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2" MinWidth="80"
+                                Style="{DynamicResource FormBorderValue}">
+                            <ComboBox Name="PlayScreenComboScale">
+                                <ComboBoxItem Content="Auto" Tag="0"></ComboBoxItem>
+                                <ComboBoxItem Content="10" Tag="10"></ComboBoxItem>
+                                <ComboBoxItem Content="25" Tag="25"></ComboBoxItem>
+                                <ComboBoxItem Content="50" Tag="50"></ComboBoxItem>
+                                <ComboBoxItem Content="75" Tag="75"></ComboBoxItem>
+                                <ComboBoxItem Content="100" Tag="100"></ComboBoxItem>
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                
+            </TabControl>
+            <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnApply" Content="Apply" ></Button>
+                </Border>
+                <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnClose" Content="Close"></Button>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

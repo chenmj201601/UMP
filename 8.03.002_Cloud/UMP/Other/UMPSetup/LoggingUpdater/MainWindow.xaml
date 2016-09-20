@@ -1,0 +1,49 @@
+﻿<Window x:Class="LoggingUpdater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="480" Width="800">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Name="BtnTest" Header="Test"></MenuItem>
+                <MenuItem Name="BtnStart" Header="Start"></MenuItem>
+                <MenuItem Name="BtnStop" Header="Stop"></MenuItem>
+                <MenuItem Name="BtnClose" Header="Close"></MenuItem>
+            </Menu>
+            <Border DockPanel.Dock="Top" Margin="10,5,10,2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Installed products"></TextBlock>
+                    <ListBox Name="ListInstalledProducts" Grid.Row="1" Height="80" Margin="0,3,0,2">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="ListBoxItem">
+                                <TextBlock Text="{Binding Name}"></TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+          
+            <Grid Name="GridProgress" DockPanel.Dock="Bottom" Visibility="Collapsed">
+                <ProgressBar Name="ProgressUpdate" Height="30" Margin="5,2,5,2"></ProgressBar>
+                <TextBlock Name="TxtProgress" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold" Text="0.0%"></TextBlock>
+            </Grid>
+
+            <TextBox Name="TxtMsg" DockPanel.Dock="Bottom" Height="80" Margin="5,2,5,2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" IsReadOnly="True"></TextBox>
+
+            <Border Margin="10,5,10,2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Update informations"></TextBlock>
+                    <ListBox Name="ListBoxUpdateInfos" Grid.Row="1" Margin="0,3,0,2"></ListBox>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>

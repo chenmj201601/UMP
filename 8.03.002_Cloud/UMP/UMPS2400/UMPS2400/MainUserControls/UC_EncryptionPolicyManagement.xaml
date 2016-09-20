@@ -1,0 +1,83 @@
+﻿<umpc:UMPUserControl x:Class="UMPS2400.MainUserControls.UC_EncryptionPolicyManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS2400;component/Themes/Default/UMPS2400/EncryptMainPageResources.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS2400;component/Themes/Default/UMPS2400/UC_EncryptServersResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="3"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--分隔线-->
+        <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpilitVertical}"></GridSplitter>
+        <!--Column1  加密服务器title和列表-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <DockPanel LastChildFill="True">
+                        <Border DockPanel.Dock="Top" Style="{DynamicResource BorderTitleStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Name="LbCurrentObject" Text="{Binding Name}" Style="{DynamicResource LbTitleStyle}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Grid>
+                            <Border Name="PanelPropertyList"></Border>
+                        </Grid>
+                    </DockPanel>
+                </Border>
+            <Border Grid.Row="1">
+                <DockPanel HorizontalAlignment="Stretch">
+                    <Image Name="imgStatus" Width="16" Height="16" HorizontalAlignment="Left"></Image>
+                    <Label Name="lblStatus" HorizontalAlignment="Stretch" Height="26"></Label>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="2">
+                <ComboBox Height="25" Margin="0,0,0,0" Name="CmbPolicyType" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" FontFamily="SimSun" FontSize="12" >
+                    <ComboBoxItem Name="cmbPolicyTypeUsing" Tag="1" Margin="0,1,0,1" Height="24" FontFamily="SimSun" FontSize="12" Content="">
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="cmbPolicyTypeWillBeUse" Tag="2" Margin="0,1,0,1" Height="24" FontFamily="SimSun" FontSize="12" Content="">
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="cmbPolicyTypeExpired" Tag="3" Margin="0,1,0,1" Height="24" FontFamily="SimSun" FontSize="12" Content="">
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="cmbPolicyTypeDisabled" Tag="4" Margin="0,1,0,1" Height="24" FontFamily="SimSun" FontSize="12" Content="">
+                    </ComboBoxItem>
+                </ComboBox>
+            </Border>
+            <ListView Name="lvEncryptionPolicyObject" BorderBrush="Transparent" Style="{DynamicResource ListViewResourceObject}"
+                          ItemContainerStyle="{DynamicResource ListViewItemResourceObject}" Grid.Row="3">
+                </ListView>
+        </Grid>
+        <Border Grid.Column="2">
+            <DockPanel LastChildFill="True">
+                <Border DockPanel.Dock="Top" Style="{DynamicResource BorderTitleStyle}">
+                    <TextBlock Name="LbOperations" Text="Operations" Style="{DynamicResource LbTitleStyle}"></TextBlock>
+                </Border>
+                <Grid>
+                    <StackPanel Name="PanelOperationButtons" Orientation="Vertical" MinHeight="100"></StackPanel>
+                </Grid>
+            </DockPanel>
+        </Border>
+        <umpc:PopupPanel x:Name="PopupPanel"
+                                     IsOpen="False"
+                                     Style="{DynamicResource PopupInfo}">
+        </umpc:PopupPanel>
+    </Grid>
+</umpc:UMPUserControl>

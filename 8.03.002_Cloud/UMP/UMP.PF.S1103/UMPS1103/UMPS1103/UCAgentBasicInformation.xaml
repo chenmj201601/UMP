@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="UMPS1103.UCAgentBasicInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:YoungControl="clr-namespace:PFShareControls;assembly=PFShareControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="190" d:DesignWidth="500">
+    <Grid MinWidth="500" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Name="GridAgentBasicTitle" Style="{DynamicResource GridAgentBasicTitleStyle}">
+            <TextBlock Name="TextBlockObjectHeader" Style="{DynamicResource TextBlockObjectHeaderStyle}"/>
+            <Image Name="ImageUpDownArrow" Margin="0,0,2,0" Width="26" Height="26" HorizontalAlignment="Right" Style="{DynamicResource ImageUpDownArrowOpenStyle}"/>
+        </Grid>
+        <Grid x:Name="GridObjectView" Grid.Row="1" Margin="0,0,0,10" Visibility="Visible">
+            <StackPanel Orientation="Vertical">
+                <Grid x:Name="GridBelongOrgView" Style="{DynamicResource GridABIStyle}">
+                    <Label x:Name="LabelOrg" Style="{DynamicResource LabelOrgStyle}"/>
+                    <TextBox x:Name="TextBoxOrg" Tag="" IsReadOnly="True" Style="{DynamicResource TextBoxOrgStyle}"/>
+                    <Button x:Name="ButtonOrg" Style="{DynamicResource ButtonOrgStyle}"/>
+                </Grid>
+                <Grid x:Name="GridBelongOrgSelect" Style="{DynamicResource GridABIStyle}" Visibility="Visible" MaxHeight="300">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="StackPanelOrgOperation" Style="{DynamicResource StackPanelOrgOperationStyle}" Grid.Row="0">
+                        <Button x:Name="ButtonOrgCancel" Style="{DynamicResource ButtonSelectCancelStyle}"/>
+                        <Button x:Name="ButtonSelectOrg" Style="{DynamicResource ButtonSelectCancelStyle}"/>
+                    </StackPanel>
+                    <Grid x:Name="GridMyControlOrgForSelect" Grid.Row="1">
+                        <TreeView x:Name="TreeViewMyCtrlOrg" Style="{DynamicResource TreeViewOrgAgentStyle}" SelectedItemChanged="TreeViewMyCtrlOrg_SelectedItemChanged">
+                            <TreeView.Resources>
+                                <Style TargetType="{x:Type TreeViewItem}">
+                                    <Setter Property="HeaderTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate DataType="ContentPresenter">
+                                                <Grid Height="26" >
+                                                    <StackPanel Name="spImg" Orientation="Horizontal">
+                                                        <Image Name="img" Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}},Path=(YoungControl:TreeViewItemProps.ItemImageName)}" Width="16" Height="16"  Stretch="Fill" VerticalAlignment="Center" />
+                                                        <Label x:Name="LabelHeader" Content="{Binding}" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TreeView.Resources>
+                        </TreeView>
+                    </Grid>
+                </Grid>
+                <Grid Style="{DynamicResource GridABIStyle}">
+                    <Label x:Name="LabelAgentID" Style="{DynamicResource LabelAgentIDStyle}"/>
+                    <TextBox x:Name="TextBoxAgentID" Style="{DynamicResource TextBoxAgentIDStyle}"/>
+                </Grid>
+                <Grid Style="{DynamicResource GridABIStyle}">
+                    <Label x:Name="LabelAgentName" Style="{DynamicResource LabelAgentNameStyle}"/>
+                    <TextBox x:Name="TextBoxAgentName" Style="{DynamicResource TextBoxAgentNameStyle}"/>
+                </Grid>
+                <Grid Style="{DynamicResource GridABIStyle}">
+                    <Label x:Name="LabelAgentStatus" Style="{DynamicResource LabelAgentStatusStyle}"/>
+                    <ComboBox x:Name="ComboBoxStatus" Style="{DynamicResource ComboBoxStatusStyle}">
+                        <ComboBoxItem x:Name="ComboBoxItemLockStatus1" Tag="1" Style="{DynamicResource ComboBoxItemStyle}"/>
+                        <ComboBoxItem x:Name="ComboBoxItemLockStatus0" Tag="0" Style="{DynamicResource ComboBoxItemStyle}"/>
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

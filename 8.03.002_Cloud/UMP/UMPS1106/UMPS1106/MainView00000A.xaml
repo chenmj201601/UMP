@@ -1,0 +1,72 @@
+﻿<umpc:UMPMainView x:Class="UMPS1106.MainView00000A"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1106;component/Themes/Default/UMPS1106/StyleDictionary1106.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+       
+        
+        <Grid Margin="0" Name="GridMainPanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="65*"/>
+            </Grid.ColumnDefinitions>
+            <!--<Image Name="ImageBackGroundA" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource BackgroundImage}"/>-->
+            <Border x:Name="BorderContainsGroupParameter" Grid.Column="0" Style="{DynamicResource BorderContainsGroupParameterStyle}" >
+                <ScrollViewer x:Name="ScrollContainsGroupParameter" Style="{DynamicResource ScrollContainsGroupParameterStyle}">
+                    <StackPanel x:Name="StackPanelContainsGroupParameter" Style="{DynamicResource StackPanelContainsGroupParameterStyle}"/>
+                </ScrollViewer>
+            </Border>
+            <GridSplitter Name="SplitterLeftRight" Grid.Column="1" ShowsPreview="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0" Background="Transparent" Width="2"/>
+            <Border x:Name="BorderParameterDetail" Grid.Column="2" Style="{DynamicResource BorderContainsGroupParameterStyle}">
+                <Grid x:Name="GridParameterDetail" Style="{DynamicResource GridParameterDetailStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="38"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="BorderParameterOperation" Style="{DynamicResource BorderParameterOperationStyle}">
+
+                        <Grid Grid.Row="0" x:Name="GridParameterOperation" Style="{DynamicResource GridParameterOperationStyle}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1" x:Name="LabelParameterName" Style="{DynamicResource LabelParameterNameStyle}" Content="{Binding Path=StrParaName}"/>
+                            <Button Grid.Column="0" x:Name="ButtonEditApply"  Content="{Binding Path=StrEditApply}" Style="{DynamicResource ButtonApplyStyle}"/>
+                            <Button Grid.Column="2" x:Name="ButtonCancelEdit" Style="{DynamicResource ButtonCancelStyle}" Content="{Binding Path=StrCancel}"/>
+                        </Grid>
+
+
+
+                    </Border>
+                    <Grid Name="GridSingleParameterDetail" Style="{DynamicResource GridContainsParametersStyle}" Grid.Row="1" Margin="0,3,0,0">
+                        <ScrollViewer x:Name="ScrollSingleParameterDetail" Style="{DynamicResource ScrollSingleParameterDetailStyle}">
+                            <Grid x:Name="GridParameterDetailUserControl" Margin="0">
+                                <GroupBox x:Name="GroupBoxParameterValueHeader" Style="{DynamicResource GroupBoxParameterValueHeaderStyle}" Header="{Binding Path=StrHeader}">
+                                    <Grid x:Name="GridViewOrEditValue" Style="{DynamicResource GridViewOrEditValueStyle}"/>
+                                </GroupBox>
+                                <GroupBox x:Name="GroupBoxParameterDescriber" Style="{DynamicResource GroupBoxParameterDescriberStyle}" Header="{Binding Path=StrDescriber}">
+                                    <TextBox x:Name="TextBoxParameterDescriber" Style="{DynamicResource TextBoxParameterDescriberStyle}" Text="{Binding Path=StrParameterDesc}"/>
+                                </GroupBox>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+
+</umpc:UMPMainView>

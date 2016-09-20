@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LangLister xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LangID="1033" LangName="English (U.S)">
+  <Langs>
+    <!--Updater-->
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>Lang1033</Name>
+      <Display>English (U.S)</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>Lang1028</Name>
+      <Display>繁体中文</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>Lang1041</Name>
+      <Display>日本語</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>Lang2052</Name>
+      <Display>简体中文</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B001</Name>
+      <Display>Previous</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B002</Name>
+      <Display>Next</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B003</Name>
+      <Display>Close</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B004</Name>
+      <Display>Update</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B005</Name>
+      <Display>Login</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B006</Name>
+      <Display>Detail Informations</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B007</Name>
+      <Display>Login</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>B008</Name>
+      <Display>Cancel</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T001</Name>
+      <Display>Content of this update package</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T002</Name>
+      <Display>Products installed on this machine</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T003</Name>
+      <Display>No product installed</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T004</Name>
+      <Display>Will update to version</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T005</Name>
+      <Display>Database information</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T006</Name>
+      <Display>Database not created</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T007</Name>
+      <Display>Please login before update</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T008</Name>
+      <Display>{0} login successful</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T009</Name>
+      <Display>I agree the license above</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T010</Name>
+      <Display>Backup UMP files</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T011</Name>
+      <Display>UMP backup path</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T012</Name>
+      <Display>Compress UMP files</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T013</Name>
+      <Display>Update UMP languages</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T014</Name>
+      <Display>UMP languages update mode</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T015</Name>
+      <Display>Other options</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T016</Name>
+      <Display>Save update source data</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T017</Name>
+      <Display>Congratulations, upgrade successfully!</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T018</Name>
+      <Display>Sorry, UMP upgrade failed!</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T019</Name>
+      <Display>Login UMP </Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T020</Name>
+      <Display>Login as UMP System Administrator</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T021</Name>
+      <Display>Account</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>T022</Name>
+      <Display>Password</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>LM001</Name>
+      <Display>Append</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>LM002</Name>
+      <Display>Modify</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>LM003</Name>
+      <Display>Reset</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>LM004</Name>
+      <Display>Backup and reset</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U001</Name>
+      <Display>Backup UMP</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U002</Name>
+      <Display>Stop services</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U003</Name>
+      <Display>Update files</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U004</Name>
+      <Display>Update database</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U005</Name>
+      <Display>Update languages</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U006</Name>
+      <Display>Update services</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U007</Name>
+      <Display>Start services</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>U008</Name>
+      <Display>Update servers</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>COL001</Name>
+      <Display>Item</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>COL002</Name>
+      <Display>Progress</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>COL003</Name>
+      <Display>Status</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N001</Name>
+      <Display>Checking the system environment, please wait...</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N002</Name>
+      <Display>Confirm close window?</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N003</Name>
+      <Display>Please agree the license</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N004</Name>
+      <Display>Please select path to backup UMP</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N005</Name>
+      <Display>Please login before update</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N006</Name>
+      <Display>Confirm update UMP？</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N007</Name>
+      <Display>Account or password empty!</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N008</Name>
+      <Display>Checking login informations, please wait...</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N009</Name>
+      <Display>Account or password error!</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>N010</Name>
+      <Display>Newer product has installed on this machine, can not update!</Display>
+    </Lang>
+    <!--Updater-->
+    <!--BugInfo Display-->
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>MC803002P000000001</Name>
+      <Display>Modify some application's log, save to one directory</Display>
+    </Lang>
+    <!--BugInfo Display-->
+    <!--Module Name-->
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M0000</Name>
+      <Display>Basic</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1101</Name>
+      <Display>Organization / User Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1102</Name>
+      <Display>Role / Permission Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1103</Name>
+      <Display>Agent Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1104</Name>
+      <Display>Skill Group Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1105</Name>
+      <Display>Organization Type</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1106</Name>
+      <Display>Password Policy</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1107</Name>
+      <Display>Interactive logon</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1108</Name>
+      <Display>Lockout policies</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1109</Name>
+      <Display>Global Parameter</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1110</Name>
+      <Display>Resource Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1111</Name>
+      <Display>Tenant Resource Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M1112</Name>
+      <Display>Domain Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2101</Name>
+      <Display>Filter Distribution Center</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2102</Name>
+      <Display>Live Monitoring</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2120</Name>
+      <Display>Voice Server</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2122</Name>
+      <Display>Screen Server</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2129</Name>
+      <Display>CTI2 Server</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2130</Name>
+      <Display>CMC2</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2131</Name>
+      <Display>Health Server</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2401</Name>
+      <Display>Key Generation Service Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2402</Name>
+      <Display>Key Policy Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2403</Name>
+      <Display>Encryption Policy Binding</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2404</Name>
+      <Display>Encryption Key Reminder</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M2501</Name>
+      <Display>Alarm Message Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3101</Name>
+      <Display>Evaluation Form Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3102</Name>
+      <Display>Search and Playback</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3103</Name>
+      <Display>Task Assignment</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3104</Name>
+      <Display>Smart Client</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3105</Name>
+      <Display>Appeal</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3106</Name>
+      <Display>Coaching Library</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3107</Name>
+      <Display>Automatic Task Assignment</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3108</Name>
+      <Display>QM parameter setting</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3601</Name>
+      <Display>Question Library</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3602</Name>
+      <Display>Test Paper Library</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M3603</Name>
+      <Display>Tester Settings</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4401</Name>
+      <Display>ASM</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4411</Name>
+      <Display>Onsite Monitor</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4412</Name>
+      <Display>Region Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4413</Name>
+      <Display>Seat Management</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4414</Name>
+      <Display>ASM State Setting</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4415</Name>
+      <Display>ASM Alarm Setting</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4601</Name>
+      <Display>PM Setting</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4602</Name>
+      <Display>PM Analysis</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M4603</Name>
+      <Display>Performance Allocation</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M5101</Name>
+      <Display>Bookmark rank</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M5102</Name>
+      <Display>Keyword</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M5103</Name>
+      <Display>Speech to Text</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M6101</Name>
+      <Display>Dashboard</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M9801</Name>
+      <Display>Third Application 1</Display>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Name>M9802</Name>
+      <Display>Third Application 2</Display>
+    </Lang>
+    <!--Module Name-->
+  </Langs>
+</LangLister>

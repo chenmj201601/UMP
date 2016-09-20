@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cmd="clr-namespace:UMPS1110.Commands">
+    
+    <DataTemplate x:Key="OperationCellTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{DynamicResource CellOperationButton}"
+                    Command="cmd:ChildObjectListerCommands.ModifyCommand"
+                    CommandParameter="{Binding}">
+                <Image Stretch="Uniform" Source="Images/modify.png"></Image>
+            </Button>
+            <Button Style="{DynamicResource CellOperationButton}"
+                    Command="cmd:ChildObjectListerCommands.DeleteCommand"
+                    CommandParameter="{Binding}">
+                <Image Stretch="Uniform" Source="Images/remove.png"></Image>
+            </Button>
+        </StackPanel>
+    </DataTemplate>
+    
+</ResourceDictionary>

@@ -1,0 +1,88 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3103.AssignToQA"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="480">
+
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>                
+                <ResourceDictionary Source="Themes/Default/UMPS3103/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3103/MainPageStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid  Height="350">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{DynamicResource FormStyle}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" Name="GridLeft"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition  Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Name="BorderLeft" Grid.Column="0" Style="{DynamicResource BorderLeft}">
+                    <ScrollViewer>
+                        <Grid>
+                            <vcc:CheckableTree x:Name="TvObjects" Style="{DynamicResource TreeViewObjects}"
+                                                                                   ItemTemplate="{DynamicResource ObjectItemTemplate}"
+                                                                                   ItemContainerStyle="{DynamicResource TreeViewItemObject}">
+                            </vcc:CheckableTree>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                <Border Grid.Column="2">
+                    <StackPanel  Orientation="Vertical">
+                        <GroupBox Header="Quality Time" Name="gpQualitytime">
+                            <StackPanel Orientation="Vertical">
+                                <Label Name="labYear" Content="Year"></Label>
+                                <ComboBox Name="cmbYear" ></ComboBox>
+                                <Label Name="labMonth" Content="Month" ></Label>
+                                <ComboBox Name="cmbMonth" ></ComboBox>
+                            </StackPanel>    
+                        </GroupBox>
+                        <Border  Style="{DynamicResource FormItemValue}">
+                            <Label Name="labTaskValidTime" Content="Task DeadLine Time"></Label>
+                        </Border>
+                        <Border Style="{DynamicResource FormItemValue}" >
+                            <vcc:DateTimePicker Name="DateDeadLineTime"  Format="Custom"  FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+                        </Border>
+                        <Border Style="{DynamicResource FormItemValue}" >
+                            <Label Name="labTaskName" Content="Task Name"></Label>
+                        </Border>
+                        <Border Style="{DynamicResource FormItemValue}">
+                            <TextBox Name="txbTaskName" MaxLength="28"></TextBox>
+                        </Border>
+                        <Border Style="{DynamicResource FormItemValue}">
+                            <!--<CheckBox Name="chkIsAVGAssign" Content="IsAVGAssign" Click="chkIsAVGAssign_Click"></CheckBox>-->
+                        </Border>
+                            
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnConfirm" Content="Confirm" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>  
+</umpc:UMPUserControl>

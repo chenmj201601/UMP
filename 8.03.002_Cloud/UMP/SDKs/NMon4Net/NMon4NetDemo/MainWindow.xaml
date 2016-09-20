@@ -1,0 +1,132 @@
+﻿<Window x:Class="NMon4NetDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Name="BtnTest" Header="Test"></MenuItem>
+            <MenuItem Name="BtnStartMon" Header="StartMonitor"></MenuItem>
+            <MenuItem Name="BtnStopMon" Header="StopMonitor"></MenuItem>
+            <MenuItem Name="BtnClose" Header="Close"></MenuItem>
+        </Menu>
+        <TabControl DockPanel.Dock="Top">
+            <TabItem Header="Params">
+                <Border Background="Azure">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Voice Ip"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Monitor Port"></Label>
+                        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Channel 0"></Label>
+                        <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Channel 1"></Label>
+                        <TextBox Name="TxtVoiceIp" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"></TextBox>
+                        <TextBox Name="TxtMonitorPort" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"></TextBox>
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Name="TxtChannel0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"></TextBox>
+                            <GroupBox Grid.Column="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <RadioButton Name="RbMix0" Grid.Column="0" Content="Mix" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                    <RadioButton Name="RbLeft0" Grid.Column="1" Content="Left" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                    <RadioButton Name="RbRight0" Grid.Column="2" Content="Right" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Name="TxtChannel1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"></TextBox>
+                            <GroupBox Grid.Column="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <RadioButton Name="RbMix1" Grid.Column="0" Content="Mix" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                    <RadioButton Name="RbLeft1" Grid.Column="1" Content="Left" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                    <RadioButton Name="RbRight1" Grid.Column="2" Content="Right" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Border Background="Azure">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Connect voice"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Decode data"></Label>
+                        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Play wave"></Label>
+                        <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Write source file"></Label>
+                        <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Write pcm file"></Label>
+                        <Label Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Save directory"></Label>
+                        <CheckBox Name="CbConnectVoice" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox Name="CbDecodeData" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox Name="CbPlayWave" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox Name="CbWriteSrcFile" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox Name="CbWritePcmFile" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                        <TextBox Name="TxtWaveDir" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"></TextBox>
+                    </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="Play">
+                <Border Background="Azure">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Play Type"></Label>
+                        <GroupBox Grid.Column="1" Grid.Row="0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <RadioButton Name="RbVLNMon" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="VLNMon4Net"></RadioButton>
+                                <RadioButton Name="RbNAudio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="NAudio"></RadioButton>
+                                <RadioButton Name="RbDiretX" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="DirectX"></RadioButton>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </Border>
+            </TabItem>
+        </TabControl>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <TextBox Name="TbMsg" TextWrapping="WrapWithOverflow"></TextBox>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

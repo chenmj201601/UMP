@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1461E9A1-02B9-41AB-B02A-288779B8DACE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoiceCyber.UMP.Common31041</RootNamespace>
+    <AssemblyName>Common31041</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABCD_OrgSkillGroup.cs" />
+    <Compile Include="AgentAndUserInfoList.cs" />
+    <Compile Include="AppealInfoDetailItem.cs" />
+    <Compile Include="BasicScoreCommentInfo.cs" />
+    <Compile Include="BasicScoreItemInfo.cs" />
+    <Compile Include="BasicScoreSheetInfo.cs" />
+    <Compile Include="BasicUserInfo.cs" />
+    <Compile Include="Common3102\DownloadParamInfo.cs" />
+    <Compile Include="Common3102\RecordEncryptInfo.cs" />
+    <Compile Include="Common3102\SettingInfo.cs" />
+    <Compile Include="CtrolAgent.cs" />
+    <Compile Include="CtrolOrg.cs" />
+    <Compile Include="DateTimeSpliteAsDay.cs" />
+    <Compile Include="ExamInfo.cs" />
+    <Compile Include="FilesItemInfo.cs" />
+    <Compile Include="FolderInfo.cs" />
+    <Compile Include="LocalXmlLanguage.cs" />
+    <Compile Include="LocalXmlTheme.cs" />
+    <Compile Include="MachineInfo.cs" />
+    <Compile Include="OrganizationInfo.cs" />
+    <Compile Include="QueryConditionDetail.cs" />
+    <Compile Include="QueryConditionSubItem.cs" />
+    <Compile Include="RecordInfo.cs" />
+    <Compile Include="RecordPlayHistoryInfo.cs" />
+    <Compile Include="RecordPlayInfo.cs" />
+    <Compile Include="RecordScoreInfo.cs" />
+    <Compile Include="S3104Codes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S3104Consts.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

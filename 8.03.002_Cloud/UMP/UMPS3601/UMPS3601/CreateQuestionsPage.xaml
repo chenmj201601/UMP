@@ -1,0 +1,623 @@
+﻿<umpc:UMPMainPage x:Class="UMPS3601.CreateQuestionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcad="http://www.voicecyber.com/wpf/avalondock"
+      xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="800"
+	  Title="TaskSetting" Style="{DynamicResource ATAMainPage}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/Control.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3601/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3601/AvalonDock.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3601/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <umpc:UMPPage.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform></TranslateTransform>
+            <ScaleTransform></ScaleTransform>
+            <RotateTransform></RotateTransform>
+        </TransformGroup>
+    </umpc:UMPPage.RenderTransform>
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" Name="GridLeft"/>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Name="ChoiceQuestionTypeOpt" Grid.Row="0" Style="{DynamicResource BorderBasicOpt}">
+                        <Grid>
+                            <Expander Name="CQTExpandStyleOpt" Header="Choice Question Type" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Name="CQTBut" Orientation="Vertical"/>
+                                </Grid>
+                            </Expander>
+                        </Grid>
+                    </Border>
+                    <Border Name="QuestionSettingsOpt" Grid.Row="1" Style="{DynamicResource BorderBasicOpt}">
+                        <Grid>
+                            <Expander Name="QSExpandStyleOpt" Header="Change Question" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Name="QSBut" Orientation="Vertical"/>
+                                </Grid>
+                            </Expander>
+                        </Grid>
+                    </Border>
+                    <Border Name="BasicSettingsOpt" Grid.Row="2" Style="{DynamicResource BorderBasicOpt}">
+                        <Grid>
+                            <Expander Name="BSExpandStyleOpt" Header="Basic Settings" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Name="BasicSetBut" Orientation="Vertical"/>
+                                </Grid>
+                            </Expander>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+
+            <Grid Grid.Column="2">
+                <Border Name="BorderMainBg" Style="{DynamicResource BorderMainBg}"></Border>
+                <Border Name="BoderMain" Style="{DynamicResource BorderMain}">
+                    <DockPanel LastChildFill="True">
+                        <Border Name="BorderToolBar" DockPanel.Dock="Top" Style="{DynamicResource ToolBarStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="3" Name="PanelToolButton" Orientation="Horizontal" Margin="0,0,5,0"></StackPanel>
+                            </Grid>
+                        </Border>
+                        <vcad:DockingManager x:Name="PanelManager" Style="{DynamicResource DockManageStyle}">
+                            <vcad:LayoutRoot>
+                                <vcad:LayoutPanel Orientation="Horizontal">
+                                    <vcad:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="400">
+                                        <vcad:LayoutAnchorablePane >
+                                            <vcad:LayoutAnchorable x:Name="PanelObjectTreeBox" Title="Question Category" ContentId="PanelObjectTreeBox" >
+                                                <ScrollViewer>
+                                                    <vcc:CheckableTree Name="CategoryTree" Style="{DynamicResource TreeViewObjects}" ItemContainerStyle="{DynamicResource TreeViewItemObject}" Background="White">
+                                                        <vcc:CheckableTree.ItemTemplate>
+                                                            <HierarchicalDataTemplate  DataType="{x:Type vcc:CheckableTreeItem}"  ItemsSource="{Binding Children}">
+                                                                <StackPanel>
+                                                                    <StackPanel.ContextMenu>
+                                                                        <ContextMenu >
+                                                                            <MenuItem Header="{Binding TipNew}"  CommandParameter="{Binding}"/>
+                                                                        </ContextMenu>
+                                                                    </StackPanel.ContextMenu>
+                                                                    <TextBlock Text="{Binding StrName}"></TextBlock>
+                                                                </StackPanel>
+                                                            </HierarchicalDataTemplate>
+                                                        </vcc:CheckableTree.ItemTemplate>
+                                                    </vcc:CheckableTree>
+                                                </ScrollViewer>
+                                            </vcad:LayoutAnchorable>
+                                        </vcad:LayoutAnchorablePane>
+                                        <vcad:LayoutAnchorablePane>
+                                            <vcad:LayoutAnchorable x:Name="PanelObjectNewListQuestion" Title="New Questions" ContentId="PanelObjectNewListQuestion">
+                                                <Border Style="{DynamicResource BorderPanelContent}">
+                                                    <DockPanel LastChildFill="True">
+                                                        <ListView Name="NewLqDocument" SelectionMode="Extended"  Style="{DynamicResource ListViewRecord}" Background="White">
+                                                            <ListView.ItemContainerStyle>
+                                                                <Style  TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                                                    <EventSetter Event="MouseLeftButtonUp" Handler="NewLqDocument_MouseLeftButtonUp"></EventSetter>
+                                                                    <EventSetter Event="KeyDown" Handler="LqDocument_KeyDown"></EventSetter>
+                                                                    <Setter Property="Background">
+                                                                        <Setter.Value>
+                                                                            <Binding RelativeSource="{RelativeSource Self}" Converter="{StaticResource ListViewBackgroundConverter}"></Binding>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="ListBoxItem">
+                                                                                <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                                                                    <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                                </Border>
+                                                                                <ControlTemplate.Triggers>
+                                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsEnabled" Value="False">
+                                                                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                                                                        <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsSelected" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                </ControlTemplate.Triggers>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </ListView.ItemContainerStyle>
+                                                        </ListView>
+                                                    </DockPanel>
+                                                </Border>
+                                            </vcad:LayoutAnchorable>
+                                            <vcad:LayoutAnchorable x:Name="PanelObjectAllListQuestion" Title="All Questions" ContentId="PanelObjectAllListQuestion">
+                                                <Border Style="{DynamicResource BorderPanelContent}">
+                                                    <DockPanel LastChildFill="True">
+                                                        <ListView Name="AllLqDocument" SelectionMode="Extended"  Style="{DynamicResource ListViewRecord}" Background="White">
+                                                            <ListView.ItemContainerStyle>
+                                                                <Style  TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                                                    <EventSetter Event="MouseLeftButtonUp" Handler="AllLqDocument_MouseLeftButtonUp"></EventSetter>
+                                                                    <EventSetter Event="KeyDown" Handler="LqDocument_KeyDown"></EventSetter>
+                                                                    <Setter Property="Background">
+                                                                        <Setter.Value>
+                                                                            <Binding RelativeSource="{RelativeSource Self}" Converter="{StaticResource ListViewBackgroundConverter}"></Binding>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="ListBoxItem">
+                                                                                <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                                                                    <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                                </Border>
+                                                                                <ControlTemplate.Triggers>
+                                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsEnabled" Value="False">
+                                                                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                                                                        <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsSelected" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                </ControlTemplate.Triggers>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </ListView.ItemContainerStyle>
+                                                        </ListView>
+                                                    </DockPanel>
+                                                </Border>
+                                            </vcad:LayoutAnchorable>
+                                        </vcad:LayoutAnchorablePane>
+                                    </vcad:LayoutAnchorablePaneGroup>
+                                    <vcad:LayoutDocumentPane>
+                                        <vcad:LayoutAnchorable x:Name="SCPanelLearnDocument" Title="Single Choice"  ContentId="SCPanelLearnDocument" CanFloat="False" CanClose="False">
+                                            <ScrollViewer VerticalAlignment="Center" CanContentScroll="True">
+                                                <Border HorizontalAlignment="Center">
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Border Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                                                                <Label Name="lbSCQusetionConten" Content="QusetionConten:" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                            <Border Grid.Row="1" Width="630" Height="180" Style="{DynamicResource FormItemValue}">
+                                                                <TextBox Name="TxtSCQusetionConten" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                                                            </Border>
+                                                            <Border Grid.Row="2" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbSCOptionA" Content="A." Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                        <TextBox Name="TxtSCOptionA" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Border Grid.Row="3" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbSCOptionB" Content="B." Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                        <TextBox Name="TxtSCOptionB" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Border Grid.Row="4" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbSCOptionC" Content="C." Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                        <TextBox Name="TxtSCOptionC" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Border Grid.Row="5" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbSCOptionD" Content="D." Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                        <TextBox Name="TxtSCOptionD" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Border Grid.Row="6" Style="{DynamicResource FormItemValue}">
+                                                                <StackPanel>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                            <Label Name="lbSCOptionAnswer" HorizontalAlignment="Left" Content="Answer :" Margin="10,10,0,0"></Label>
+                                                                        </Border>
+                                                                        <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                            <RadioButton GroupName="GroupChoice" Name="rbutA" HorizontalAlignment="Left" Margin="10,10,0,-10">A</RadioButton>
+                                                                        </Border>
+                                                                        <Border Grid.Column="2" Style="{DynamicResource FormItemValue}">
+                                                                            <RadioButton GroupName="GroupChoice" Name="rbutB" HorizontalAlignment="Left" Margin="10,10,0,-10">B</RadioButton>
+                                                                        </Border>
+                                                                        <Border Grid.Column="3" Style="{DynamicResource FormItemValue}">
+                                                                            <RadioButton GroupName="GroupChoice" Name="rbutC" HorizontalAlignment="Left" Margin="10,10,0,-10">C</RadioButton>
+                                                                        </Border>
+                                                                        <Border Grid.Column="4" Style="{DynamicResource FormItemValue}">
+                                                                            <RadioButton GroupName="GroupChoice" Name="rbutD" HorizontalAlignment="Left" Margin="10,10,0,-10">D</RadioButton>
+                                                                        </Border>
+                                                                    </Grid>
+                                                                </StackPanel>
+                                                            </Border>
+                                                            <Border Grid.Row="7" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbSCAttachments" HorizontalAlignment="Left" Content="Attachments" Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                        <TextBox Name="TxtSCAttachments" IsReadOnly="True"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Margin="10,10,0,0"></TextBox>
+                                                                    </Border>
+                                                                    <Border Grid.Column="2" Style="{DynamicResource FormItemValue}">
+                                                                        <Button Name="butSCBrowse" Content="Browse" Click="butBrowse_Click" HorizontalAlignment="Left" Margin="10,10,0,0"></Button>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Border Grid.Row="8" Style="{DynamicResource FormItemValue}">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid Grid.Column="1">
+                                                                        <Button Name="butSCClear" Content="Clear" Click="butSCClear_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="2">
+                                                                        <Button Name="butSCSave" Content="Save" Click="butSCSave_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Border>
+                                            </ScrollViewer>
+                                        </vcad:LayoutAnchorable>
+                                        <vcad:LayoutAnchorable x:Name="MCPanelLearnDocument" Title="Multiple Choice" ContentId="MCPanelLearnDocument" CanFloat="False" CanClose="False">
+                                            <ScrollViewer VerticalAlignment="Center" CanContentScroll="True">
+                                                <Border HorizontalAlignment="Center">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Border Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                                                            <Label Name="lbMCQusetionConten" Content="QusetionConten:" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                        <Border Grid.Row="1" Width="630" Height="180" Style="{DynamicResource FormItemValue}">
+                                                            <TextBox Name="TxtMCQusetionConten" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="2" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionA" Content="A." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionA" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="3" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionB" Content="B." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionB" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="4" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionC" Content="C." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionC" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="5" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionD" Content="D." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionD" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="6" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionE" Content="E." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionE" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.ColumnSpan="2" Grid.Row="7" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Width="50" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionF" Content="F." Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" Width="580">
+                                                                    <TextBox Name="TxtMCOptionF" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Width="570" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.Row="8" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCOptionAnswer" HorizontalAlignment="Left" Content="Answer :" Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <CheckBox Grid.Column="1" Name="checkBoxA" HorizontalAlignment="Left" Margin="10,10,0,-10">A</CheckBox>
+                                                                <CheckBox Grid.Column="2" Name="checkBoxB" HorizontalAlignment="Left" Margin="10,10,0,-10">B</CheckBox>
+                                                                <CheckBox Grid.Column="3" Name="checkBoxC" HorizontalAlignment="Left" Margin="10,10,0,-10">C</CheckBox>
+                                                                <CheckBox Grid.Column="4" Name="checkBoxD" HorizontalAlignment="Left" Margin="10,10,0,-10">D</CheckBox>
+                                                                <CheckBox Grid.Column="5" Name="checkBoxE" HorizontalAlignment="Left" Margin="10,10,0,-10">E</CheckBox>
+                                                                <CheckBox Grid.Column="6" Name="checkBoxF" HorizontalAlignment="Left" Margin="10,10,0,-10">F</CheckBox>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border  Grid.Row="9" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbMCAttachments" HorizontalAlignment="Left" Content="Attachments" Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <TextBox Name="TxtMCAttachments" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                                <Border Grid.Column="2" Style="{DynamicResource FormItemValue}">
+                                                                    <Button Name="butMCBrowse" Content="Browse" Click="butBrowse_Click" HorizontalAlignment="Left" Margin="10,10,0,0"></Button>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.Row="10" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid Grid.Column="1">
+                                                                    <Button Name="butMCClear" Content="Clear" Click="butMCClear_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                </Grid>
+                                                                <Grid Grid.Column="2">
+                                                                    <Button Name="butMCSave" Content="Save" Click="butMCSave_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </Border>
+                                                    </Grid>
+                                                </Border>
+                                            </ScrollViewer>
+                                        </vcad:LayoutAnchorable>
+                                        <vcad:LayoutAnchorable x:Name="TOFPanelLearnDocument" Title="TrueOrFalse" ContentId="TOFPanelLearnDocument" CanFloat="False" CanClose="False">
+                                            <ScrollViewer VerticalAlignment="Center" CanContentScroll="False">
+                                                <Border HorizontalAlignment="Center">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Border Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                                                            <Label Name="lbTOFQusetionConten" Content="QusetionConten:" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                        <Border Grid.Row="1" Width="630" Height="180" Style="{DynamicResource FormItemValue}">
+                                                            <TextBox Name="TxtTOFQusetionConten" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                                                        </Border>
+                                                        <Border Grid.Row="2" Width="630" Style="{DynamicResource FormItemValue}">
+                                                            <StackPanel>
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                        <ColumnDefinition Width="auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                        <Label Name="lbTOFOptionAnswer" HorizontalAlignment="Left" Content="Answer" Margin="10,10,0,0"></Label>
+                                                                    </Border>
+                                                                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                        <RadioButton GroupName="GroupTOF" Name="rbutTOFTrue" HorizontalAlignment="Left" Margin="10,10,0,0">True</RadioButton>
+                                                                    </Border>
+                                                                    <Border Grid.Column="2" Style="{DynamicResource FormItemValue}">
+                                                                        <RadioButton GroupName="GroupTOF" Name="rbutTOFFalse" HorizontalAlignment="Left" Margin="10,10,0,0">False</RadioButton>
+                                                                    </Border>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                        </Border>
+                                                        <Border Grid.Row="3" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                    <ColumnDefinition Width="auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Border Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbTOFAttachments" HorizontalAlignment="Left" Content="Attachments" Margin="10,10,0,0"></Label>
+                                                                </Border>
+                                                                <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <TextBox Name="TxtTOFAttachments" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Margin="10,10,0,0"></TextBox>
+                                                                </Border>
+                                                                <Border Grid.Column="2" Style="{DynamicResource FormItemValue}">
+                                                                    <Button Name="butTOFBrowse" Content="Browse" Click="butBrowse_Click" HorizontalAlignment="Left" Margin="10,10,0,0"></Button>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.Row="4" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValue}">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid Grid.Column="1">
+                                                                    <Button Name="butTOFClear" Content="Clear" Click="butTOFClear_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                </Grid>
+                                                                <Grid Grid.Column="2">
+                                                                    <Button Name="butTOFSave" Content="Save" Click="butTOFSave_Click" HorizontalAlignment="Right" Margin="10,10,0,0"></Button>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </Border>
+                                                    </Grid>
+                                                </Border>
+                                            </ScrollViewer>
+                                        </vcad:LayoutAnchorable>
+                                        <vcad:LayoutAnchorable x:Name="BrowseQuestionDocument" Title="Browse Question" ContentId="BrowseQuestionDocument" CanFloat="False" CanClose="False">
+                                            <ScrollViewer>
+                                                <Border HorizontalAlignment="Stretch" Style="{DynamicResource BorderPanelContent}">
+                                                    <Border VerticalAlignment="Top" ScrollViewer.CanContentScroll="True">
+                                                        <Grid>
+                                                            <Grid Margin="10" Name="QuestionInfoGrid"  HorizontalAlignment="Left"></Grid>
+                                                        </Grid>
+                                                    </Border>
+                                                </Border>
+                                            </ScrollViewer>
+                                        </vcad:LayoutAnchorable>
+                                    </vcad:LayoutDocumentPane>
+                                </vcad:LayoutPanel>
+                            </vcad:LayoutRoot>
+                        </vcad:DockingManager>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Grid>
+        <umpc:PopupPanel x:Name="PopupPanel" IsOpen="False" Style="{DynamicResource PopupInfo}">
+        </umpc:PopupPanel>
+    </Grid>
+</umpc:UMPMainPage>

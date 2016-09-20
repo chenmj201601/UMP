@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!--日语-->
+    <s:String x:Key="ServerAddress">伺服器地址:</s:String>
+    <s:String x:Key="ServerPort">端口:</s:String>
+    <s:String x:Key="Install">安裝</s:String>
+    <s:String x:Key="Close">關閉</s:String>
+    <s:String x:Key="Cancel">取消</s:String>
+    <s:String x:Key="UMPHead">安裝 UMP 證書</s:String>
+
+    <!--Message-->
+    <s:String x:Key="InstallSucessed">安裝成功</s:String>
+    <s:String x:Key="Warning">警告</s:String>
+    <s:String x:Key="Infomation">提示</s:String>
+    <s:String x:Key="Error">錯誤</s:String>
+    <s:String x:Key="ServerInfoIsNull">請輸入正確的伺服器地址和端口</s:String>
+
+
+    <!--Error-->
+    <s:String x:Key="LoseXmlFile">UMPClientInit.xml文件不存在</s:String>
+    <s:String x:Key="AddressIsError">請輸入正確的伺服器地址</s:String>
+    <s:String x:Key="PortIsError">請輸入正確的端口</s:String>
+    <s:String x:Key="LinkFailed">鏈接伺服器失敗，請檢查伺服器地址、端口輸入是否正確，網絡是否暢通</s:String>
+
+
+</ResourceDictionary>

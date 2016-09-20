@@ -1,0 +1,256 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+                    xmlns:local="clr-namespace:VoiceCyber.UMP.Controls">
+
+    <Style x:Key="MainPageBg" TargetType="{x:Type Border}">
+
+    </Style>
+
+    <Style x:Key="PageHead" TargetType="{x:Type local:UMPPageHead}">
+        <Setter Property="AppName" Value="UMP Demo"></Setter>
+    </Style>
+
+    <Style x:Key="BorderMainBg" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush1}"></Setter>
+        <Setter Property="Opacity" Value="0.8"></Setter>
+    </Style>
+
+    <Style x:Key="StatusBar" TargetType="{x:Type StatusBar}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+    </Style>
+
+    <Style x:Key="MyWaiter" TargetType="{x:Type vcc:CustomWaiter}">
+        <Setter Property="Width" Value="500"></Setter>
+        <Setter Property="Height" Value="5"></Setter>
+        <Setter Property="ViewColor" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="PointSize" Value="5"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style x:Key="PopupInfo" TargetType="{x:Type local:PopupPanel}">
+        <Setter Property="Icon" Value="Images/ump.png"></Setter>
+    </Style>
+    
+    <Style x:Key="IMPanelStyle" TargetType="{x:Type local:PopupPanel}">
+        <Setter Property="Icon" Value="Images/ump.png"></Setter>
+    </Style>
+
+    <Style x:Key="BtnStopQuery" TargetType="{x:Type Button}">
+        <Setter Property="Width"  Value="20"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="border">
+                        <Grid>
+                            <Border Name="Over" CornerRadius="2" BorderThickness="1" Background="{DynamicResource SystemBrush7}" Visibility="Collapsed"></Border>
+                            <Ellipse Name="Ellipse" Margin="2" Stroke="{DynamicResource SystemBrush7}" Fill="{DynamicResource SystemBrush7}"></Ellipse>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="Ellipse" Property="Fill" Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="MiddleMainPageTemplate" TargetType="{x:Type local:UMPMainPage}">
+        <Border Background="{TemplateBinding Background}">
+            <Grid x:Name="PART_GridMain">
+                <Border Name="PART_MainPageBg" Style="{StaticResource MainPageBg}"></Border>
+                <DockPanel LastChildFill="True">
+                    <local:UMPPageHead x:Name="PART_PageHead" DockPanel.Dock="Top"
+                                       PageHeadType="Middle"
+                                Style="{StaticResource PageHead}"></local:UMPPageHead>
+                    <StatusBar DockPanel.Dock="Bottom" Style="{StaticResource StatusBar}">
+                        <Button Name="PART_BtnCancel" Style="{StaticResource BtnStopQuery}" Visibility="Hidden"></Button>
+                        <TextBlock Name="PART_StatusContent"></TextBlock>
+                        <vcc:CustomWaiter x:Name="PART_MyWaiter"
+                                                      Visibility="Hidden" Width="500" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                    </StatusBar>
+                    <Grid>
+                        <Border Style="{StaticResource BorderMainBg}"></Border>
+                        <ContentPresenter></ContentPresenter>
+                    </Grid>
+                </DockPanel>
+                <local:PopupPanel x:Name="PART_PopupPanel"
+                                     IsOpen="False"
+                                     Style="{StaticResource PopupInfo}">
+                </local:PopupPanel>
+                <Border Name="PART_Mask" Background="LightGray">
+                    <Grid HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="10">
+                            <Image Source="Images/ump.png" Width="80" Height="80" Stretch="Uniform"></Image>
+                        </Border>
+                        <Grid Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Margin="5">
+                                <TextBlock Text="Unified Management Portal" FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SystemBrush7}"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="1" Margin="5">
+                                <vcc:CustomWaiter Width="300" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="MinMainPageTemplate" TargetType="{x:Type local:UMPMainPage}">
+        <Border Background="{TemplateBinding Background}">
+            <Grid x:Name="PART_GridMain">
+                <Border Name="PART_MainPageBg" Style="{StaticResource MainPageBg}"></Border>
+                <DockPanel LastChildFill="True">
+                    <local:UMPPageHead x:Name="PART_PageHead" DockPanel.Dock="Top"
+                                       PageHeadType="Min"
+                                Style="{StaticResource PageHead}"></local:UMPPageHead>
+                    <StatusBar DockPanel.Dock="Bottom">
+                        <StatusBar.Background>
+                            <SolidColorBrush Color="LightCyan" Opacity="0.4"/>
+                        </StatusBar.Background>
+                        <StatusBar.Effect>
+                            <DropShadowEffect Color="Black" Direction="90" ShadowDepth="5" Opacity="1" BlurRadius="5"/>
+                        </StatusBar.Effect>
+                        <Button Name="PART_BtnCancel" Style="{StaticResource BtnStopQuery}" Visibility="Hidden"></Button>
+                        <TextBlock Name="PART_StatusContent"></TextBlock>
+                        <vcc:CustomWaiter x:Name="PART_MyWaiter"
+                                                      Visibility="Hidden" Width="500" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                    </StatusBar>
+                    <Grid>
+                        <!--<Border Style="{StaticResource BorderMainBg}"></Border>-->
+                        <ContentPresenter></ContentPresenter>
+                    </Grid>
+                </DockPanel>
+                <local:PopupPanel x:Name="PART_PopupPanel"
+                                     IsOpen="False"
+                                     Style="{StaticResource PopupInfo}">
+                </local:PopupPanel>
+                <Border Name="PART_Mask" Background="LightGray">
+                    <Grid HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="10">
+                            <Image Source="Images/ump.png" Width="80" Height="80" Stretch="Uniform"></Image>
+                        </Border>
+                        <Grid Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Margin="5">
+                                <TextBlock Text="Unified Management Portal" FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SystemBrush7}"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="1" Margin="5">
+                                <vcc:CustomWaiter Width="300" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type local:UMPMainPage}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush11}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:UMPMainPage}">
+                    <Border Background="{TemplateBinding Background}">
+                        <Grid x:Name="PART_GridMain">
+                            <Border Name="PART_MainPageBg" Style="{StaticResource MainPageBg}"></Border>
+                            <DockPanel LastChildFill="True">
+                                <local:UMPPageHead x:Name="PART_PageHead" DockPanel.Dock="Top"
+                                       PageHeadType="Default"
+                                Style="{StaticResource PageHead}"></local:UMPPageHead>
+                                <StatusBar DockPanel.Dock="Bottom" Style="{StaticResource StatusBar}">
+                                    <Button Name="PART_BtnCancel" Style="{StaticResource BtnStopQuery}" Visibility="Hidden"></Button>
+                                    <TextBlock Name="PART_StatusContent"></TextBlock>
+                                    <vcc:CustomWaiter x:Name="PART_MyWaiter"
+                                                      Visibility="Hidden" Width="500" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                                </StatusBar>
+                                <Grid>
+                                    <Border Style="{StaticResource BorderMainBg}"></Border>
+                                    <ContentPresenter></ContentPresenter>
+                                </Grid>
+                            </DockPanel>
+                            <!--通用弹出窗口-->
+                            <local:PopupPanel x:Name="PART_PopupPanel"
+                                     IsOpen="False"
+                                     Style="{StaticResource PopupInfo}">
+                            </local:PopupPanel>
+                            <!--IM-->
+                            <local:PopupPanel x:Name="PART_IMPanel"
+                                              IsOpen="False"
+                                              Style="{StaticResource IMPanelStyle}">
+                            </local:PopupPanel>
+                            <!--一个遮罩层，在页面之间切换之间显示-->
+                            <Border Name="PART_Mask" Background="LightGray">
+                                <Grid HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Margin="10">
+                                        <Image Source="Images/ump.png" Width="80" Height="80" Stretch="Uniform"></Image>
+                                    </Border>
+                                    <Grid Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" Margin="5">
+                                            <TextBlock Text="Unified Management Portal" FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SystemBrush7}"></TextBlock>
+                                        </Border>
+                                        <Border Grid.Row="1" Margin="5">
+                                            <vcc:CustomWaiter Width="300" Height="5" ViewColor="{DynamicResource SystemBrush7}"
+                                                      PointSize="5" VerticalAlignment="Center"></vcc:CustomWaiter>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="PageHeadType" Value="Middle">
+                <Setter Property="Template" Value="{StaticResource MiddleMainPageTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="PageHeadType" Value="Min">
+                <Setter Property="Template" Value="{StaticResource MinMainPageTemplate}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

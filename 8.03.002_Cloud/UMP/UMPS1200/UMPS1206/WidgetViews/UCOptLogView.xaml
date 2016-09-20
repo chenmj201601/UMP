@@ -1,0 +1,68 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1206.WidgetViews.UCOptLogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:conv="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1206;component/Themes/Default/UMPS1206/UCOptLogView.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="5,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Name="ListViewOptLogs" Grid.Row="0" Style="{DynamicResource ListViewOptLogStyle}" ScrollViewer.CanContentScroll="False">
+            <ListView.Resources>
+                <conv:ListViewBackgroundConverter x:Key="ListViewBackgroundConverter"></conv:ListViewBackgroundConverter>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Converter={StaticResource ListViewBackgroundConverter}}"></Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border x:Name="Border"
+                                      Padding="2,3"
+                                      SnapsToDevicePixels="true"
+                                      Background="{TemplateBinding Background}">
+                                    <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush9}"></Setter>
+                                        <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush8}"></Setter>
+                                        <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Button Name="BtnMore" Grid.Row="1" Content="More ...">
+
+        </Button>
+
+    </Grid>
+
+</umpc:UMPUserControl>

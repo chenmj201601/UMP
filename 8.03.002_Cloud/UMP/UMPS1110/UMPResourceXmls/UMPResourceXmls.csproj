@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C6C8E3F-9AC1-4F92-84D9-05DB801C373B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoiceCyber.UMP.ResourceXmls</RootNamespace>
+    <AssemblyName>UMPResourceXmls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UMPCommon">
+      <HintPath>..\..\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPCommunications">
+      <HintPath>..\..\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCommon">
+      <HintPath>..\..\VCCommon\VCCommon\bin\Release\VCCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenerateOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceObject.cs" />
+    <Compile Include="ResourceXmlHelper.cs" />
+    <Compile Include="ResourceXmlsConsts.cs" />
+    <Compile Include="Service References\Wcf11101\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common11101\Common11101.csproj">
+      <Project>{d07f1956-516f-486d-afa5-83275133f9bc}</Project>
+      <Name>Common11101</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\VoiceCyber.UMP.Communications.WebReturn.datasource" />
+    <None Include="Service References\Wcf11101\Service11101.wsdl" />
+    <None Include="Service References\Wcf11101\Service11101.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11101\Service111011.wsdl" />
+    <None Include="Service References\Wcf11101\Service111011.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11101\Service111012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11101\Service111013.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11101\Service111014.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11101\Service111015.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Wcf11101\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11101\Service11101.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11101\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11101\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11101\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

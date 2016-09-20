@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMPS1102", "UMPS1102\UMPS1102.csproj", "{D9C0B0BD-5BD9-454A-8E11-EA808F3AA4DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8934FDB9-209C-4A53-BEF9-3BB9FA17E680} = {8934FDB9-209C-4A53-BEF9-3BB9FA17E680}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf11021", "Wcf11021\Wcf11021.csproj", "{8934FDB9-209C-4A53-BEF9-3BB9FA17E680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common1102", "Common1102\Common1102.csproj", "{C7154BB8-ED07-46B5-BD65-81386CC7A4FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9C0B0BD-5BD9-454A-8E11-EA808F3AA4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C0B0BD-5BD9-454A-8E11-EA808F3AA4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C0B0BD-5BD9-454A-8E11-EA808F3AA4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C0B0BD-5BD9-454A-8E11-EA808F3AA4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8934FDB9-209C-4A53-BEF9-3BB9FA17E680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8934FDB9-209C-4A53-BEF9-3BB9FA17E680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8934FDB9-209C-4A53-BEF9-3BB9FA17E680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8934FDB9-209C-4A53-BEF9-3BB9FA17E680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7154BB8-ED07-46B5-BD65-81386CC7A4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7154BB8-ED07-46B5-BD65-81386CC7A4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7154BB8-ED07-46B5-BD65-81386CC7A4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7154BB8-ED07-46B5-BD65-81386CC7A4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

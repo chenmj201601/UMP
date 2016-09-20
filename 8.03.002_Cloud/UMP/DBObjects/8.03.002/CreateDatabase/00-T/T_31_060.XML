@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDefine P01="T_31_060" P02="8.02.002" P03="0" P04="1" P05="0" P06="教材详细信息（T_BookDetails）" P07="备用">
+  <ColumnDefine>
+    <Column P01="C001" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="C002" P02="03" P03="20" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C003" P02="14" P03="1024" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="C004" P02="13" P03="512" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C005" P02="14" P03="2000" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C006" P02="11" P03="1" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="C007" P02="11" P03="1" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C008" P02="11" P03="1" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="C009" P02="13" P03="1024" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C010" P02="13" P03="1024" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="C011" P02="13" P03="1024" P04="0" P05="1" P06="" P07=""/>
+  </ColumnDefine>
+  <IndexDefine>
+     <Index P01="PK_31_060" P02="1" P03="1">
+      <Column P01="C001" P02="A"/>
+    </Index>
+  </IndexDefine>
+</TableDefine>

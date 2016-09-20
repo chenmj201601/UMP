@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SessionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppServerInfo" nillable="true" type="tns:AppServerInfo" />
+      <xs:element minOccurs="0" name="DBConnectionString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangTypeInfo" nillable="true" type="tns:LangTypeInfo" />
+      <xs:element minOccurs="0" name="LastActiveTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RentInfo" nillable="true" type="tns:RentInfo" />
+      <xs:element minOccurs="0" name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemeInfo" nillable="true" type="tns:ThemeInfo" />
+      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionInfo" nillable="true" type="tns:SessionInfo" />
+  <xs:complexType name="AppServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppServerInfo" nillable="true" type="tns:AppServerInfo" />
+  <xs:complexType name="LangTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangID" type="xs:int" />
+      <xs:element minOccurs="0" name="LangName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LangTypeInfo" nillable="true" type="tns:LangTypeInfo" />
+  <xs:complexType name="RentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentInfo" nillable="true" type="tns:RentInfo" />
+  <xs:complexType name="RoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+  <xs:complexType name="ThemeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThemeInfo" nillable="true" type="tns:ThemeInfo" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+</xs:schema>

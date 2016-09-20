@@ -1,0 +1,4214 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VCCustomControls</name>
+    </assembly>
+    <members>
+        <member name="T:VoiceCyber.Wpf.CustomControls.AutoSelectBehavior">
+            <summary>
+            AutoSelectBehavior
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.AutoSelectBehavior.Never">
+            <summary>
+            Never
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.AutoSelectBehavior.OnFocus">
+            <summary>
+            OnFocus
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.AutoSelectTextBox.#ctor">
+            <summary>
+            AutoSelectTextBox
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.AutoSelectTextBox.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            OnPreviewKeyDown
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ButtonSpinner">
+            <summary>
+            Represents a spinner control that includes two Buttons.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Spinner">
+            <summary>
+            Base class for controls that represents controls that can spin.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Spinner.ValidSpinDirectionProperty">
+            <summary>
+            Identifies the ValidSpinDirection dependency property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Spinner.OnValidSpinDirectionPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ValidSpinDirectionProperty property changed handler.
+            </summary>
+            <param name="d">ButtonSpinner that changed its ValidSpinDirection.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Spinner.#ctor">
+            <summary>
+            Initializes a new instance of the Spinner class.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Spinner.OnSpin(VoiceCyber.Wpf.CustomControls.SpinEventArgs)">
+            <summary>
+            Raises the OnSpin event when spinning is initiated by the end-user.
+            </summary>
+            <param name="e">Spin event args.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Spinner.OnValidSpinDirectionChanged(VoiceCyber.Wpf.CustomControls.ValidSpinDirections,VoiceCyber.Wpf.CustomControls.ValidSpinDirections)">
+            <summary>
+            Called when valid spin direction changed.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.Spinner.Spin">
+            <summary>
+            Occurs when spinning is initiated by the end-user.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ButtonSpinner.ContentProperty">
+            <summary>
+            Identifies the Content dependency property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.OnContentPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ContentProperty property changed handler.
+            </summary>
+            <param name="d">ButtonSpinner that changed its Content.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Cancel LeftMouseButtonUp events originating from a button that has
+            been changed to disabled.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.OnValidSpinDirectionChanged(VoiceCyber.Wpf.CustomControls.ValidSpinDirections,VoiceCyber.Wpf.CustomControls.ValidSpinDirections)">
+            <summary>
+            Called when valid spin direction changed.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.OnButtonClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handle click event of IncreaseButton and DecreaseButton template parts,
+            translating Click to appropriate Spin event.
+            </summary>
+            <param name="sender">Event sender, should be either IncreaseButton or DecreaseButton template part.</param>
+            <param name="e">Event args.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.OnContentChanged(System.Object,System.Object)">
+            <summary>
+            Occurs when the Content property value changed.
+            </summary>
+            <param name="oldValue">The old value of the Content property.</param>
+            <param name="newValue">The new value of the Content property.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ButtonSpinner.SetButtonUsage">
+            <summary>
+            Disables or enables the buttons based on the valid spin direction.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ButtonSpinner.DecreaseButton">
+            <summary>
+            Gets or sets the DecreaseButton template part.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ButtonSpinner.IncreaseButton">
+            <summary>
+            Gets or sets the IncreaseButton template part.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.SpinDirection">
+            <summary>
+            Represents spin directions that could be initiated by the end-user.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.SpinDirection.Increase">
+            <summary>
+            Represents a spin initiated by the end-user in order to Increase a value.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.SpinDirection.Decrease">
+            <summary>
+            Represents a spin initiated by the end-user in order to Decrease a value.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.SpinEventArgs">
+            <summary>
+            Provides data for the Spinner.Spin event.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.SpinEventArgs.#ctor(VoiceCyber.Wpf.CustomControls.SpinDirection)">
+            <summary>
+            Initializes a new instance of the SpinEventArgs class.
+            </summary>
+            <param name="direction">Spin direction.</param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.SpinEventArgs.Direction">
+            <summary>
+            Gets the SpinDirection for the spin that has been initiated by the 
+            end-user.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.SpinEventArgs.UsingMouseWheel">
+            <summary>
+            Get or set whheter the spin event originated from a mouse wheel event.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ValidSpinDirections">
+            <summary>
+            Represents spin directions that are valid.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ValidSpinDirections.None">
+            <summary>
+            Can not increase nor decrease.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ValidSpinDirections.Increase">
+            <summary>
+            Can increase.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ValidSpinDirections.Decrease">
+            <summary>
+            Can decrease.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.BarChart">
+            <summary>
+            表示一个条状图表
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.Chart">
+            <summary>
+            表示一个图标
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.Chart.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.Chart.GetContainerForItemOverride">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.Chart.TitleProperty">
+            <summary>
+             Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.Chart.TitleTemplateProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for TitleTemplate.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.Chart.TitleTemplateSelectorProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for TitleTemplateSelector.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.Chart.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.Chart.TitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.Chart.TitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChart.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.BarPenProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.BarBrushProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisItemTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisItemTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisItemTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisItemTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitleTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitleTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitleTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitleTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValuePathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelPathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowValueAxisTicksProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowLabelAxisTicksProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowValueAxisReferenceLinesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowLabelAxisReferenceLinesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ReferenceLinePenProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChart.TickLengthProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.BarPen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.BarBrush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisItemTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisItemTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisItemTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisItemTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValueAxisTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelAxisTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ValuePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.LabelPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowValueAxisTicks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowLabelAxisTicks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowValueAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ShowLabelAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.ReferenceLinePen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChart.TickLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.OnInitialized(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.OnValuesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            
+            </summary>
+            <param name="dc"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.BarPenProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.BarBrushProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.XValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.GetXValues(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.SetXValues(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.YValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.GetYValues(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.SetYValues(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.HorizontalAxisProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.GetHorizontalAxis(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.SetHorizontalAxis(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.BarPen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.BarBrush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.XValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.BarChartPanel.YValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ChartItem">
+            <summary>
+            表示图表中的一个项
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ChartLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            
+            </summary>
+            <param name="drawingContext"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.OnVerticalAxisTickValuesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.VerticalAxisTickPositions_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.ReferenceLinePenProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ReferenceLinePen.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.VerticalAxisTickPositionsProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for VerticalAxisTickPositions.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.HorizontalAxisTickPositionsProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for HorizontalAxisTickPositions.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.TickMarksLengthProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for TickMarksLength.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawVerticalAxisTickMarksProperty">
+            <summary>
+             Using a DependencyProperty as the backing store for DrawVerticalAxisTickMarks.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawVerticalAxisReferenceLinesProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for DrawVerticalAxisReferenceLines.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawHorizontalAxisTickMarksProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for DrawHorizontalAxisTickMarks.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawHorizontalAxisReferenceLinesProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for DrawHorizontalAxisReferenceLines.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.HorizontalAxisProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for HorizontalAxis.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.VerticalAxisProperty">
+            <summary>
+             Using a DependencyProperty as the backing store for VerticalAxis.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.ReferenceLinePen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.VerticalAxisTickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.HorizontalAxisTickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.TickMarksLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawVerticalAxisTickMarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawVerticalAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawHorizontalAxisTickMarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.DrawHorizontalAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.HorizontalAxis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ChartLines.VerticalAxis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.OnWedgeShapeChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="arrangeBounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.GetClipGeometry(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="arrangeBounds"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.WedgeAngleProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for WedgeAngle.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.BeginFigurePointProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for BeginFigurePoint.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.LineToPointProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LineTo.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.CenterPointProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.TranslateXProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.TranslateYProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.ProportionProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.WedgeAngle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.BeginFigurePoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.LineToPoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.CenterPoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.TranslateX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.TranslateY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ClipWedge.Proportion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ColorConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.GetContainerForItemOverride">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.SourceValuesProperty">
+            <summary>
+             Using a DependencyProperty as the backing store for SourceValues.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.ValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.TickPositionsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.OriginProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.OrientationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.ReferenceLineSeperationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.SourceValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.Values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.TickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.Origin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.Orientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxis.ReferenceLineSeperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.OnInitialized(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.OnDataValuesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.Axis2Panel_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.GenerateItemsSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.CalculatePixelIncrements(System.Windows.Size,System.Windows.Size)">
+            <summary>
+            Calculate the pixel distance between each tick mark on the vertical axis
+            </summary>
+            <param name="constraint"></param>
+            <param name="labelSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.IsWithinRange(System.Double,System.Int32,System.Windows.Size)">
+            <summary>
+            Checks to see if the calculated increment value is between the low and high passed in, 
+            then returns the multiplier used
+            </summary>
+            <param name="numerator"></param>
+            <param name="exponent"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.YValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.ItemsSourceProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.TickPositionsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.OriginProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.OrientationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.ReferenceLineSeperationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel._parentControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.YValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.ItemsSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.TickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.Origin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.Orientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ContinuousAxisPanel.ReferenceLineSeperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.GetContainerForItemOverride">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.TickPositionsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.OriginProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.OrientationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.TickLengthProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.TickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.Origin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.Orientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxis.TickLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.OnInitialized(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.TickMarksLengthProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.TickPositionsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.OrientationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.OriginProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.TickMarksLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.TickPositions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.Orientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.DiscreteAxisPanel.Origin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.ComputeIntersectionPoint(System.Windows.FrameworkElement,System.Windows.FrameworkElement)">
+            <summary>
+            
+            </summary>
+            <param name="thisV"></param>
+            <param name="toV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.BuildVertexGeometry(System.Windows.Media.Visual)">
+            <summary>
+            Returns the flattened geometry for the argument vertex. It does not take the transforms on the vertex into account.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.WalkChildren(System.Windows.Media.Visual,System.Windows.Media.GeometryGroup)">
+            <summary>
+            Walks the children of a visual to build a geometry tree. Ignores the transform and clip on the visual.
+            </summary>
+            <param name="v"></param>
+            <param name="g"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.EnumVisual(System.Windows.Media.Visual,System.Windows.Media.GeometryGroup)">
+            <summary>
+            Builds a geometry group for the given visual taking into account the transform, clip and enumerating the drawings.
+            </summary>
+            <param name="myVisual"></param>
+            <param name="g"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.EnumerateDrawingGroup(System.Windows.Media.DrawingGroup,System.Windows.Media.GeometryGroup)">
+            <summary>
+            Enumerates through the drawing group of a visual to extract the geometries.
+            </summary>
+            <param name="dg"></param>
+            <param name="currentParent"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.GetVisualTransform(System.Windows.Media.Visual)">
+            <summary>
+            returns a matrix corresponding to the combination of the transform and the offset on the visual.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.FindOppositePoint(System.Windows.Media.PathGeometry,System.Windows.Point,System.Windows.Vector,System.Windows.Media.Transform)">
+            <summary>
+            Intersects a line with a geometry to return the point of intersection
+            </summary>
+            <param name="node"></param>
+            <param name="p"></param>
+            <param name="centerVector"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.CatmullRom(System.Windows.Point[])">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.GeometryOperation.DrawPolyBezier(System.Windows.Point[])">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.CreateInstanceCore">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.ItemsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelPathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelsKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelHolderProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.Labels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LabelExtractor.LabelHolder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.LineChart">
+            <summary>
+            表示一个线状图标
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LinePenProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.AreaBrushProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.IsSmoothOutlineProperty">
+            <summary>
+             Using a DependencyProperty as the backing store for IsSmoothOutline.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisItemTemplateProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValueAxisItemTemplate.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisItemTemplateSelectorProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValueAxisItemTemplateSelector.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisItemTemplateProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelAxisItemTemplate.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisItemTemplateSelectorProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelAxisItemTemplateSelector.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitleProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValueAxisTitle.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitleTemplateProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValueAxisTitleTemplate.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitleTemplateSelectorProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValueAxisTitleTemplateSelector.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitleProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelAxisTitle.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitleTemplateProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelAxisTitleTemplate.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitleTemplateSelectorProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelAxisTitleTemplateSelector.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValuePathProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ValuePath.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelPathProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for LabelPath.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowValueAxisTicksProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ShowValueAxisTicks.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowLabelAxisTicksProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ShowLabelAxisTicks.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowValueAxisReferenceLinesProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ShowValueAxisReferenceLines.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowLabelAxisReferenceLinesProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ShowLabelAxisReferenceLines.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ReferenceLinePenProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for ReferenceLinePen.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChart.TickLengthProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for TickLength.  This enables animation, styling, binding, etc...
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LinePen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.AreaBrush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.IsSmoothOutline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisItemTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisItemTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisItemTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisItemTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValueAxisTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelAxisTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ValuePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.LabelPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowValueAxisTicks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowLabelAxisTicks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowValueAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ShowLabelAxisReferenceLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.ReferenceLinePen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChart.TickLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.OnInitialized(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            
+            </summary>
+            <param name="dc"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.IsSmoothOutlineProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.LinePenProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.AreaBrushProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.GetXValues(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.SetXValues(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.XValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.GetYValues(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.SetYValues(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.YValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.GetHorizontalAxis(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.SetHorizontalAxis(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.HorizontalAxisProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.IsSmoothOutline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.LinePen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.LineChartPanel.AreaBrush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.PieChart">
+            <summary>
+            表示一个饼状图表
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitleTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitleTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitleTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitleTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValuePathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelPathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LegendItemTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LegendItemTemplateSelectorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValueTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitleTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelTitleTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.ValuePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LabelPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LegendItemTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PieChart.LegendItemTemplateSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.PiePanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.OnInitialized(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.OnValuesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.PiePanel_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetWedgeAngle(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetWedgeAngle(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.WedgeAngleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetBeginFigurePoint(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetBeginFigurePoint(System.Windows.DependencyObject,System.Windows.Point)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.BeginFigurePointProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetLineToPoint(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetLineToPoint(System.Windows.DependencyObject,System.Windows.Point)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.LineToPointProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetCenterPoint(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetCenterPoint(System.Windows.DependencyObject,System.Windows.Point)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.CenterPointProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.TranslateXProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetTranslateX(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetTranslateX(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.TranslateYProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetTranslateY(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetTranslateY(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ProportionProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetProportion(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetProportion(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ValuePathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.GetValues(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.SetValues(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ParentControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.PiePanel.ValuePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.CreateInstanceCore">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.ItemsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.ValuePathProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.ValuesProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.ValuePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Charts.ValueExtractor.Values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.OnSelectedItemsCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            When SelectedItems collection implements INotifyPropertyChanged, this is the callback.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.OnItemsSourceCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            When the ItemsSource implements INotifyPropertyChanged, this is the change callback.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.OnSelectedMemberPathValuesChanged">
+            <summary>
+            This is called when any value of any item referenced by SelectedMemberPath
+            is modified. This may affect the SelectedItems collection.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.OnValueMemberPathValuesChanged">
+            <summary>
+            This is called when any value of any item referenced by ValueMemberPath
+            is modified. This will affect the SelectedValue property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.OnItemSelectionChanged(VoiceCyber.Wpf.CustomControls.Primitives.ItemSelectionChangedEventArgs)">
+            <summary>
+            This method will be called when the "IsSelected" property of an SelectorItem
+            has been modified.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.UpdateSelectedValue">
+            <summary>
+            Updates the SelectedValue property based on what is present in the SelectedItems property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.UpdateSelectedItem">
+            <summary>
+            Updates the SelectedItem property based on what is present in the SelectedItems property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.UpdateFromSelectedMemberPathValues">
+            <summary>
+            Update the SelectedItems collection based on the values 
+            refered to by the SelectedMemberPath property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.UpdateFromSelectedItems">
+            <summary>
+            Updates the following based on the content of SelectedItems:
+            - All SelectorItems "IsSelected" properties
+            - Values refered to by SelectedMemberPath
+            - SelectedItem property
+            - SelectedValue property
+            Refered to by the SelectedMemberPath property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.RemoveUnavailableSelectedItems">
+            <summary>
+            Removes all items from SelectedItems that are no longer in ItemsSource.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.Selector.UpdateFromSelectedValue">
+            <summary>
+            Updates the SelectedItems collection based on the content of
+            the SelectedValue property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ColorPicker.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.CancelRoutedEventArgs">
+            <summary>
+            An event data class that allows to inform the sender that the handler wants to cancel
+            the ongoing action.
+            
+            The handler can set the "Cancel" property to false to cancel the action.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.BoolToVisibilityConverter">
+            <summary>
+            bool类型格式化Visibility
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.BoolToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.BoolToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            ConvertBack
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.CenterTitleConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.ColorBlendConverter">
+            <summary>
+            This converter allow to blend two colors into one based on a specified ratio
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Core.Converters.ColorBlendConverter.BlendedColorRatio">
+            <summary>
+            The ratio of the blended color. Must be between 0 and 1.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Core.Converters.ColorBlendConverter.BlendedColor">
+            <summary>
+            The color to blend with the source color
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.ColorToSolidColorBrushConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a Color to a SolidColorBrush.
+            </summary>
+            <param name="value">The Color produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted SolidColorBrush. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.ColorToSolidColorBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a SolidColorBrush to a Color.
+            </summary>
+            <remarks>Currently not used in toolkit, but provided for developer use in their own projects</remarks>
+            <param name="value">The SolidColorBrush that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.InverseBoolToVisibilityConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.LevelToMarginConverter">
+            <summary>
+            Level类型格式化Margin
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.LevelToMarginConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert
+            </summary>
+            <param name="o"></param>
+            <param name="type"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.LevelToMarginConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            ConvertBack
+            </summary>
+            <param name="o"></param>
+            <param name="type"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.WindowContentBorderMarginConverter">
+            <summary>
+            Sets the margin for the thumb grip, the top buttons, or for the content border in the WindowControl.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.WindowControlBackgroundConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.WindowControlBackgroundConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Used in the WindowContainer Template to calculate the resulting background brush
+            from the WindowBackground (values[0]) and WindowOpacity (values[1]) propreties.
+            </summary>
+            <param name="values"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Media.WindowColors">
+            <summary>
+            Contains system colors and configurations that can be used by the control themes.
+            
+            Mainly extracted from the registry because theses values are not exposed by the standard .NET API.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Core.Media.WindowColors.ColorizationColor">
+            <summary>
+            Relative to the \HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM\ColorizationColor Registry key.
+            
+            Gets the window chrome color.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Core.Media.WindowColors.ColorizationOpaqueBlend">
+            <summary>
+            Relative to the \HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM\ColorizationOpaqueBlend Registry key:
+            
+            Gets whether transparency is disabled.
+            
+            Returns true if transparency is disabled; false otherwise.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.PART_TextBox">
+            <summary>
+            Name constant for Text template part.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.PART_Spinner">
+            <summary>
+            Name constant for Spinner template part.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1._isSyncingTextAndValueProperties">
+            <summary>
+            Flags if the Text and Value properties are in the process of being sync'd
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.MouseWheelActiveTriggerProperty">
+            <summary>
+            Identifies the MouseWheelActiveTrigger dependency property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.DoDecrement">
+            <summary>
+            Performs an increment if conditions allow it.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.DoIncrement">
+            <summary>
+            Performs a decrement if conditions allow it.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.ConvertTextToValue(System.String)">
+            <summary>
+            Converts the formatted text to a value.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.ConvertValueToText">
+            <summary>
+            Converts the value to formatted text.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.OnIncrement">
+            <summary>
+            Called by OnSpin when the spin direction is SpinDirection.Increase.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.OnDecrement">
+            <summary>
+            Called by OnSpin when the spin direction is SpinDirection.Descrease.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.SetValidSpinDirection">
+            <summary>
+            Sets the valid spin directions.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Primitives.UpDownBase`1.MouseWheelActiveTrigger">
+            <summary>
+            Get or set when the mouse wheel event should affect the value.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Primitives.MouseWheelActiveTrigger">
+            <summary>
+            Specify when the mouse wheel is active.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.MouseWheelActiveTrigger.FocusedMouseOver">
+            <summary>
+            FocusedMouseOver
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.MouseWheelActiveTrigger.MouseOver">
+            <summary>
+            MouseOver
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.MouseWheelActiveTrigger.Disabled">
+            <summary>
+            Disabled
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Primitives.WindowContainer.ModalBackgroundBrushProperty">
+            <summary>
+            Identifies the ModalBackgroundBrush dependency property.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.WindowContainer.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Measure the size of the WindowContainer based on its children.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Primitives.WindowContainer.OnVisualChildrenChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)">
+            <summary>
+            Register and unregister to children events.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Primitives.WindowContainer.ModalBackgroundBrush">
+            <summary>
+            When using a modal window in the WindowContainer, a ModalBackgroundBrush can be set
+            for the WindowContainer.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Utilities.ColorUtilities.ConvertRgbToHsv(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts an RGB color to an HSV color.
+            </summary>
+            <param name="r"></param>
+            <param name="b"></param>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Utilities.ColorUtilities.ConvertHsvToRgb(System.Double,System.Double,System.Double)">
+            <summary>
+             Converts an HSV color to an RGB color.
+            </summary>
+            <param name="h"></param>
+            <param name="s"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Utilities.ColorUtilities.GenerateHsvSpectrum">
+            <summary>
+            Generates a list of colors with hues ranging from 0 360 and a saturation and value of 1. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Utilities.ReflectionHelper.ValidatePublicPropertyName(System.Object,System.String)">
+            <summary>
+            Check the existence of the specified public instance (i.e. non static) property against
+            the type of the specified source object. If the property is not defined by the type,
+            a debug assertion will fail. Typically used to validate the parameter of a 
+            RaisePropertyChanged method.
+            </summary>
+            <param name="sourceObject">The object for which the type will be checked.</param>
+            <param name="propertyName">The name of the property.</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Utilities.ReflectionHelper.ValidatePropertyName(System.Object,System.String)">
+            <summary>
+            Check the existence of the specified instance (i.e. non static) property against
+            the type of the specified source object. If the property is not defined by the type,
+            a debug assertion will fail. Typically used to validate the parameter of a 
+            RaisePropertyChanged method.
+            </summary>
+            <param name="sourceObject">The object for which the type will be checked.</param>
+            <param name="propertyName">The name of the property.</param>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Utilities.ValueChangeHelper">
+            <summary>
+            This helper class will raise events when a specific
+            path value on one or many items changes.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Core.Utilities.ValueChangeHelper.ValueProperty">
+            <summary>
+            This private property serves as the target of a binding that monitors the value of the binding
+            of each item in the source.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DiagramCanvas">
+            <summary>
+            表示一个面板，其子元素与用直线连接起来
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramCanvas.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Any custom Panel must override ArrangeOverride and MeasureOverride
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DiagramNodeStateChangedHandler">
+            <summary>
+            折叠展开操作的事件委托
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArguments"></param>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DiagramNode">
+            <summary>
+            表示关系图的一个节点
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DiagramNode.ExpandCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DiagramNode.CollapseCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramNode.#ctor(System.String,VoiceCyber.Wpf.CustomControls.DiagramNode,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="nodeName"></param>
+            <param name="treeParent"></param>
+            <param name="imageUrl"></param>
+            <param name="itemDescription"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DiagramNode.NodeNameProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DiagramNode.DescriptionProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DiagramNode.IconProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramNode.OnSelected(VoiceCyber.Wpf.CustomControls.DiagramNode,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArguments"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramNode.OnExpanded(VoiceCyber.Wpf.CustomControls.DiagramNode,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArguments"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramNode.OnCollapsed(VoiceCyber.Wpf.CustomControls.DiagramNode,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArguments"></param>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.DiagramNode.Expanded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.DiagramNode.Collapsed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.DiagramNode.Selected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.NodeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.Icon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.DiagramChildren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.IsExpanded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.Location">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.DiagramParent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramNode.BoundingCircle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DiagramViewer">
+            <summary>
+            表示关系图
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramViewer.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DiagramViewer.OnSelected(VoiceCyber.Wpf.CustomControls.DiagramNode,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramViewer.RootNode">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DiagramViewer.AutoExpandRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DragDropPanel">
+            <summary>
+            拖放操作的容器
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DragDropPanel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.IDragDropObject">
+            <summary>
+            拖放对象，这个对象是拖放容器的关联对象
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IDragDropObject.OnStartDragged(VoiceCyber.Wpf.CustomControls.DragDropEventArgs)">
+            <summary>
+            开始拖放操作
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IDragDropObject.OnDragOver(VoiceCyber.Wpf.CustomControls.DragDropEventArgs)">
+            <summary>
+            拖放对象位于容器之上，容器背景变色
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IDragDropObject.OnDropped(VoiceCyber.Wpf.CustomControls.DragDropEventArgs)">
+            <summary>
+            放下拖放对象，应用拖放操作
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragDropObject.StartDragged">
+            <summary>
+            开始拖放操作
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragDropObject.DragOver">
+            <summary>
+            拖放对象位于容器之上，容器背景变色
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragDropObject.Dropped">
+            <summary>
+            放下拖放对象，应用拖放操作
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DragDropEventArgs">
+            <summary>
+            拖放事件的参数
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DragDropEventArgs.DragSource">
+            <summary>
+            拖放源，一般也就是拖放容器
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DragDropEventArgs.DragData">
+            <summary>
+            拖放的数据
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DragDropEventArgs.Effects">
+            <summary>
+            拖放效果
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DragPanel">
+            <summary>
+            可拖动的面板
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.IDragElement">
+            <summary>
+            可拖动元素
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragElement.MoveStarted">
+            <summary>
+            开始移动
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragElement.Moved">
+            <summary>
+            移动
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IDragElement.MoveStopped">
+            <summary>
+            停止移动
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ListItemEditBox">
+            <summary>
+            EditBox is a custom cotrol that can switch between two modes: 
+            editing and normal. When it is in editing mode, the content is
+            displayed in a TextBox that provides editing capbability. When 
+            the EditBox is in normal, its content is displayed in a TextBlock
+            that is not editable.
+            
+            This control is designed to be used in with a GridView View.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.#cctor">
+            <summary>
+            Static constructor
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnApplyTemplate">
+            <summary>
+            Called when the tree for the EditBox has been generated.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            If the ListViewItem that contains the EditBox is selected, 
+            when the mouse pointer moves over the EditBox, the corresponding
+            MouseEnter event is the first of two events (MouseUp is the second)
+            that allow the EditBox to change to editing mode.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            If the MouseLeave event occurs for an EditBox control that
+            is in normal mode, the mode cannot be changed to editing mode
+            until a MouseEnter event followed by a MouseUp event occurs.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            An EditBox switches to editing mode when the MouseUp event occurs
+            for that EditBox and the following conditions are satisfied:
+            1. A MouseEnter event for the EditBox occurred before the 
+            MouseUp event.
+            2. The mouse did not leave the EditBox between the
+            MouseEnter and MouseUp events.
+            3. The ListViewItem that contains the EditBox was selected
+            when the MouseEnter event occurred.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ListItemEditBox.IsReadOnlyProperty">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ListItemEditBox.ValueProperty">
+            <summary>
+            ValueProperty DependencyProperty.
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ListItemEditBox.IsEditingProperty">
+            <summary>
+            IsEditingProperty DependencyProperty
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnTextBoxKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            When an EditBox is in editing mode, pressing the ENTER or F2
+            keys switches the EditBox to normal mode.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnTextBoxLostKeyboardFocus(System.Object,System.Windows.Input.KeyboardFocusChangedEventArgs)">
+            <summary>
+            If an EditBox loses focus while it is in editing mode, 
+            the EditBox mode switches to normal mode.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnCouldSwitchToNormalMode(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Sets IsEditing to false when the ListViewItem that contains an
+            EditBox changes its size
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.OnScrollViewerChanged(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            If an EditBox is in editing mode and the content of a ListView is
+            scrolled, then the EditBox switches to normal mode.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.GetDependencyObjectFromVisualTree(System.Windows.DependencyObject,System.Type)">
+            <summary>
+            Walk visual tree to find the first DependencyObject 
+            of the specific type.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemEditBox.HookTemplateParentResizeEvent">
+            <summary>
+            When the size of the column containing the EditBox changes
+            and the EditBox is in editing mode, switch the mode to normal mode 
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItemEditBox.IsReadOnly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItemEditBox.Value">
+            <summary>
+            Gets or sets the value of the EditBox
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItemEditBox.IsEditing">
+            <summary>
+            Returns true if the EditBox control is in editing mode.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItemEditBox.IsParentSelected">
+            <summary>
+            Gets whether the ListViewItem that contains the 
+            EditBox is selected.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.EditBoxAdorner">
+            <summary>
+            An adorner class that contains a TextBox to provide editing capability 
+            for an EditBox control. The editable TextBox resides in the 
+            AdornerLayer. When the EditBox is in editing mode, the TextBox is given a size 
+            it with desired size; otherwise, arrange it with size(0,0,0,0).
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.#ctor(System.Windows.UIElement,System.Windows.UIElement)">
+            <summary>
+            Inialize the EditBoxAdorner.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.UpdateVisibilty(System.Boolean)">
+            <summary>
+            Specifies whether a TextBox is visible 
+            when the IsEditing property changes.
+            </summary>
+            <param name="isVisible"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Override to measure elements.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            override function to arrange elements.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.GetVisualChild(System.Int32)">
+            <summary>
+            override function to return infomation about visual tree.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.BuildTextBox">
+            <summary>
+            Inialize necessary properties and hook necessary events on TextBox, 
+            then add it into tree.
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.OnTextBoxLayoutUpdated(System.Object,System.EventArgs)">
+            <summary>
+            When Layout finish, if in editable mode, update focus status 
+            on TextBox.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.EditBoxAdorner.VisualChildrenCount">
+            <summary>
+            override property to return infomation about visual tree.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ListItem.Implementation.ListItemEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ListItem.Implementation.ListItemEventArgs.EVT_MOUSEDOUBLECLICK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItem.Implementation.ListItemEventArgs.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ListItem.Implementation.ListItemEventArgs.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ListItemPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemPanel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ListItemPanel.ItemMouseDoubleClickEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ListItemPanel.OnItemMouseDoubleClick(System.Object,VoiceCyber.Wpf.CustomControls.ListItem.Implementation.ListItemEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.ListItemPanel.ItemMouseDoubleClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.EditableTextBlock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.EditableTextBlock.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox">
+            <summary>
+            IP地址输入框
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.ValueProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.GetIP">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.SetIP(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.IPv4AddressTextBox.ValueChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.IPv4ParagraphTextBox">
+            <summary>
+            IP地址的一段
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.IPv4ParagraphTextBox.SetNeighbour(VoiceCyber.Wpf.CustomControls.IPv4ParagraphTextBox,VoiceCyber.Wpf.CustomControls.IPv4ParagraphTextBox)">
+            <summary>
+            设置相关联的前段和后段
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer">
+            <summary>
+            一个自定义的ScrollViewer控件，支持拖动内容
+            可以将内容拖动到指定的点
+            提供缓冲动画效果
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.#cctor">
+            <summary>
+            Overrides metadata
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.#ctor">
+            <summary>
+            Initialises all friction related variables
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.FrictionProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for Friction.  
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Get position and CaptureMouse
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.OnMouseMove(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            If IsMouseCaptured scroll to correct position. 
+            Where position is updated by animation timer
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Release MouseCapture if its captured
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.HandleWorldTimerTick(System.Object,System.EventArgs)">
+            <summary>
+            Animation timer tick, used to move the scrollviewer incrementally
+            to the desired position. This also uses the friction setting
+            when determining how much to move the scrollviewer
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.ScrollToCenterTarget(System.Windows.Point)">
+            <summary>
+            
+            </summary>
+            <param name="target"></param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.Friction">
+            <summary>
+            The ammount of friction to use. Use the Friction property to set a 
+            value between 0 and 1, 0 being no friction 1 is full friction 
+            meaning the panel won’t "auto-scroll".
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.FrictionScrollViewer.AutoScrollTarget">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.TileView">
+            <summary>
+            简单平铺的视图,用于在ListView控件中平铺显示列表项
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.TimeFormat">
+            <summary>
+            TimeFormat
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Core.Converters.MultLineTextConverter">
+            <summary>
+            MultLineTextConverter
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.MultLineTextConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Core.Converters.MultLineTextConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            ConvertBack
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DateTimeTextBox">
+            <summary>
+            一个日期时间的输入文本框
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.FormatProperty">
+            <summary>
+            增加一个依赖属性
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.EndInit">
+            <summary>
+            初始化控件显示文本
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            截获按键输入消息，只响应数字键、方向键等，并使用按键值替换文本
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标释放
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.OnTextChanged(System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            文本内容更新
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.SetInputIndex">
+            <summary>
+            设置插入点，遇到分隔符，自动跳到下一位置
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.OnLostFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            失去焦点
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.checkDateTime(System.String)">
+            <summary>
+            验证输入
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.Format">
+            <summary>
+            日期时间格式
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.DateTimeTextBox.Text">
+            <summary>
+            获取或设置文本框的值，若设置值不是有效的日期时间型数据，则显示空值
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.DragHelper">
+            <summary>
+            一个实现WPF元素可以拖动的帮助类型
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.DragHelper.Init``1(System.Windows.IInputElement,``0)">
+            <summary>
+            初始化容器和被拖动的元素
+            </summary>
+            <typeparam name="T">被拖动元素的类型，此类必须实现IDragElement接口</typeparam>
+            <param name="container">容器</param>
+            <param name="dragObject">拖动对象</param>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.CheckableItemBase">
+            <summary>
+            可选择的项，要让TreeView实现可选中功能，则绑定的项元素可以继承此类
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ICheckableItem">
+            <summary>
+            可选择的项，要让TreeView实现可选中功能，则绑定的项元素需实现接口
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ICheckableItem.SetIsChecked(System.Nullable{System.Boolean},System.Boolean,System.Boolean)">
+            <summary>
+            设置元素选中状态
+            </summary>
+            <param name="value"></param>
+            <param name="updateChildren"></param>
+            <param name="updateParent"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ICheckableItem.VerifyCheckState">
+            <summary>
+            检查元素状态
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ICheckableItem.Init">
+            <summary>
+            初始化，将子元素的父元素设为自身
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ICheckableItem.IsChecked">
+            <summary>
+            选择状态
+            True    选中（所有子项也选中）
+            False   为选中（所有子项都未选中）
+            Null    子项部分选中
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ICheckableItem.Parent">
+            <summary>
+            父元素
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableItemBase.OnPropertyChanged(System.String)">
+            <summary>
+            引发属性通知
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableItemBase.Init">
+            <summary>
+            初始化子元素的父元素
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableItemBase.AddChild(VoiceCyber.Wpf.CustomControls.CheckableItemBase)">
+            <summary>
+            增加一个子项
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableItemBase.RemoveChild(VoiceCyber.Wpf.CustomControls.CheckableItemBase)">
+            <summary>
+            移除一个子项
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableItemBase.VerifyCheckState">
+            <summary>
+            检查元素状态
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableItemBase.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableItemBase.Children">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableItemBase.IsExpanded">
+            <summary>
+            展开
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.CheckableItemBase.PropertyChanged">
+            <summary>
+            属性通知
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableItemBase.IsChecked">
+            <summary>
+            选中状态
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableItemBase.Parent">
+            <summary>
+            父对象
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableTree.GetContainerForItemOverride">
+            <summary>
+            设定子项的包装类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableTree.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            判断包装类型
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableTree.IsShowIcon">
+            <summary>
+            是否显示图标
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableTreeItem.GetContainerForItemOverride">
+            <summary>
+            设定子项的包装类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CheckableTreeItem.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            判断包装类型
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableTreeItem.IsChecked">
+            <summary>
+            选中状态
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CheckableTreeItem.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.GridTree">
+            <summary>
+            网格型树形控件
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTree.GetContainerForItemOverride">
+            <summary>
+            设定子项的包装类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTree.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            判断包装类型
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTree.SetColumns(System.Windows.Controls.GridViewColumnHeader,System.Int32,System.Collections.Generic.List{System.Windows.Controls.GridViewColumn})">
+            <summary>
+            初始化列信息
+            </summary>
+            <param name="nameHeader"></param>
+            <param name="nameWidth"></param>
+            <param name="listColumns"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTree.SetColumns(System.Windows.DataTemplate,System.Windows.Controls.GridViewColumnHeader,System.Int32,System.Collections.Generic.List{System.Windows.Controls.GridViewColumn})">
+            <summary>
+            初始化列信息
+            </summary>
+            <param name="nameColumnTemplate"></param>
+            <param name="nameHeader"></param>
+            <param name="nameWidth"></param>
+            <param name="listColumns"></param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.GridTree.IsShowCheckBox">
+            <summary>
+            是否显示复选框
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTreeItem.GetContainerForItemOverride">
+            <summary>
+            设定子项的包装类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.GridTreeItem.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            判断包装类型
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.GridTreeItem.Level">
+            <summary>
+            子项的深度
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.GridTreeItem.IsChecked">
+            <summary>
+            选中状态
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.GridTreeItem.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.MultiLineTextEditor">
+            <summary>
+            MultiLineTextEditor
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MultiLineTextEditor.ShowDropDownButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.TopMostPopup">
+            <summary>
+            Popup 解决普通Popup遮挡输入法的问题，需要将Topmost属性设为False
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Sprocket">
+            <summary>
+            齿轮状的进度条
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.IntervalProperty">
+            <summary>
+            Interval Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnIntervalChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Interval property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnIntervalChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Interval property.
+            </summary>
+            <param name="oldInterval">Old Value</param>
+            <param name="newInterval">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.IsIndeterminateProperty">
+            <summary>
+            IsIndeterminate Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnIsIndeterminateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the IsIndeterminate property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnIsIndeterminateChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the IsIndeterminate property.
+            </summary>
+            <param name="oldIsIndeterminate">Old Value</param>
+            <param name="newIsIndeterminate">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.ProgressProperty">
+            <summary>
+            Progress Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.CoerceProgress(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the Progress value so that it stays in the range 0-100
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnProgressChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Progress property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnProgressChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Progress property.
+            </summary>
+            <param name="oldProgress">Old Value</param>
+            <param name="newProgress">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.RotationProperty">
+            <summary>
+            Rotation Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnRotationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Rotation property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnRotationChanged(VoiceCyber.Wpf.CustomControls.Sprocket.Direction,VoiceCyber.Wpf.CustomControls.Sprocket.Direction)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Rotation property.
+            </summary>
+            <param name="oldRotation">Old Value</param>
+            <param name="newRotation">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.StartAngleProperty">
+            <summary>
+            StartAngle Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnStartAngleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the StartAngle property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnStartAngleChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the StartAngle property.
+            </summary>
+            <param name="oldStartAngle">Old Value</param>
+            <param name="newStartAngle">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.TickColorProperty">
+            <summary>
+            TickColor Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickColorChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickColor property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickColorChanged(System.Windows.Media.Color,System.Windows.Media.Color)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickColor property.
+            </summary>
+            <param name="oldTickColor">Old Value</param>
+            <param name="newTickColor">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.TickCountProperty">
+            <summary>
+            TickCount Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.CoerceTickCount(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the TickCount value to an acceptable value
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickCountChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickCount property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickCountChanged(System.Int32,System.Int32)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickCount property.
+            </summary>
+            <param name="oldTickCount">Old Value</param>
+            <param name="newTickCount">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.TickStyleProperty">
+            <summary>
+            TickStyle Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickStyle property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickStyleChanged(System.Windows.Media.PenLineCap,System.Windows.Media.PenLineCap)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickStyle property.
+            </summary>
+            <param name="oldTickStyle">Old Value</param>
+            <param name="newTickStyle">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.TickWidthProperty">
+            <summary>
+            TickWidth Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.CoerceTickWidth(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the TickWidth value so that it stays above 0.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickWidthChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickWidth property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnTickWidthChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickWidth property.
+            </summary>
+            <param name="oldTickWidth">Old Value</param>
+            <param name="newTickWidth">New Value</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.Start">
+            <summary>
+            Start the Tick Control rotation
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.Stop">
+            <summary>
+            Stop the Tick Control rotation
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.ConvertDegreesToRadians(System.Double)">
+            <summary>
+            Converts Degrees to Radians
+            </summary>
+            <param name="degrees">Degrees</param>
+            <returns>Radians</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.CalculateSpokesPoints">
+            <summary>
+            Calculate the Spoke Points and store them
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            OnRenderSizeChanged
+            </summary>
+            <param name="sizeInfo"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            OnRender
+            </summary>
+            <param name="dc"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Sprocket.OnRenderTimerElapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Handles the Elapsed event of the renderTimer
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.Interval">
+            <summary>
+            Gets or sets the Interval property. This dependency property 
+            indicates duration at which the timer for rotation should fire.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.IsIndeterminate">
+            <summary>
+            Gets or sets the IsIndeterminate property. This dependency property 
+            indicates whether the SprocketControl's progress is indeterminate or not.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.Progress">
+            <summary>
+            Gets or sets the Progress property. This dependency property 
+            indicates the progress percentage.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.Rotation">
+            <summary>
+            Gets or sets the Rotation property. This dependency property 
+            indicates the direction of Rotation of the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.StartAngle">
+            <summary>
+            Gets or sets the StartAngle property. This dependency property 
+            indicates the angle at which the first spoke (with max opacity) is drawn.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.TickColor">
+            <summary>
+            Gets or sets the TickColor property. This dependency property 
+            indicates the color of the Spokes in the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.TickCount">
+            <summary>
+            Gets or sets the TickCount property. This dependency property 
+            indicates the number of spokes of the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.TickStyle">
+            <summary>
+            Gets or sets the TickStyle property. This dependency property 
+            indicates the style of the ends of each tick.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Sprocket.TickWidth">
+            <summary>
+            Gets or sets the TickWidth property. This dependency property 
+            indicates the width of each spoke in the SprocketControl.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Sprocket.Direction">
+            <summary>
+            Defines the Direction of Rotation
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.Direction.ClockWise">
+            <summary>
+            顺时针
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.Sprocket.Direction.AntiClockWise">
+            <summary>
+            逆时针
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Sprocket.Spoke">
+            <summary>
+            Stores the details of each spoke
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.ToggleSwitch">
+            <summary>
+            自定义开关
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedTextProperty">
+            <summary>
+            CheckedText Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedBackgroundProperty">
+            <summary>
+            CheckedBackground Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedForegroundProperty">
+            <summary>
+            CheckedForeground Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CornerRadiusProperty">
+            <summary>
+            CornerRadius Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.TargetColumnInternalProperty">
+            <summary>
+            TargetColumnInternal Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnTargetColumnInternalChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TargetColumnInternal property.
+            </summary>
+            <param name="d">ToggleSwitch</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnTargetColumnInternalChanged(System.Int32,System.Int32)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TargetColumnInternal property.
+            </summary>
+            <param name="oldTargetColumnInternal">Old Value</param>
+            <param name="newTargetColumnInternal">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBackgroundProperty">
+            <summary>
+            ThumbBackground Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBorderBrushProperty">
+            <summary>
+            ThumbBorderBrush Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBorderThicknessProperty">
+            <summary>
+            ThumbBorderThickness Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbCornerRadiusProperty">
+            <summary>
+            ThumbCornerRadius Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbGlowColorProperty">
+            <summary>
+            ThumbGlowColor Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbShineCornerRadiusProperty">
+            <summary>
+            ThumbShineCornerRadius Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbWidthProperty">
+            <summary>
+            ThumbWidth Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CoerceThumbWidth(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the Thumb Width to an acceptable value
+            </summary>
+            <param name="d">Dependency Object</param>
+            <param name="value">Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnThumbWidthChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the ThumbWidth property.
+            </summary>
+            <param name="d">ToggleSwitch</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnThumbWidthChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the ThumbWidth property.
+            </summary>
+            <param name="oldThumbWidth">Old Value</param>
+            <param name="newThumbWidth">New Value</param>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedBackgroundProperty">
+            <summary>
+            UncheckedBackground Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedForegroundProperty">
+            <summary>
+            UncheckedForeground Dependency Property
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedTextProperty">
+            <summary>
+            UncheckedText Dependency Property
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnApplyTemplate">
+            <summary>
+            Override which is called when the template is applied
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Handler for the event raised when the size of the ToggleSwitch changes
+            </summary>
+            <param name="sizeInfo">Size Changed Info</param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.GetTemplateParts">
+            <summary>
+            Gets the required controls in the template
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.GetChildControl``1(System.String)">
+            <summary>
+            Generic method to get a control from the template
+            </summary>
+            <typeparam name="T">Type of the control</typeparam>
+            <param name="ctrlName">Name of the control in the template</param>
+            <returns>Control</returns>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CalculateLayout">
+            <summary>
+            Calculates the width and margin of the contents of the ContentBorder
+            The following calculation is used: (Here p is the value of ThumbWidth)
+            p = [10, 90]
+            Margin = 1 - p
+            Left = (1 - p)/(2 - p)
+            Right = (1 - p)/(2 - p)
+            Center = 0.03
+            CenterLeft = 0.485 - Left
+            CenterRight = 0.485 - Left
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CalculateContentBorderMargin">
+            <summary>
+            Calculates the margin of the contentBorder
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedText">
+            <summary>
+            Gets or sets the CheckedText property. This dependency property 
+            indicates the on text.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedBackground">
+            <summary>
+            Gets or sets the CheckedBackground property. This dependency property 
+            indicates Background of the Checked Text.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CheckedForeground">
+            <summary>
+            Gets or sets the CheckedForeground property. This dependency property 
+            indicates Foreground of the Checked Text.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.CornerRadius">
+            <summary>
+            Gets or sets the CornerRadius property. This dependency property 
+            indicates the corner radius of the outer most border of the ToggleSwitch.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.TargetColumnInternal">
+            <summary>
+            Gets or sets the TargetColumnInternal property. This dependency property 
+            indicates the target column to which the contentborder moves when the control is in unchecked state.
+            This property is used internally.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBackground">
+            <summary>
+            Gets or sets the ThumbBackground property. This dependency property 
+            indicates the Background of the Thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBorderBrush">
+            <summary>
+            Gets or sets the ThumbBorderBrush property. This dependency property 
+            indicates the BorderBrush of the Thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbBorderThickness">
+            <summary>
+            Gets or sets the ThumbBorderThickness property. This dependency property 
+            indicates the BorderThickness of the Thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbCornerRadius">
+            <summary>
+            Gets or sets the ThumbCornerRadius property. This dependency property 
+            indicates the corner radius of the Thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbGlowColor">
+            <summary>
+            Gets or sets the ThumbGlowColor property. This dependency property 
+            indicates the GlowColor of the Thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbShineCornerRadius">
+            <summary>
+            Gets or sets the ThumbShineCornerRadius property. This dependency property 
+            indicates the corner radius of the shine over the thumb.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.ThumbWidth">
+            <summary>
+            Gets or sets the ThumbWidth property. This dependency property 
+            indicates the width  of the Thumb as a percentage of the total width of the ToggleSwitch.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedBackground">
+            <summary>
+            Gets or sets the UncheckedBackground property. This dependency property 
+            indicates the Background of the Unchecked Text.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedForeground">
+            <summary>
+            Gets or sets the UncheckedForeground property. This dependency property 
+            indicates the Foreground of the Unchecked Text.
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ToggleSwitch.UncheckedText">
+            <summary>
+            Gets or sets the UncheckedText property. This dependency property 
+            indicates the off text.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.CustomWaiter">
+            <summary>
+            自定义的等待按钮
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.CustomWaiter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.CustomWaiter.ViewColorProperty">
+            <summary>
+            圆点的颜色
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.CustomWaiter.PointSizeProperty">
+            <summary>
+            圆点的尺寸
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.CustomWaiter.DurationProperty">
+            <summary>
+            动画持续时长
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CustomWaiter.ViewColor">
+            <summary>
+            圆点的颜色
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CustomWaiter.PointSize">
+            <summary>
+            圆点的尺寸
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.CustomWaiter.Duration">
+            <summary>
+            动画持续时长
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.MetroWaiter">
+            <summary>
+            MetroWaiter.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MetroWaiter
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.MetroWaiter.ViewColorProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.MetroWaiter.ViewWidthHeightProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.MetroWaiter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.MetroWaiter.#ctor(System.Windows.Media.Brush,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="color"></param>
+            <param name="widthHeight"></param>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.MetroWaiter.StartAnimation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.MetroWaiter.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.LeftFrom">
+            <summary>
+            左边第一个起点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.LeftTo">
+            <summary>
+            第一个终点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.SlowFrom">
+            <summary>
+            缓动起点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.SlowTo">
+            <summary>
+            缓动终点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.RightFrom">
+            <summary>
+            右边起点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.RightTo">
+            <summary>
+            右边终点
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.ViewColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.MetroWaiter.ViewWidthHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.MetroWaiter.PropertyChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.ChildWindow.DialogResult">
+            <summary>
+            Gets or sets a value indicating whether the ChildWindow was accepted or canceled.
+            </summary>
+            <value>
+            True if the child window was accepted; false if the child window was
+            canceled. The default is null.
+            </value>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.ChildWindow.Closed">
+            <summary>
+            Occurs when the ChildWindow is closed.
+            </summary>
+        </member>
+        <member name="E:VoiceCyber.Wpf.CustomControls.ChildWindow.Closing">
+            <summary>
+            Occurs when the ChildWindow is closing.
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.Window">
+            <summary>
+            一个自定义窗口
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Window.#ctor">
+            <summary>
+            构造一个自定义窗口
+            </summary>
+        </member>
+        <member name="M:VoiceCyber.Wpf.CustomControls.Window.WndProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)">
+            <summary>
+            窗口消息
+            </summary>
+            <param name="hwnd"></param>
+            <param name="msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <param name="handled"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Window.IsShowMax">
+            <summary>
+            是否显示最大化按钮
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Window.BackGroundType">
+            <summary>
+            背景类型
+            </summary>
+        </member>
+        <member name="P:VoiceCyber.Wpf.CustomControls.Window.BackImage">
+            <summary>
+            背景图片
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.HitTest">
+            <summary>
+            包含了鼠标的各种消息
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTERROR">
+            <summary>
+            HTERROR
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTTRANSPARENT">
+            <summary>
+            HTTRANSPARENT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTNOWHERE">
+            <summary>
+            HTNOWHERE
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTCLIENT">
+            <summary>
+            HTCLIENT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTCAPTION">
+            <summary>
+            HTCAPTION
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTSYSMENU">
+            <summary>
+            HTSYSMENU
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTGROWBOX">
+            <summary>
+            HTGROWBOX
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTSIZE">
+            <summary>
+            HTSIZE
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTMENU">
+            <summary>
+            HTMENU
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTHSCROLL">
+            <summary>
+            HTHSCROLL
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTVSCROLL">
+            <summary>
+            HTVSCROLL
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTMINBUTTON">
+            <summary>
+            HTMINBUTTON
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTMAXBUTTON">
+            <summary>
+            HTMAXBUTTON
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTLEFT">
+            <summary>
+            HTLEFT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTRIGHT">
+            <summary>
+            HTRIGHT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTTOP">
+            <summary>
+            HTTOP
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTTOPLEFT">
+            <summary>
+            HTTOPLEFT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTTOPRIGHT">
+            <summary>
+            HTTOPRIGHT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTBOTTOM">
+            <summary>
+            HTBOTTOM
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTBOTTOMLEFT">
+            <summary>
+            HTBOTTOMLEFT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTBOTTOMRIGHT">
+            <summary>
+            HTBOTTOMRIGHT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTBORDER">
+            <summary>
+            HTBORDER
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTREDUCE">
+            <summary>
+            HTREDUCE
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTZOOM">
+            <summary>
+            HTZOOM
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTSIZEFIRST">
+            <summary>
+            HTSIZEFIRST
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTSIZELAST">
+            <summary>
+            HTSIZELAST
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTOBJECT">
+            <summary>
+            HTOBJECT
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTCLOSE">
+            <summary>
+            HTCLOSE
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.HitTest.HTHELP">
+            <summary>
+            HTHELP
+            </summary>
+        </member>
+        <member name="T:VoiceCyber.Wpf.CustomControls.BackGroundType">
+            <summary>
+            背景类型
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.BackGroundType.Green">
+            <summary>
+            绿色调
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.BackGroundType.Blue">
+            <summary>
+            蓝色调
+            </summary>
+        </member>
+        <member name="F:VoiceCyber.Wpf.CustomControls.BackGroundType.Image">
+            <summary>
+            背景图片
+            </summary>
+        </member>
+    </members>
+</doc>

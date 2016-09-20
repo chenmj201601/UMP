@@ -1,0 +1,34 @@
+﻿<Window x:Class="UMPService10Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Name="BtnTest" Header="Test"></MenuItem>
+                <MenuItem Name="BtnStartNMon" Header="Start NMon"></MenuItem>
+                <MenuItem Name="BtnStopNMon" Header="Stop NMon"></MenuItem>
+            </Menu>
+            <TextBox Name="TxtMsg" DockPanel.Dock="Bottom" Height="200" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"></TextBox>
+            <ListView Name="ListViewExtState">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Extension" Width="120" DisplayMemberBinding="{Binding Extension}"></GridViewColumn>
+                        <GridViewColumn Header="LoginState" Width="80" DisplayMemberBinding="{Binding StrLoginState}"></GridViewColumn>
+                        <GridViewColumn Header="CallState" Width="80" DisplayMemberBinding="{Binding StrCallState}"></GridViewColumn>
+                        <GridViewColumn Header="RecordState" Width="80" DisplayMemberBinding="{Binding StrRecordState}"></GridViewColumn>
+                        <GridViewColumn Header="DirectionState" Width="80" DisplayMemberBinding="{Binding StrDirectionState}"></GridViewColumn>
+                        <GridViewColumn Header="AgentState" Width="80" DisplayMemberBinding="{Binding StrAgentState}"></GridViewColumn>
+                        <GridViewColumn Header="AgentID" Width="120" DisplayMemberBinding="{Binding AgentID}"></GridViewColumn>
+                        <GridViewColumn Header="CallerID" Width="120" DisplayMemberBinding="{Binding CallerID}"></GridViewColumn>
+                        <GridViewColumn Header="CalledID" Width="120" DisplayMemberBinding="{Binding CalledID}"></GridViewColumn>
+                        <GridViewColumn Header="RecordReference" Width="180" DisplayMemberBinding="{Binding RecordReference}"></GridViewColumn>
+                        <GridViewColumn Header="StartRecordTime" Width="180" DisplayMemberBinding="{Binding StartRecordTime}"></GridViewColumn>
+                        <GridViewColumn Header="StopRecordTime" Width="180" DisplayMemberBinding="{Binding StopRecordTime}"></GridViewColumn>
+                        <GridViewColumn Header="RecordLength" Width="120" DisplayMemberBinding="{Binding RecordLength}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </Grid>
+</Window>

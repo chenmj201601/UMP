@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:umpc="http://www.voicecyber.com/ump/controls">
+    
+    <Style x:Key="PageMain" TargetType="{x:Type Page}">
+            <Setter Property="Background" Value="{DynamicResource SystemBrush10}"></Setter>
+    </Style>
+    
+    <Style x:Key="PopupPanel" TargetType="{x:Type umpc:PopupPanel}">
+        <Setter Property="PanelWidth" Value="300"></Setter>
+        <Setter Property="PanelHeight" Value="250"></Setter>
+        <Setter Property="Icon" Value="Images/ump.png"></Setter>
+    </Style>
+    
+</ResourceDictionary>

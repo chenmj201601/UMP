@@ -1,0 +1,78 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3101.ExportScoreSheet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"  Style="{DynamicResource ExportScoreSheet}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3101;component/Themes/Default/UMPS3101/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3101;component/Themes/Default/UMPS3101/SSMMainPage.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3101;component/Themes/Default/UMPS3101/ExportScoreSheet.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{DynamicResource BorderMain}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock Height="20"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormBorderItem}">
+                                <TextBlock Name="LbSaveDir" Text="Save Directory" FontSize="14"></TextBlock>
+                            </Border>
+                            <Border Grid.Column="1" HorizontalAlignment="Stretch" 
+                                    Style="{DynamicResource FormBorderValue}">
+                                <TextBox Name="TxtSaveDir" IsReadOnly="True"></TextBox>
+                            </Border>
+                            <Border Grid.Column="2" Style="{DynamicResource FormBorderValue}">
+                                <Button Name="BtnBrowser" Content="..."></Button>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <TextBlock Height="10"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </Grid>
+        </Border>
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnApply" Content="Apply" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

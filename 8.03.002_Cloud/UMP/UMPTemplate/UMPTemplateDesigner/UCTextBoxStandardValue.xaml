@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="UMPTemplateDesigner.UCTextBoxStandardValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            Loaded="UCTextBoxStandardValue_OnLoaded">
+    <Grid>
+        <Border Height="28">
+            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="25" Text="{Binding Score}" Margin="3,2" HorizontalContentAlignment="Right" ></TextBox>
+        </Border>
+    </Grid>
+</UserControl>

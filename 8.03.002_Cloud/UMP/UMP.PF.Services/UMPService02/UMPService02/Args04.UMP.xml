@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldConfigs>
+  <Database P01="username" P02="C301"/>
+  <Database P01="userid" P02="C302"/>
+  <Database P01="cardid" P02="C303"/>
+</CustomFieldConfigs>

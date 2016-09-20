@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RootPanel Orientation="Horizontal">
+    <LayoutAnchorablePane Id="5dc334fd-576b-482c-ad5b-e91e291942eb" DockWidth="254">
+      <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="对象浏览器" IsSelected="True" ContentId="PanelObject" LastActivationTimeStamp="08/08/2014 10:14:54" />
+    </LayoutAnchorablePane>
+    <LayoutDocumentPane>
+      <LayoutDocument Title="评分表预览" IsSelected="True" IsLastFocusedDocument="True" ContentId="PanelScoreViewer" CanClose="False" LastActivationTimeStamp="08/12/2014 14:15:42" />
+    </LayoutDocumentPane>
+    <LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="245">
+      <LayoutAnchorablePane Id="31f7b7e5-415c-4df6-b80b-8c46b0ebea4a" DockWidth="245" DockHeight="0.688969258589512*" FloatingWidth="200" FloatingHeight="559" FloatingLeft="1153" FloatingTop="460">
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="评分项属性" IsSelected="True" ContentId="PanelProperty" FloatingLeft="1153" FloatingTop="460" FloatingWidth="200" FloatingHeight="559" LastActivationTimeStamp="08/08/2014 10:16:10" />
+      </LayoutAnchorablePane>
+      <LayoutAnchorablePaneGroup Orientation="Vertical" DockHeight="1.31103074141049*" FloatingWidth="200" FloatingHeight="559" FloatingLeft="970" FloatingTop="504">
+        <LayoutAnchorablePane Id="e2a70f42-b9cb-4860-bf4e-05d02be4577a" FloatingWidth="200" FloatingHeight="559" FloatingLeft="970" FloatingTop="504" />
+        <LayoutAnchorablePane Id="c940c4ae-048e-443d-8e50-17b3d39c016f" FloatingWidth="200" FloatingHeight="559" FloatingLeft="1147" FloatingTop="610" />
+      </LayoutAnchorablePaneGroup>
+    </LayoutAnchorablePaneGroup>
+  </RootPanel>
+  <TopSide />
+  <RightSide />
+  <LeftSide />
+  <BottomSide />
+  <FloatingWindows>
+    <LayoutFloatingWindow xsi:type="LayoutAnchorableFloatingWindow">
+      <RootPanel Orientation="Horizontal" FloatingWidth="242" FloatingHeight="572" FloatingLeft="-316" FloatingTop="118">
+        <LayoutAnchorablePane Id="8a0ccbb8-3410-4303-9a1d-4221ed66d779" FloatingWidth="242" FloatingHeight="572" FloatingLeft="-316" FloatingTop="118" />
+      </RootPanel>
+    </LayoutFloatingWindow>
+    <LayoutFloatingWindow xsi:type="LayoutAnchorableFloatingWindow">
+      <RootPanel Orientation="Horizontal" FloatingWidth="230" FloatingHeight="563" FloatingLeft="-590" FloatingTop="124">
+        <LayoutAnchorablePane Id="c01bd9d5-3499-4709-91dc-ac5b89ff6ec4" FloatingWidth="230" FloatingHeight="563" FloatingLeft="-590" FloatingTop="124" />
+      </RootPanel>
+    </LayoutFloatingWindow>
+  </FloatingWindows>
+  <Hidden>
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="评分项子项" IsSelected="True" ContentId="PanelChildList" FloatingLeft="-316" FloatingTop="118" FloatingWidth="242" FloatingHeight="572" LastActivationTimeStamp="08/12/2014 14:15:47" PreviousContainerId="8a0ccbb8-3410-4303-9a1d-4221ed66d779" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="子项属性" ContentId="PanelChildProperty" FloatingLeft="-590" FloatingTop="124" FloatingWidth="230" FloatingHeight="563" LastActivationTimeStamp="08/08/2014 10:16:16" PreviousContainerId="c01bd9d5-3499-4709-91dc-ac5b89ff6ec4" PreviousContainerIndex="0" />
+  </Hidden>
+</LayoutRoot>

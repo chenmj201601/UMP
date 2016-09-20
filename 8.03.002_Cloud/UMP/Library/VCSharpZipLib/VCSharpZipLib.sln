@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCSharpZipLib", "VCSharpZipLib\VCSharpZipLib.csproj", "{95744B5A-ABCE-4F6D-9456-B538094080A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCSharpZipDemo", "VCSharpZipDemo\VCSharpZipDemo.csproj", "{E3898747-34A9-416A-A21D-CC682EDEB255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95744B5A-ABCE-4F6D-9456-B538094080A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95744B5A-ABCE-4F6D-9456-B538094080A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95744B5A-ABCE-4F6D-9456-B538094080A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95744B5A-ABCE-4F6D-9456-B538094080A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3898747-34A9-416A-A21D-CC682EDEB255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3898747-34A9-416A-A21D-CC682EDEB255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3898747-34A9-416A-A21D-CC682EDEB255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3898747-34A9-416A-A21D-CC682EDEB255}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageObject>
+  <LangeuageDataRow>
+    <ObjectID>Language1028</ObjectID>
+    <ObjectData>1028</ObjectData>
+    <ObjectDescribe>Traditional Chinese</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Language2052</ObjectID>
+    <ObjectData>2052</ObjectData>
+    <ObjectDescribe>Simplified Chinese</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Language1033</ObjectID>
+    <ObjectData>1033</ObjectData>
+    <ObjectDescribe>English(U.S.)</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Language1041</ObjectID>
+    <ObjectData>1041</ObjectData>
+    <ObjectDescribe>日本語</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window01</ObjectID>
+    <ObjectData>Get01</ObjectData>
+    <ObjectDescribe>Loading system path...</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window01</ObjectID>
+    <ObjectData>Get02</ObjectData>
+    <ObjectDescribe>Loading OS information...</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window01</ObjectID>
+    <ObjectData>Get03</ObjectData>
+    <ObjectDescribe>Loading UMP server information...</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>MenuLanguage</ObjectData>
+    <ObjectDescribe>Language</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>LabelComponentsInstall</ObjectData>
+    <ObjectDescribe>Install UMP Client Components</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>TabItemServer</ObjectData>
+    <ObjectDescribe>Application Server</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>TabItemInstallLog</ObjectData>
+    <ObjectDescribe>Installation Log</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>LabelAppServer</ObjectData>
+    <ObjectDescribe>UMP Application Server</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>LabelServer</ObjectData>
+    <ObjectDescribe>Server:</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>LabelPort</ObjectData>
+    <ObjectDescribe>Port:</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>ButtonInstall</ObjectData>
+    <ObjectDescribe>Install(_S)</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>ButtonCloseWindow</ObjectData>
+    <ObjectDescribe>Close_C)</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N001</ObjectData>
+    <ObjectDescribe>Incorrect application server</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N002</ObjectData>
+    <ObjectDescribe>Incorrect port</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N003</ObjectData>
+    <ObjectDescribe>Clear {0} buffer</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N004</ObjectData>
+    <ObjectDescribe>{0}</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N005</ObjectData>
+    <ObjectDescribe>Components are installed but with errors. Please check installation log and contact your administrator.</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>N006</ObjectData>
+    <ObjectDescribe>All components are installed successfully.</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsResult0</ObjectData>
+    <ObjectDescribe>X X failed：</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsResult1</ObjectData>
+    <ObjectDescribe>* * success</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep01</ObjectData>
+    <ObjectDescribe>Loading alias</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep02</ObjectData>
+    <ObjectDescribe>Loading icons</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep03</ObjectData>
+    <ObjectDescribe>Loading language packs</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep04</ObjectData>
+    <ObjectDescribe>Loading binding protocol</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep05</ObjectData>
+    <ObjectDescribe>Loading supported windows type</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep06</ObjectData>
+    <ObjectDescribe>Download security certificate {0}</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep07</ObjectData>
+    <ObjectDescribe>Download checklist editor</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep08</ObjectData>
+    <ObjectDescribe>Download report components {0}</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep09</ObjectData>
+    <ObjectDescribe>Download theme file</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep11</ObjectData>
+    <ObjectDescribe>This application supported Windows XP SP2 or above, Windows 2003 SP1 or above, Windows Vista, Windows Server 2008/2012, Windows 7/8. Please contact your software provider</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep21</ObjectData>
+    <ObjectDescribe>Error occured during loading components, please contact your system administrator.</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep51</ObjectData>
+    <ObjectDescribe>Installing security certificate {0}</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep52</ObjectData>
+    <ObjectDescribe>Install report components</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep53</ObjectData>
+    <ObjectDescribe>Add UMP application server {0} to trusted site</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep54</ObjectData>
+    <ObjectDescribe>Write server information into local file</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep55</ObjectData>
+    <ObjectDescribe>Creating shortcut</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep56</ObjectData>
+    <ObjectDescribe>Creating "Remove Application" shortcut</ObjectDescribe>
+  </LangeuageDataRow>
+  <LangeuageDataRow>
+    <ObjectID>Window02</ObjectID>
+    <ObjectData>InsStep99</ObjectData>
+    <ObjectDescribe>All components are installed successfully.</ObjectDescribe>
+  </LangeuageDataRow>
+</LanguageObject>

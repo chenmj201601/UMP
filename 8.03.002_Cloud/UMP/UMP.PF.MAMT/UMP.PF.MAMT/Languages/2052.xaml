@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="ChangeLan">切换语言</s:String>
+    <s:String x:Key="1033">English</s:String>
+    <s:String x:Key="2052">中文（简体）</s:String>
+    <s:String x:Key="LoginDesc">连接到UMP应用服务器</s:String>
+    <s:String x:Key="ServerHost">服务器地址</s:String>
+    <s:String x:Key="ServerPort">端口</s:String>
+    <s:String x:Key="UserName">用户名</s:String>
+    <s:String x:Key="Password">密码</s:String>
+    <s:String x:Key="Login">登录</s:String>
+    <s:String x:Key="Close">关闭</s:String>
+    <s:String x:Key="WindowsTitle">UMP 管理和维护中心</s:String>
+    <s:String x:Key="LoginError">登录出错，请仔细检查登录信息</s:String>
+    <s:String x:Key="ErrorMsgTitle">出现错误</s:String>
+    <s:String x:Key="SaveFileError">您的登录信息保存失败，可能您下次登录时无法获取到您的登录信息，但不影响系统操作</s:String>
+    <s:String x:Key="ReturnMain">返回主页</s:String>
+    <s:String x:Key="AboutSystem">关于UMP</s:String>
+    <s:String x:Key="DBManager">数据库管理(暂不支持)</s:String>
+    <s:String x:Key="IISManager">IIS 管理(暂不支持)</s:String>
+    <s:String x:Key="LanguageManager">语言包管理</s:String>
+    <s:String x:Key="ServerSource">服务器资源</s:String>
+    <s:String x:Key="DBServerToolTip">服务器: {0}\n类型: {1}\n状态: {2}</s:String>
+    <s:String x:Key="Operation">操作</s:String>
+    <s:String x:Key="ConnToUmp">连接UMP服务器(暂不支持)</s:String>
+    <s:String x:Key="DisConnToUmp">断开连接(暂不支持)</s:String>
+    <s:String x:Key="ConnToDB">连接到数据库(暂不支持)</s:String>
+    <s:String x:Key="Refersh">刷新</s:String>
+    <s:String x:Key="LanguageOperatoin">语言包管理</s:String>
+    <s:String x:Key="ImportLan">导入</s:String>
+    <s:String x:Key="ExportLan">导出</s:String>
+    <s:String x:Key="EditLan">编辑</s:String>
+    <s:String x:Key="AddLan">添加</s:String>
+    <s:String x:Key="LanguageFile">请选择一个语言包文件</s:String>
+    <s:String x:Key="LanguageFilePwd">语言包解密密码</s:String>
+    <s:String x:Key="LanguageName">语言名称（语言ID ）</s:String>
+    <s:String x:Key="ImportOptions">导入选项</s:String>
+    <s:String x:Key="SaveImport">确认导入</s:String>
+    <s:String x:Key="SearchLan">查找</s:String>
+    <s:String x:Key="LanFileSavePath">语言包存放路径</s:String>
+    <s:String x:Key="SelectFolder">选择文件夹</s:String>
+    <s:String x:Key="EncryptionOptions">加密选项</s:String>
+    <s:String x:Key="IsEncryption">将导出的语言包加密</s:String>
+    <s:String x:Key="ConfirmExport">确认导出</s:String>
+    <s:String x:Key="LanFilePwd">加密密码</s:String>
+    <s:String x:Key="LanFileConfirmPwd">确认密码</s:String>
+    <s:String x:Key="Cancel">取消</s:String>
+    <s:String x:Key="MessageID">消息编号</s:String>
+    <s:String x:Key="ModuleID">模块编号</s:String>
+    <s:String x:Key="ChildModuleID">子模块ID</s:String>
+    <s:String x:Key="InPageFrame">所属Frame/Page/Window</s:String>
+    <s:String x:Key="DisplayContent">显示内容</s:String>
+    <s:String x:Key="ToolTipContent">提示内容</s:String>
+    <s:String x:Key="SaveEdit">保存</s:String>
+    <s:String x:Key="No.">序号</s:String>
+    <s:String x:Key="LanguageCode">语言编号</s:String>
+    <s:String x:Key="MessageCode">消息编号</s:String>
+    <s:String x:Key="DisplayMessage">显示内容</s:String>
+    <s:String x:Key="TipMessage">提示内容</s:String>
+    <s:String x:Key="SaveLanguageItemError">保存失败</s:String>
+    <s:String x:Key="SelectLanguage">请选择一行记录</s:String>
+    <s:String x:Key="LanFilePwdNotNull">解密密码不能为空</s:String>
+    <s:String x:Key="LanFileDecryptFailed">密码不匹配，解密失败</s:String>
+    <s:String x:Key="FilePathNotNull">请选择需要导入的文件</s:String>
+    <s:String x:Key="FileContentError">该文件不是语言包文件，不能导入</s:String>
+    <s:String x:Key="FileFormatError">语言包文件格式错误或解密语言包失败</s:String>
+    <s:String x:Key="ImportOperationRefersh">全部替换（Delete / Insert ）</s:String>
+    <s:String x:Key="ImportOperationUpdate">更新并追加（ Update / Insert ）</s:String>
+    <s:String x:Key="ImportOperationAppend">追加（ Insert ）</s:String>
+    <s:String x:Key="Confirm001">确定导入语言ID为{0}的语言包吗？</s:String>
+    <s:String x:Key="CompanyName">宇音科技有限公司</s:String>
+    <s:String x:Key="RefreshDone">刷新完成</s:String>
+    <s:String x:Key="Refreshing">正在刷新</s:String>
+    <s:String x:Key="ForcedLogin">强制登录</s:String>
+    <s:String x:Key="CreateDB">创建数据库</s:String>
+    <s:String x:Key="DBType">数据库及类型</s:String>
+    <s:String x:Key="ChooseDB">请选择需要创建的数据库</s:String>
+    <s:String x:Key="ChooseDBType">请选择数据库类型</s:String>
+    <s:String x:Key="NextStup">下一步</s:String>
+    <s:String x:Key="DBConnParams">数据库连接参数</s:String>
+    <s:String x:Key="DBServerHost">数据库服务器</s:String>
+    <s:String x:Key="DBServerPort">端口</s:String>
+    <s:String x:Key="DBServerLoginUser">登录名</s:String>
+    <s:String x:Key="DBServerPwd">密码</s:String>
+    <s:String x:Key="DBServerName">服务名</s:String>
+    <s:String x:Key="Skip">跳过</s:String>
+    <s:String x:Key="DBType1">MySql</s:String>
+    <s:String x:Key="DBType2">MSSql</s:String>
+    <s:String x:Key="DBType3">Oracle</s:String>
+    <s:String x:Key="DBObjcetName">名称</s:String>
+    <s:String x:Key="DBObjectType">类型</s:String>
+    <s:String x:Key="DBObjectOperationMessage">消息</s:String>
+    
+
+
+        <!-- Message -->
+    <s:String x:Key="Message001">请选择一个文件夹</s:String>
+    <s:String x:Key="Message002">导入成功</s:String>
+    <s:String x:Key="Message003">提示</s:String>
+    <s:String x:Key="Message004">语言包导出成功</s:String>
+    <s:String x:Key="Message005">等待创建</s:String>
+    
+    
+    <!--  Error  -->
+    <s:String x:Key="Error001">不允许导入导入语言ID为{0}的语言包</s:String>
+    <s:String x:Key="Error002">保存路径不能为空</s:String>
+    <s:String x:Key="Error003">解密密码不能为空</s:String>
+    <s:String x:Key="Error004">两次密码输入不一致</s:String>
+    <s:String x:Key="Error005">导入语言包数据过程中有错误,详情请见日志文件</s:String>
+    <s:String x:Key="Error006">消息ID:{0}导入错误</s:String>
+    <s:String x:Key="Error007">语言包导出出错</s:String>
+    <s:String x:Key="Error008">错误信息：{0}</s:String>
+    <s:String x:Key="Error009">用户名不能为空</s:String>
+    <s:String x:Key="Error010">密码不能为空</s:String>
+    <s:String x:Key="Error011">端口不能为空</s:String>
+    <s:String x:Key="Error012">服务器地址不能为空</s:String>
+    <s:String x:Key="Error013">该UMP服务器未配置数据库，请在UMP服务器上配置</s:String>
+    <s:String x:Key="Error014">请填写连接数据库服务器的完整信息</s:String>
+    <s:String x:Key="Error015">连接数据库服务器失败，错误信息如下：{0}</s:String>
+    <s:String x:Key="Error016">获得数据库对象失败，错误信息如下：{0}</s:String>
+    <s:String x:Key="Error017">UMP服务器上没有找到数据库脚本，请联系管理员</s:String>
+
+
+    <!--   Confirm   -->
+    
+    
+</ResourceDictionary>

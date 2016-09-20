@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMon4Net", "NMon4Net\NMon4Net.csproj", "{256F1662-5B4E-4E91-A611-E91B6CE33F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMon4NetDemo", "NMon4NetDemo\NMon4NetDemo.csproj", "{D4347EAC-749C-4C68-9BC9-A0DB802495E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{256F1662-5B4E-4E91-A611-E91B6CE33F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256F1662-5B4E-4E91-A611-E91B6CE33F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256F1662-5B4E-4E91-A611-E91B6CE33F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256F1662-5B4E-4E91-A611-E91B6CE33F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4347EAC-749C-4C68-9BC9-A0DB802495E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4347EAC-749C-4C68-9BC9-A0DB802495E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4347EAC-749C-4C68-9BC9-A0DB802495E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4347EAC-749C-4C68-9BC9-A0DB802495E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

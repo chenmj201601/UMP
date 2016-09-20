@@ -1,0 +1,17 @@
+﻿<Window x:Class="VCCommonDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="800" Loaded="MainWindow_OnLoaded" Closing="MainWindow_OnClosing">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Name="BtnTest" Header="Test" Click="BtnTest_OnClick"></MenuItem>
+            <MenuItem Name="BtnWriteLog" Header="WriteLog" Click="BtnWriteLog_OnClick"></MenuItem>
+            <MenuItem Name="BtnDownloadFTP" Header="DownloadFTP" Click="BtnDownloadFTP_OnClick"></MenuItem>
+            <MenuItem Name="BtnDownloadHTTP" Header="DownloadHTTP" Click="BtnDownloadHTTP_OnClick"></MenuItem>
+            <MenuItem Name="BtnGetDataSet" Header="GetDataSet" Click="BtnGetDataSet_OnClick"></MenuItem>
+            <MenuItem Name="BtnExecuteCommand" Header="ExecuteCommand" Click="BtnExecuteCommand_OnClick"></MenuItem>
+            <MenuItem Name="BtnClose" Header="Close" Click="BtnClose_OnClick"></MenuItem>
+        </Menu>
+        <TextBox Name="TxtMsg" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"></TextBox>
+    </DockPanel>
+</Window>

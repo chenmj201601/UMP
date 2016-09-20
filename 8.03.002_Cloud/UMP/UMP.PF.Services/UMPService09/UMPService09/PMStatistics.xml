@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PMStatisticsTime>
+  <StatisticsName name="QMStatistics" IsActive="1" StartTime="2016-02-01 00:00:00" />
+  <StatisticsName name="RecordStatistics" IsActive="1" StartTime="2016-02-01 00:00:00" />
+  <StatisticsName name="KPIStatistics" IsActive="1" StartTime="2016-02-01 00:00:00" />
+</PMStatisticsTime>

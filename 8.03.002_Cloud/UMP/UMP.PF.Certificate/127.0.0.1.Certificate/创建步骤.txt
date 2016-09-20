@@ -1,0 +1,17 @@
+1、创建一个自我签署的X.509证书（.cer）和一个.pvk私钥文件，用到makecert工具，命令如下：
+
+makecert -r -n "CN=VoiceCyber" -b 01/01/2010 -e 12/31/2099 -sv VCLogIMP.pvk VCLogIMP.cer
+这一步必须输入密码，密码为: voicecyber
+
+2、利用X.509证书（.cer）创建发行者证书 (.spc)，用到cert2spc工具，命令如下：
+
+cert2spc VCLogIMP.cer VCLogIMP.spc
+
+3、从.pvk和.spc格式转换成.pfx格式，用到pvk2pfx工具，命令如下：
+
+pvk2pfx -pvk VCLogIMP.pvk -spc VCLogIMP.spc -pfx VCLogIMP.pfx -pi voicecyber -po voicecyber
+在vs项目的ClickOnce清单签名的证书设置处点击“从文件选择”浏览定位到第3步导出的.pfx证书，此处需要验证第3步中设置的证书私钥密码
+
+
+
+MAKECERT -A SHA512 -N "CN=127.0.0.1" -B 01/01/2015 -E 12/31/2199 -PE -SS MY -R

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"  standalone="yes"?>
+<ObjectOperations>
+  <SingleOperations>
+    <DisplayC>ApplicationName</DisplayC>
+    <DisplayI/>
+    <DisplayT/>
+    <DataInTag/>
+    <MoreOp>-1</MoreOp>
+    <OrderID>0</OrderID>
+    <DisplayM>A</DisplayM>
+  </SingleOperations>
+  <SingleOperations>
+    <DisplayC>M04002</DisplayC>
+    <DisplayI>Images\00000039.ico</DisplayI>
+    <DisplayT></DisplayT>
+    <DataInTag>IMPTL</DataInTag>
+    <MoreOp>0</MoreOp>
+    <OrderID>1</OrderID>
+    <DisplayM>A</DisplayM>
+  </SingleOperations>
+</ObjectOperations>

@@ -1,0 +1,62 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3603.TestPaperPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3603;component/Themes/Default/UMPS3603/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3603;component/Themes/Default/UMPS3603/MainPageStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+
+    <Grid Background="White" Width="750">
+        <ScrollViewer>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" HorizontalAlignment="Center">
+                    <TextBlock Name="PaperName" Text="PaperName" FontSize="30"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1" HorizontalAlignment="Center">
+                    <TextBlock Name="PaperInfoName" Text="Time : Score:" FontSize="25"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="2" HorizontalAlignment="Center">
+                    <TextBlock Name="NoteName" Text="Note:" FontSize="15" Visibility="Collapsed"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="3" HorizontalAlignment="Left">
+                    <TextBlock Name="TrueOrFalse" Text="True or False:" FontSize="20" Visibility="Collapsed"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid Margin="40,0" Name="TrueOrFalseQuestions"></Grid>
+                </Grid>
+                <Grid Grid.Row="5" HorizontalAlignment="Left">
+                    <TextBlock Name="SingleChoice" Text="SingleChoice:" FontSize="20"  Visibility="Collapsed"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid Margin="40,0" Name="SingleChoiceQuestions"></Grid>
+                </Grid>
+                <Grid Grid.Row="7" HorizontalAlignment="Left">
+                    <TextBlock Name="MultipleChoice" Text="Multiple Choice:" FontSize="20" Visibility="Collapsed"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="8">
+                    <Grid Margin="40,0" Name="MultipleChoiceQuestions"></Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</umpc:UMPUserControl>
+

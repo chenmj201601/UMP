@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="UMP.MAMT.CreateDatabaseObject.UCSelectDatabaseType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="565">
+    <Grid Margin="0" Background="Transparent">
+        <TabControl Margin="0" Background="Transparent">
+            <TabItem x:Name="TabItemDatabaseType" Style="{DynamicResource TabItemDatabaseStyle}"  Header=" 语言包文字代替 ">
+                <Grid Background="Transparent">
+                    <DockPanel Margin="15,30,15,0" Height="24" VerticalAlignment="Top">
+                        <Label x:Name="LabelSelectDatabase" Style="{DynamicResource LabelSelectDatabaseStyle}">请选择数据库类型</Label>
+                        <Label Margin="8,12,0,0" Height="1" Background="LightGray" VerticalAlignment="Top"/>
+                    </DockPanel>
+                    <RadioButton x:Name="RadioButtonDBType2" Style="{DynamicResource RadioButtonDBType2Style}">MS SQL Server</RadioButton>
+                    <RadioButton x:Name="RadioButtonDBType3" Style="{DynamicResource RadioButtonDBType3Style}">Oracle</RadioButton>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

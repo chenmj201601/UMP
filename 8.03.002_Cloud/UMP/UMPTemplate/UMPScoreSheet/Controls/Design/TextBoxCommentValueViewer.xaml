@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="VoiceCyber.UMP.ScoreSheets.Controls.Design.TextBoxCommentValueViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Loaded="TextBoxCommentValueViewer_OnLoaded">
+    <Grid>
+        <Border Name="BorderPanel">
+            <TextBox Name="TxtComment" Margin="3,2" TextWrapping="Wrap" AcceptsReturn="True" MinHeight="50" LostFocus="TxtComment_OnLostFocus"></TextBox>
+        </Border>
+    </Grid>
+</UserControl>

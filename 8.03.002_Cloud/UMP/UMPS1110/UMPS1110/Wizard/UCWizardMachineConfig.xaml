@@ -1,0 +1,161 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1110.Wizard.UCWizardMachineConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             xmlns:editor="clr-namespace:UMPS1110.Editors"
+             xmlns:local="clr-namespace:UMPS1110"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="500" d:Margin="0" Width="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1110;component/Themes/Default/UMPS1110/ResourceMainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="5" Style="{x:Null}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                            <ColumnDefinition Width="60*"></ColumnDefinition>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="LabMachineIP" Height="30" Margin="5" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">LabMachineIP</Label>
+                        <vcc:IPv4AddressTextBox Name="IPTextBox" Grid.Column="2" Grid.Row="1" Margin="5" Background="White"
+                                BorderThickness="0"></vcc:IPv4AddressTextBox>
+
+                        <Label x:Name="LabLogPath" Height="30" Margin="5" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">LogPath</Label>
+                        <TextBox x:Name="TexLogPath" Margin="5" Grid.Column="2" Grid.Row="2"></TextBox>
+
+                        <Label x:Name="LabCatalog" Margin="5" Height="30" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left">Catalog</Label>
+                        <TextBox x:Name="EditorCatalog" Grid.Column="2" Margin="5" Grid.Row="3"></TextBox>
+                        <!--<editor:UCPropertyEditor400 x:Name="EditorCatalog" Grid.Column="1" Margin="5" Background="White"
+                                        MainPage="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:ResourceMainPage}}}"
+                PropertyInfoItem="{Binding PropertyInfoItem,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:UCResourcePropertyEditor}}}"></editor:UCPropertyEditor400>-->
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                            <ColumnDefinition Width="20*"></ColumnDefinition>
+                            <ColumnDefinition Width="20*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="CheckLicense" Margin="5" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">License Serive</CheckBox>
+                        <!--<Label x:Name="LabLicense" Margin="5" Grid.Column="2">License Serive</Label>-->
+                        <Label x:Name="LabLicensePort" Margin="5" Grid.Column="2" Grid.Row="0">Port :</Label>
+                        <TextBox x:Name="TexLicensePort" Margin="5" Grid.Column="3" Grid.Row="0">3070</TextBox>
+
+                        <CheckBox x:Name="CheckDEC" Margin="5" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">DEC Serive</CheckBox>
+                        <!--<Label x:Name="LabDEC" Margin="5" Grid.Column="2">DEC Serive</Label>-->
+                        <Label x:Name="LabDECPort" Margin="5" Grid.Column="2" Grid.Row="1">Port :</Label>
+                        <TextBox x:Name="TexDECPort" Margin="5" Grid.Column="3" Grid.Row="1">3072</TextBox>
+
+                        <CheckBox x:Name="CheckCTIHub" Margin="5" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">CTIHub Serive</CheckBox>
+                        <!--<Label x:Name="LabCTIHub" Margin="5" Grid.Column="2">CTIHub Serive</Label>-->
+                        <Label x:Name="LabCTIHubPort" Margin="5" Grid.Column="2" Grid.Row="2">Port :</Label>
+                        <TextBox x:Name="TexCTIHubPort" Margin="5" Grid.Column="3" Grid.Row="2">3420</TextBox>
+
+                        <CheckBox x:Name="CheckDBBridge" Margin="5" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">DBBridge Serive</CheckBox>
+                        <!--<Label x:Name="LabDBBridge" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabDBBridgePort" Margin="5" Grid.Column="2" Grid.Row="3">Port :</Label>
+                        <TextBox x:Name="TexDBBridgePort" Margin="5" Grid.Column="3" Grid.Row="3">3004</TextBox>
+
+                        <CheckBox x:Name="CheckAlarmMonitor" Margin="5" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center">AlarmMonitor Serive</CheckBox>
+                        <!--<Label x:Name="LabAlarmMonitor" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabAlarmMonitorPort" Margin="5" Grid.Column="2" Grid.Row="4">Port :</Label>
+                        <TextBox x:Name="TexAlarmMonitorPort" Margin="5" Grid.Column="3" Grid.Row="4">3101</TextBox>
+
+                        <CheckBox x:Name="CheckAlarm" Margin="5" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Alarm Serive</CheckBox>
+                        <!--<Label x:Name="LabAlarm" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabAlarmPort" Margin="5" Grid.Column="2" Grid.Row="5">Port :</Label>
+                        <TextBox x:Name="TexAlarmPort" Margin="5" Grid.Column="3" Grid.Row="5">3100</TextBox>
+
+                        <CheckBox x:Name="CheckDocumentProcess" Margin="5" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center">DocumentProcess Serive</CheckBox>
+                        <!--<Label x:Name="LabDocumentProcess" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabDocumentProcessPort" Margin="5" Grid.Column="2" Grid.Row="6">Port :</Label>
+                        <TextBox x:Name="TexDocumentProcessPort" Margin="5" Grid.Column="3" Grid.Row="6">3301</TextBox>
+
+                        <CheckBox x:Name="CheckRecord" Margin="5" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Record Serive</CheckBox>
+                        <!--<Label x:Name="LabRecord" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabRecordPort" Margin="5" Grid.Column="2" Grid.Row="7">Port:</Label>
+                        <TextBox x:Name="TexRecordPort" Margin="5" Grid.Column="3" Grid.Row="7">3001</TextBox>
+
+                        <CheckBox x:Name="CheckScreen" Margin="5" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center">Screen Serive</CheckBox>
+                        <!--<Label x:Name="LabScreen" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabScreenPort" Margin="5" Grid.Column="2" Grid.Row="8">Port:</Label>
+                        <TextBox x:Name="TexScreenPort" Margin="5" Grid.Column="3" Grid.Row="8">3012</TextBox>
+
+                        <CheckBox x:Name="CheckSFTP" Margin="5" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">SFTP Serive</CheckBox>
+                        <!--<Label x:Name="LabSFTP" Margin="5" Grid.Column="2"></Label>-->
+                        <Label x:Name="LabSFTPPort" Margin="5" Grid.Column="2" Grid.Row="9">Port :</Label>
+                        <TextBox x:Name="TexSFTPPort" Margin="5" Grid.Column="3" Grid.Row="9">3022</TextBox>
+                        <Grid Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                <ColumnDefinition Width="60*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="LabSFTPPath" Grid.Column="0" Margin="5" HorizontalAlignment="Right">根目录:</Label>
+                            <TextBox x:Name="EditorDirectory" Grid.Column="1" Margin="5"></TextBox>
+                            <!--<editor:UCPropertyEditor400 x:Name="EditorDirectory" Grid.Column="1" Margin="5" Background="White"
+                                            MainPage="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:ResourceMainPage}}}"
+                PropertyInfoItem="{Binding PropertyInfoItem,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:UCResourcePropertyEditor}}}"></editor:UCPropertyEditor400>-->
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                            <ColumnDefinition Width="20*"></ColumnDefinition>
+                            <ColumnDefinition Width="20*"></ColumnDefinition>
+                            <ColumnDefinition Width="20*"></ColumnDefinition>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ButnBack" Grid.Column="2" Height="30" Margin="5"></Button>
+                        <Button x:Name="ButnPrevious" Grid.Column="3" Height="30" Margin="5"></Button>
+                        <Button x:Name="ButnNext" Grid.Column="4" Height="30" Margin="5"></Button>
+                    </Grid>
+                    <!--<umpc:PopupPanel x:Name="UCPopupPanel"
+                                     IsOpen="False"
+                                     Style="{DynamicResource PopupInfo}">
+                </umpc:PopupPanel>-->
+                </Grid>
+        </ScrollViewer>
+    </Grid>
+</umpc:UMPUserControl>

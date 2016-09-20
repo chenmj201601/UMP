@@ -1,0 +1,94 @@
+﻿<umpc:UMPUserControl x:Class="UMPS4413.UCSeatModify"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="420"
+             Width="420" Height="350">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="20,15,10,5">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*"></ColumnDefinition>
+                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Name="GridCount" Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormBorderItem}">
+                        <TextBlock Name="LbCount" Text="Count"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormBorderItem}">
+                        <TextBlock Name="LbName" Text="Seat Name"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormBorderItem}">
+                        <TextBlock Name="LbExtension" Text="Extension"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormBorderItem}">
+                        <TextBlock Name="LbState" Text="State"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormBorderItem}">
+                        <TextBlock Name="LbLevel" Text="Level"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="5" Style="{DynamicResource FormBorderItem}" VerticalAlignment="Top">
+                        <TextBlock Name="LbDescription" Text="Description"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormBorderValue}">
+                        <vcc:IntegerUpDown Name="TxtCount" Width="180"></vcc:IntegerUpDown>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource FormBorderValue}">
+                        <TextBox Name="TxtName" Width="180"></TextBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" Style="{DynamicResource FormBorderValue}">
+                        <StackPanel Orientation="Vertical">
+                           <TextBox Name="TxtExtension" Width="180"></TextBox>
+                           <CheckBox Name="CbEqualName" Content="Equal Name" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,2"></CheckBox>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="3" Style="{DynamicResource FormBorderValue}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Name="RadioStateEnable" Content="Enable" VerticalContentAlignment="Center" Margin="5,0" MinWidth="80"></RadioButton>
+                            <RadioButton Name="RadioStateDisable" Content="Disable" VerticalContentAlignment="Center" Margin="5,0" MinWidth="80"></RadioButton>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="4" Style="{DynamicResource FormBorderValue}">
+                        <vcc:IntegerUpDown Name="TxtLevel" Width="180"></vcc:IntegerUpDown>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="5" Style="{DynamicResource FormBorderValue}">
+                        <TextBox Name="TxtDescription" Height="80" Width="180" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" AcceptsReturn="True"></TextBox>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnConfirm" Content="Confirm" ></Button>
+                </Border>
+                <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnClose" Content="Close"></Button>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

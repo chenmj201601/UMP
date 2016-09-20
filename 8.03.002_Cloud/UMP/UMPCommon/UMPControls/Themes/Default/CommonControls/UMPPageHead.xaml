@@ -1,0 +1,715 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:VoiceCyber.UMP.Controls">
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+
+    <Style x:Key="BtnOpenIMPanelStyle" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border">
+                        <Grid>
+                            <Border Name="Bg" Background="{DynamicResource SystemBrush1}" Opacity="0.1"></Border>
+                            <Border Name="Over" Background="{DynamicResource SystemBrush7}" Visibility="Collapsed"></Border>
+                            <ContentPresenter Margin="1"></ContentPresenter>
+                            <Border Name="MsgCount"
+                                    Visibility="{Binding IsMsgCountVisible,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    Margin="0,-8,-8,0">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFFFFF" ShadowDepth="0"></DropShadowEffect>
+                                </Border.Effect>
+                                <Grid>
+                                    <TextBlock Foreground="Red"
+                                           FontWeight="Bold"
+                                           FontSize="16"
+                                           Text="{Binding MsgCount}">
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="MiddlePageHeadTemplate" TargetType="{x:Type local:UMPPageHead}">
+        <Border Name="BorderPanel">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Name="BorderBg" Opacity="0.6" Background="{DynamicResource SystemBrush1}">
+                </Border>
+                <Border Grid.Row="0" Padding="15,5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Name="BorderLogo" Grid.Column="0">
+                            <Image Width="64" Height="64" Stretch="Uniform"
+                                       Source="{Binding Logo,RelativeSource={RelativeSource TemplatedParent}}"></Image>
+                        </Border>
+                        <Border Name="BorderAppName" Grid.Column="1">
+                            <TextBlock Text="{TemplateBinding AppName}"
+                                           Foreground="{DynamicResource SystemBrush7}"
+                                           FontSize="18"
+                                           FontFamily="Microsoft Yahei"
+                                           FontWeight="Bold"
+                                           Margin="15,5,5,20"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Name="BorderUserRole" Grid.Column="2" Margin="15,0">
+                            <Grid Margin="0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50*"></RowDefinition>
+                                    <RowDefinition Height="50*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Column="0" Grid.Row="0" 
+                                                   VerticalAlignment="Center"
+                                                   Width="20" Height="20" Stretch="Uniform"
+                                                   Style="{DynamicResource PageHeadUserImageStyle}"></Image>
+                                <Image Grid.Column="0" Grid.Row="1"
+                                                   VerticalAlignment="Center"
+                                                   Width="20" Height="20" Stretch="Uniform"
+                                                   Style="{DynamicResource PageHeadRoleImageStyle}"></Image>
+                                <TextBlock Grid.Column="1" Grid.Row="0"
+                                                   VerticalAlignment="Center"
+                                                   Text="{TemplateBinding UserName}"></TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="1"
+                                                   VerticalAlignment="Center"
+                                                   Text="{TemplateBinding RoleName}"></TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Name="BorderHeadIcon" Grid.Column="3"
+                                            BorderThickness="2"
+                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                            Background="{DynamicResource SystemBrush10}">
+                            <Button x:Name="PART_ButtonOpenIM" Command="local:UMPPageHead.OpenIMCommand" 
+                                                Style="{DynamicResource BtnOpenIMPanelStyle}">
+                                <Image Width="64" Height="64" Stretch="Uniform"
+                                               Source="{Binding HeadIcon,RelativeSource={RelativeSource TemplatedParent}}"></Image>
+                            </Button>
+                        </Border>
+                        <Border Name="BorderOther" Grid.Column="4">
+                            <Grid Margin="5,5,0,5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Button Grid.Row="0" Style="{DynamicResource HomeSettingStyle}"
+                                                ToolTip="{TemplateBinding ToolTipHome}"
+                                                Command="local:UMPPageHead.NavigateHomeCommand">
+                                    <Image Stretch="Uniform" Style="{DynamicResource PageHeadHomeImageStyle}"></Image>
+                                </Button>
+                                <Button Grid.Row="1" Style="{DynamicResource HomeSettingStyle}"
+                                                ToolTip="{TemplateBinding ToolTipSetting}"
+                                                Command="ApplicationCommands.Open">
+                                    <Image Stretch="Uniform" Style="{DynamicResource PageHeadSettingImageStyle}"></Image>
+                                </Button>
+                                <Popup Name="PART_PopupSetting" Grid.Row="1" 
+                                                       StaysOpen="False" 
+                                                       PopupAnimation="Slide" 
+                                                       AllowsTransparency="True">
+                                    <Border Background="{DynamicResource SystemBrush11}"
+                                                        BorderBrush="{DynamicResource SystemBrush3}"
+                                                        BorderThickness="1"
+                                                        MinWidth="250">
+                                        <Grid>
+                                            <Border Grid.RowSpan="6" Background="{DynamicResource SystemBrush1}" Opacity="0.8"></Border>
+                                            <Grid Margin="5,2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Grid.Row="0" Text="{TemplateBinding LabelTheme}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                                <ListBox Name="PART_ListBoxThemes" Grid.Row="1" 
+                                                                     ItemsSource="{Binding ListThemes, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}" 
+                                                                     Style="{DynamicResource ListBoxStyle}">
+                                                    <ListBox.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                        </ItemsPanelTemplate>
+                                                    </ListBox.ItemsPanel>
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                            <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                                <Grid>
+                                                                    <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                    <StackPanel Orientation="Vertical" Margin="2">
+                                                                        <Image Width="64" Height="64" Stretch="Uniform"
+                                                                                       Source="{Binding ThumbImage}"
+                                                                                           HorizontalAlignment="Center"></Image>
+                                                                        <!--<TextBlock Text="{Binding Display}" 
+                                                                                           HorizontalAlignment="Center"
+                                                                                           Margin="2"></TextBlock>-->
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </Border>
+                                                            <DataTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="Border" Property="Background"
+                                                                            Value="{DynamicResource SystemBrush10}"></Setter>
+                                                                </Trigger>
+                                                            </DataTemplate.Triggers>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                    <ListBox.ItemContainerStyle>
+                                                        <Style TargetType="{x:Type ListBoxItem}">
+                                                            <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                        </Style>
+                                                    </ListBox.ItemContainerStyle>
+                                                </ListBox>
+                                                <TextBlock Grid.Row="2" Text="{TemplateBinding LabelLanguage}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                                <ListBox Name="PART_ListBoxLangs" Grid.Row="3" Style="{DynamicResource ListBoxStyle}"
+                                                                     ItemsSource="{Binding ListLanugages, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}">
+                                                    <ListBox.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                        </ItemsPanelTemplate>
+                                                    </ListBox.ItemsPanel>
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                            <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                                <Grid>
+                                                                    <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                    <StackPanel Orientation="Vertical" Margin="2">
+                                                                        <TextBlock Text="{Binding Display}" 
+                                                                               HorizontalAlignment="Center"></TextBlock>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </Border>
+                                                            <DataTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="Border" Property="Background"
+                                                                                Value="{DynamicResource SystemBrush10}"></Setter>
+                                                                </Trigger>
+                                                            </DataTemplate.Triggers>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                    <ListBox.ItemContainerStyle>
+                                                        <Style TargetType="{x:Type ListBoxItem}">
+                                                            <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                        </Style>
+                                                    </ListBox.ItemContainerStyle>
+                                                </ListBox>
+                                                <Border Grid.Row="4" Height="2" Margin="5,5,5,2" BorderBrush="Gray" BorderThickness="1"></Border>
+                                                <WrapPanel Grid.Row="5" Margin="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <!--<Button Style="{StaticResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipChangPwd}"
+                                                                        Command="local:UMPPageHead.ChangePasswordCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/key.png"></Image>
+                                                                </Button>-->
+                                                    <Button Style="{DynamicResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipCloseLeft}"
+                                                                        Command="local:UMPPageHead.OpenCloseLeftPanelCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/leftpanel.png"></Image>
+                                                                </Button>
+                                                                <!--<Button Style="{StaticResource QuikButtonStyle}"
+                                                                        Command="local:UMPPageHead.LogoutCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/logout.png" ToolTip="{TemplateBinding ToolTipLogout}"></Image>
+                                                                </Button>-->
+                                                    <!--<Button Style="{DynamicResource QuikButtonStyle}" Visibility="Collapsed"
+                                                                        Command="local:UMPPageHead.SetDefaultPageCommand">
+                                                        <Image Stretch="Uniform" Source="Images/00004.png" ToolTip="{TemplateBinding ToolTipSetDefaultPage}" Visibility="Collapsed"></Image>
+                                                    </Button>-->
+                                                </WrapPanel>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" Background="{DynamicResource SystemBrush7}"></Border>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MinPageHeadTemplate" TargetType="{x:Type local:UMPPageHead}">
+        <Border Name="BorderPanel" Background="{DynamicResource SystemBrush11}">
+            <Border Height="48">
+                <Border.Background>
+                    <SolidColorBrush Color="LightCyan" Opacity="0.4"></SolidColorBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="270" ShadowDepth="5" Opacity="1" BlurRadius="5"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Stretch="Uniform"
+                       Width="48"
+                       Height="38"
+                       Margin="5,0,0,0"
+                       Source="Images/ump.png"></Image>
+                    <Label Grid.Column="1"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Content="{TemplateBinding AppName}"
+                       Margin="15,0,0,0"
+                       VerticalAlignment="Center"
+                       Foreground="#FFE3EACA"></Label>
+                    <StackPanel Grid.Column="3" Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0">
+
+                        <Grid>
+                            <Button x:Name="PART_ButtonSetting" Content="{TemplateBinding ToolTipSetting}" Cursor="Hand"
+                                Command="ApplicationCommands.Open">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Column="0"
+                                                   Stretch="Uniform" Width="25"
+                                                       Style="{DynamicResource PageHeadSetting2ImageStyle}"></Image>
+                                                <Label Grid.Column="1" FontSize="13" FontWeight="Light" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                               Content="{TemplateBinding Content}"></Label>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="15"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Popup Name="PART_PopupSetting"
+                                                       StaysOpen="False" 
+                                                       PopupAnimation="Slide" 
+                                                       AllowsTransparency="True">
+                                <Border Background="{DynamicResource SystemBrush11}"
+                                                        BorderBrush="{DynamicResource SystemBrush3}"
+                                                        BorderThickness="1"
+                                                        MinWidth="250">
+                                    <Grid>
+                                        <Border Grid.RowSpan="6" Background="{DynamicResource SystemBrush1}" Opacity="0.8"></Border>
+                                        <Grid Margin="5,2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" Text="{TemplateBinding LabelTheme}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                            <ListBox Name="PART_ListBoxThemes" Grid.Row="1" 
+                                                                     ItemsSource="{Binding ListThemes, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}" 
+                                                                     Style="{DynamicResource ListBoxStyle}">
+                                                <ListBox.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ListBox.ItemsPanel>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                        <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                            <Grid>
+                                                                <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                <StackPanel Orientation="Vertical" Margin="2">
+                                                                    <Image Width="64" Height="64" Stretch="Uniform"
+                                                                                       Source="{Binding ThumbImage}"
+                                                                                           HorizontalAlignment="Center"></Image>
+                                                                    <!--<TextBlock Text="{Binding Display}" 
+                                                                                           HorizontalAlignment="Center"
+                                                                                           Margin="2"></TextBlock>-->
+                                                                </StackPanel>
+                                                            </Grid>
+                                                        </Border>
+                                                        <DataTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="Border" Property="Background"
+                                                                            Value="{DynamicResource SystemBrush10}"></Setter>
+                                                            </Trigger>
+                                                        </DataTemplate.Triggers>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                            </ListBox>
+                                            <TextBlock Grid.Row="2" Text="{TemplateBinding LabelLanguage}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                            <ListBox Name="PART_ListBoxLangs" Grid.Row="3" Style="{DynamicResource ListBoxStyle}"
+                                                                     ItemsSource="{Binding ListLanugages, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}">
+                                                <ListBox.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ListBox.ItemsPanel>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                        <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                            <Grid>
+                                                                <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                <StackPanel Orientation="Vertical" Margin="2">
+                                                                    <TextBlock Text="{Binding Display}" 
+                                                                               HorizontalAlignment="Center"></TextBlock>
+                                                                </StackPanel>
+                                                            </Grid>
+                                                        </Border>
+                                                        <DataTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="Border" Property="Background"
+                                                                                Value="{DynamicResource SystemBrush10}"></Setter>
+                                                            </Trigger>
+                                                        </DataTemplate.Triggers>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                            </ListBox>
+                                            <Border Grid.Row="4" Height="2" Margin="5,5,5,2" BorderBrush="Gray" BorderThickness="1"></Border>
+                                            <WrapPanel Grid.Row="5" Margin="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                <!--<Button Style="{StaticResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipChangPwd}"
+                                                                        Command="local:UMPPageHead.ChangePasswordCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/key.png"></Image>
+                                                                </Button>-->
+                                                <Button Style="{DynamicResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipCloseLeft}"
+                                                                        Command="local:UMPPageHead.OpenCloseLeftPanelCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/leftpanel.png"></Image>
+                                                                </Button>
+                                                                <!--<Button Style="{StaticResource QuikButtonStyle}"
+                                                                        Command="local:UMPPageHead.LogoutCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/logout.png" ToolTip="{TemplateBinding ToolTipLogout}"></Image>
+                                                                </Button>-->
+                                                <!--<Button Style="{DynamicResource QuikButtonStyle}"
+                                                                        Command="local:UMPPageHead.SetDefaultPageCommand">
+                                                    <Image Stretch="Uniform" Source="Images/00004.png" ToolTip="{TemplateBinding ToolTipSetDefaultPage}"></Image>
+                                                </Button>-->
+                                            </WrapPanel>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                            <Image VerticalAlignment="Center" Margin="2"
+                               Stretch="Uniform"
+                               Width="25"
+                               Style="{DynamicResource PageHeadUser2ImageStyle}"></Image>
+                            <Label VerticalAlignment="Center" FontSize="13" FontWeight="Light" Content="{Binding UserName,RelativeSource={RelativeSource TemplatedParent}}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                            <Image VerticalAlignment="Center" Margin="2" 
+                               Stretch="Uniform" 
+                               Style="{DynamicResource PageHeadRole2ImageStyle}"
+                               Width="25"></Image>
+                            <Label VerticalAlignment="Center" FontSize="13" FontWeight="Light" Content="{TemplateBinding RoleName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type local:UMPPageHead}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:UMPPageHead}">
+                    <Border Name="BorderPanel">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="5"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Name="BorderBg" Opacity="0.6" Background="{DynamicResource SystemBrush1}">
+                            </Border>
+                            <Border Grid.Row="0" Padding="15,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Name="BorderLogo" Grid.Column="0">
+                                        <Image Width="64" Height="64" Stretch="Uniform"
+                                       Source="{Binding Logo,RelativeSource={RelativeSource TemplatedParent}}"></Image>
+                                    </Border>
+                                    <Border Name="BorderAppName" Grid.Column="1">
+                                        <TextBlock Text="{TemplateBinding AppName}"
+                                           Foreground="{DynamicResource SystemBrush7}"
+                                           FontSize="18"
+                                           FontFamily="Microsoft Yahei"
+                                           FontWeight="Bold"
+                                           Margin="15,5,5,20"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                    <Border Name="BorderUserRole" Grid.Column="2" Margin="15,0">
+                                        <Grid Margin="0,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50*"></RowDefinition>
+                                                <RowDefinition Height="50*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Image Grid.Column="0" Grid.Row="0" 
+                                                   VerticalAlignment="Center"
+                                                   Width="20" Height="20" Stretch="Uniform"
+                                                   Source="Images/user.png"></Image>
+                                            <Image Grid.Column="0" Grid.Row="1"
+                                                   VerticalAlignment="Center"
+                                                   Width="20" Height="20" Stretch="Uniform"
+                                                   Source="Images/role.png"></Image>
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                   VerticalAlignment="Center"
+                                                   Text="{TemplateBinding UserName}"></TextBlock>
+                                            <TextBlock Grid.Column="1" Grid.Row="1"
+                                                   VerticalAlignment="Center"
+                                                   Text="{TemplateBinding RoleName}"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Name="BorderHeadIcon" Grid.Column="3"
+                                            BorderThickness="2"
+                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                            Background="{DynamicResource SystemBrush10}">
+                                        <Button x:Name="PART_ButtonOpenIM" Command="local:UMPPageHead.OpenIMCommand" 
+                                                Style="{DynamicResource BtnOpenIMPanelStyle}">
+                                            <Image Width="64" Height="64" Stretch="Uniform"
+                                               Source="{Binding HeadIcon,RelativeSource={RelativeSource TemplatedParent}}"></Image>
+                                        </Button>
+                                    </Border>
+                                    <Border Name="BorderOther" Grid.Column="4">
+                                        <Grid Margin="5,5,0,5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Button Grid.Row="0" Style="{DynamicResource HomeSettingStyle}"
+                                                ToolTip="{TemplateBinding ToolTipHome}"
+                                                Command="local:UMPPageHead.NavigateHomeCommand">
+                                                <Image Stretch="Uniform" Source="Images/home.png"></Image>
+                                            </Button>
+                                            <Button Grid.Row="1" Style="{DynamicResource HomeSettingStyle}"
+                                                ToolTip="{TemplateBinding ToolTipSetting}"
+                                                Command="ApplicationCommands.Open">
+                                                <Image Stretch="Uniform" Source="Images/setting.png"></Image>
+                                            </Button>
+                                            <Popup Name="PART_PopupSetting" Grid.Row="1" 
+                                                       StaysOpen="False" 
+                                                       PopupAnimation="Slide" 
+                                                       AllowsTransparency="True">
+                                                <Border Background="{DynamicResource SystemBrush11}"
+                                                        BorderBrush="{DynamicResource SystemBrush3}"
+                                                        BorderThickness="1"
+                                                        MinWidth="250">
+                                                    <Grid>
+                                                        <Border Grid.RowSpan="6" Background="{DynamicResource SystemBrush1}" Opacity="0.8"></Border>
+                                                        <Grid Margin="5,2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <TextBlock Grid.Row="0" Text="{TemplateBinding LabelTheme}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                                            <ListBox Name="PART_ListBoxThemes" Grid.Row="1" 
+                                                                     ItemsSource="{Binding ListThemes, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}" 
+                                                                     Style="{DynamicResource ListBoxStyle}">
+                                                                <ListBox.ItemsPanel>
+                                                                    <ItemsPanelTemplate>
+                                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                                    </ItemsPanelTemplate>
+                                                                </ListBox.ItemsPanel>
+                                                                <ListBox.ItemTemplate>
+                                                                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                                        <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                                            <Grid>
+                                                                                <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                                <StackPanel Orientation="Vertical" Margin="2">
+                                                                                    <Image Width="64" Height="64" Stretch="Uniform"
+                                                                                       Source="{Binding ThumbImage}"
+                                                                                           HorizontalAlignment="Center"></Image>
+                                                                                    <!--<TextBlock Text="{Binding Display}" 
+                                                                                           HorizontalAlignment="Center"
+                                                                                           Margin="2"></TextBlock>-->
+                                                                                </StackPanel>
+                                                                            </Grid>
+                                                                        </Border>
+                                                                        <DataTemplate.Triggers>
+                                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                                <Setter TargetName="Border" Property="Background"
+                                                                            Value="{DynamicResource SystemBrush10}"></Setter>
+                                                                            </Trigger>
+                                                                        </DataTemplate.Triggers>
+                                                                    </DataTemplate>
+                                                                </ListBox.ItemTemplate>
+                                                                <ListBox.ItemContainerStyle>
+                                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                                        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                                    </Style>
+                                                                </ListBox.ItemContainerStyle>
+                                                            </ListBox>
+                                                            <TextBlock Grid.Row="2" Text="{TemplateBinding LabelLanguage}" Style="{DynamicResource TextBlockItemTitle}"></TextBlock>
+                                                            <ListBox Name="PART_ListBoxLangs" Grid.Row="3" Style="{DynamicResource ListBoxStyle}"
+                                                                     ItemsSource="{Binding ListLanugages, 
+                                                                RelativeSource={RelativeSource TemplatedParent}}">
+                                                                <ListBox.ItemsPanel>
+                                                                    <ItemsPanelTemplate>
+                                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                                    </ItemsPanelTemplate>
+                                                                </ListBox.ItemsPanel>
+                                                                <ListBox.ItemTemplate>
+                                                                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                                        <Border Name="Border"
+                                                                            BorderThickness="1"
+                                                                            Background="{DynamicResource SystemBrush1}"
+                                                                            BorderBrush="{DynamicResource SystemBrush3}"
+                                                                            ToolTip="{Binding Description}">
+                                                                            <Grid>
+                                                                                <Border Name="Selected"
+                                                                                    Background="{DynamicResource SystemBrush10}"
+                                                                                    Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                                                                <StackPanel Orientation="Vertical" Margin="2">
+                                                                                    <TextBlock Text="{Binding Display}" 
+                                                                               HorizontalAlignment="Center"></TextBlock>
+                                                                                </StackPanel>
+                                                                            </Grid>
+                                                                        </Border>
+                                                                        <DataTemplate.Triggers>
+                                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                                <Setter TargetName="Border" Property="Background"
+                                                                                Value="{DynamicResource SystemBrush10}"></Setter>
+                                                                            </Trigger>
+                                                                        </DataTemplate.Triggers>
+                                                                    </DataTemplate>
+                                                                </ListBox.ItemTemplate>
+                                                                <ListBox.ItemContainerStyle>
+                                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                                        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+                                                                    </Style>
+                                                                </ListBox.ItemContainerStyle>
+                                                            </ListBox>
+                                                            <Border Grid.Row="4" Height="2" Margin="5,5,5,2" BorderBrush="Gray" BorderThickness="1"></Border>
+                                                            <WrapPanel Grid.Row="5" Margin="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <!--<Button Style="{StaticResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipChangPwd}"
+                                                                        Command="local:UMPPageHead.ChangePasswordCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/key.png"></Image>
+                                                                </Button>-->
+                                                                <Button Style="{DynamicResource QuikButtonStyle}" ToolTip="{TemplateBinding ToolTipCloseLeft}"
+                                                                        Command="local:UMPPageHead.OpenCloseLeftPanelCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/leftpanel.png"></Image>
+                                                                </Button>
+                                                                <!--<Button Style="{StaticResource QuikButtonStyle}"
+                                                                        Command="local:UMPPageHead.LogoutCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/logout.png" ToolTip="{TemplateBinding ToolTipLogout}"></Image>
+                                                                </Button>-->
+                                                                <!--<Button Style="{DynamicResource QuikButtonStyle}"
+                                                                        Command="local:UMPPageHead.SetDefaultPageCommand">
+                                                                    <Image Stretch="Uniform" Source="Images/00004.png" ToolTip="{TemplateBinding ToolTipSetDefaultPage}"></Image>
+                                                                </Button>-->
+                                                            </WrapPanel>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Border>
+                                            </Popup>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <Border Grid.Row="1" Background="{DynamicResource SystemBrush7}"></Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="PageHeadType" Value="Middle">
+                <Setter Property="Template" Value="{StaticResource MiddlePageHeadTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="PageHeadType" Value="Min">
+                <Setter Property="Template" Value="{StaticResource MinPageHeadTemplate}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

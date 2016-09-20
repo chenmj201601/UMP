@@ -1,0 +1,63 @@
+﻿<umpc:UMPUserControl  x:Class="UMPS2400.ChildUCs.AppendOrInsertBindStrategy02"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:ctrl="clr-namespace:UMPS2400.Classes"        
+             mc:Ignorable="d" 
+             d:DesignHeight="355" d:DesignWidth="700">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default/UMPS2400/EncryptMainPageResources.xaml"></ResourceDictionary>
+                <!--<ResourceDictionary Source="../Themes/Default/UMPS2400/UC_AddPolicyResources.xaml"></ResourceDictionary>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="Transparent" Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Background="Transparent" Margin="5,10,5,0" Height="185" VerticalAlignment="Top">
+            <TabItem Header=" Key Strategy Details " Name="TabOjbect01" Background="Transparent" FontFamily="SimSun" FontSize="12" Height="24">
+                <Grid>
+                    <ListView Height="150" Name="LvPropertyAndValues" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" Style="{DynamicResource ListViewRecord}"
+                                                                          ItemContainerStyle="{DynamicResource ListViewItemRecord}"></ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TabControl Background="Transparent" Margin="5,200,5,0" Height="95" VerticalAlignment="Top">
+            <TabItem Header=" Duration " Name="TabOjbect02" Background="Transparent" FontFamily="SimSun" FontSize="12">
+                <Grid>
+                    <RadioButton Height="18" Margin="15,15,0,0" Width="Auto" Name="RadioBeginDate" FontFamily="SimSun" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="DurationBegin" Checked="RadioBeginDate_Checked">开始于</RadioButton>
+                    <ctrl:MaskedTextBox x:Name="TextStartDateTime" Height="24" Margin="120,10,0,0" VerticalAlignment="Top" InputMask="iiii-ii-ii ii:ii:ii" MaskType="DT" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="130" FontFamily="SimSun" FontSize="12"/>
+                    <my:DatePicker Height="24" HorizontalAlignment="Left" Margin="250,10,0,0" x:Name="StartDate" VerticalAlignment="Top" Width="30" VerticalContentAlignment="Center" BorderBrush="Transparent" xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" Background="Transparent"/>
+                    <RadioButton Height="18" Margin="15,45,0,0" Width="Auto" Name="RadioBeginImmediately" FontFamily="SimSun" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="DurationBegin" Checked="RadioBeginImmediately_Checked">立即开始</RadioButton>
+
+                    <RadioButton Height="18" Margin="355,15,0,0" Width="Auto" Name="RadioEndDate" FontFamily="SimSun" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="DurationEnd" Checked="RadioEndDate_Checked">结束于</RadioButton>
+                    <ctrl:MaskedTextBox x:Name="TextEndDateTime" Height="24" Margin="465,10,0,0" VerticalAlignment="Top" InputMask="iiii-ii-ii ii:ii:ii" MaskType="DT" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="130" FontFamily="SimSun" FontSize="12"/>
+                    <my:DatePicker Height="24" HorizontalAlignment="Left" Margin="595,10,0,0" x:Name="EndDate" VerticalAlignment="Top" Width="30" VerticalContentAlignment="Center" BorderBrush="Transparent" xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" Background="Transparent"/>
+                    <RadioButton Height="18" Margin="355,45,0,0" Width="Auto" Name="RadioNoEndDate" FontFamily="SimSun" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="DurationEnd" Checked="RadioNoEndDate_Checked">无结束时间</RadioButton>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnApply" Click="BtnApply_Click" Content="Confirm" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnCancel" Click="BtnCancel_Click" Content="Close"></Button>
+            </Border>
+        </Grid>
+
+    </Grid>
+</umpc:UMPUserControl>

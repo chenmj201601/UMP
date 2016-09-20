@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoiceCyber.NAudio</RootNamespace>
+    <AssemblyName>VCNAudio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Defines.cs" />
+    <Compile Include="Dmo\AudioMediaSubtypes.cs" />
+    <Compile Include="IWaveBuffer.cs" />
+    <Compile Include="Mixer\BooleanMixerControl.cs" />
+    <Compile Include="Mixer\CustomMixerControl.cs" />
+    <Compile Include="Mixer\ListTextMixerControl.cs" />
+    <Compile Include="Mixer\MixerControl.cs" />
+    <Compile Include="Mixer\MixerControlClass.cs" />
+    <Compile Include="Mixer\MixerFlags.cs" />
+    <Compile Include="Mixer\MixerInterop.cs" />
+    <Compile Include="Mixer\MixerLine.cs" />
+    <Compile Include="Mixer\MixerLineComponentType.cs" />
+    <Compile Include="Mixer\SignedMixerControl.cs" />
+    <Compile Include="Mixer\UnsignedMixerControl.cs" />
+    <Compile Include="MmException.cs" />
+    <Compile Include="MmResult.cs" />
+    <Compile Include="MpegVersion.cs" />
+    <Compile Include="OptReturn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BufferHelpers.cs" />
+    <Compile Include="Utils\ByteArrayExtensions.cs" />
+    <Compile Include="Utils\CircularBuffer.cs" />
+    <Compile Include="Wave\WavePainters\WavePainter.cs" />
+    <Compile Include="Wave\WaveStreams\AiffFileReader.cs" />
+    <Compile Include="Wave\WaveStreams\AudioFileReader.cs" />
+    <Compile Include="Wave\WaveStreams\BlockAlignReductionStream.cs" />
+    <Compile Include="Wave\WaveStreams\BufferedWaveStream.cs" />
+    <Compile Include="Wave\WaveStreams\CustomRateWaveStream.cs" />
+    <Compile Include="Wave\WaveStreams\Mp3NetworkStream.cs" />
+    <Compile Include="Wave\WaveStreams\NetWorkWaveReader.cs" />
+    <Compile Include="Wave\WaveStreams\WaveFormatConversionStream.cs" />
+    <Compile Include="Wave\WaveInputs\IWaveIn.cs" />
+    <Compile Include="Wave\WaveOutputs\IWavePlayer.cs" />
+    <Compile Include="Wave\Others\AcmMp3FrameDecompressor.cs" />
+    <Compile Include="Wave\Others\ChannelMode.cs" />
+    <Compile Include="Wave\Compression\AcmDriverDetails.cs" />
+    <Compile Include="Wave\Compression\AcmDriverDetailsSupportFlags.cs" />
+    <Compile Include="Wave\Compression\AcmDriverEnumFlags.cs" />
+    <Compile Include="Wave\Compression\AcmFormatChoose.cs" />
+    <Compile Include="Wave\Compression\AcmFormatChooseStyleFlags.cs" />
+    <Compile Include="Wave\Compression\AcmFormatDetails.cs" />
+    <Compile Include="Wave\Compression\AcmFormatEnumFlags.cs" />
+    <Compile Include="Wave\Compression\AcmFormatSuggestFlags.cs" />
+    <Compile Include="Wave\Compression\AcmFormatTagDetails.cs" />
+    <Compile Include="Wave\Compression\AcmInterop.cs" />
+    <Compile Include="Wave\Compression\AcmMetrics.cs" />
+    <Compile Include="Wave\Compression\AcmStream.cs" />
+    <Compile Include="Wave\Compression\AcmStreamConvertFlags.cs" />
+    <Compile Include="Wave\Compression\AcmStreamHeader.cs" />
+    <Compile Include="Wave\Compression\AcmStreamHeaderStatusFlags.cs" />
+    <Compile Include="Wave\Compression\AcmStreamHeaderStruct.cs" />
+    <Compile Include="Wave\Compression\AcmStreamOpenFlags.cs" />
+    <Compile Include="Wave\Compression\AcmStreamSizeFlags.cs" />
+    <Compile Include="Wave\Others\Id3v2Tag.cs" />
+    <Compile Include="Wave\Others\IMp3FrameDecompressor.cs" />
+    <Compile Include="Wave\Others\MmTime.cs" />
+    <Compile Include="Wave\WaveStreams\Mp3FileReader.cs" />
+    <Compile Include="Wave\Others\Mp3Frame.cs" />
+    <Compile Include="Wave\Others\MpegLayer.cs" />
+    <Compile Include="Wave\Others\MpegVersion.cs" />
+    <Compile Include="Wave\Others\RiffChunk.cs" />
+    <Compile Include="Wave\Others\WaveBuffer.cs" />
+    <Compile Include="Wave\Others\WaveCallbackInfo.cs" />
+    <Compile Include="Wave\Others\WaveCallbackStrategy.cs" />
+    <Compile Include="Wave\Others\WaveFileChunkReader.cs" />
+    <Compile Include="Wave\WaveOutputs\PlaybackState.cs" />
+    <Compile Include="Wave\SampleProviders\ISampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\MeteringSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\MonoToStereoSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\Pcm16BitToSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\Pcm24BitToSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\Pcm8BitToSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\SampleChannel.cs" />
+    <Compile Include="Wave\SampleProviders\SampleProviderConverterBase.cs" />
+    <Compile Include="Wave\SampleProviders\SampleProviderConverters.cs" />
+    <Compile Include="Wave\SampleProviders\SampleToWaveProvider.cs" />
+    <Compile Include="Wave\SampleProviders\SampleToWaveProvider16.cs" />
+    <Compile Include="Wave\SampleProviders\VolumeSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\WaveToSampleProvider.cs" />
+    <Compile Include="Wave\WaveOutputs\StoppedEventArgs.cs" />
+    <Compile Include="Wave\WaveStreams\WaveFileReader.cs" />
+    <Compile Include="Wave\Others\WaveFilter.cs" />
+    <Compile Include="Wave\Others\WaveFormatCustomMarshaler.cs" />
+    <Compile Include="Wave\Others\WaveHeader.cs" />
+    <Compile Include="Wave\Others\WaveHeaderFlags.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveFileWriter.cs" />
+    <Compile Include="Wave\WaveInputs\WaveIn.cs" />
+    <Compile Include="Wave\WaveInputs\WaveInBuffer.cs" />
+    <Compile Include="Wave\WaveInputs\WaveInCapabilities.cs" />
+    <Compile Include="Wave\Others\WaveInterop.cs" />
+    <Compile Include="Wave\WaveInputs\WaveInEventArgs.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveOut.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveOutBuffer.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveOutCapabilities.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveOutChannelMode.cs" />
+    <Compile Include="Wave\WaveOutputs\WaveOutSupport.cs" />
+    <Compile Include="Wave\WaveProviders\BufferedWaveProvider.cs" />
+    <Compile Include="Wave\WaveProviders\IWaveProvider.cs" />
+    <Compile Include="Wave\WaveFormats\AdpcmWaveFormat.cs" />
+    <Compile Include="Wave\WaveFormats\Gsm610WaveFormat.cs" />
+    <Compile Include="Wave\WaveFormats\Mp3WaveFormat.cs" />
+    <Compile Include="Wave\WaveFormats\WaveFormat.cs" />
+    <Compile Include="Wave\WaveFormats\WaveFormatEncoding.cs" />
+    <Compile Include="Wave\WaveFormats\WaveFormatExtensible.cs" />
+    <Compile Include="Wave\WaveFormats\WaveFormatExtraData.cs" />
+    <Compile Include="Wave\WaveStreams\WaveStream.cs" />
+    <Compile Include="Wave\Others\WaveStreamType.cs" />
+    <Compile Include="Wave\Others\WaveWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wave\Others\XingHeader.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="UMP.MAMT.IISBindingSetting.UCIISBindingListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="BindingProtolTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Stretch="Fill" Source="{Binding BindingProtolIco}"/>
+                <Label Height="26" Margin="2,0,0,0" Content="{Binding BindingProtolName}" Style="{DynamicResource LabelNormalStyle}" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="OpendServerNameTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="26" Content="{Binding OpendServerName}" Style="{DynamicResource LabelNormalStyle}" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="OpendServerPortTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="26" Content="{Binding OpendServerPort}" Style="{DynamicResource LabelNormalStyle}" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="IsUsedTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="26" Content="{Binding IsUsed}" Style="{DynamicResource LabelNormalStyle}" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Background="Transparent">
+        <ListView Name="ListViewIISBindingProtol" BorderBrush="Transparent" Tag="001" Background="Transparent">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" CellTemplate="{StaticResource BindingProtolTemplate}">
+                        <GridViewColumnHeader x:Name="BindingProtolColumnHeader" Style="{DynamicResource GridViewColumnHeaderFontStyle}" Content=" 协议" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="200" CellTemplate="{StaticResource OpendServerNameTemplate}">
+                        <GridViewColumnHeader x:Name="OpendServerNameColumnHeader" Style="{DynamicResource GridViewColumnHeaderFontStyle}" Content=" IP 地址 或 服务器名" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="80" CellTemplate="{StaticResource OpendServerPortTemplate}">
+                        <GridViewColumnHeader x:Name="OpendServerPortColumnHeader" Style="{DynamicResource GridViewColumnHeaderFontStyle}" Content=" 端口" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" CellTemplate="{StaticResource IsUsedTemplate}">
+                        <GridViewColumnHeader x:Name="IsUsedColumnHeader" Style="{DynamicResource GridViewColumnHeaderFontStyle}" Content=" 启用" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

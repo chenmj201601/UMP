@@ -1,0 +1,103 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1206.WidgetViews.UCAllModuleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             xmlns:local="clr-namespace:UMPS1206.WidgetViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1206;component/Themes/Default/UMPS1206/UCAllModuleView.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS1206;component/Themes/Default/UMPS1206/DiagramStyleStatic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridChart" Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="3"></ColumnDefinition>
+            <ColumnDefinition Name="GridDetail" Width="50*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Border Name="BorderChart" Style="{DynamicResource BorderChartViewStyle}" MaxHeight="550" VerticalAlignment="Top">
+                <vcc:FrictionScrollViewer x:Name="MyScrollViewer" Style="{DynamicResource ScrollViewerDiagramStyle}">
+                    <vcc:DiagramViewer x:Name="MyDiagramViewer" Width="2000" Height="2000"></vcc:DiagramViewer>
+                </vcc:FrictionScrollViewer>
+            </Border>
+        </Grid>
+
+        <GridSplitter Name="SplitterDetail" Grid.Column="1" 
+                      Style="{DynamicResource SplitterDetailStyle}"></GridSplitter>
+
+        <Border Name="BorderDetailView" Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<Border Grid.Row="0" Style="{DynamicResource BorderDetailHeadStyle}">
+                    <TextBlock Text="功能列表" Style="{DynamicResource TxtDetailHeadStyle}"></TextBlock>
+                </Border>-->
+                <Border Grid.Row="1">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <Border Name="BorderDetail" Style="{DynamicResource BorderDetailContentStyle}">
+                            <ListBox Name="ListBoxModuleItems" Style="{DynamicResource ListBoxModuleItemStyle}"
+                                 ItemContainerStyle="{DynamicResource ListBoxItemModuleItemStyle}">
+                                <ListBox.Resources>
+                                    <Style x:Key="ListBoxGroupStyle" TargetType="GroupItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <Expander IsExpanded="True" Style="{DynamicResource GroupExpanderStyle}">
+                                                        <Expander.Header>
+                                                            <DockPanel>
+                                                                <TextBlock FontWeight="Bold" FontFamily="SimSun" FontSize="12" Foreground="{DynamicResource SystemBrush7}" Text="{Binding Path=Name}" Margin="5,0,0,0" Width="300"/>
+                                                            </DockPanel>
+                                                        </Expander.Header>
+                                                        <Expander.Content>
+                                                            <ItemsPresenter />
+                                                        </Expander.Content>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.Resources>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                                        <Button Style="{DynamicResource BtnAppItemStyle}"
+                                            Command="local:UCAllModuleView.ItemClickCommand"
+                                            CommandParameter="{Binding}">
+                                            <DockPanel LastChildFill="True">
+                                                <TextBlock Text="{Binding Title}" DockPanel.Dock="Bottom" Style="{DynamicResource TxtAppTitleStyle}"></TextBlock>
+                                                <Image Source="{Binding Icon}" Style="{DynamicResource ImageAppIconStyle}"></Image>
+                                            </DockPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.GroupStyle>
+                                    <GroupStyle ContainerStyle="{StaticResource ListBoxGroupStyle}"></GroupStyle>
+                                </ListBox.GroupStyle>
+                            </ListBox>
+                        </Border>
+                    </ScrollViewer>
+
+                </Border>
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</umpc:UMPUserControl>

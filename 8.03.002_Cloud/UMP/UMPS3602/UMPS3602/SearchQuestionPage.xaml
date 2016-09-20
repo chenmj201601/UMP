@@ -1,0 +1,180 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3602.SearchQuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="800">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3602;component/Themes/Default/UMPS3602/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3602;component/Themes/Default/UMPS3602/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3602;component/Themes/Default/UMPS3602/AvalonDock.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="330"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock Name="SearchCategoryName" Margin="0,5" Text="Search Category:"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Name="TbSearchCategroy" Text="Search Categroy" VerticalAlignment="Center"></TextBlock>
+                                <TextBox Grid.Column="1" Name="TxtSearchCategroy" Margin="5" VerticalAlignment="Center"></TextBox>
+                                <StackPanel Grid.Column="2" Name="ButSearchCategroy" Orientation="Vertical" VerticalAlignment="Center"></StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <vcc:CheckableTree Background="White" Name="CategoryTree" Style="{DynamicResource TreeViewObjects}" ItemContainerStyle="{DynamicResource TreeViewItemObject}">
+                                    <vcc:CheckableTree.ItemTemplate>
+                                        <HierarchicalDataTemplate  DataType="{x:Type vcc:CheckableTreeItem}"  ItemsSource="{Binding Children}">
+                                        </HierarchicalDataTemplate>
+                                    </vcc:CheckableTree.ItemTemplate>
+                                </vcc:CheckableTree>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                <Border Grid.Column="2">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="230"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Name="SearchInfoName" VerticalAlignment="Center" Text="Search Information:"></TextBlock>
+                            <TextBox Grid.Column="1" Name="TxtSearchInfo" Width="250" HorizontalAlignment="Center" TextChanged="TxtSearchInfo_OnTextChanged"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Row="2" Margin="0,5">
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="230"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Name="TypeName" Text="Type"></TextBlock>
+                                </Grid>
+                                <Border Grid.Column="1" Width="110" HorizontalAlignment="Left" >
+                                    <ComboBox Name="ComboBoxName" >
+                                        <ComboBoxItem Name="BoxItem1" Content="1"></ComboBoxItem>
+                                        <ComboBoxItem Name="BoxItem2" Content="2"></ComboBoxItem>
+                                        <ComboBoxItem Name="BoxItem3" Content="3"></ComboBoxItem>
+                                        <ComboBoxItem Name="BoxItem4" Content="4"></ComboBoxItem>
+                                        <ComboBoxItem Name="BoxItem5" Content="5"></ComboBoxItem>
+                                    </ComboBox>
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="3" Margin="0,5">
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="230"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Name="UseNumName" Text="Use Num"></TextBlock>
+                                </Grid>
+                                <Border Grid.Column="1" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <vcc:IntegerUpDown Grid.Column="0" Name="TbUseNumMin" ValueChanged="TbUseNumMin_OnValueChanged" Text="0"></vcc:IntegerUpDown>
+                                        <TextBlock Grid.Column="1" Text="-" HorizontalAlignment="Center"></TextBlock>
+                                        <vcc:IntegerUpDown Grid.Column="2" Name="TbUseNumMax" ValueChanged="TbUseNumMax_OnValueChanged" Text="0"></vcc:IntegerUpDown>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <CheckBox Name="TrueOrFalseName" Margin="0,5" Content="True Or False" VerticalAlignment="Center"></CheckBox>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <CheckBox Name="SingleChioceName" Margin="0,5" Content="Single Chioce" VerticalAlignment="Center"></CheckBox>
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <CheckBox Name="MultipleChoiceName" Margin="0,5" Content="Multiple Choice" VerticalAlignment="Center"></CheckBox>
+                        </Grid>
+
+                        <Border Grid.Row="7" >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,10,0" VerticalAlignment="Center" Name="CreateTime" Text="Create Time"></TextBlock>
+                                <vcc:DateTimePicker Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="FromTimeName"></vcc:DateTimePicker>
+                                <TextBlock Grid.Column="2" Name="ToName" Text="-" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <vcc:DateTimePicker Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Name="ToTimeNum" ></vcc:DateTimePicker>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Style="{DynamicResource FormItemValue}" HorizontalAlignment="Center" >
+                        <Button Name="OkButton" Content="OK" Click="BtnOk_Click" Width="80"></Button>
+                    </Border>
+                    <Border Grid.Column="1" Style="{DynamicResource FormItemValue}" HorizontalAlignment="Center">
+                        <Button Name="BtnCancel"  Content="Cancel" Click="BtnCancel_Click" Width="80"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

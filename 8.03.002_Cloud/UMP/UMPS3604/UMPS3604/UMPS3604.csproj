@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D18A30E-3E1E-4AA3-A958-AFF3492B0C51}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPS3604</RootNamespace>
+    <AssemblyName>UMPS3604</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <EnableSecurityDebugging>true</EnableSecurityDebugging>
+    <StartAction>URL</StartAction>
+    <HostInBrowser>true</HostInBrowser>
+    <TargetZone>Internet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>True</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>8.03.002.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\公用dll\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="PFShareClassesC">
+      <HintPath>..\..\UMP.PF.Classes\PFShareClassesC\PFShareClassesC\bin\Release\PFShareClassesC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UMPCommon">
+      <HintPath>..\..\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPCommunications">
+      <HintPath>..\..\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPControls">
+      <HintPath>..\..\UMPCommon\UMPControls\bin\Release\UMPControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VCAvalonDock">
+      <HintPath>..\..\Library\VCAvalonDock\VCAvalonDock\bin\Release\VCAvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCommon">
+      <HintPath>..\..\VCCommon\VCCommon\bin\Release\VCCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCustomControls">
+      <HintPath>..\..\Library\VCCustomControls\VCCustomControls\bin\Release\VCCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VCNAudio">
+      <HintPath>..\..\Library\VCNAudio\VCNAudio\bin\Release\VCNAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="VCNAudioControls">
+      <HintPath>..\..\Library\VCNAudio\VCNAudioControls\bin\Release\VCNAudioControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContentsProperties.xaml.cs">
+      <DependentUpon>ContentsProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BackgroundConverter.cs" />
+    <Compile Include="Models\ContentsTree.cs" />
+    <Compile Include="Models\ObjectItem.cs" />
+    <Compile Include="Models\PanelItem.cs" />
+    <Compile Include="Models\ToolButtonItem.cs" />
+    <Compile Include="S3604App.cs" />
+    <Compile Include="Service References\Wcf36041\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ContentMenuCommand.cs" />
+    <Compile Include="LinkToLaosURL\LaosLinkConverter.cs" />
+    <Compile Include="MaterialLibraryView.xaml.cs">
+      <DependentUpon>MaterialLibraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\VoiceCyber.UMP.Communications.WebReturn.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\Wcf36041\Service36041.wsdl" />
+    <None Include="Service References\Wcf36041\Service36041.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360411.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360412.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360413.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360414.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360415.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf36041\Service360416.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UMP.PF.Certificate.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ContentsProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MaterialLibraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS3604\AvalonDock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS3604\FormStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS3604\MainPageStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3604\Images\add.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\agent.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\appeal.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\appealdetail.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\Background %282%29.jpg" />
+    <Resource Include="Themes\Default\UMPS3604\Images\Background.jpg" />
+    <Resource Include="Themes\Default\UMPS3604\Images\close.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\Delete.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\document.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\group.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\history.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\link.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\modify.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\org.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\rootorg.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\SystemLogo.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\SystemLogo.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\ump.png" />
+    <Resource Include="Themes\Default\UMPS3604\Images\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common3604\Common3604.csproj">
+      <Project>{3dd1b918-e11d-4aaa-96e2-81f1a031a67e}</Project>
+      <Name>Common3604</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Wcf36041\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf36041\Service36041.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf36041\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf36041\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf36041\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3604\Images\first.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\last.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\next.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\pre.ico" />
+    <Resource Include="Themes\Default\UMPS3604\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3604\Images\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3604\Images\change.png" />
+  </ItemGroup>
+  <PropertyGroup>
+    <StartArguments />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UMP.PF.Certificate.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C3BBF9EA2C0DA7FEAA17043A0A6010A522ABAB87</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

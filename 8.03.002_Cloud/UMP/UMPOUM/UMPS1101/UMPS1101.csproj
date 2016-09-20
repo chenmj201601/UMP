@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE0B3A5A-5710-47BE-A126-B3C238C39CE2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPS1101</RootNamespace>
+    <AssemblyName>UMPS1101</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <EnableSecurityDebugging>true</EnableSecurityDebugging>
+    <StartAction>URL</StartAction>
+    <HostInBrowser>true</HostInBrowser>
+    <TargetZone>Internet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>True</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\myself\UMPRelease832\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <WebPage>index.html</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>8.03.002.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common1111, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPS1111\Common1111\obj\Release\Common1111.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\公用dll\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\公用dll\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\公用dll\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\公用dll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\公用dll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\公用dll\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PFShareClassesC, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMP.PF.Classes\PFShareClassesC\PFShareClassesC\bin\Release\PFShareClassesC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UMPCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPCommunications, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPControls, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPControls\bin\Release\UMPControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VCCommon\VCCommon\bin\Release\VCCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCustomControls, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\VCCustomControls\VCCustomControls\bin\Release\VCCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VCLDAP">
+      <HintPath>..\..\Library\VCLDAP\VCLDAP\bin\Release\VCLDAP.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\LockMethodConverter.cs" />
+    <Compile Include="ExcelNamePage.xaml.cs">
+      <DependentUpon>ExcelNamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BindItem.cs" />
+    <Compile Include="Models\CacheInfo.cs" />
+    <Compile Include="Models\DomainObjectItem.cs" />
+    <Compile Include="Models\HeadIconInfo.cs" />
+    <Compile Include="Models\NPOIHelper.cs" />
+    <Compile Include="Models\OrgTypeItem.cs" />
+    <Compile Include="Models\RoleItem.cs" />
+    <Compile Include="Models\SelectedInfo.cs" />
+    <Compile Include="S1101App.cs" />
+    <Compile Include="Service References\Wcf11111\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WCFService00000\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCBatchMove.xaml.cs">
+      <DependentUpon>UCBatchMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCLDAPLinkPage.xaml.cs">
+      <DependentUpon>UCLDAPLinkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserResourcesPage.xaml.cs">
+      <DependentUpon>UserResourcesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf11011\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf11012\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf11901\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoModify.xaml.cs">
+      <DependentUpon>UserInfoModify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserResourceManagement.xaml.cs">
+      <DependentUpon>UserResourceManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoleModify.xaml.cs">
+      <DependentUpon>UserRoleModify.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\OUMMainPageCommands.cs" />
+    <Compile Include="Converters\CellOperationVisibilityConverter.cs" />
+    <Compile Include="Converters\ImageSourceConverter.cs" />
+    <Compile Include="Converters\LevelToMarginConverter.cs" />
+    <Compile Include="Converters\ObjectStateConverter.cs" />
+    <Compile Include="Converters\OrgTypeConverter.cs" />
+    <Compile Include="Models\ObjectItem.cs" />
+    <Compile Include="OrgInfoModify.xaml.cs">
+      <DependentUpon>OrgInfoModify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OUMMainView.xaml.cs">
+      <DependentUpon>OUMMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\VoiceCyber.UMP.Communications.WebReturn.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\ユーザー座席テンプレート.xlsx" />
+    <None Include="Resources\用户坐席模板.xlsx" />
+    <None Include="Service References\Wcf11011\Service1101121.wsdl" />
+    <None Include="Service References\Wcf11011\Service1101122.wsdl" />
+    <None Include="Service References\Wcf11011\Service11011610.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11011\Service11011611.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11011\Service1101166.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11011\Service1101167.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11011\Service1101168.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11011\Service1101169.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110122.wsdl" />
+    <None Include="Service References\Wcf11012\Service1101221.wsdl" />
+    <None Include="Service References\Wcf11012\Service110126.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101261.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101262.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101263.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101264.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101265.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service11111.wsdl" />
+    <None Include="Service References\Wcf11111\Service11111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service111111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service111112.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service111113.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service111114.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11111\Service111115.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service11901.wsdl" />
+    <None Include="Service References\Wcf11901\Service11901.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119011.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119013.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119014.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119015.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\UMPS1101.Wcf11901.OperationDataArgs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCFService00000\Service00000.wsdl" />
+    <None Include="Service References\WCFService00000\Service00000.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\Service000001.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\Service000002.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\Service000003.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\Service000004.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\Service000005.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFService00000\UMPS1101.WCFService00000.OperationDataArgs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="UMP.PF.Certificate.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ExcelNamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrgInfoModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OUMMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCBatchMove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCLDAPLinkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserResourcesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS1101\MainPageStatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS1101\FormStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS1101\OUMMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserInfoModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserResourceManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserRoleModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\root.ico" />
+    <Resource Include="Themes\Default\UMPS1101\Images\company.ico" />
+    <Resource Include="Themes\Default\UMPS1101\Images\group.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\avaliable.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\disabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\remove.png" />
+    <Resource Include="Themes\Default\UMPS1101\Images\modify.png" />
+    <Resource Include="Themes\Default\UMPS1101\Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\ump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\userlocked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MySql.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Wcf11011\" />
+    <WCFMetadataStorage Include="Service References\Wcf11012\" />
+    <WCFMetadataStorage Include="Service References\Wcf11111\" />
+    <WCFMetadataStorage Include="Service References\Wcf11901\" />
+    <WCFMetadataStorage Include="Service References\WCFService00000\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\org.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\agent.ico" />
+    <Resource Include="Themes\Default\UMPS1101\Images\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11011\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11011\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11011\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Service110121.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Service11901.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11011\Service1101111.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\extension.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\voiceserver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WCFService00000\Service00000.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WCFService00000\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WCFService00000\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WCFService00000\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\addorg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\removeorg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common11011\Common11011.csproj">
+      <Project>{841db241-1950-4065-8711-ea75db3ee6ba}</Project>
+      <Name>Common11011</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11111\Service11111.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11111\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11111\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11111\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS1101\Images\RealExtension.ico" />
+  </ItemGroup>
+  <PropertyGroup>
+    <StartArguments />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UMP.PF.Certificate.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C3BBF9EA2C0DA7FEAA17043A0A6010A522ABAB87</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7914af9d-a67b-460a-a9fe-bce8fcd35fef" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service31021.xsd" MetadataType="Schema" ID="256b3afc-4264-4b7d-a338-000aef9106ff" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service310211.xsd" MetadataType="Schema" ID="e85d02c0-40bd-4084-9558-3279a2473848" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service310212.xsd" MetadataType="Schema" ID="8a61f89a-99f5-4711-958f-cd9186027e85" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service310216.xsd" MetadataType="Schema" ID="ef79a32c-5b21-4050-a403-e8523b784b3c" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd6" />
+    <MetadataFile FileName="Service31021.wsdl" MetadataType="Wsdl" ID="b5c8f713-779c-4786-98eb-e860425d61a8" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service310213.xsd" MetadataType="Schema" ID="82f20108-9713-49b1-a46a-58dc4646599a" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service310214.xsd" MetadataType="Schema" ID="1b86c39e-4733-4d5d-a8d9-0ebcaaaa9034" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service310215.xsd" MetadataType="Schema" ID="0f0d2b6c-2a6d-4802-b861-1fd4a5cba324" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service310211.wsdl" MetadataType="Wsdl" ID="dcac3d32-8d2b-4638-9cb6-9c127260797b" SourceId="1" SourceUrl="http://192.168.6.7:8081/Wcf2Client/Service31021.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

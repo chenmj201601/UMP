@@ -1,0 +1,123 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3601.AddPapers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="230" d:DesignWidth="520">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3601;component/Themes/Default/UMPS3601/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3601;component/Themes/Default/UMPS3601/MainPageStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid Margin="20,20,20,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                        <TextBlock Name="PaperName" TextWrapping="Wrap" Text="Papre Name" ></TextBlock>
+                    </Border>
+                    <Border Grid.Column="1" Style="{DynamicResource FormItemTitle}">
+                        <TextBox Name="TbPaperName" TextWrapping="Wrap" Width="250"></TextBox>
+                    </Border>
+                    <Border Grid.Column="2" Style="{DynamicResource FormItemTitle}" Width="80">
+                        <ComboBox Name="CbPaperType">
+                            <ComboBoxItem Name="CbPaperType1" Content="1"></ComboBoxItem>
+                            <ComboBoxItem Name="CbPaperType2" Content="2"></ComboBoxItem>
+                            <ComboBoxItem Name="CbPaperType3" Content="3"></ComboBoxItem>
+                            <ComboBoxItem Name="CbPaperType4" Content="4"></ComboBoxItem>
+                            <ComboBoxItem Name="CbPaperType5" Content="5"></ComboBoxItem>
+                        </ComboBox>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Style="{DynamicResource FormItemTitle}">
+                    <TextBlock Name="DescribeName" TextWrapping="Wrap" Text="Describe:"></TextBlock>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <TextBox Name="TbDescribeConnect" TextWrapping="Wrap" Width="480" Height="40" VerticalScrollBarVisibility="Visible"></TextBox>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <TextBlock Name="ScoresName" Text="Scores:"></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <vcc:IntegerUpDown Name="TbScores" ValueChanged="TbScores_OnValueChanged" Width="125"></vcc:IntegerUpDown>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <TextBlock Name="TestTimeName" Text="TestTime (Min):"></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <vcc:IntegerUpDown Name="TbTestTime" ValueChanged="TbTestTime_OnValueChanged"  Width="125"></vcc:IntegerUpDown>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <TextBlock Name="PassMarkName" Text="PassMark:"></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border Style="{DynamicResource FormItemTitle}">
+                        <vcc:IntegerUpDown Name="TbPassMark" ValueChanged="TbPassMark_OnValueChanged"  Width="125"></vcc:IntegerUpDown>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnConfirm" Click="BtnConfirm_Click" Content="Confirm" ></Button>
+                </Border>
+                <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnClose" Click="BtnClose_Click" Content="Close"></Button>
+                </Border>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</umpc:UMPUserControl>

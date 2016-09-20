@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+                    xmlns:conv="clr-namespace:UMPS3108.Converters">
+
+    <conv:ConditionPreViewItemConverter x:Key="ConditionPreViewItemConverter"></conv:ConditionPreViewItemConverter>
+    <conv:ParamsItemsViewItemConverter x:Key="ParamsItemsViewItemConverter"></conv:ParamsItemsViewItemConverter>
+    <conv:ABCDItemConverter x:Key="ABCDItemConverter"></conv:ABCDItemConverter>
+
+
+    <Style x:Key="ListViewItemAvaliableParamItem" TargetType="{x:Type ListViewItem}">
+        <Setter Property="ToolTip" Value="{Binding Converter={StaticResource ConditionPreViewItemConverter}}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <vcc:DragDropPanel Tag="{Binding}">
+                        <Border x:Name="Border"
+                              Padding="2"
+                              SnapsToDevicePixels="true"
+                              Background="Transparent">
+                            <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </vcc:DragDropPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush9}"></Setter>
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background"
+                                    Value="{DynamicResource SystemBrush2}"></Setter>
+                            <Setter TargetName="Border" Property="BorderBrush"
+                                    Value="{DynamicResource SystemBrush3}"></Setter>
+                            <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush8}"></Setter>
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ListBoxItemConditionItem" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <vcc:DragDropPanel Tag="{Binding}">
+                        <Border x:Name="Border"
+                        SnapsToDevicePixels="true" 
+                            Padding="3,0"
+                            Background="Transparent">
+                            <ContentPresenter Content="{Binding Converter={StaticResource ParamsItemsViewItemConverter}}"></ContentPresenter>
+                        </Border>
+                    </vcc:DragDropPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="ListBoxABCDItem" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <vcc:DragDropPanel Tag="{Binding}">
+                        <Border x:Name="Border"
+                        SnapsToDevicePixels="true" 
+                            Padding="3,0"
+                            Background="Transparent">
+                            <ContentPresenter Content="{Binding Converter={StaticResource ABCDItemConverter}}"></ContentPresenter>
+                        </Border>
+                    </vcc:DragDropPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ListBoxItemConditionItemDisplay" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <vcc:DragDropPanel Tag="{Binding}">
+                        <Border x:Name="Border"
+                            SnapsToDevicePixels="true" 
+                            Padding="0,0"
+                            Background="Transparent">
+                            <ContentPresenter Content="{Binding Converter={StaticResource ConditionPreViewItemConverter}}"></ContentPresenter>
+                        </Border>
+                    </vcc:DragDropPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

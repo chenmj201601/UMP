@@ -1,0 +1,133 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:VoiceCyber.NAudio.Controls">
+    
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+    
+    <Style x:Key="ListBoxButtonStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Name="Border"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <StackPanel Margin="1" IsItemsHost="True" Orientation="Horizontal"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ListItemButtonStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Margin" Value="3,1"></Setter>
+        <Setter Property="ToolTip" Value="{Binding ToolTip}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Border"
+                            Padding="1"
+                            SnapsToDevicePixels="true"
+                            Background="Transparent">
+                        <Button Command="local:CustomAudioPlayer.ButtonCommand"
+                                CommandParameter="{Binding}">
+                            <Grid>
+                                <Image Width="18" Height="16" Stretch="Uniform"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Source="{Binding Icon}"></Image>
+                                <TextBlock Text="{Binding Display}" 
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="9"></TextBlock>
+                            </Grid>
+                        </Button>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomAudioPlayer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomAudioPlayer}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="PART_ImageLeft" Grid.Row="0" Stretch="Fill"
+                                           Visibility="{Binding IsImageLeftVisible, RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                    <Image x:Name="PART_ImageRight" Grid.Row="1" Stretch="Fill"
+                                           Visibility="{Binding IsImageRightVisible, RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                            <Border Grid.Row="1">
+                                <Slider x:Name="PART_Slider" HorizontalAlignment="Stretch" VerticalAlignment="Center" TickPlacement="TopLeft"
+                                        TickFrequency="0"
+                                        IsMoveToPointEnabled="True"></Slider>
+                            </Border>
+                            <Border Grid.Row="2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0">
+                                        <ListBox x:Name="PART_ListLeftButtons" Style="{StaticResource ListBoxButtonStyle}"
+                                                 ItemContainerStyle="{StaticResource ListItemButtonStyle}"></ListBox>
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                        <TextBlock Text="{Binding LbRate,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="2,0"></TextBlock>
+                                        <TextBlock Text="{Binding LbVolume,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="2,0"
+                                                   Visibility="{Binding IsVolumeVisible, RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource BooleanToVisibilityConverter}}"></TextBlock>
+                                        <Slider Width="80" TickPlacement="TopLeft" TickFrequency="0" IsMoveToPointEnabled="True"
+                                                Maximum="1.0" Minimum="0.0" Margin="2,0"
+                                                VerticalAlignment="Center"
+                                                Value="{Binding Volume,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                Visibility="{Binding IsVolumeVisible, RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource BooleanToVisibilityConverter}}"></Slider>
+                                        <TextBlock Text="{Binding LbCurrentTime, RelativeSource={RelativeSource TemplatedParent}}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="2,0"></TextBlock>
+                                        <TextBlock Text="/" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Text="{Binding LbTotalTime, RelativeSource={RelativeSource TemplatedParent}}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="2,0"></TextBlock>
+                                        <TextBlock Text="{Binding Title,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="5,0,2,0"></TextBlock>
+                                    </StackPanel>
+                                    <Border Grid.Column="3">
+                                        <ListBox x:Name="PART_ListRightButtons" Style="{StaticResource ListBoxButtonStyle}"
+                                                 ItemContainerStyle="{StaticResource ListItemButtonStyle}"></ListBox>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

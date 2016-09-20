@@ -1,0 +1,96 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1103.UCAgentBasicInformation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1103;component/Themes/Default/UMPS1103/UCAgentBasicInformation.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS1103;component/Themes/Default/UMPS1103/MoreInfo.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid MinWidth="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridObjectView" Grid.Row="1" Margin="0,0,0,10" Visibility="Visible">
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="5">
+                <StackPanel Orientation="Vertical">
+               
+                    <Grid x:Name="GridBelongOrgView" Style="{DynamicResource GridABIStyle}">
+                        <Label x:Name="LabelOrg" Style="{DynamicResource LabelOrgStyle}"/>
+                        <ComboBox x:Name="ComboBoxOrg" Style="{DynamicResource ComboBoxStatusStyle}" ItemTemplate="{DynamicResource CombTemplate}">
+                        </ComboBox>
+                    </Grid>
+                    <Grid Style="{DynamicResource GridABIStyle}">
+                        <Label x:Name="LabelAgentID" Style="{DynamicResource LabelAgentIDStyle}"/>
+                        <TextBox x:Name="TextBoxAgentID" Style="{DynamicResource TextBoxAgentIDStyle}" MaxWidth="365"/>
+                    </Grid>
+                    <Grid Style="{DynamicResource GridABIStyle}">
+                        <Label x:Name="LabelAgentName" Style="{DynamicResource LabelAgentNameStyle}"/>
+                        <TextBox x:Name="TextBoxAgentName" Style="{DynamicResource TextBoxAgentNameStyle}" MaxWidth="365"/>
+                    </Grid>
+                    <Grid Style="{DynamicResource GridABIStyle}">
+                        <Label x:Name="LabelAgentStatus" Style="{DynamicResource LabelAgentStatusStyle}"/>
+                        <ComboBox x:Name="ComboBoxStatus" Style="{DynamicResource ComboBoxStatusStyle}">
+                            <ComboBoxItem x:Name="ComboBoxItemLockStatus1" Tag="1" Style="{DynamicResource ComboBoxItemStyle}"/>
+                            <ComboBoxItem x:Name="ComboBoxItemLockStatus0" Tag="0" Style="{DynamicResource ComboBoxItemStyle}"/>
+                        </ComboBox>
+                    </Grid>
+                    <ToggleButton Name="BtnMore" Grid.Row="2"
+                              Style="{DynamicResource ToggleMore}"
+                              IsChecked="False"></ToggleButton>
+                    <Border Name="BorderMore" Grid.Row="1"
+                        Visibility="{Binding ElementName=BtnMore,Path=IsChecked,
+                    Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="LabelAgentSkillGroup" Grid.Row="0" Margin="5"/>
+                            <Border Style ="{DynamicResource BorderObjectTree}" Grid.Row="1">
+                                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="5">
+                                    <vcc:CheckableTree Name="TvObject" Style="{DynamicResource MmtObjectTreeStyle}"
+                                 ItemContainerStyle="{DynamicResource MmtObjectTreeItemStyle}"
+                                 ItemTemplate="{DynamicResource MmtObjectTreeItemTemplate}"></vcc:CheckableTree>
+                                </ScrollViewer>
+                            </Border>
+
+                            <Label x:Name="LabelAgentManager" Grid.Row="2" Margin="5"/>
+                            <Border Style ="{DynamicResource BorderObjectTree}" Grid.Row="3">
+                                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0">
+                                    <vcc:CheckableTree Name="TvObjects" Style="{DynamicResource MmtObjectTreeStyle}"
+                      ItemContainerStyle="{DynamicResource MmtObjectTreeItemStyle}"
+                      ItemTemplate="{DynamicResource MmtObjectTreeItemTemplate}"></vcc:CheckableTree>
+                                </ScrollViewer>
+                            </Border>
+                        </Grid>
+                    </Border>
+             
+            <Grid x:Name="GridBelongOrgSelect" Style="{DynamicResource GridABIStyle}" Visibility="Visible" MaxHeight="300">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                            <Button Name="ButtonSelectOrg" Content="Confirm" ></Button>
+                        </Border>
+                        <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                            <Button Name="ButtonOrgCancel" Content="Close"></Button>
+                        </Border>
+                    </Grid>
+                
+              </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

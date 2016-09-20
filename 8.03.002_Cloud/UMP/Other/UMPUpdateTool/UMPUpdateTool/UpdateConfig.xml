@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpdateConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CurrentVersion="803002P00000">
+    <Modules>
+        <Module ModuleID="0" MasterID="0" ModuleName="Basic" Display="基础模块" />
+        <Module ModuleID="1101" MasterID="11" ModuleName="OrgUserManager" Display="机构用户管理" />
+        <Module ModuleID="1102" MasterID="11" ModuleName="RoleManager" Display="角色权限管理" />
+        <Module ModuleID="1103" MasterID="11" ModuleName="AgentManager" Display="坐席管理" />
+        <Module ModuleID="1104" MasterID="11" ModuleName="OrgTypeManager" Display="技能组管理" />
+        <Module ModuleID="1105" MasterID="11" ModuleName="TechnologyGroupManager" Display="机构类型管理" />
+        <Module ModuleID="1106" MasterID="11" ModuleName="TechnologyGroupManager" Display="密码策略" />
+        <Module ModuleID="1107" MasterID="11" ModuleName="TechnologyGroupManager" Display="交互式登录" />
+        <Module ModuleID="1108" MasterID="11" ModuleName="TechnologyGroupManager" Display="锁定策略" />
+        <Module ModuleID="1109" MasterID="11" ModuleName="PolicyManager" Display="全局参数" />
+        <Module ModuleID="1110" MasterID="11" ModuleName="ResourceManager" Display="资源管理" />
+        <Module ModuleID="1111" MasterID="11" ModuleName="RentManager" Display="租户管理" />
+        <Module ModuleID="1112" MasterID="11" ModuleName="DomainManager" Display="域管理" />
+        <Module ModuleID="2101" MasterID="21" ModuleName="FilterPolicy" Display="筛选策略" />
+        <Module ModuleID="2102" MasterID="21" ModuleName="ChanStateMonitor" Display="状态监控" />
+        <Module ModuleID="2401" MasterID="24" ModuleName="KeyGeneryManager" Display="密钥服务管理" />
+        <Module ModuleID="2402" MasterID="24" ModuleName="EncryptionPolicy" Display="加密策略" />
+        <Module ModuleID="2403" MasterID="24" ModuleName="EncryptionPolicyBingding" Display="加密策略绑定" />
+        <Module ModuleID="2404" MasterID="24" ModuleName="EncryptionAlarm" Display="加密告警" />
+        <Module ModuleID="3101" MasterID="31" ModuleName="ScoreSheetManager" Display="评分表维护" />
+        <Module ModuleID="3102" MasterID="31" ModuleName="QueryManager" Display="查询管理" />
+        <Module ModuleID="3103" MasterID="31" ModuleName="TaskManager" Display="任务管理" />
+        <Module ModuleID="3104" MasterID="31" ModuleName="AgentClient" Display="智能客户端" />
+        <Module ModuleID="3105" MasterID="31" ModuleName="AppealManager" Display="申诉管理" />
+        <Module ModuleID="3106" MasterID="31" ModuleName="MaterialLibrary" Display="教材库" />
+        <Module ModuleID="3107" MasterID="31" ModuleName="AutoTask" Display="自动任务" />
+        <Module ModuleID="3108" MasterID="31" ModuleName="QMParamter" Display="质检参数" />
+        <Module ModuleID="3601" MasterID="36" ModuleName="QuestionLibrary" Display="试卷库" />
+        <Module ModuleID="3602" MasterID="36" ModuleName="TestPaperLibrary" Display="试题库" />
+        <Module ModuleID="3603" MasterID="36" ModuleName="TesterSetting" Display="考试人员设置" />
+        <Module ModuleID="4411" MasterID="44" ModuleName="Onsite Monitor" Display="现场管理" />
+        <Module ModuleID="4412" MasterID="44" ModuleName="ASM Region" Display="ASM 区域管理" />
+        <Module ModuleID="4413" MasterID="44" ModuleName="ASM Seat" Display="ASM 座位管理" />
+        <Module ModuleID="4414" MasterID="44" ModuleName="ASM State" Display="ASM 状态设置" />
+        <Module ModuleID="4415" MasterID="44" ModuleName="ASM Alarm" Display="ASM 告警设置" />
+        <Module ModuleID="4601" MasterID="46" ModuleName="PMSetting" Display="PM参数绑定" />
+        <Module ModuleID="4602" MasterID="46" ModuleName="PMAnalysis" Display="PM报表展示" />
+        <Module ModuleID="4603" MasterID="46" ModuleName="PerformanceAllocation" Display="PM Kpi 详情" />
+        <Module ModuleID="5101" MasterID="51" ModuleName="BookmarkLevel" Display="书签等级" />
+        <Module ModuleID="5102" MasterID="51" ModuleName="KeyWords" Display="关键词配置" />
+        <Module ModuleID="5103" MasterID="51" ModuleName="SpeechToTxt" Display="语文转换设置" />
+        <Module ModuleID="6101" MasterID="61" ModuleName="Report" Display="报表展示" />
+    </Modules>
+    <DatabaseInfo>
+        <TypeID>3</TypeID>
+        <Host>192.168.4.182</Host>
+        <Port>1521</Port>
+        <DBName>PFOrcl</DBName>
+        <LoginName>PFDEV832</LoginName>
+        <Password>pfdev832</Password>
+    </DatabaseInfo>
+</UpdateConfig>

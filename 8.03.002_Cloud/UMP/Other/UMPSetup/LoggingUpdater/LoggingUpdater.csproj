@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD696351-C171-40E0-9307-6B308EC349A2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LoggingUpdater</RootNamespace>
+    <AssemblyName>LoggingUpdater</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ump.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\Adler32.cs">
+      <Link>Zips\Adler32.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\Crc32.cs">
+      <Link>Zips\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\IChecksum.cs">
+      <Link>Zips\IChecksum.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Encryption\PkzipClassicManaged.cs">
+      <Link>Zips\PkzipClassicManaged.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Encryption\ZipAESTransform.cs">
+      <Link>Zips\ZipAESTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\SharpZipBaseException.cs">
+      <Link>Zips\SharpZipBaseException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Deflater.cs">
+      <Link>Zips\Deflater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterConstants.cs">
+      <Link>Zips\DeflaterConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterEngine.cs">
+      <Link>Zips\DeflaterEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterHuffman.cs">
+      <Link>Zips\DeflaterHuffman.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterPending.cs">
+      <Link>Zips\DeflaterPending.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Inflater.cs">
+      <Link>Zips\Inflater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\InflaterHuffmanTree.cs">
+      <Link>Zips\InflaterHuffmanTree.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\PendingBuffer.cs">
+      <Link>Zips\PendingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs">
+      <Link>Zips\DeflaterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\InflaterDynHeader.cs">
+      <Link>Zips\InflaterDynHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\InflaterInputStream.cs">
+      <Link>Zips\InflaterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\OutputWindow.cs">
+      <Link>Zips\OutputWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\StreamManipulator.cs">
+      <Link>Zips\StreamManipulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipConstants.cs">
+      <Link>Zips\ZipConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipEntry.cs">
+      <Link>Zips\ZipEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipException.cs">
+      <Link>Zips\ZipException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipExtraData.cs">
+      <Link>Zips\ZipExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipHelperStream.cs">
+      <Link>Zips\ZipHelperStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipInputStream.cs">
+      <Link>Zips\ZipInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipOutputStream.cs">
+      <Link>Zips\ZipOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommon\ConstValue.cs">
+      <Link>UMPCommon\ConstValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommon\EncryptionMode.cs">
+      <Link>UMPCommon\EncryptionMode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommon\IEncryptable.cs">
+      <Link>UMPCommon\IEncryptable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\ConnectionEventArgs.cs">
+      <Link>UMPCommunications\ConnectionEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\INetClient.cs">
+      <Link>UMPCommunications\INetClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageEncoding.cs">
+      <Link>UMPCommunications\MessageEncoding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageEncryption.cs">
+      <Link>UMPCommunications\MessageEncryption.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageHead.cs">
+      <Link>UMPCommunications\MessageHead.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageReceivedEventArgs.cs">
+      <Link>UMPCommunications\MessageReceivedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageState.cs">
+      <Link>UMPCommunications\MessageState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\MessageType.cs">
+      <Link>UMPCommunications\MessageType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\NetClient.cs">
+      <Link>UMPCommunications\NetClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\NotifyMessage.cs">
+      <Link>UMPCommunications\NotifyMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\NotifyMessageReceivedEventArgs.cs">
+      <Link>UMPCommunications\NotifyMessageReceivedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\RequestCode.cs">
+      <Link>UMPCommunications\RequestCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\RequestMessage.cs">
+      <Link>UMPCommunications\RequestMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\ReturnMessage.cs">
+      <Link>UMPCommunications\ReturnMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\UMPCommon\UMPCommunications\ReturnMessageReceivedEventArgs.cs">
+      <Link>UMPCommunications\ReturnMessageReceivedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\Converter.cs">
+      <Link>Common\Converter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\Defines.cs">
+      <Link>Common\Defines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\LogMode.cs">
+      <Link>Common\LogMode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\LogOperator.cs">
+      <Link>Common\LogOperator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\OperationReturn.cs">
+      <Link>Common\OperationReturn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\VCCommon\VCCommon\XMLHelper.cs">
+      <Link>Common\XMLHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\ErrorMode.cs">
+      <Link>Updates\ErrorMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\FileInstallMode.cs">
+      <Link>Updates\FileInstallMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\FollowDataType.cs">
+      <Link>Updates\FollowDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\InstallComponent.cs">
+      <Link>Updates\InstallComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\InstallInfo.cs">
+      <Link>Updates\InstallInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\InstallProduct.cs">
+      <Link>Updates\InstallProduct.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\LangInstallMode.cs">
+      <Link>Updates\LangInstallMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\NodeItem.cs">
+      <Link>Updates\NodeItem.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\PackType.cs">
+      <Link>Updates\PackType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\ServiceInfo.cs">
+      <Link>Updates\ServiceInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\ServiceInstallMode.cs">
+      <Link>Updates\ServiceInstallMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\ServiceStartMode.cs">
+      <Link>Updates\ServiceStartMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\ShortcutInfo.cs">
+      <Link>Updates\ShortcutInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\TargetPathType.cs">
+      <Link>Updates\TargetPathType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateConsts.cs">
+      <Link>Updates\UpdateConsts.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateFile.cs">
+      <Link>Updates\UpdateFile.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateFileType.cs">
+      <Link>Updates\UpdateFileType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateFollow.cs">
+      <Link>Updates\UpdateFollow.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateInfo.cs">
+      <Link>Updates\UpdateInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateLang.cs">
+      <Link>Updates\UpdateLang.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateModule.cs">
+      <Link>Updates\UpdateModule.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateModuleType.cs">
+      <Link>Updates\UpdateModuleType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateScript.cs">
+      <Link>Updates\UpdateScript.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateScriptType.cs">
+      <Link>Updates\UpdateScriptType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateService.cs">
+      <Link>Updates\UpdateService.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateSqlScript.cs">
+      <Link>Updates\UpdateSqlScript.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateSqlType.cs">
+      <Link>Updates\UpdateSqlType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPUpdates\UpdateUpgrade.cs">
+      <Link>Updates\UpdateUpgrade.cs</Link>
+    </Compile>
+    <Compile Include="LoggingUpdateCommand.cs" />
+    <Compile Include="LoggingUpdateConsts.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateEngine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ump.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

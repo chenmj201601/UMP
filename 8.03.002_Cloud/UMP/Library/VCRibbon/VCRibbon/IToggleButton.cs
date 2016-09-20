@@ -1,0 +1,50 @@
+//======================================================================
+//
+//        Copyright © 2014-2015 VoiceCyber Technology (SH) Ltd.
+//        All rights reserved
+//        guid1:                    e020b88d-4649-4010-a96d-337c387963af
+//        CLR Version:              4.0.30319.18444
+//        Name:                     IToggleButton
+//        Computer:                 CHARLEY-PC
+//        Organization:             VoiceCyber
+//        Namespace:                VoiceCyber.Fluent
+//        File Name:                IToggleButton
+//
+//        created by Charley at 2014/5/27 18:03:41
+//        http://www.voicecyber.com 
+//
+//======================================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Controls.Primitives;
+
+namespace VoiceCyber.Ribbon
+{
+    /// <summary>
+    /// Interface for controls that support <see cref="ToggleButton"/>-Behavior
+    /// </summary>
+    public interface IToggleButton
+    {
+        /// <summary>
+        /// Gets or sets the name of the group that the toggle button belongs to. 
+        /// Use the GroupName property to specify a grouping of toggle buttons to 
+        /// create a mutually exclusive set of controls. You can use the GroupName 
+        /// property when only one selection is possible from a list of available 
+        /// options. When this property is set, only one ToggleButton in the specified
+        /// group can be selected at a time.
+        /// </summary>
+        string GroupName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether SplitButton is checked
+        /// </summary>
+        bool? IsChecked { get; set; }
+
+        /// <summary>
+        /// Gets a value that indicates whether the ToggleButton is fully loaded
+        /// </summary>
+        bool IsLoaded { get; }
+    }
+}

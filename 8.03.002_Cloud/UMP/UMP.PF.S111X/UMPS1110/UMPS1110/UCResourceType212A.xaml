@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="UMPS1110.UCResourceType212A"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <UserControl.Resources>
+        <DataTemplate x:Key="ServerIPTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Stretch="Fill" Source="{Binding VServerIcoPath}"/>
+                <Label Height="26" Content="{Binding VServerIP}" Style="{DynamicResource LabelDecServerListViewItemsFontStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ServerPortTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="26" Content="{Binding VServerPort}" Style="{DynamicResource LabelDecServerListViewItemsFontStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="UsedSSLTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="26" Content="{Binding VUsedSSL}" Style="{DynamicResource LabelDecServerListViewItemsFontStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <ListView x:Name="ListViewDECServerList" Style="{DynamicResource YListViewDECServerListStyle}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="200" CellTemplate="{StaticResource ServerIPTemplate}">
+                        <GridViewColumnHeader x:Name="ServerIPColumnHeader" Style="{DynamicResource YListViewColumnHeaderStyle}" Content="服务器 IP" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" CellTemplate="{StaticResource ServerPortTemplate}">
+                        <GridViewColumnHeader x:Name="ServerPortColumnHeader" Style="{DynamicResource YListViewColumnHeaderStyle}" Content="端口" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" CellTemplate="{StaticResource UsedSSLTemplate}">
+                        <GridViewColumnHeader x:Name="UsedSSLColumnHeader" Style="{DynamicResource YListViewColumnHeaderStyle}" Content="启用 SSL" />
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

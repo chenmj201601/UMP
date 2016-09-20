@@ -1,0 +1,45 @@
+﻿<Window x:Class="LoggingUpdater.WSearchPackage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WSearchPackage" Height="200" Width="350" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Border Margin="15,5,15,2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton Name="RadioSearch" Grid.Row="0" Content="Search update data" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center"></RadioButton>
+                    <RadioButton Name="RadioSelect" Grid.Row="1" Content="Select update data" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center"></RadioButton>
+                    <Grid Name="GridDataPath" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                            <ColumnDefinition Width="180"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="TxtDataPath" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="160"></TextBox>
+                        <Button Name="BtnBrowser" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="25" Content="..."></Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+           <Button Name="BtnConfirm" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25" Content="Confirm"></Button>
+            <Button Name="BtnClose" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25" Content="Close"></Button>
+        </Grid>
+        
+    </Grid>
+</Window>

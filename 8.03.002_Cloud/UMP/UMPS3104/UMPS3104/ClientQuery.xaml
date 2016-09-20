@@ -1,0 +1,481 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3104.ClientQuery"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="700">
+
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TreeViewObjects" TargetType="{x:Type vcc:CheckableTree}">
+                <Setter Property="IsShowIcon" Value="True"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type vcc:CheckableTree}">
+                            <Border Name="BorderPanel"
+                            CornerRadius="1"
+                            BorderThickness="0"
+                            Background="{TemplateBinding Background}">
+                                <vcc:FrictionScrollViewer HorizontalScrollBarVisibility="Hidden"
+                                                    VerticalScrollBarVisibility="Hidden"
+                                                    Padding="5">
+                                    <ItemsPresenter></ItemsPresenter>
+                                </vcc:FrictionScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <HierarchicalDataTemplate x:Key="ObjectItemTemplate" DataType="{x:Type vcc:CheckableTreeItem}"
+                              ItemsSource="{Binding Children}">
+                <TextBlock Text="{Binding Name}"></TextBlock>
+            </HierarchicalDataTemplate>
+
+            <Style x:Key="TreeViewItemObject" TargetType="{x:Type vcc:CheckableTreeItem}">
+                <Setter Property="Padding" Value="2,3" />
+                <Setter Property="Margin" Value="2"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                <Setter Property="IsChecked" Value="{Binding IsChecked}"></Setter>
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                <Setter Property="ToolTip" Value="{Binding Description}"></Setter>
+                <Setter Property="Icon" Value="{Binding Icon}"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type vcc:CheckableTreeItem}">
+                            <StackPanel>
+                                <Border Name="Bd"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Padding="{TemplateBinding Padding}">
+                                    <StackPanel Name="PART_Header" Orientation="Horizontal">
+                                        <ToggleButton x:Name="Expander" 
+                                          Style="{DynamicResource ExpandCollaspToggleStyle}" 
+                                          IsChecked="{Binding Path=IsExpanded,
+                                                     RelativeSource={RelativeSource AncestorType={x:Type vcc:CheckableTreeItem}}}"
+                                          ClickMode="Press"/>
+                                        <CheckBox IsChecked="{Binding IsChecked}" Tag="{Binding }"   VerticalAlignment="Center" />
+                                        <Image Width="16" Height="16" VerticalAlignment="Center" Source="{Binding Icon,Mode=OneTime,IsAsync=True}"></Image>
+                                        <ContentPresenter Content="{Binding Name, Mode=OneTime}" Margin="2,0" />
+                                    </StackPanel>
+                                </Border>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="15,0,0,0" />
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="HasItems" Value="false">
+                                    <Setter TargetName="Expander"
+                                  Property="Visibility"
+                                  Value="Hidden" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="false" />
+                                        <Condition Property="Width" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header"
+                                  Property="MinWidth"
+                                  Value="75" />
+                                </MultiTrigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="false" />
+                                        <Condition Property="Height" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header"
+                                  Property="MinHeight"
+                                  Value="19" />
+                                </MultiTrigger>
+                                <Trigger Property="IsExpanded" Value="false">
+                                    <Setter TargetName="ItemsHost"
+                                    Property="Visibility"
+                                    Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Bd" Property="Background"
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                                    <Setter TargetName="PART_Header" Property="Control.Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsExpanded" Value="True">
+                                    <Setter TargetName="ItemsHost" Property="Visibility" Value="Visible"></Setter>
+                                </Trigger>
+                                <Trigger SourceName="Bd" Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" 
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                                    <Setter TargetName="PART_Header" Property="Control.Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3104/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Name="tabQueryRecordInTask" Grid.Row="0"  Style="{DynamicResource TabControlCondition}">
+            <TabItem Header="Record Information" Name="tabRecordInformation">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rdbTime1" Content="Record Start And Stop Time"  GroupName="Time"></RadioButton>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                                <vcc:DateTimePicker Name="DateStart"  Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+                            </Border>
+                            <Border Grid.Column="2" Grid.Row="0" Style="{DynamicResource FormLableItemValue}">
+                                <Label >---</Label>
+                            </Border>
+                            <Border Grid.Column="3" Grid.Row="0" Style="{DynamicResource FormItemValue}">
+                                <vcc:DateTimePicker Name="DateStop"  Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+                            </Border>
+
+                            <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rdbTime2"   Content="Recent Time"  GroupName="Time"
+                                           ></RadioButton>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource FormItemValue}">
+                                <vcc:IntegerUpDown Name="txtNumTime"></vcc:IntegerUpDown>
+                            </Border>
+                            <Border Grid.Column="3" Grid.Row="1" Style="{DynamicResource FormItemValue}">
+                                <ComboBox Name="combUintTime" ></ComboBox>
+                            </Border>
+                        </Grid>
+                    </GroupBox>
+
+                    <Border  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                                <!--<Label Name="labLengthTime" Content="Record Length"></Label>-->
+                                <CheckBox Name="chkEnableLengthTime" Content="Record Length"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormItemValue}"  IsEnabled="{Binding ElementName= chkEnableLengthTime,Path=IsChecked}">
+                                <vcc:MaskedTextBox Name="mtbStart" ></vcc:MaskedTextBox>
+                            </Border>
+                            <Border Grid.Column="2" Grid.Row="0" Style="{DynamicResource FormLableItemValue}">
+                                <Label >---</Label>
+                            </Border>
+                            <Border Grid.Column="3" Grid.Row="0" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName= chkEnableLengthTime,Path=IsChecked}">
+                                <vcc:MaskedTextBox Name="mtbStop" ></vcc:MaskedTextBox>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!--<Border  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                                <CheckBox Name="chkEnableRange" Content="Score Range"></CheckBox>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="0" Style="{DynamicResource FormItemValue}"  IsEnabled="{Binding ElementName= chkEnableRange,Path=IsChecked}">
+                                <vcc:DoubleUpDown Name="dbUDStart"></vcc:DoubleUpDown>
+                            </Border>
+                            <Border Grid.Column="2" Grid.Row="0" Style="{DynamicResource FormLableItemValue}">
+                            </Border>
+                            <Border Grid.Column="3" Grid.Row="0" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName= chkEnableRange,Path=IsChecked}">
+                                <vcc:DoubleUpDown Name="dbUDStop"></vcc:DoubleUpDown>
+                            </Border>
+                        </Grid>
+                    </Border>-->
+
+                    <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormItemTitle}">
+                        <!--<Label Name="labReference" Content="Record Reference"></Label>-->
+                        <CheckBox Name="chkEnableReference" Content="Record Reference"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkEnableReference,Path=IsChecked}" >
+                        <TextBox Name="txtRecordReference" ></TextBox>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="3" Style="{DynamicResource FormItemTitle}" IsEnabled="{Binding ElementName=chkEnableReference,Path=IsChecked}">
+                        <CheckBox Name="chkRecordReference" Content="Obscure Query"></CheckBox>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="4" Style="{DynamicResource FormItemTitle}">
+                        <!--<Label Name="labCallerID" Content="Caller Number"></Label>-->
+                        <CheckBox Name="chkEnableCaller" Content="Caller Number"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkEnableCaller,Path=IsChecked}">
+                        <TextBox Name="txtCaller" ></TextBox>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="4" Style="{DynamicResource FormItemTitle}" IsEnabled="{Binding ElementName=chkEnableCaller,Path=IsChecked}">
+                        <CheckBox Name="chkCaller" Content="Obscure Query"></CheckBox>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="5" Style="{DynamicResource FormItemTitle}" >
+                        <!--<Label Name="labCalledID" Content="Called Number"></Label>-->
+                        <CheckBox Name="chkEnableCalledID" Content="Called Number"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkEnableCalledID,Path=IsChecked}" >
+                        <TextBox Name="txtCalled" ></TextBox>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="5" Style="{DynamicResource FormItemTitle}" IsEnabled="{Binding ElementName=chkEnableCalledID,Path=IsChecked}">
+                        <CheckBox Name="chkCalled" Content="Obscure Query"></CheckBox>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="6" Style="{DynamicResource FormItemTitle}">
+                        <!--<Label Name="labChanel" Content="Record Chanel"></Label>-->
+                        <CheckBox Name="chkEnableChanel" Content="Record Channel"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkEnableChanel,Path=IsChecked}">
+                        <TextBox Name="txtChanle" ></TextBox>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="6" Style="{DynamicResource FormItemTitle}" IsEnabled="{Binding ElementName=chkEnableChanel,Path=IsChecked}">
+                        <CheckBox Name="chkChanle" Content="Obscure Query"></CheckBox>
+                    </Border>
+
+                    <!--<Border Grid.Column="0" Grid.Row="6" Style="{DynamicResource FormItemTitle}">
+                        -->
+                    <!--<Label Name="labCTIReference" Content="CTI Reference"></Label>-->
+                    <!--
+                        <CheckBox Name="chkEnableCTIReference" Content="CTI Reference"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkEnableCTIReference,Path=IsChecked}" >
+                        <TextBox Name="txtCTIReference" ></TextBox>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="6" Style="{DynamicResource FormItemTitle}" IsEnabled="{Binding ElementName=chkEnableCTIReference,Path=IsChecked}">
+                        <CheckBox Name="chkCTIReference" Content="Obscure Query"></CheckBox>
+                    </Border>-->
+
+                    <Border Grid.Column="0" Grid.Row="7" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="labCallDirection" Content="Call Direction" ></Label>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="7" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabDirectionAll" Content="All" GroupName="Direction"></RadioButton>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="7" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabDirectionIn" Content="Call In" GroupName="Direction"></RadioButton>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="7" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabDirectionOut" Content="Call Out" GroupName="Direction"></RadioButton>
+                    </Border>
+
+                    <!--<Border Grid.Column="0" Grid.Row="8" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="labScreen" Content="Screen Mark"></Label>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="8" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabScreenAll" Content="All" GroupName="Screen"></RadioButton>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="8" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabHaveScreen" Content="Have Screen" GroupName="Screen"></RadioButton>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="8" Style="{DynamicResource FormItemTitle}">
+                        <RadioButton Name="rabNotScreen" Content="No Screen" GroupName="Screen"></RadioButton>
+                    </Border>-->
+
+                    <Border Grid.Column="0" Grid.Row="9" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="labAppeal" Content="Has Appeal"></Label>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="9" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkAppeal" VerticalAlignment="Center" Content="     "></CheckBox>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="9" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="labScore" Content="Has Score"></Label>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="9" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkScore" VerticalAlignment="Center" Content="     "></CheckBox>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="10" Style="{DynamicResource FormItemTitle}">
+                        <Label Name="labBookMark" Content="Has BookMark"></Label>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="10" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkBookMark" VerticalAlignment="Center" Content="     "></CheckBox>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="ABCD" Name="tabABCD"  >
+                <Grid Width="615">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="192"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Column="0" Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkServiceAttitude" Content="Service Attitude"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkServiceAttitude,Path=IsChecked}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbSAGood" Content="Good" Grid.Column="0" GroupName="SevAttitude"/>
+                            </Border>
+                            <Border Grid.Column="1" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbSABad" Content="Bad" Grid.Column="1"  GroupName="SevAttitude"/>
+                            </Border>
+                            <Border Grid.Column="2" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbSAAll" Content="All" Grid.Column="2" GroupName="SevAttitude" />
+                                <!--IsChecked="{Binding ElementName=chkServiceAttitude,Path=IsChecked}"-->
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="0" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName=chkServiceAttitude,Path=IsChecked}">
+                        <ComboBox Name="cbSvAttitude"  SelectedIndex="0"/>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkProfessionalLevel" Content="Professional Level"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkProfessionalLevel,Path=IsChecked}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbPLGood" Content="Better" GroupName="ProfessionalLevel"/>
+                            </Border>
+                            <Border Grid.Column="1" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbPLBad" Content="Low-level" GroupName="ProfessionalLevel"/>
+                            </Border>
+                            <Border Grid.Column="2" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbPLAll" Content="All" GroupName="ProfessionalLevel"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="1" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName=chkProfessionalLevel,Path=IsChecked}">
+                        <ComboBox Name="cbProLevel"  SelectedIndex="0"/>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkRecordDurationError" Content="Abnormal Duration"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkRecordDurationError,Path=IsChecked}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRDGood" Content="Normal" GroupName="DurationError"/>
+                            </Border>
+                            <Border Grid.Column="1" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRDBad" Content="Abnormal" GroupName="DurationError"/>
+                            </Border>
+                            <Border Grid.Column="2" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRDAll" Content="All" GroupName="DurationError" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="2" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName=chkRecordDurationError,Path=IsChecked}">
+                        <ComboBox Name="cbRDError" SelectedIndex="0"/>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="3" Style="{DynamicResource FormItemTitle}">
+                        <CheckBox Name="chkRepeatCallIn" Content="Repeat CallIn"></CheckBox>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Style="{DynamicResource FormItemValueDouble}" IsEnabled="{Binding ElementName=chkRepeatCallIn,Path=IsChecked}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRCNo" Content="Normal" GroupName="RepeatCallIn"/>
+                            </Border>
+                            <Border Grid.Column="1" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRCYes" Content="Repetition" GroupName="RepeatCallIn"/>
+                            </Border>
+                            <Border Grid.Column="2" Style="{DynamicResource FormItemTitle}">
+                                <RadioButton Name="rbRCAll" Content="All" GroupName="RepeatCallIn"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="3" Style="{DynamicResource FormItemValue}" IsEnabled="{Binding ElementName=chkRepeatCallIn,Path=IsChecked}">
+                        <ComboBox Name="cbRepeatCallIn"  SelectedIndex="0"/>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnConfirm" Content="Confirm" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

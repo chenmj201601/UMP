@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LangLister xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LangID="1033" LangName="English(U.S.)">
+  <Langs>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>Lang2052</Name>
+      <Display>Simplified Chinese</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>Lang1033</Name>
+      <Display>English(U.S.)</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>Lang1028</Name>
+      <Display>Traditional Chinese</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>Lang1041</Name>
+      <Display>日本語</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>L001</Name>
+      <Display>Loading system path...</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>L002</Name>
+      <Display>Loading OS information...</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>L003</Name>
+      <Display>Loading UMP server information...</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T001</Name>
+      <Display>Language</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T002</Name>
+      <Display>Install UMP Client Components</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T003</Name>
+      <Display>Application Server</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T004</Name>
+      <Display>Installation Log</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T005</Name>
+      <Display>UMP Application Server</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T006</Name>
+      <Display>Server：</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T007</Name>
+      <Display>Port：</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>T008</Name>
+      <Display>Launch UMP after installed</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>B001</Name>
+      <Display>Install(_S)</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>B002</Name>
+      <Display>Close(_C)</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N001</Name>
+      <Display>Incorrect application server</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N002</Name>
+      <Display>Incorrect port</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N003</Name>
+      <Display>Clear {0} buffer</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N004</Name>
+      <Display>{0}</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N005</Name>
+      <Display>Components are installed but with errors. Please check installation log and contact your administrator.</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N006</Name>
+      <Display>All components are installed successfully.</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>N007</Name>
+      <Display>Confirm close this window？</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>R001</Name>
+      <Display>X X failed：</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>R002</Name>
+      <Display>* * success</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S001</Name>
+      <Display>Loading alias</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S002</Name>
+      <Display>Loading icons</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S003</Name>
+      <Display>Loading language packs</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S004</Name>
+      <Display>Loading binding protocol</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S005</Name>
+      <Display>Loading supported windows type</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S006</Name>
+      <Display>Download security certificate {0}</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S007</Name>
+      <Display>Download checklist editor</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S008</Name>
+      <Display>Download report components {0}</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S009</Name>
+      <Display>Download theme file</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S011</Name>
+      <Display>This application supported Windows XP SP2 or above, Windows 2003 SP1 or above, Windows Vista, Windows Server 2008/2012, Windows 7/8. Please contact your software provider</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S021</Name>
+      <Display>Error occured during loading components, please contact your system administrator.</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S051</Name>
+      <Display>Installing security certificate {0}</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S052</Name>
+      <Display>Install report components</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S053</Name>
+      <Display>Add UMP application server {0} to trusted site</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S054</Name>
+      <Display>Write server information into local file</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S055</Name>
+      <Display>Creating shortcut</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S056</Name>
+      <Display>Creating "Remove Application" shortcut</Display>
+      <SysID>0</SysID>
+    </Lang>
+    <Lang>
+      <LangID>1033</LangID>
+      <Module>0</Module>
+      <SubModule>0</SubModule>
+      <Name>S099</Name>
+      <Display>All components are installed successfully.</Display>
+      <SysID>0</SysID>
+    </Lang>
+  </Langs>
+</LangLister>
