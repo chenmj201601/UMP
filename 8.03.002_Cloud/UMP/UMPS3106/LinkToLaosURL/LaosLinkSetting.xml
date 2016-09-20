@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-  <Setting>
-    <IsLinkToUrl>1</IsLinkToUrl>
-    <LaosURL>zhihu.com</LaosURL>
-    <Usersuffix>exam/CreateExam.php?</Usersuffix>
-    <Agentsuffix>exam/Exams.php?</Agentsuffix>
-  </Setting>
-</root>

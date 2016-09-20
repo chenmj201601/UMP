@@ -1,9 +1,0 @@
-﻿<umpc:UMPApp x:Class="UMPS6106.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:umpc="http://www.voicecyber.com/ump/controls"
-             StartupUri="MainPage.xaml">
-    <Application.Resources>
-        
-    </Application.Resources>
-</umpc:UMPApp>

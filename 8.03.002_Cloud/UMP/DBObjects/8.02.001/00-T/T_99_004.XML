@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<TableDefine P01="T_99_004" P02="8.02.001" P03="0" P04="0" P05="0" P06="SQLSERVER中过程p_11_011的ID临时表,在ORACLE中建立为保持统一" P07="备用">
-  <ColumnDefine>
-    <Column P01="C001" P02="03" P03="20" P04="0" P05="1" P06="" P07=""/>
-  </ColumnDefine>
-  <IndexDefine>
-  </IndexDefine>
-</TableDefine>

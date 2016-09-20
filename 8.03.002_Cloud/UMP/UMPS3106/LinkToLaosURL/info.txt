@@ -1,9 +1,0 @@
-LaosLinkSetting.xml放置在服务器的UMP/Components/LinkToLaosURL文件夹下。
-
-IsLinkToUrl属性=1，表示启用外部链接；
-
-LaosURL属性保存公共部分的网址信息；
-
-Usersuffix属性保存UMP客户端用的链接格式；
-
-Agentsuffix属性保存座席客户端用的链接格式；
