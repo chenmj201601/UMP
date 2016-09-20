@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D18A2354-0D83-41E4-8257-6370FBCCBC31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoiceCyber.WebSockets</RootNamespace>
+    <AssemblyName>VCWebSocket</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationBase.cs" />
+    <Compile Include="AuthenticationChallenge.cs" />
+    <Compile Include="AuthenticationResponse.cs" />
+    <Compile Include="AuthenticationSchemes.cs" />
+    <Compile Include="ByteOrder.cs" />
+    <Compile Include="Chunk.cs" />
+    <Compile Include="ChunkedRequestStream.cs" />
+    <Compile Include="ChunkStream.cs" />
+    <Compile Include="ClientSslConfiguration.cs" />
+    <Compile Include="CloseEventArgs.cs" />
+    <Compile Include="CloseStatusCode.cs" />
+    <Compile Include="CompressionMethod.cs" />
+    <Compile Include="Cookie.cs" />
+    <Compile Include="CookieCollection.cs" />
+    <Compile Include="CookieException.cs" />
+    <Compile Include="EndPointListener.cs" />
+    <Compile Include="EndPointManager.cs" />
+    <Compile Include="ErrorEventArgs.cs" />
+    <Compile Include="Ext.cs" />
+    <Compile Include="Fin.cs" />
+    <Compile Include="HttpBase.cs" />
+    <Compile Include="HttpBasicIdentity.cs" />
+    <Compile Include="HttpConnection.cs" />
+    <Compile Include="HttpDigestIdentity.cs" />
+    <Compile Include="HttpHeaderInfo.cs" />
+    <Compile Include="HttpHeaderType.cs" />
+    <Compile Include="HttpListener.cs" />
+    <Compile Include="HttpListenerAsyncResult.cs" />
+    <Compile Include="HttpListenerContext.cs" />
+    <Compile Include="HttpListenerException.cs" />
+    <Compile Include="HttpListenerPrefix.cs" />
+    <Compile Include="HttpListenerPrefixCollection.cs" />
+    <Compile Include="HttpListenerRequest.cs" />
+    <Compile Include="HttpListenerResponse.cs" />
+    <Compile Include="HttpListenerWebSocketContext.cs" />
+    <Compile Include="HttpRequest.cs" />
+    <Compile Include="HttpRequestEventArgs.cs" />
+    <Compile Include="HttpRequestHeader.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpResponseHeader.cs" />
+    <Compile Include="HttpServer.cs" />
+    <Compile Include="HttpStatusCode.cs" />
+    <Compile Include="HttpStreamAsyncResult.cs" />
+    <Compile Include="HttpUtility.cs" />
+    <Compile Include="HttpVersion.cs" />
+    <Compile Include="InputChunkState.cs" />
+    <Compile Include="InputState.cs" />
+    <Compile Include="IWebSocketSession.cs" />
+    <Compile Include="LineState.cs" />
+    <Compile Include="LogData.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="Mask.cs" />
+    <Compile Include="MessageEventArgs.cs" />
+    <Compile Include="NetworkCredential.cs" />
+    <Compile Include="Opcode.cs" />
+    <Compile Include="PayloadData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryStringCollection.cs" />
+    <Compile Include="ReadBufferState.cs" />
+    <Compile Include="RequestStream.cs" />
+    <Compile Include="ResponseStream.cs" />
+    <Compile Include="Rsv.cs" />
+    <Compile Include="ServerSslConfiguration.cs" />
+    <Compile Include="ServerState.cs" />
+    <Compile Include="SslConfiguration.cs" />
+    <Compile Include="TcpListenerWebSocketContext.cs" />
+    <Compile Include="WebHeaderCollection.cs" />
+    <Compile Include="WebSocket.cs" />
+    <Compile Include="WebSocketBehavior.cs" />
+    <Compile Include="WebSocketContext.cs" />
+    <Compile Include="WebSocketException.cs" />
+    <Compile Include="WebSocketFrame.cs" />
+    <Compile Include="WebSocketServer.cs" />
+    <Compile Include="WebSocketServiceHost.cs" />
+    <Compile Include="WebSocketServiceHost`1.cs" />
+    <Compile Include="WebSocketServiceManager.cs" />
+    <Compile Include="WebSocketSessionManager.cs" />
+    <Compile Include="WebSocketState.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

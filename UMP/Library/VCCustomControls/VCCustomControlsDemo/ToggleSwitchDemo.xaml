@@ -1,0 +1,27 @@
+﻿<Window x:Class="VCCustomControlsDemo.ToggleSwitchDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+        Title="ToggleSwitchDemo" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <vcc:ToggleSwitch Grid.Row="0" 
+                          Background="Black"
+                          BorderThickness="2"
+                          CheckedForeground="Aquamarine"
+                          CheckedText="True"
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Center"
+                          Width="100" 
+                          Height="30">
+            
+        </vcc:ToggleSwitch>
+        <!--<vcc:MaskedTextBox Grid.Row="1" InputMask="iiii"></vcc:MaskedTextBox>-->
+    </Grid>
+</Window>

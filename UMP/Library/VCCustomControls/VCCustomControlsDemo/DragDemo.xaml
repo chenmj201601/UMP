@@ -1,0 +1,9 @@
+﻿<Window x:Class="VCCustomControlsDemo.DragDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:VCCustomControlsDemo"
+        Title="DragDemo" Height="500" Width="800" Loaded="DragDemo_OnLoaded">
+    <Grid Name="GridMain">
+        <local:UCDragElement x:Name="MyDragElement"></local:UCDragElement>
+    </Grid>
+</Window>

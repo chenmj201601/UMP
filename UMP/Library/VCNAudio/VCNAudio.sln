@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCNAudio", "VCNAudio\VCNAudio.csproj", "{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCNAudioControls", "VCNAudioControls\VCNAudioControls.csproj", "{AC0EFD87-CDD6-4C04-AA2D-A124FA817DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCNAudioDemo", "VCNAudioDemo\VCNAudioDemo.csproj", "{F6586CD8-1343-48A7-8DCC-6E3A89A20A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F68E764-5DC1-4C0D-9E82-D7F37F482AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0EFD87-CDD6-4C04-AA2D-A124FA817DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0EFD87-CDD6-4C04-AA2D-A124FA817DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0EFD87-CDD6-4C04-AA2D-A124FA817DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0EFD87-CDD6-4C04-AA2D-A124FA817DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6586CD8-1343-48A7-8DCC-6E3A89A20A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6586CD8-1343-48A7-8DCC-6E3A89A20A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6586CD8-1343-48A7-8DCC-6E3A89A20A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6586CD8-1343-48A7-8DCC-6E3A89A20A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

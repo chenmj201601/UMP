@@ -1,0 +1,2 @@
+2014/3/24			创建项目，实现核心代码
+2014/3/25			修改OperationReturn类，提供Int，String，Decemal三种简单类型的返回值

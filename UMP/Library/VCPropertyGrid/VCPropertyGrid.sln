@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCPropertyGrid", "VCPropertyGrid\VCPropertyGrid.csproj", "{2580BFE4-6931-4294-8EB9-D180E8E1A96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCPropertyGridDemo", "VCPropertyGridDemo\VCPropertyGridDemo.csproj", "{7369F909-4987-416B-9C4E-A87EE6DB49D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2580BFE4-6931-4294-8EB9-D180E8E1A96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2580BFE4-6931-4294-8EB9-D180E8E1A96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2580BFE4-6931-4294-8EB9-D180E8E1A96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2580BFE4-6931-4294-8EB9-D180E8E1A96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7369F909-4987-416B-9C4E-A87EE6DB49D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7369F909-4987-416B-9C4E-A87EE6DB49D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7369F909-4987-416B-9C4E-A87EE6DB49D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7369F909-4987-416B-9C4E-A87EE6DB49D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
