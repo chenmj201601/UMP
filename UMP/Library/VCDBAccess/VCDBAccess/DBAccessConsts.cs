@@ -33,6 +33,13 @@ namespace VoiceCyber.DBAccesses
         #endregion
 
 
+        #region MySQL错误号
+
+        internal const int MYSQL_ERR_OBJECT_NOT_EXIST = 208;
+
+        #endregion
+
+
         #region MSSQL 错误号
 
         internal const int MSSQL_ERR_OBJECT_NOT_EXIST = 208;  //表不存在

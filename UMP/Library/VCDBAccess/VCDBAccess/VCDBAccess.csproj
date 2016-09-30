@@ -30,6 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\公用dll\MySql.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Oracle.DataAccess">
       <HintPath>..\..\..\公用dll\Oracle.DataAccess.dll</HintPath>
       <Private>False</Private>
@@ -49,6 +54,8 @@
     <Compile Include="DBAccessConsts.cs" />
     <Compile Include="MssqlDataType.cs" />
     <Compile Include="MssqlOperation.cs" />
+    <Compile Include="MysqlDataType.cs" />
+    <Compile Include="MysqlOperation.cs" />
     <Compile Include="OracleDataType.cs" />
     <Compile Include="OracleOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
