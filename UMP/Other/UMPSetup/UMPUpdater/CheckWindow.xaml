@@ -1,0 +1,99 @@
+﻿<Window x:Class="UMPUpdater.CheckWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:UMPUpdater.UserControls"
+        Title="CheckWindow" Height="350" Width="650"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        Style="{DynamicResource CheckWindowStyle}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPUpdater;component/Themes/Default/MainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid>
+            
+            <Border Style="{DynamicResource BorderAppButtonPanelStyle}">
+                <Button Name="BtnAppClose" Style="{DynamicResource ButtonCloseStyle}"></Button>
+            </Border>
+            
+            <Border Style="{DynamicResource BorderContentStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Style="{DynamicResource BorderLogoAndNameStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0">
+                                <Image Name="ImageLogo" Style="{DynamicResource ImageLogoStyle}"></Image>
+                            </Border>
+
+                            <Grid Grid.Column="1">
+
+                                <!--AppTitle-->
+                                <TextBlock Name="TxtAppFullName" Text="Unified Management Portal" Style="{DynamicResource TxtAppFullNameStyle}"></TextBlock>
+                                <!--倒影-->
+                                <Rectangle Style="{DynamicResource RectangleAppFullNameStyle}" Height="25">
+                                    <Rectangle.Fill>
+                                        <VisualBrush Visual="{Binding ElementName=TxtAppFullName}"></VisualBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.OpacityMask>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0.3" Color="Transparent"></GradientStop>
+                                            <GradientStop Offset="1" Color="WhiteSmoke"></GradientStop>
+                                        </LinearGradientBrush>
+                                    </Rectangle.OpacityMask>
+                                    <Rectangle.RenderTransform>
+                                        <ScaleTransform ScaleY="-0.8"></ScaleTransform>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+
+                            </Grid>
+
+
+                        </Grid>
+                    </Border>
+                    
+                    <Border Grid.Row="1" Style="{DynamicResource BorderStatusStyle}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <uc:CustomWaiter x:Name="MyWaiter" Grid.Row="0" Height="5" Visibility="Collapsed"></uc:CustomWaiter>
+                            <TextBlock Name="TxtStatus" Grid.Row="1" Style="{DynamicResource TxtStatusStyle}"></TextBlock>
+                        </Grid>
+                    </Border>
+                    
+                </Grid>
+            </Border>
+            
+            <Border Style="{DynamicResource BorderCopyrightPanelStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Name="ImageCopyright" Grid.Column="0" Style="{DynamicResource ImageCopyrightStyle}"></Image>
+                    <TextBlock Name="TxtCopyright" Grid.Column="1" Style="{DynamicResource TxtCopyrightStyle}"></TextBlock>
+                </Grid>
+            </Border>
+          
+        </Grid>
+    </Grid>
+    
+</Window>

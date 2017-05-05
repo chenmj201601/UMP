@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="UMPUpdater.UCUpdateOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPUpdater;component/Themes/Default/MainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Margin="15,10,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Name="CbBackupUMP" Grid.Row="0"
+                          Content="Backup the UMP system"
+                          Style="{DynamicResource CheckBoxOptionStyle}"></CheckBox>
+                <Border Name="PanelBackupUMP" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                            <ColumnDefinition Width="60*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="LbBackupPath" Grid.Column="0" Grid.Row="0" Text="UMP backup path" Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                            <TextBox Name="TxtBackupPath" Style="{DynamicResource TxtOptionValueStyle}"></TextBox>
+                            <Button Name="BtnBackupPath" Content="..." Style="{DynamicResource BtnOptionValueStyle}"></Button>
+                        </StackPanel>
+                        <CheckBox Name="CbCompressBackup" Grid.Column="0" Grid.Row="1" Content="Compress backup file" Style="{DynamicResource CheckBoxOptionValueStyle}"></CheckBox>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Name="CbUpdateLang" Grid.Row="0"
+                          Content="Update UMP languages"
+                          Style="{DynamicResource CheckBoxOptionStyle}"></CheckBox>
+                <Border Name="PanelUpdateLang" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                            <ColumnDefinition Width="60*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="LbLangUpdateMode" Grid.Column="0" Text="UMP language update mode" Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <RadioButton Name="RadioLangAppend" Content="Append" Style="{DynamicResource RadioOptionValueStyle}" Tag="1"></RadioButton>
+                            <RadioButton Name="RadioLangModify" Content="Modify" Style="{DynamicResource RadioOptionValueStyle}" Tag="2"></RadioButton>
+                            <RadioButton Name="RadioLangReset" Content="Reset" Style="{DynamicResource RadioOptionValueStyle}" Tag="3"></RadioButton>
+                            <RadioButton Name="RadioLangBackup" Content="Backup" Style="{DynamicResource RadioOptionValueStyle}" Tag="4"></RadioButton>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+            <Grid Grid.Row="2">
+                <Border Name="BorderHybridRecording">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="LbHybridRecording" Grid.Row="0"
+                          Text="Hybrid Recording"
+                          Style="{DynamicResource LbOptionStyle}"></TextBlock>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Name="LbHybridDesc" Grid.Row="0"
+                                       TextWrapping="Wrap"
+                                       Text="Hybrid Recording"
+                                       Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                            <Grid Grid.Row="1">
+                                <StackPanel Orientation="Vertical" Margin="5,2">
+                                    
+                                    <Border Name="BorderIxPatch" Height="30">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Name="LbHybridIxPatch" Grid.Column="0"
+                                                       Text="IxPatch"
+                                                       Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                                            <TextBlock Name="LbIxPatchRename" Grid.Column="2"
+                                                       Text="Rename"
+                                                       Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                                            <TextBox Name="TxtHybridIxPatch" Grid.Column="1"
+                                                     HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                                     Margin="5,0"
+                                                     Text="NtiDrv.dll"
+                                                     IsEnabled="False"></TextBox>
+                                            <TextBox Name="TxtIxPatchRename" Grid.Column="3"
+                                                     HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                                     Margin="5,0"></TextBox>
+                                        </Grid>
+                                    </Border>
+
+                                    <Border Name="BorderIPPatch" Height="30">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Name="LbHybridIPPatch" Grid.Column="0"
+                                                       Text="IPPatch"
+                                                       Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                                            <TextBlock Name="LbIPPatchRename" Grid.Column="2"
+                                                       Text="Rename"
+                                                       Style="{DynamicResource LbOptionItemStyle}"></TextBlock>
+                                            <TextBox Name="TxtHybridIPPatch" Grid.Column="1"
+                                                     HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                                     Margin="5,0"
+                                                     Text="NtiDrv.dll"
+                                                     IsEnabled="False"></TextBox>
+                                            <TextBox Name="TxtIPPatchRename" Grid.Column="3"
+                                                     HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                                     Margin="5,0"></TextBox>
+                                        </Grid>
+                                    </Border>
+
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="LbOtherOptions" Grid.Row="0"
+                          Text="Other options"
+                          Style="{DynamicResource LbOptionStyle}"></TextBlock>
+                <Border Name="PanelOtherOptions" Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <CheckBox Name="CbSaveUpdateData" Grid.Row="0" Content="Save update file" Style="{DynamicResource CheckBoxOptionValueStyle}"></CheckBox>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Name="BtnPrevious" Style="{DynamicResource BtnWizardStyle}" Content="Previous"></Button>
+                <Button Name="BtnNext" Style="{DynamicResource BtnWizardStyle}" Content="Next"></Button>
+                <Button Name="BtnClose" Style="{DynamicResource BtnWizardStyle}" Content="Close"></Button>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

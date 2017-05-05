@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="UMPSearcher"
+  id="myeclipse.1458719509035"
+  context-root="/UMPSearcher"
+  j2ee-spec="5.0"
+  archive="UMPSearcher.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

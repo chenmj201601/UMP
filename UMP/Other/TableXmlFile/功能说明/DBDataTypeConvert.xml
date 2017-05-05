@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataTypesList>
+  <DataTypeRow>
+    <Type0>01</Type0>
+    <Type2>SMALLINT</Type2>
+    <Type3>NUMBER(5)</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>02</Type0>
+    <Type2>INT</Type2>
+    <Type3>NUMBER(11)</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>03</Type0>
+    <Type2>BIGINT</Type2>
+    <Type3>NUMBER(20)</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>04</Type0>
+    <Type2>NUMERIC</Type2>
+    <Type3>NUMBER</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>11</Type0>
+    <Type2>CHAR</Type2>
+    <Type3>CHAR</Type3>
+</DataTypeRow>
+  <DataTypeRow>
+    <Type0>12</Type0>
+    <Type2>NCHAR</Type2>
+    <Type3>NCHAR</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>13</Type0>
+    <Type2>VARCHAR</Type2>
+    <Type3>VARCHAR2</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>14</Type0>
+    <Type2>NVARCHAR</Type2>
+    <Type3>NVARCHAR2</Type3>
+  </DataTypeRow>
+  <DataTypeRow>
+    <Type0>21</Type0>
+    <Type2>DATETIME</Type2>
+    <Type3>DATE</Type3>
+  </DataTypeRow>
+</DataTypesList>

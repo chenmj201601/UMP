@@ -1,0 +1,15 @@
+create table XML_TABLE_FILE
+(
+  xml_filename VARCHAR2(20),
+  xml_string   VARCHAR2(4000),
+  xml_id       NUMBER(10),
+  xml_type     NUMBER(10)
+);
+comment on column XML_TABLE_FILE.xml_filename
+  is '文件名';
+comment on column XML_TABLE_FILE.xml_string
+  is 'XML字符串';
+comment on column XML_TABLE_FILE.xml_id
+  is '字符串ID';
+comment on column XML_TABLE_FILE.xml_type
+  is '文件类型，1：表结构 2：初始化数据';

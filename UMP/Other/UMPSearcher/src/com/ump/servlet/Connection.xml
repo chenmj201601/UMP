@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <DatabaseParameters P01="2" P02="E">
+  <DatabaseSQL P01="192.168.4.182" P02="1433" P03="UMPDataDByinlian" P04="sa" P05="PF,123" />
+  <wcf1 P01="http://192.168.6.7:8081/Wcf2Client/Service31032.svc?wsdl" />
+  <wcf2 P01="http://192.168.6.7:8081/Wcf2Client/Service000A1.svc?wsdl" />
+</DatabaseParameters> -->
+
+<DatabaseParameters P01="2" P02="E">
+  <DatabaseSQL P01="192.168.9.223" P02="1433" P03="UMPDataDB0711" P04="sa" P05="voicecodes" />
+  <wcf1 P01="http://192.168.9.223:8081/Wcf2Client/Service31032.svc?wsdl" />
+  <wcf2 P01="http://192.168.9.223:8081/Wcf2Client/Service000A1.svc?wsdl" />
+</DatabaseParameters>

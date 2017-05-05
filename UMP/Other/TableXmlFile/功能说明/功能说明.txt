@@ -1,0 +1,13 @@
+将表格式生成XML文件格式;
+
+--生成的表清单：     xml_table_list
+--数据类型清单：     xml_datatype
+--数据XML的数据文件：xml_table_file
+
+
+--文件创建过程：      zzy_table_xmlfile_create
+
+--文件样式见      T_00_000.xml
+--数据类型文件见  DBDataTypeConvert.xml
+
+

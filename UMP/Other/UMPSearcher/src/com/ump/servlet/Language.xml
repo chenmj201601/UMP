@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Accounts type="2052">
+ <Account type="2052">	
+  <LLLogin0>登录</LLLogin0>
+  <LLLogout1>注销</LLLogout1>
+  <LLqueryList2>查询</LLqueryList2>
+  <LLplayList3>播放列表</LLplayList3>
+  <LLextension4>分机</LLextension4>
+  <LLagent5>坐席</LLagent5>
+  <LLstarttime6>录音开始时间</LLstarttime6>
+  <LLstoptime7>录音结束时间</LLstoptime7>
+  <LLduration8>录音时长</LLduration8>
+  <LLdirection9>呼叫方向</LLdirection9>
+  <LLcallno10>主叫号码</LLcallno10>
+  <LLcalledno11>被叫号码</LLcalledno11>
+  <LLrecordref12>录音流水号</LLrecordref12>
+  <LLserverid13>服务器ID</LLserverid13>
+  <LLserverip14>服务器IP</LLserverip14>
+  <LLchanel15>通道号</LLchanel15>
+  <LLbSearch16>基本查询</LLbSearch16>
+  <LLall17>全部</LLall17>
+  <LLcallin18>呼入</LLcallin18>
+  <LLcallout19>呼出</LLcallout19>
+  <LLCC20>最近</LLCC20>
+  <LLCC21>天</LLCC21>
+  <LLCC22>周</LLCC22>
+  <LLCC23>月</LLCC23>
+  <LLCC24>年</LLCC24>
+  <LLCC25>时长范围</LLCC25>
+  <LLCC26>下载失败</LLCC26>
+  <LLCC27>下载成功：</LLCC27>
+  <LLCC28>播放列表未选择记录.</LLCC28>
+  <LLCC29>路径错误</LLCC29>
+  <LLCC30>加密</LLCC30>
+  <LLCC31>是</LLCC31>
+  <LLCC32>否</LLCC32>
+  <LLCC33>导出路径</LLCC33>
+  <LLCC34>导出格式</LLCC34>
+  <LLCC35>导出文件名</LLCC35>
+  <LLCC36>导出</LLCC36>
+  <LLCC37>密码</LLCC37>
+  <LLCC38>记住密码</LLCC38>
+  <LLCC39>确认</LLCC39>
+  <LLCC40>解密失败</LLCC40>
+  <LLCC41>2052</LLCC41>
+  <LLCC42>登录失败</LLCC42>
+  <LLCC43>数据库信息有误.</LLCC43>
+  <LLCC44>用户名或密码不能为空.</LLCC44>
+ </Account>
+ <Account type="1028">	
+  <LLLogin0>登錄</LLLogin0>
+  <LLLogout1>註銷</LLLogout1>
+  <LLqueryList2>查詢</LLqueryList2>
+  <LLplayList3>播放列表</LLplayList3>
+  <LLextension4>分機</LLextension4>
+  <LLagent5>坐席</LLagent5>
+  <LLstarttime6>錄音開始時間</LLstarttime6>
+  <LLstoptime7>錄音結束時間</LLstoptime7>
+  <LLduration8>錄音時長</LLduration8>
+  <LLdirection9>呼叫方向</LLdirection9>
+  <LLcallno10>主叫號碼</LLcallno10>
+  <LLcalledno11>被叫號碼</LLcalledno11>
+  <LLrecordref12>錄音流水號</LLrecordref12>
+  <LLserverid13>服務器ID</LLserverid13>
+  <LLserverip14>服務器IP</LLserverip14>
+  <LLchanel15>通道號</LLchanel15>
+  <LLbSearch16>基本查詢</LLbSearch16>
+  <LLall17>全部</LLall17>
+  <LLcallin18>呼入</LLcallin18>
+  <LLcallout19>呼出</LLcallout19>
+  <LLCC20>最近</LLCC20>
+  <LLCC21>天</LLCC21>
+  <LLCC22>周</LLCC22>
+  <LLCC23>月</LLCC23>
+  <LLCC24>年</LLCC24>
+  <LLCC25>時長範圍</LLCC25>
+  <LLCC26>下載失敗</LLCC26>
+  <LLCC27>下載成功：</LLCC27>
+  <LLCC28>播放列表未選擇記錄.</LLCC28>
+  <LLCC29>路徑錯誤</LLCC29>
+  <LLCC30>加密</LLCC30>
+  <LLCC31>是</LLCC31>
+  <LLCC32>否</LLCC32>
+  <LLCC33>導出路徑</LLCC33>
+  <LLCC34>導出格式</LLCC34>
+  <LLCC35>導出文件名</LLCC35>
+  <LLCC36>導出</LLCC36>
+  <LLCC37>密碼</LLCC37>
+  <LLCC38>記住密碼</LLCC38>
+  <LLCC39>確認</LLCC39>
+  <LLCC40>解密失敗</LLCC40>
+  <LLCC41>2052</LLCC41>
+  <LLCC42>登錄失敗</LLCC42>
+  <LLCC43>數據庫信息有誤.</LLCC43>
+  <LLCC44>用戶名或密碼不能為空.</LLCC44>
+ </Account>
+ <Account type="1033">	
+  <LLLogin0>Login</LLLogin0>
+  <LLLogout1>Logout</LLLogout1>
+  <LLqueryList2>Query</LLqueryList2>
+  <LLplayList3>PlayList</LLplayList3>
+  <LLextension4>Extension</LLextension4>
+  <LLagent5>Agent</LLagent5>
+  <LLstarttime6>StartRecordTime</LLstarttime6>
+  <LLstoptime7>StopRecordTime</LLstoptime7>
+  <LLduration8>RecordLength</LLduration8>
+  <LLdirection9>Direction</LLdirection9>
+  <LLcallno10>Calling Number</LLcallno10>
+  <LLcalledno11>Called number</LLcalledno11>
+  <LLrecordref12>Recordreferenct</LLrecordref12>
+  <LLserverid13>Server ID</LLserverid13>
+  <LLserverip14>Server IP</LLserverip14>
+  <LLchanel15>Chanel</LLchanel15>
+  <LLbSearch16>Basic Query</LLbSearch16>
+  <LLall17>All</LLall17>
+  <LLcallin18>Callin</LLcallin18>
+  <LLcallout19>Call out</LLcallout19>
+  <LLCC20>Current</LLCC20>
+  <LLCC21>Day</LLCC21>
+  <LLCC22>Week</LLCC22>
+  <LLCC23>Month</LLCC23>
+  <LLCC24>Year</LLCC24>
+  <LLCC25>Record Length</LLCC25>
+  <LLCC26>Download Field.</LLCC26>
+  <LLCC27>Download Succed.</LLCC27>
+  <LLCC28>Select at least one in the playlist.</LLCC28>
+  <LLCC29>Path Error.</LLCC29>
+  <LLCC30>Encryption</LLCC30>
+  <LLCC31>Yes</LLCC31>
+  <LLCC32>No</LLCC32>
+  <LLCC33>Export Path</LLCC33>
+  <LLCC34>Meida Type</LLCC34>
+  <LLCC35>File Name</LLCC35>
+  <LLCC36>Export</LLCC36>
+  <LLCC37>Password</LLCC37>
+  <LLCC38>Remember</LLCC38>
+  <LLCC39>Commit</LLCC39>
+  <LLCC40>Decrypt Field.</LLCC40>
+  <LLCC41>1033</LLCC41>
+  <LLCC42>Login Field.</LLCC42>
+  <LLCC43>DataBase Config Error.</LLCC43>
+  <LLCC44>UserName or Password Can not be empty.</LLCC44>
+ </Account>   
+  <Account type="1041">	
+  <LLLogin0>登录</LLLogin0>
+  <LLLogout1>注销</LLLogout1>
+  <LLqueryList2>查询</LLqueryList2>
+  <LLplayList3>播放列表</LLplayList3>
+  <LLextension4>分机</LLextension4>
+  <LLagent5>坐席</LLagent5>
+  <LLstarttime6>录音开始时间</LLstarttime6>
+  <LLstoptime7>录音结束时间</LLstoptime7>
+  <LLduration8>录音时长</LLduration8>
+  <LLdirection9>呼叫方向</LLdirection9>
+  <LLcallno10>主叫号码</LLcallno10>
+  <LLcalledno11>被叫号码</LLcalledno11>
+  <LLrecordref12>录音流水号</LLrecordref12>
+  <LLserverid13>服务器ID</LLserverid13>
+  <LLserverip14>服务器IP</LLserverip14>
+  <LLchanel15>通道号</LLchanel15>
+  <LLbSearch16>基本查询</LLbSearch16>
+  <LLall17>全部</LLall17>
+  <LLcallin18>呼入</LLcallin18>
+  <LLcallout19>呼出</LLcallout19>
+  <LLCC20>最近</LLCC20>
+  <LLCC21>天</LLCC21>
+  <LLCC22>周</LLCC22>
+  <LLCC23>月</LLCC23>
+  <LLCC24>年</LLCC24>
+  <LLCC25>时长范围</LLCC25>
+  <LLCC26>下载失败</LLCC26>
+  <LLCC27>下载成功：</LLCC27>
+  <LLCC28>播放列表未选择记录.</LLCC28>
+  <LLCC29>路径错误</LLCC29>
+  <LLCC30>加密</LLCC30>
+  <LLCC31>是</LLCC31>
+  <LLCC32>否</LLCC32>
+  <LLCC33>导出路径</LLCC33>
+  <LLCC34>导出格式</LLCC34>
+  <LLCC35>导出文件名</LLCC35>
+  <LLCC36>导出</LLCC36>
+  <LLCC37>密码</LLCC37>
+  <LLCC38>记住密码</LLCC38>
+  <LLCC39>确认</LLCC39>
+  <LLCC40>解密失败</LLCC40>
+  <LLCC41>1041</LLCC41>
+  <LLCC42>登录失败</LLCC42>
+  <LLCC43>数据库信息有误.</LLCC43>
+  <LLCC44>用户名或密码不能为空.</LLCC44>
+ </Account>
+</Accounts>

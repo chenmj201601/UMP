@@ -1,0 +1,6 @@
+数据初始化
+
+根据表名，参数，WHERE条件生成XML格式文件,如T_00_004.xml
+
+生成DATAXML文件的过程是存储过程zzy_data_xmlfile_create
+保存数据的表为XML_TABLE_FILE

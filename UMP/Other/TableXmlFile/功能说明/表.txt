@@ -1,0 +1,41 @@
+create table XML_TABLE_LIST
+(
+  table_name    VARCHAR2(30) not null,
+  create_status CHAR(1)
+);
+-- Add comments to the columns 
+comment on column XML_TABLE_LIST.table_name
+  is '表名';
+comment on column XML_TABLE_LIST.create_status
+  is '成生状态';
+
+
+
+------------------------------------------------------
+create table XML_DATATYPE
+(
+  datatypeid     VARCHAR2(2),
+  datatypesql    VARCHAR2(10),
+  datatypeoracle VARCHAR2(10)
+);
+
+---------------------------------------------------------
+
+create table XML_TABLE_FILE
+(
+  xml_filename VARCHAR2(20),
+  xml_string   VARCHAR2(4000),
+  xml_id       NUMBER(10),
+  xml_type     NUMBER(10)
+);
+-- Add comments to the columns 
+comment on column XML_TABLE_FILE.xml_filename
+  is '文件名';
+comment on column XML_TABLE_FILE.xml_string
+  is 'XML字符串';
+comment on column XML_TABLE_FILE.xml_id
+  is '字符串ID';
+comment on column XML_TABLE_FILE.xml_type
+  is '文件类型，1：表结构 2：初始化数据';
+
+---------------------------------------------------------

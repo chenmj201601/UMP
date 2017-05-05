@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+
+	<servlet>
+		<servlet-name>LoginServlt</servlet-name>
+		<servlet-class>com.ump.servlet.LoginServlt</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RecordSearchServlet</servlet-name>
+		<servlet-class>com.ump.servlet.RecordSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RecordSelectSelvert</servlet-name>
+		<servlet-class>com.ump.servlet.RecordSelectSelvert</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetAgentListServlet</servlet-name>
+		<servlet-class>com.ump.servlet.GetAgentListServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetExtensionListServlet</servlet-name>
+		<servlet-class>com.ump.servlet.GetExtensionListServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginoutServlet</servlet-name>
+		<servlet-class>com.ump.servlet.LoginoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetUrlPlayerServlet</servlet-name>
+		<servlet-class>com.ump.servlet.GetUrlPlayerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RecDownloadServlet</servlet-name>
+		<servlet-class>com.ump.servlet.RecDownloadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetPathServlet</servlet-name>
+		<servlet-class>com.ump.servlet.GetPathServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>LoginServlt</servlet-name>
+		<url-pattern>/LoginServlt</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RecordSearchServlet</servlet-name>
+		<url-pattern>/RecordSearchServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RecordSelectSelvert</servlet-name>
+		<url-pattern>/RecordSelectSelvert</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetAgentListServlet</servlet-name>
+		<url-pattern>/GetAgentListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetExtensionListServlet</servlet-name>
+		<url-pattern>/GetExtensionListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginoutServlet</servlet-name>
+		<url-pattern>/LoginoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetUrlPlayerServlet</servlet-name>
+		<url-pattern>/GetUrlPlayerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RecDownloadServlet</servlet-name>
+		<url-pattern>/RecDownloadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetPathServlet</servlet-name>
+		<url-pattern>/GetPathServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>Login.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
