@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="UMP.PF.MAMT.UserControls.UC_LanguageData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ListView x:Name="lvLanguage" Background="Transparent" Style="{DynamicResource ControlBaseStyle}"  x:FieldModifier="public"
+                  ItemsSource="{Binding}" DataContext="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <!--<GridViewColumn Header="{DynamicResource No.}" DisplayMemberBinding="{Binding Path=ROWNUM}"></GridViewColumn>-->
+                    <GridViewColumn Header="{DynamicResource LanguageCode}" DisplayMemberBinding="{Binding Path=LanguageCode}"></GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource MessageCode}" DisplayMemberBinding="{Binding Path=MessageID}"></GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource DisplayMessage}" DisplayMemberBinding="{Binding Path=DisplayMessage,Mode=TwoWay}" Width="400"></GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource TipMessage}" DisplayMemberBinding="{Binding TipMessage}" Width="200"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

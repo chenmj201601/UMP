@@ -1,0 +1,45 @@
+﻿<Window x:Class="UMP.PF.MAMT.UserControls.DBManager.CreateDBStup21"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateDBStup2" Height="300" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="38"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Name="ImageDBConnectProfile" HorizontalAlignment="Left" Height="24" Margin="2,2,0,0" VerticalAlignment="Top" Width="24"/>
+        <Label Grid.Row="0" Name="LabelDBConnectProfile" Content="{DynamicResource CreateDB}"  Margin="30,3,0,0" Height="24" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="12" FontWeight="Bold" Style="{DynamicResource LabelFontStyle}" Foreground="White"/>
+        <Button Grid.Row="0" x:Name="ButtonCloseWindowTop" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonCloseStyle}" VerticalAlignment="Top" Width="46" Margin="0"/>
+        <Border Grid.Row="1" Background="White" Grid.RowSpan="2" Opacity="0.85" Margin="5,5,5,5" BorderThickness="1" BorderBrush="LightGray" CornerRadius="5">
+            <TabControl Margin="5,5,5,38" Background="Transparent">
+                <TabItem Name="TabItemDBConnectProfile" Header="{DynamicResource DBConnParams}" Background="Transparent" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType" Height="24">
+                    <Grid Margin="0" Background="Transparent" Name="GridConnectProfile">
+                        <Label Height="24" Name="LabelDBServerName" HorizontalAlignment="Left" Margin="20,15,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" 
+                               Style="{DynamicResource ControlBaseStyle}" FontSize="12" Content="{DynamicResource DBServerHost}"></Label>
+                        <TextBox Height="24" Name="txtServerName" Margin="180,15,20,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White"
+                                 Style="{DynamicResource ControlBaseStyle}" FontSize="12"/>
+                        <Label x:Name="LabelServerPort" Margin="20,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="24" 
+                               Style="{DynamicResource ControlBaseStyle}" FontSize="12" Content="{DynamicResource DBServerPort}"></Label>
+                        <TextBox x:Name="txtServerPort" Margin="180,55,20,0" Height="24" Text="1433" VerticalAlignment="Top" Background="White"
+                                 Style="{DynamicResource ControlBaseStyle}" FontSize="12"/>
+
+                        <Label x:Name="LabelLoginName" Margin="20,95,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="24"
+                               Style="{DynamicResource ControlBaseStyle}" FontSize="12" Content="{DynamicResource DBServerLoginUser}"></Label>
+                        <TextBox Height="24" Name="txtLoginName" Margin="180,95,20,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White"
+                                 Style="{DynamicResource ControlBaseStyle}" FontSize="12" Text="sa"/>
+
+                        <Label x:Name="LabelLoginPassword" Grid.Row="1" Margin="20,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="24"
+                               Style="{DynamicResource ControlBaseStyle}" FontSize="12" Content="{DynamicResource DBServerPwd}"></Label>
+                        <PasswordBox x:Name="txtLoginPassword" Margin="180,135,20,0" VerticalAlignment="Top" Height="24" PasswordChar="*" 
+                                     VerticalContentAlignment="Center" Background="White" FontSize="12"></PasswordBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+        <Button x:Name="ButtonNextStep" Grid.Row="2" Margin="0,0,122,10" HorizontalAlignment="Right" Width="100"
+                Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" Content="{DynamicResource NextStup}"></Button>
+        <Button x:Name="ButtonCloseWindowButtom" Grid.Row="2" Margin="0,0,12,10" HorizontalAlignment="Right" Width="100"
+                Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" Content="{DynamicResource Cancel}"></Button>
+    </Grid>
+</Window>

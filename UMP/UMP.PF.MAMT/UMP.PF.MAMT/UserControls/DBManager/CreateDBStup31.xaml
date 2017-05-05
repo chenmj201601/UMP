@@ -1,0 +1,101 @@
+﻿<Window x:Class="UMP.PF.MAMT.UserControls.DBManager.CreateDBStup31"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateDBStup31" Height="300" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="38"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Name="ImageCreateDatabase" HorizontalAlignment="Left" Height="24" Margin="2,2,0,0" VerticalAlignment="Top" Width="24"/>
+        <Label Grid.Row="0" Name="LabelConnectServerTip" Content="{DynamicResource CreateDB}"  Margin="30,3,0,0" Height="24" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="12" FontWeight="Bold" Style="{DynamicResource LabelFontStyle}" Foreground="White"/>
+        <Button Grid.Row="0" x:Name="ButtonCloseWindowTop" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonCloseStyle}" VerticalAlignment="Top" Width="46" Margin="0"/>
+        <Border Grid.Row="1" Background="White" Grid.RowSpan="2" Opacity="0.85" Margin="5,5,5,5" BorderThickness="1" BorderBrush="LightGray" CornerRadius="5">
+            <TabControl Margin="0" Background="Transparent">
+                <TabItem Name="TabItemDBGenaral" Header="常规" Background="Transparent" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType" Height="24">
+                    <Grid>
+                        <Label Height="24" Name="LabelDBName" HorizontalAlignment="Left" Margin="15,15,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">数据库服务器：</Label>
+                        <TextBox Height="24" Name="TextBoxDBName" Margin="140,15,20,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12"/>
+                        <CheckBox x:Name="CheckBoxWithReplace" Margin="140,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="Auto" IsEnabled="False">覆盖现有数据库</CheckBox>
+                        <Label x:Name="LabelCollations" Margin="15,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="24" Style="{DynamicResource LabelFontStyle}" FontSize="12">排序规则：</Label>
+                        <ComboBox x:Name="ComboBoxCollations" Margin="140,85,20,0" VerticalAlignment="Top" Height="24" Background="White" Style="{DynamicResource ComboBoxFontStyle}" FontSize="12"/>
+                        <Label x:Name="LabelRecoveryMode" Margin="15,130,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="24" Style="{DynamicResource LabelFontStyle}" FontSize="12">恢复模式：</Label>
+                        <ComboBox x:Name="ComboBoxRecoveryMode" Margin="140,130,20,0" VerticalAlignment="Top" Height="24" Background="White" Style="{DynamicResource ComboBoxFontStyle}" FontSize="12" SelectedIndex="2">
+                            <ComboBoxItem x:Name="ComboBoxItemRecoveryMode1" Tag="1" Margin="0,1,0,1" Height="24" FontSize="12" Style="{DynamicResource ComboBoxItemFontStyle}">完整</ComboBoxItem>
+                            <ComboBoxItem x:Name="ComboBoxItemRecoveryMode2" Tag="2" Margin="0,1,0,1" Height="24" FontSize="12" Style="{DynamicResource ComboBoxItemFontStyle}">大容量日志</ComboBoxItem>
+                            <ComboBoxItem x:Name="ComboBoxItemRecoveryMode3" Tag="3" Margin="0,1,0,1" Height="24" FontSize="12" Style="{DynamicResource ComboBoxItemFontStyle}">简单</ComboBoxItem>
+                        </ComboBox>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Name="TabItemDataFileOptions" Header="数据文件" Background="Transparent" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType" Height="24">
+                    <Grid Name="GridDataFileOptions">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Height="24" Name="LabelDataPath" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">路径</Label>
+                        <TextBox Height="24" Name="TextBoxDataPath" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="80,10,45,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" IsReadOnly="True"/>
+                        <Button Name="ButtonDataPath" Margin="0,10,12,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Height="24" Width="30" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" Content="..."/>
+                        <GroupBox Header="文件大小" Margin="5,10,2,2" Name="GroupBoxDataSize" Grid.Row="1" Grid.Column="0" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">
+                            <Grid Name="GridDataSize">
+                                <Label Height="24" Name="LabelDataInitSize" HorizontalAlignment="Left" Margin="5,20,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">Inital Size(MB)</Label>
+                                <TextBox Height="24" Name="TextBoxDataInitSize" Margin="0,20,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="80" Text="1024" HorizontalContentAlignment="Right"/>
+                                <Label Height="24" Name="LabelDataMaximumSize" HorizontalAlignment="Left" Margin="5,65,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">Maximum Size(MB)</Label>
+                                <TextBox Height="24" Name="TextBoxDataMaximumSize" Margin="0,65,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="80" Text="0" HorizontalContentAlignment="Right"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="自动增长" Margin="5,10,5,2" Name="GroupBoxDataGrowth"  Grid.Row="1" Grid.Column="1" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">
+                            <Grid Name="GridDataGrowth">
+                                <RadioButton Height="Auto" HorizontalAlignment="Left" Margin="5,22,0,0" Name="RadioButtonDataPrecent" VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">In Percent</RadioButton>
+                                <TextBox Height="24" Name="TextBoxDataPrecent" Margin="0,20,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="70" Text="10" HorizontalContentAlignment="Right"/>
+                                <RadioButton Height="Auto" HorizontalAlignment="Left" Margin="5,67,0,0" Name="RadioButtonDataMegabytes" VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" IsChecked="True" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">In Megabytes</RadioButton>
+                                <TextBox Height="24" Name="TextBoxDataMegabytes" Margin="0,65,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="70" Text="100" HorizontalContentAlignment="Right"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="TabItemLogFileOptions" Header="日志文件" Background="Transparent" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType" Height="24">
+                    <Grid Name="GridLogFileOptions">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Height="24" Name="LabelLogPath" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">路径</Label>
+                        <TextBox Height="24" Name="TextBoxLogPath" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="80,10,45,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" IsReadOnly="True"/>
+                        <Button Name="ButtonLogPath" Margin="0,10,12,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Height="24" Width="30" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" Content="..."/>
+                        <GroupBox Header="文件名、文件大小" Margin="5,10,2,2" Name="GroupBoxLogSize" Grid.Row="1" Grid.Column="0" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">
+                            <Grid Name="GridLogSize">
+                                <Label Height="24" Name="LabelLogInitSize" HorizontalAlignment="Left" Margin="5,20,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">Inital Size(MB)</Label>
+                                <TextBox Height="24" Name="TextBoxLogInitSize" Margin="0,20,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="80" Text="256" HorizontalContentAlignment="Right"/>
+                                <Label Height="24" Name="LabellogMaximumSize" HorizontalAlignment="Left" Margin="5,65,0,0"  VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" Style="{DynamicResource LabelFontStyle}" FontSize="12">Maximum Size(MB)</Label>
+                                <TextBox Height="24" Name="TextBoxLogMaximumSize" Margin="0,65,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="80" Text="0" HorizontalContentAlignment="Right"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="自动增长" Margin="5,10,5,2" Name="GroupBoxLogGrowth"  Grid.Row="1" Grid.Column="1" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">
+                            <Grid Name="GridLogGrowth">
+                                <RadioButton Height="Auto" HorizontalAlignment="Left" Margin="5,22,0,0" Name="RadioButtonLogPrecent" VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" IsChecked="True" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">In Percent</RadioButton>
+                                <TextBox Height="24" Name="TextBoxLogPrecent" Margin="0,20,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="70" Text="10" HorizontalContentAlignment="Right"/>
+                                <RadioButton Height="Auto" HorizontalAlignment="Left" Margin="5,67,0,0" Name="RadioButtonLogMegabytes" VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" FontFamily="SimSun" FontSize="12" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="ClearType">In Megabytes</RadioButton>
+                                <TextBox Height="24" Name="TextBoxLogMegabytes" Margin="0,65,10,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" Background="White" Style="{DynamicResource TextBoxFontStyle}" FontSize="12" HorizontalAlignment="Right" Width="70" Text="100" HorizontalContentAlignment="Right"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+        <Button x:Name="ButtonBackStep" Grid.Row="2" Margin="0,0,232,10" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0">上一步(_B)</Button>
+        <Button x:Name="ButtonNextStep" Grid.Row="2" Margin="0,0,122,10" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0">下一步(_N)</Button>
+        <Button x:Name="ButtonCloseWindowButtom" Grid.Row="2" Margin="0,0,12,10" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0">取消(_Q)</Button>
+        <Button x:Name="ButtonSkipCreate" Grid.Row="2" Margin="12,0,0,10" HorizontalAlignment="Left" Width="100" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" Content="{DynamicResource Skip}"></Button>
+    </Grid>
+</Window>

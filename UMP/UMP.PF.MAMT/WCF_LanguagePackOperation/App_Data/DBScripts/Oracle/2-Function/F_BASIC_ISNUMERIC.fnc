@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION F_BASIC_ISNUMERIC (AStrNumber VARCHAR2)
+   RETURN NUMBER
+AS --ÊÇ·ñÊÇÊý×ÖÅÐ¶Ï
+   LNumberConvert   NUMBER;
+BEGIN
+   LNumberConvert := TO_NUMBER (AStrNumber);
+   RETURN 1;
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN 0;
+END;
+/

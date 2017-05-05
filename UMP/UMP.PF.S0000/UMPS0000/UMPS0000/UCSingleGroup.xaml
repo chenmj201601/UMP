@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UMPS0000.UCSingleGroup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500" Initialized="UserControl_Initialized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" MinHeight="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border  Grid.Row="0" x:Name="BorderFeatureGroup" Style="{DynamicResource BorderFeatureGroupStyle}">
+            <Label x:Name="LabelFeatureGroupName" Style="{DynamicResource LabelFeatureGroupNameStyle}" Content="{Binding Path=StrFeatureGroupName}"/>
+        </Border>
+        
+        <WrapPanel x:Name="WrapPanelContainsFeatures" Grid.Row="1" Style="{DynamicResource WrapPanelContainsFeaturesStyle}"/>
+    </Grid>
+</UserControl>

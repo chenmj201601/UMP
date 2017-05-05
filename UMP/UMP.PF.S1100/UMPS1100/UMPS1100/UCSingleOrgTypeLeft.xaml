@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="UMPS1100.UCSingleOrgTypeLeft"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="32" d:DesignWidth="300" Initialized="UserControl_Initialized">
+    <Grid x:Name="GridSingleOrgTypePanel" Style="{DynamicResource GridSingleOrgTypePanelStyle}">
+        <Image Name="ImageOrgStatus" Style="{DynamicResource ImageOrgStatus1Style}"/>
+        <Label Name="LabelOrgTypeName" Style="{DynamicResource LabelOrgTypeNameInUCStyle}" Content="{Binding Path=StrOrgTypeName}"/>
+    </Grid>
+</UserControl>

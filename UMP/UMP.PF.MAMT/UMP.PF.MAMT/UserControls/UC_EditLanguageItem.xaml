@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="UMP.PF.MAMT.UserControls.UC_EditLanguageItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <WrapPanel>
+                        <Label Content="{DynamicResource MessageID}" Style="{DynamicResource ControlBaseStyle}"></Label>
+                        <Label Name="lblMessageID" Style="{DynamicResource ControlBaseStyle}" Margin="10,0,10,0"></Label>
+                        <Label Content="{DynamicResource ModuleID}" Style="{DynamicResource ControlBaseStyle}" Margin="20,0,0,0"></Label>
+                        <Label Name="lblModuleID" Style="{DynamicResource ControlBaseStyle}" Margin="10,0,10,0"></Label>
+                        <Label Content="{DynamicResource ChildModuleID}" Style="{DynamicResource ControlBaseStyle}" Margin="20,0,0,0"></Label>
+                        <Label Name="lblChildModuleID" Style="{DynamicResource ControlBaseStyle}"></Label>
+                        <Label Content="{DynamicResource InPageFrame}" Style="{DynamicResource ControlBaseStyle}" Margin="20,0,0,0"></Label>
+                        <Label Name="lblInPageFrame" Style="{DynamicResource ControlBaseStyle}"></Label>
+                    </WrapPanel>
+                    <GroupBox Header="{DynamicResource DisplayContent}" Margin="0,20,0,10">
+                        <StackPanel Name="spDisplayContent"></StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="{DynamicResource ToolTipContent}">
+                        <StackPanel Name="spTipContent" x:FieldModifier="public"></StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

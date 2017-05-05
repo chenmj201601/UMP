@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="UMPS1100.UCOrganizationMaintenance"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600" Background="Transparent" Initialized="UserControl_Initialized">
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="BorderAllOrgTypeList" Grid.Column="0" Style="{DynamicResource BorderAllOrgTypeListStyle}">
+            <Grid x:Name="GridAllOrgTypeList" Style="{DynamicResource GridAllOrgTypeListStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border x:Name="BorderAllOrgTypeOperation" Style="{DynamicResource BorderAllOrgTypeOperationStyle}">
+                    <Grid x:Name="GridAllOrgTypeOperation" Style="{DynamicResource GridAllOrgTypeOperationStyle}">
+                        <Label x:Name="LabelAllOrgTypeName" Style="{DynamicResource LabelAllOrgTypeNameStyle}"/>
+                        <StackPanel x:Name="StackPanelButtonLayout" Grid.Row="3" Style="{DynamicResource StackPanelButtonAddDelStyle}">
+                            <Button x:Name="ButtonAddOrgType" Style="{DynamicResource ButtonAddOrgStyle}" Content="{Binding Path=StrAddOrg}"/>
+                            <Button x:Name="ButtonDelOrgType" Style="{DynamicResource ButtonAddOrgStyle}" Content="{Binding Path=StrDelOrg}"/>
+                        </StackPanel>
+                        <!--<Button x:Name="ButtonAddOrgType" Margin="0,2,35,0" VerticalAlignment="Top" Width="32" Height="32" HorizontalAlignment="Right" Cursor="Hand" Style="{DynamicResource ButtonEffect01}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Grid>
+                                        <Image Name="ImageLoginSystem" Style="{DynamicResource AddOrgTypeImage}" Stretch="Fill"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="ButtonDelOrgType" Margin="0,2,0,0" VerticalAlignment="Top" Width="32" Height="32" HorizontalAlignment="Right" Cursor="Hand" Style="{DynamicResource ButtonEffect01}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Grid>
+                                        <Image Name="ImageLoginOptions"  Style="{DynamicResource DelOrgTypeImage}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>-->
+                        
+                    </Grid>
+                </Border>
+                <Grid Name="GridAllOrgTypeDetail" Style="{DynamicResource GridAllOrgTypeDetailStyle}" Grid.Row="1" Margin="0,3,0,0">
+                    <ScrollViewer x:Name="ScrollAllOrgTypeDetail" Style="{DynamicResource ScrollAllOrgTypeDetailStyle}">
+                        <StackPanel x:Name="StackPanelAllOrgTypeDetail" Style="{DynamicResource StackPanelAllOrgTypeDetailStyle}"/>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Border>
+        <GridSplitter Name="SplitterLeftRight" Grid.Column="1" ShowsPreview="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0" Background="Transparent" Width="2"/>
+        <Border x:Name="BorderSingeOrgDetail" Grid.Column="2" Style="{DynamicResource BorderAllOrgTypeListStyle}">
+            <Grid x:Name="GridSingeOrgDetail" Style="{DynamicResource GridAllOrgTypeListStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border x:Name="BorderSingleOperation" Style="{DynamicResource BorderAllOrgTypeOperationStyle}">
+                    <Grid x:Name="GridSingleOperation" Style="{DynamicResource GridAllOrgTypeOperationStyle}">
+                        <Label x:Name="LabelSingleOrgName" Style="{DynamicResource LabelSingleOrgNameStyle}" Content="{Binding Path=StrTypeName}"/>
+                        <Button x:Name="ButtonEditApply" Style="{DynamicResource ButtonEditStyle}" Content="{Binding Path=StrEditApply}"/>
+                        <Button x:Name="ButtonCancelEdit" Style="{DynamicResource ButtonCancelStyle}" Content="{Binding Path=StrCancel}"/>
+                    </Grid>
+                </Border>
+                <Grid Name="GridSingleOrgTypeDetail" Style="{DynamicResource GridAllOrgTypeDetailStyle}" Grid.Row="1" Margin="0,3,0,0">
+                    <ScrollViewer x:Name="ScrollSingleOrgTypeDetail" Style="{DynamicResource ScrollSingleOrgTypeDetailStyle}">
+                        <Grid x:Name="GridSingleOrgTypeViewEdit" Margin="0">
+                            <GroupBox x:Name="GroupBoxSingleTypeValueHeader" Style="{DynamicResource GroupBoxSingleTypeValueHeaderStyle}" Header="{Binding Path=StrHeader}">
+                                <Grid x:Name="GridViewOrEditValue" Style="{DynamicResource GridViewOrEditValueStyle}">
+                                    <Label x:Name="LabelOrgTypeName" Style="{DynamicResource LabelOrgTypeNameStyle}"/>
+                                    <TextBox x:Name="TextBoxOrgTypeName" Style="{DynamicResource TextBoxOrgTypeNameStyle}"/>
+                                    <Label x:Name="LabelOrgTypeStatus" Style="{DynamicResource LabelOrgTypeStatusStyle}"/>
+                                    <CheckBox x:Name="CheckBoxIsEnabled" Style="{DynamicResource CheckBoxIsEnabledStyle}"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="GroupBoxSingleTypeDescriber" Style="{DynamicResource GroupBoxSingleTypeDescriberStyle}" Header="{Binding Path=StrDescriber}">
+                                <TextBox x:Name="TextBoxSingleTypeDescriber" Style="{DynamicResource TextBoxSingleTypeDescriberStyle}" Text="{Binding Path=StrTypeDesc}"/>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
