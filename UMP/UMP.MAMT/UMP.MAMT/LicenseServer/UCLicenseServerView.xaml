@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="UMP.MAMT.LicenseServer.UCLicenseServerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Name="LabelMainServerTitle" Style="{DynamicResource TextBoxNormalStyle}" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,1,0"/>
+            <TextBox Grid.Column="0" Grid.Row="1" Name="LabelMStatus" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="2" Name="LabelMIsEnabled" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="3" Name="LabelMHost" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="4" Name="LabelMPort" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,1"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Name="TextBoxMStatus" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="2" Name="TextBoxMIsEnabled" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="3" Name="TextBoxMHost" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="4" Name="TextBoxMPort" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,1"/>
+            
+            <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" ShowsPreview="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0" Background="SlateGray" Width="1"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Name="LabelSpareServerTitle" Style="{DynamicResource TextBoxNormalStyle}" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,1,0"/>
+            <TextBox Grid.Column="0" Grid.Row="1" Name="LabelSStatus" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="2" Name="LabelSIsEnabled" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="3" Name="LabelSHost" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,0"/>
+            <TextBox Grid.Column="0" Grid.Row="4" Name="LabelSPort" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="1,1,0,1"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Name="TextBoxSStatus" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="2" Name="TextBoxSIsEnabled" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="3" Name="TextBoxSHost" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,0"/>
+            <TextBox Grid.Column="2" Grid.Row="4" Name="TextBoxSPort" Style="{DynamicResource TextBoxNormalStyle}" Background="Transparent" IsReadOnly="True" BorderBrush="SlateGray" BorderThickness="0,1,1,1"/>
+
+            <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" ShowsPreview="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0" Background="SlateGray" Width="1"/>
+        </Grid>
+    </Grid>
+</UserControl>
