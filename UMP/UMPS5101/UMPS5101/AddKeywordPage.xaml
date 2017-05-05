@@ -1,0 +1,90 @@
+﻿<umpc:UMPUserControl x:Class="UMPS5101.AddKeywordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      mc:Ignorable="d">
+
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS5101;component/Themes/Default/UMPS5101/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Style="{DynamicResource FormItemText}">
+                <TextBlock Name="TbKeyword" TextWrapping="Wrap" Text="Keyword" ></TextBlock>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                <TextBox Name="TxtKeyword" TextWrapping="Wrap" TextChanged="TxtKeyword_OnTextChanged"></TextBox>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource FormItemText}">
+                <TextBlock Name="TbIcan" TextWrapping="Wrap" Text="Ican" ></TextBlock>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                <ComboBox Name="CmbIcan">
+                    <ComboBoxItem Name="CmbIcan1" HorizontalAlignment="Center">
+                        <Image Name="Ico00011" Source="Themes/Default/UMPS5101/Images/00011.png"></Image>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="CmbIcan2" HorizontalAlignment="Center">
+                        <Image Name="Ico00012" Source="Themes/Default/UMPS5101/Images/00012.png"></Image>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="CmbIcan3" HorizontalAlignment="Center">
+                        <Image Name="Ico00013" Source="Themes/Default/UMPS5101/Images/00013.png"></Image>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="CmbIcan4" HorizontalAlignment="Center">
+                        <Image Name="Ico00014" Source="Themes/Default/UMPS5101/Images/00014.png"></Image>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="CmbIcan5" HorizontalAlignment="Center">
+                        <Image Name="Ico00015" Source="Themes/Default/UMPS5101/Images/00015.png"></Image>
+                    </ComboBoxItem>
+                </ComboBox>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="1" Name="BorderKwInfo" Visibility="Collapsed">
+                <CheckBox Name="CbEnableKwConnect" Content="Enable Kw Content" Style="{DynamicResource FormItemChackBox}" ></CheckBox>
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="1">
+                <CheckBox Name="CbEnable" Content="Enable" Style="{DynamicResource FormItemChackBox}" ></CheckBox>
+            </Border>
+        </Grid>
+      
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Style="{DynamicResource FormButtonStyle}">
+                   <Button Name="ButNext" Content="Next" Click="ButNext_OnClick"></Button>
+                </Border>
+                <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="ButCancel" Content="Cancel" Click="ButCancel_OnClick"></Button>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</umpc:UMPUserControl>

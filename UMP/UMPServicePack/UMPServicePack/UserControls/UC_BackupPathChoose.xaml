@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="UMPServicePack.UserControls.UC_BackupPathChoose"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid>
+        <Border Style="{DynamicResource BorderInChildeWindowDetail}" VerticalAlignment="Stretch" Margin="0" >
+            <Grid>
+                <GroupBox Name="grpBackup" Header="{DynamicResource string93}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10">
+                    <Grid>
+                        <Label Name="lblTip" Margin="20,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="200" Content="{DynamicResource string53}"></Label>
+                        <TextBox Name="txtPath" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40,56,150,10"
+                                 Style="{DynamicResource TextBoxNormalStyle}" FontSize="12" MinWidth="230" Height="26" IsEnabled="False"></TextBox>
+                        <Button Name="btnBrowse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,56,30,0" Width="100" Content="{DynamicResource string54}"></Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Name="grpNtidrv" Header="{DynamicResource string92}" VerticalAlignment="Top" Margin="10,130,10,0">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{DynamicResource string94}" Margin="20,10,10,0"></TextBlock>
+                        <DockPanel Margin="0,10,0,0" Name="dpIP">
+                            <Label Content="{DynamicResource string95}" VerticalAlignment="Top" Margin="40,10,0,10" HorizontalAlignment="Left" Width="70"></Label>
+                            <TextBox Name="txtIPOldName" Text="Ntidrv.dll" HorizontalAlignment="Left" IsEnabled="False" VerticalAlignment="Top" Width="200" Margin="20,10,0,10"></TextBox>
+                            <Label Content="{DynamicResource string97}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,10"  Width="100"></Label>
+                            <TextBox Name="txtIPNewName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,20,10" VerticalContentAlignment="Center" Width="200"></TextBox>
+                        </DockPanel>
+                        <DockPanel Margin="0,10,0,0" Name="dpSnyway">
+                            <Label Content="{DynamicResource string96}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,10,0,10" Width="70"></Label>
+                            <TextBox Name="txtSnywayOldName" Text="Ntidrv.dll" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,10"  IsEnabled="False" Height="26" Width="200"></TextBox>
+                            <Label Content="{DynamicResource string97}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,10" Width="100"></Label>
+                            <TextBox Name="txtSnywayNewName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,20,10" VerticalContentAlignment="Center" Width="200"></TextBox>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </Border>
+        <Button Name="btnPrevious" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100"  Content="{DynamicResource string33}" Margin="0,10,240,30"></Button>
+        <Button Name="btnNext" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Content="{DynamicResource string34}" Margin="0,10,130,30"></Button>
+        <Button Name="btnTermination" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Content="{DynamicResource string21}" Margin="0,10,25,30"></Button>
+    </Grid>
+</UserControl>

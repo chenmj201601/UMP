@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpdateInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="UMP8.03.001P05.000" Version="8.03.001 P05.000" BaseVersion="8.03.001" Type="3" PublishDate="2016-08-02" Description="" xmlns="http://www.voicecyber.com/UMP/Updates/2016/05">
+  <Modules>
+    <Module SerialNo="803001P020000002" Name="803001P020000002" Lang="MC00000002" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Display the count of not read message in header" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000004" Name="803001P020000004" Lang="MC00000004" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Copyright message error" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000005" Name="803001P020000005" Lang="MC00000005" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Database not exist alert message error" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000006" Name="803001P020000006" Lang="MC00000006" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="IM license control" Type="2" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000007" Name="803001P020000007" Lang="MC31010001" ModuleLangID="M3101" ModuleID="3101" ModuleName="ScoreSheet Management" Content="Child item panel icon button not exist error" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000008" Name="803001P020000008" Lang="MC31010002" ModuleLangID="M3101" ModuleID="3101" ModuleName="ScoreSheet Management" Content="Delete ScoreSheet then page breakdown" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000009" Name="803001P020000009" Lang="MC31010003" ModuleLangID="M3101" ModuleID="3101" ModuleName="ScoreSheet Management" Content="YesNoStandard add Reverse property" Type="2" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000010" Name="803001P020000010" Lang="MC31020001" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="BookmarkRank add button not exist error"  Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000011" Name="803001P020000011" Lang="MC31020002" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="Query condition child window breakdown" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000012" Name="803001P020000012" Lang="MC31020003" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="Play record from PlayList then page breakdown" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000013" Name="803001P020000013" Lang="MC31020004" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="File export setting save directory empty, gave default directory" Type="2" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000014" Name="803001P020000014" Lang="MC31020005" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="StartRecordTime display error in scoresheet list" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000015" Name="803001P020000015" Lang="MC00000007" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Create oracle database error" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000016" Name="803001P020000016" Lang="MC61010001" ModuleLangID="M6101" ModuleID="6101" ModuleName="Report Management" Content="Add No.22-26Report,fix some logic problem" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000017" Name="803001P020000017" Lang="MC11100001" ModuleLangID="M1110" ModuleID="2400" ModuleName="Resourcees Management" Content="Fixed PBXDevices to add the bug, can not be loaded based on the PBXDevices, the synchronization error or no synchronization, adding 2, the number is 0" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000018" Name="803001P020000018" Lang="MC24000001" ModuleLangID="M2400" ModuleID="2400" ModuleName="Key Generation Service Management" Content="Key service management module to switch to other modules, and then switch back, the original green state will be displayed as red" Type="1" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000019" Name="803001P020000019" Lang="MC00000008" ModuleLangID="M0000" ModuleName="Basic" Content="Support http and https by configuration in MAMT" Type="1" Level="3" Description="" ErrorReply="0" ModuleID="0" />
+    <Module SerialNo="803001P020000020" Name="803001P020000020" Lang="MC31020006" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="GroupWay is applying ABCD" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000021" Name="803001P020000021" Lang="MC31020007" ModuleLangID="M3102" ModuleID="0" ModuleName="Query Management" Content="Voice Content is synchronous with Voice" Type="3" Level="3" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000025" Name="803001P020000025" Lang="MC25120001" ModuleLangID="M2512" ModuleID="2512" ModuleName="Alarm Server" Content="Add Screen Number Alarm" Type="1" Level="5" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000026" Name="803001P020000026" Lang="MC36010001" ModuleLangID="M3601" ModuleID="3601" ModuleName="Question Bank" Content="Modify the title of the imported message, add operation log" Type="3" Level="5" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000027" Name="803001P020000027" Lang="MC36020001" ModuleLangID="M3602" ModuleID="3602" ModuleName="Paper Bank" Content="Modify delete the test paper, no clear use bug, add test paper, cancel after browsing the examination paper, an error, then the web page to collapse" Type="3" Level="5" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000028" Name="803001P020000028" Lang="MC36030001" ModuleLangID="M3603" ModuleID="3603" ModuleName="Setting People" Content="Add operation log" Type="1" Level="5" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000029" Name="803001P020000029" Lang="MC51110001" ModuleLangID="M5111" ModuleID="5111" ModuleName="Speech Analysis" Content="T_31_042_00000 add extension at real extension information table" Type="1" Level="5" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000030" Name="803001P020000030" Lang="MC33110001" ModuleLangID="M3311" ModuleID="3311" ModuleName="CTI Hub" Content="Support CISCO CTI OS" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000031" Name="803001P020000031" Lang="MC21200001" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="Modify Standby work mode, modify voip parameter" Type="2" Level="5" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P020000032" Name="803001P020000032" Lang="MC21200002" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="Add channel status alarm" Type="1" Level="5" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000033" Name="803001P020000033" Lang="MC21390001" ModuleLangID="M2139" ModuleID="2139" ModuleName="CM Server" Content="Modify Standby work mode" Type="2" Level="5" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000034" Name="803001P020000034" Lang="MC21200003" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="Modify Sanway digital error when recording has stopped" Type="2" Level="5" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P020000035" Name="803001P020000035" Lang="MC21200004" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="Add bri reverse direction" Type="1" Level="3" Description="" ErrorReply="0"/>
+
+    <Module SerialNo="803001P030000001" Name="803001P030000001" Lang="MC51110001" ModuleLangID="M5111" ModuleID="5111" ModuleName="Speech Analysis" Content="Log output changes, upload the recording file upload mode changes." Type="2" Level="5" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000002" Name="803001P030000002" Lang="MC36010001" ModuleLangID="M3601" ModuleID="3601" ModuleName="Question Bank" Content="Add the excel file message." Type="2" Level="2" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000003" Name="803001P030000003" Lang="MC36020001" ModuleLangID="M3602" ModuleID="3602" ModuleName="Paper Bank" Content="Change Language." Type="2" Level="2" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P030000004" Name="803001P030000004" Lang="MC36030001" ModuleLangID="M3603" ModuleID="3603" ModuleName="Setting People" Content="Modify the query interface message." Type="2" Level="2" Description="" ErrorReply="0"/>
+    <Module SerialNo="803001P030000005" Name="803001P030000005" Lang="MC61010001" ModuleLangID="M6101" ModuleID="6101" ModuleName="Report Management" Content="Recovery the code of Report tree node display" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000006" Name="803001P030000006" Lang="MC11030001" ModuleLangID="M1103" ModuleID="1103" ModuleName="Agent Management" Content="Recovery the agent resoure and state" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000007" Name="803001P030000007" Lang="MC11120001" ModuleLangID="M1112" ModuleID="1112" ModuleName="Domian Management" Content="Recovery the delete operation" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000008" Name="803001P030000008" Lang="MC11100001" ModuleLangID="M1110" ModuleID="1110" ModuleName="Resource Management" Content="Recovery the window title" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000009" Name="803001P030000009" Lang="MC21200005" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="SIP Trunk support mutil-PBX IP" Type="2" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000010" Name="803001P030000010" Lang="MC00000001" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="UMPService01 modify text log output" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000011" Name="803001P030000011" Lang="MC31020008" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Increasing the function of the time spent in calculating the score" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000012" Name="803001P030000012" Lang="MC31020009" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Modify the score to write to the database corresponding to the field is not the correct problem" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000013" Name="803001P030000013" Lang="MC31020010" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content=" Only one valid score is recorded directly in the column. " Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000014" Name="803001P030000014" Lang="MC31020011" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Improve the session information panel, make it more accurate to the root of the needle progress bar rolling" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000015" Name="803001P030000015" Lang="MC00000002" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Ignore AgentRole when select login role while loging UMP system" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000016" Name="803001P030000016" Lang="MC00000003" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="The time display error when user has logined on other terminal" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000017" Name="803001P030000017" Lang="MC00000004" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Default page reload when normal user login system" Type="2" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000018" Name="803001P030000018" Lang="MC25010001" ModuleLangID="M2501" ModuleID="2501" ModuleName="Alarm Message Setting" Content="Display error when add alarm message" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000019" Name="803001P030000019" Lang="MC21340001" ModuleLangID="M2134" ModuleID="2134" ModuleName="CQC" Content="Modify the menu language pack according to the code under the Japanese system and query list lost direction" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000020" Name="803001P030000020" Lang="MC31050001" ModuleLangID="M3105" ModuleID="3105" ModuleName="Appeal Management" Content="Add the validity of the complaint handling" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000021" Name="803001P030000021" Lang="MC31030001" ModuleLangID="M3103" ModuleID="3105" ModuleName="Task Management" Content="The task cannot be scored after the expiration of the task" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000022" Name="803001P030000022" Lang="MC31040001" ModuleLangID="M3104" ModuleID="3105" ModuleName="Agent Client" Content="Increase the validity of the complaint、Score show time" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000023" Name="803001P030000023" Lang="MC31080001" ModuleLangID="M3108" ModuleID="3108" ModuleName="Task Parameter Management" Content="Add some Parameters" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P030000024" Name="803001P030000024" Lang="MC21020001" ModuleLangID="M2102" ModuleID="2102" ModuleName="Channel State Monitor" Content="Support audio data transforred direct from VoiceServer" Type="1" Level="3" Description="" ErrorReply="0" />
+
+    <Module SerialNo="803001P040000001" Name="803001P040000001" Lang="MC24000001" ModuleLangID="M2400" ModuleID="2400" ModuleName="Key Generation Service Management" Content="Modify the problem of adding encryption policy error when there is no choice of recording server" Type="1" Level="2" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000002" Name="803001P040000002" Lang="MC61010001" ModuleLangID="M6101" ModuleID="6101" ModuleName="Report Management" Content="Sort DepartmentTree and keyword query condition" Type="2" Level="0" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000003" Name="803001P040000003" Lang="MC11100001" ModuleLangID="M1110" ModuleID="1110" ModuleName="Resources Management" Content="Add BindDevice property of PBXDevices and add CTI type CnCall" Type="1" Level="2" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000006" Name="803001P040000006" Lang="MC21200006" ModuleLangID="M2120" ModuleID="2120" ModuleName="Voice Server" Content="Add DataRestorer.exe" Type="1" Level="2" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000004" Name="803001P040000004" Lang="MC31020012" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Organizition Order" Type="2" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000005" Name="803001P040000005" Lang="MC31020013" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Set T_31_041 C005" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000007" Name="803001P040000007" Lang="MC31020014" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Color Color" Type="2" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000008" Name="803001P040000008" Lang="MC11010001" ModuleLangID="M1101" ModuleID="1101" ModuleName="Organizition and Users Management" Content="status icon repair" Type="3" Level="0" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000009" Name="803001P040000009" Lang="MC11030001" ModuleLangID="M1103" ModuleID="1103" ModuleName="Agent Management" Content="operation bug" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000010" Name="803001P040000010" Lang="MC51110001" ModuleLangID="M5111" ModuleID="5111" ModuleName="Speech Analysis" Content="Recording information acquisition a third party" Type="1" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P040000011" Name="803001P040000011" Lang="MC25120001" ModuleLangID="M2512" ModuleID="2512" ModuleName="Alarm Server" Content="fix searching receiver,fix sending email" Type="3" Level="4" Description="" ErrorReply="0" />
+
+    <Module SerialNo="803001P050000001" Name="803001P050000001" Lang="MC00000001" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Modify read license server method" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P050000002" Name="803001P050000002" Lang="MC00000002" ModuleLangID="M0000" ModuleID="0" ModuleName="Basic" Content="Modify LDAP login method" Type="2" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P050000003" Name="803001P050000003" Lang="MC31020001" ModuleLangID="M3102" ModuleID="3102" ModuleName="Query Management" Content="Modify read license server method" Type="3" Level="3" Description="" ErrorReply="0" />
+    <Module SerialNo="803001P050000004" Name="803001P050000004" Lang="MC21020001" ModuleLangID="M2102" ModuleID="2102" ModuleName="State Monitor" Content="Modify state error where add/remove in monitor list" Type="3" Level="3" Description="" ErrorReply="0" />
+
+  </Modules>
+  <Files>
+
+    <File Name="UMPMain"  Description="" ErrorReply="0" Type="2" FileName="UMPMain_8_03_001_101" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1101" Description="" ErrorReply="0" Type="2" FileName="UMPS1101_8_03_001_25" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1102" Description="" ErrorReply="0" Type="2" FileName="UMPS1102_8_03_001_20" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1103" Description="" ErrorReply="0" Type="2" FileName="UMPS1103_8_03_001_30" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1106" Description="" ErrorReply="0" Type="2" FileName="UMPS1106_8_03_001_23" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1110" Description="" ErrorReply="0" Type="2" FileName="UMPS1110_8_03_001_57" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1112" Description="" ErrorReply="0" Type="2" FileName="UMPS1112_8_03_001_18" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1202" Description="" ErrorReply="0" Type="2" FileName="UMPS1202_8_03_001_54" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1203" Description="" ErrorReply="0" Type="2" FileName="UMPS1203_8_03_001_38" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1204" Description="" ErrorReply="0" Type="2" FileName="UMPS1204_8_03_001_24" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1206" Description="" ErrorReply="0" Type="2" FileName="UMPS1206_8_03_001_37" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS2102" Description="" ErrorReply="0" Type="2" FileName="UMPS2102_8_03_001_24" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS2400" Description="" ErrorReply="0" Type="2" FileName="UMPS2400_8_03_001_60" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS2501" Description="" ErrorReply="0" Type="2" FileName="UMPS2501_8_03_001_14" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3101" Description="" ErrorReply="0" Type="2" FileName="UMPS3101_8_03_001_21" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3102" Description="" ErrorReply="0" Type="2" FileName="UMPS3102_8_03_001_73" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3103" Description="" ErrorReply="0" Type="2" FileName="UMPS3103_8_03_001_35" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3104" Description="" ErrorReply="0" Type="2" FileName="UMPS3104_8_03_001_13" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3105" Description="" ErrorReply="0" Type="2" FileName="UMPS3105_8_03_001_22" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3106" Description="" ErrorReply="0" Type="2" FileName="UMPS3106_8_03_001_20" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3107" Description="" ErrorReply="0" Type="2" FileName="UMPS3107_8_03_001_12" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3108" Description="" ErrorReply="0" Type="2" FileName="UMPS3108_8_03_001_25" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3601" Description="" ErrorReply="0" Type="2" FileName="UMPS3601_8_03_001_62" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3602" Description="" ErrorReply="0" Type="2" FileName="UMPS3602_8_03_001_38" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3603" Description="" ErrorReply="0" Type="2" FileName="UMPS3603_8_03_001_51" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS6101" Description="" ErrorReply="0" Type="2" FileName="UMPS6101_8_03_001_75" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+
+    <File Name="Wcf2Client" Description="" ErrorReply="0" Type="2" FileName="Wcf2Client" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="WcfServices" Description="" ErrorReply="0" Type="2" FileName="WcfServices" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="WinServices" Description="" ErrorReply="0" Type="2" FileName="WinServices" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="WCF1600" Description="" ErrorReply="0" Type="2" FileName="WCF1600" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="MAMT" Description="" ErrorReply="0" Type="2" FileName="MAMT" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="Themes" Description="" ErrorReply="0" Type="2" FileName="Themes" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="ManagementMaintenance" Description="" ErrorReply="0" Type="2" FileName="ManagementMaintenance" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="dotnetfx40" Description="" ErrorReply="0" Type="2" FileName="dotnetfx40" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="dotnetfx40_3104" Description="" ErrorReply="0" Type="2" FileName="dotnetfx40_3104" SourcePath="UMP" TargetPath="" InstallMode="4" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="umpcomponents" Description="" ErrorReply="0" Type="2" FileName="umpcomponents" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="umpclienttest" Description="" ErrorReply="0" Type="2" FileName="umpclienttest" SourcePath="UMP" TargetPath="" InstallMode="4" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="windowsinstaller4_5" Description="" ErrorReply="0" Type="2" FileName="windowsinstaller4_5" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="windowsinstaller4_5_3104" Description="" ErrorReply="0" Type="2" FileName="windowsinstaller4_5_3104" SourcePath="UMP" TargetPath="" InstallMode="4" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="setup.exe" Description="" ErrorReply="0" Type="1" FileName="setup.exe" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="ClientSetup.exe" Description="" ErrorReply="0" Type="1" FileName="ClientSetup.exe" SourcePath="UMP" TargetPath="" InstallMode="4" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="UMP.PF.html" Description="" ErrorReply="0" Type="1" FileName="UMP.PF.html" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPMain.xbap" Description="" ErrorReply="0" Type="1" FileName="UMPMain.xbap" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3104.application" Description="" ErrorReply="0" Type="1" FileName="UMPS3104.application" SourcePath="UMP" TargetPath="" InstallMode="4" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="umpcomponents.zip" Description="" ErrorReply="0" Type="1" FileName="umpcomponents.zip" SourcePath="UMP" TargetPath="" InstallMode="1" Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+
+    <File Name="UMPService00" Description="" ErrorReply="0" Type="1" FileName="UMPService00.exe" SourcePath="UMPLogging\UMPService" TargetPath="" InstallMode="1" Package="UMPService" TargetPathType="0" DependFile="UMPService00.exe"/>
+    <File Name="Common11101.dll" Description="" ErrorReply="0" Type="1" FileName="Common11101.dll" SourcePath="UMPLogging\UMPService" TargetPath="" InstallMode="1" Package="UMPService" TargetPathType="0" DependFile="UMPService00.exe"/>
+    <File Name="CISCO CTI OS" Description="" ErrorReply="0" Type="1" FileName="cti_ciscoctios.dll" SourcePath="UMPLogging/CtiHub/ctiplug/ciscoctios" TargetPath="ctiplug/ciscoctios" InstallMode="1" Package="UMPCTIHub" TargetPathType="0" DependFile="CTIHubServer.exe"/>
+    <File Name="AlarmServer.exe" Description="" ErrorReply="0" Type="1" FileName="AlarmServer.exe" SourcePath="UMPLogging\UMPAlarmServer" TargetPath="" InstallMode="1" Package="UMPAlarmServer" TargetPathType="0" DependFile="AlarmServer.exe"/>
+    <File Name="AlarmClient.exe" Description="" ErrorReply="0" Type="1" FileName="AlarmClient.exe" SourcePath="UMPLogging\UMPAlarmClient" TargetPath="" InstallMode="1" Package="UMPAlarmClient" TargetPathType="0" DependFile="AlarmClient.exe"/>
+    <File Name="language" Description="" ErrorReply="0" Type="2" FileName="language" SourcePath="UMPLogging\UMPAlarmClient" TargetPath="" InstallMode="1" Package="UMPAlarmClient" TargetPathType="0" DependFile="AlarmClient.exe"/>
+    <File Name="SpeechAnalysis.exe" Description="" ErrorReply="0" Type="1" FileName="SpeechAnalysis.exe" SourcePath="UMPLogging\UMPSpeechAnalysis" TargetPath="" InstallMode="1" Package="UMPSpeechAnalysis" TargetPathType="0" DependFile="SpeechAnalysis.exe"/>
+    <File Name="DimensionInformation.xml" Description="" ErrorReply="0" Type="1" FileName="DimensionInformation.xml" SourcePath="UMPLogging\UMPSpeechAnalysis" TargetPath="" InstallMode="1" Package="UMPSpeechAnalysis" TargetPathType="0" DependFile="SpeechAnalysis.exe"/>
+    <File Name="CustomizationInfos.xml" Description="" ErrorReply="0" Type="1" FileName="CustomizationInfos.xml" SourcePath="UMPLogging\UMPSpeechAnalysis" TargetPath="" InstallMode="1" Package="UMPSpeechAnalysis" TargetPathType="0" DependFile="SpeechAnalysis.exe"/>
+    <File Name="UploadRecord.exe" Description="" ErrorReply="0" Type="1" FileName="UploadRecord.exe" SourcePath="UMPLogging\UMPSpeechAnalysis" TargetPath="" InstallMode="1" Package="UMPSpeechAnalysis" TargetPathType="0" DependFile="SpeechAnalysis.exe"/>
+    <File Name="VoiceServer.exe" Description="" ErrorReply="0" Type="1" FileName="VoiceServer.exe" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="UMPSftp.exe" Description="" ErrorReply="0" Type="1" FileName="UMPSftp.exe" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="LumiSoft.Net.dll" Description="" ErrorReply="0" Type="1" FileName="LumiSoft.Net.dll" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="voipdrv.dll" Description="" ErrorReply="0" Type="1" FileName="voipdrv.dll" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPSoftRecord" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="cmserver.exe" Description="" ErrorReply="0" Type="1" FileName="cmserver.exe" SourcePath="UMPLogging\UMPCMServer" TargetPath="" InstallMode="1" Package="UMPCMServer" TargetPathType="0" DependFile="cmserver.exe"/>
+    <File Name="ntidrv.dll" Description="" ErrorReply="0" Type="1" FileName="ntidrv.dll" SourcePath="UMPLogging\IxPatch" TargetPath="" InstallMode="1" Package="IxPatch" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="Ngx.dll" Description="" ErrorReply="0" Type="1" FileName="Ngx.dll" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="CQC.exe" Description="" ErrorReply="0" Type="1" FileName="CQC.exe" SourcePath="UMPLogging\UMPCQC" TargetPath="" InstallMode="1" Package="UMPCQC" TargetPathType="0" DependFile="CQC.exe"/>
+    <File Name="DataRestorer.exe" Description="" ErrorReply="0" Type="1" FileName="DataRestorer.exe" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="Language" Description="" ErrorReply="0" Type="2" FileName="Language" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+    <File Name="UMPFileService.exe" Description="" ErrorReply="0" Type="1" FileName="UMPFileService.exe" SourcePath="UMPLogging\UMPVoiceServer" TargetPath="" InstallMode="1" Package="UMPVoice" TargetPathType="0" DependFile="VoiceServer.exe"/>
+  </Files>
+  <SqlScripts>
+    <SqlScript Name="DDL" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="DDL.SQL" />
+        <Script DBType="3" Path="DDL.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="DML" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="DML.SQL" />
+        <Script DBType="3" Path="DML.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="LANG" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="LANG.SQL" />
+        <Script DBType="3" Path="LANG.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="P_31_002" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="P_31_002.SQL" />
+        <Script DBType="3" Path="P_31_002.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="P_51_001" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="P_51_001.SQL" />
+        <Script DBType="3" Path="P_51_001.SQL" />
+      </Scripts>
+    </SqlScript>
+  </SqlScripts>
+  <Services>
+    <Service Name="UMPService00" Description="" ErrorReply="0" ServiceName="UMP Service 00" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService01" Description="" ErrorReply="0" ServiceName="UMP Service 01" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService01.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService02" Description="" ErrorReply="0" ServiceName="UMP Service 02" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService02.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService03" Description="" ErrorReply="0" ServiceName="UMP Service 03" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService03.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService04" Description="" ErrorReply="0" ServiceName="UMP Service 04" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService04.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService05" Description="" ErrorReply="0" ServiceName="UMP Service 05" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService05.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService06" Description="" ErrorReply="0" ServiceName="UMP Service 06" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService06.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService07" Description="" ErrorReply="0" ServiceName="UMP Service 07" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService07.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService08" Description="" ErrorReply="0" ServiceName="UMP Service 08" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService08.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService09" Description="" ErrorReply="0" ServiceName="UMP Service 09" InstallMode="0" StartMode="1" DelayTime="0" Package="UMP" TargetPathType="0" TargetPath="WinServices\UMPService09.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+
+    <Service Name="UMPAlarmServer" Description="" ErrorReply="0" ServiceName="UMPAlarmServer" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPAlarmServer" TargetPathType="0" TargetPath="AlarmServer.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPSpeechAnalysis" Description="" ErrorReply="0" ServiceName="UMPSpeechAnalysis" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPSpeechAnalysis" TargetPathType="0" TargetPath="SpeechAnalysis.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPUploadRecord" Description="" ErrorReply="0" ServiceName="UMPUploadRecord" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPSpeechAnalysis" TargetPathType="0" TargetPath="UploadRecord.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPVoiceServer" Description="" ErrorReply="0" ServiceName="UMPVoiceServer" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPVoice" TargetPathType="0" TargetPath="VoiceServer.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPFS" Description="" ErrorReply="0" ServiceName="UMPFS" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPVoice" TargetPathType="0" TargetPath="UMPFileService.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPSFTP" Description="" ErrorReply="0" ServiceName="UMPSFTP" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPVoice" TargetPathType="0" TargetPath="UMPSftp.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPCMServer" Description="" ErrorReply="0" ServiceName="UMPCMServer" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPCMServer" TargetPathType="0" TargetPath="CMServer.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+    <Service Name="UMPCTIHUB" Description="" ErrorReply="0" ServiceName="UMPCTIHUB" InstallMode="0" StartMode="1" DelayTime="0" Package="UMPCTIHub" TargetPathType="0" TargetPath="CTIHubServer.exe" InstallCommand="" UnInstallCommand="" ServiceType="0"/>
+  </Services>
+  <Follows>
+    <Follow Name="RebindSite" ErrorReply="0" Key="101" DataType="1" Value="1" />
+  </Follows>
+</UpdateInfo>

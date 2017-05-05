@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:umpc="http://www.voicecyber.com/ump/controls"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls">
+    
+    <Style x:Key="PMMainPage" TargetType="{x:Type Page}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush11}"></Setter>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
+    </Style>
+
+
+    <Style TargetType="Image" x:Key="agent">
+        <Setter Property="Source" Value="Images/agent.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="extension">
+        <Setter Property="Source" Value="Images/extension.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="org">
+        <Setter Property="Source" Value="Images/org.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="RealExtension">
+        <Setter Property="Source" Value="Images/RealExtension.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="user">
+        <Setter Property="Source" Value="Images/user.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="SkillGroup">
+        <Setter Property="Source" Value="Images/SkillGroup.ico">
+
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="rootorg">
+        <Setter Property="Source" Value="Images/rootorg.ico">
+
+        </Setter>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Start">
+        <Setter Property="Width" Value="32"></Setter>
+        <Setter Property="Height" Value="16"></Setter>
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/start.ico"></Setter>
+    </Style>
+
+    <Style TargetType="Image" x:Key="Forbidden">
+        <Setter Property="Width" Value="32"></Setter>
+        <Setter Property="Height" Value="16"></Setter>
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/forbidden.ico"></Setter>
+    </Style>
+
+</ResourceDictionary>

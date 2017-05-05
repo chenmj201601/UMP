@@ -1,0 +1,166 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3603.PaperInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcad="http://www.voicecyber.com/wpf/avalondock"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="650">
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3603;component/Themes/Default/UMPS3603/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3603;component/Themes/Default/UMPS3603/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3603;component/Themes/Default/UMPS3603/AvalonDock.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Name="SearchInfoName" Grid.Row="0" Width="200">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Style="{DynamicResource FormItemTitle}">
+                    <CheckBox Name="ChkPaperNum" Content="Paper Num" IsChecked="False" Click="SearchPaperNum_OnClick"></CheckBox>
+                </Border>
+                <Border Grid.Row="1">
+                    <TextBox Name="TbSearchPaperNum" TextChanged="TbSearchPaperNum_OnTextChanged" Margin="5" IsReadOnly="True" Background="LightGray"></TextBox>
+                </Border>
+                <Border Grid.Row="2"  Style="{DynamicResource FormItemTitle}">
+                    <CheckBox Name="ChkPaperName" Content="Paper Name" Click="PaperName_OnClick" IsChecked="False" ></CheckBox>
+                </Border>
+                <Border Grid.Row="3">
+                    <TextBox Name="TbSearchPaper" Margin="5" IsReadOnly="True" TextChanged="TbSearchPaper_OnTextChanged" Background="LightGray"></TextBox>
+                </Border>                
+                <Border Grid.Row="4" Style="{DynamicResource FormItemTitle}">
+                    <CheckBox Name="ChkPaperType" Content="Paper Type" Click="PaperType_OnClick" IsChecked="False"></CheckBox>
+                </Border>
+                <Border Grid.Row="5">
+                    <ComboBox Name="CmbPaperType" Background="LightGray" Margin="5" IsEnabled="False">
+                        <ComboBoxItem Name="TypeItem1" Content="1"></ComboBoxItem>
+                        <ComboBoxItem Name="TypeItem2" Content="2"></ComboBoxItem>
+                        <ComboBoxItem Name="TypeItem3" Content="3"></ComboBoxItem>
+                        <ComboBoxItem Name="TypeItem4" Content="4"></ComboBoxItem>
+                        <ComboBoxItem Name="TypeItem5" Content="5"></ComboBoxItem>
+                    </ComboBox>
+                </Border>
+                <Border Grid.Row="6" Style="{DynamicResource FormItemTitle}">
+                    <CheckBox Name="ChkIntegrity" Content="Integrity" IsChecked="False" Click="IntegrityName_OnClick"></CheckBox>
+                </Border>
+                <Border Grid.Row="7">
+                    <ComboBox Name="ComBoxIntegrity" IsEnabled="False" Margin="5" Background="LightGray">
+                        <ComboBoxItem Name="ComBoxIntegrity1" Content="Yes"></ComboBoxItem>
+                        <ComboBoxItem Name="ComBoxIntegrity2" Content="No"></ComboBoxItem>
+                    </ComboBox>
+                </Border>
+                <Border Grid.Row="8" Style="{DynamicResource FormItemTitle}">
+                    <TextBlock Name="TxStartTime" Text="Create Time"></TextBlock>
+                </Border>
+                <Border Grid.Row="9" Style="{DynamicResource FormItemValue}">
+                    <vcc:DateTimePicker Name="DtStartTime"></vcc:DateTimePicker>
+                </Border>
+                <Border Grid.Row="10" Style="{DynamicResource FormItemTitle}">
+                    <TextBlock Name="TxEndTime" Text="To"></TextBlock>
+                </Border>
+                <Border Grid.Row="11" Style="{DynamicResource FormItemValue}">
+                    <vcc:DateTimePicker Name="DtEndTime"></vcc:DateTimePicker>
+                </Border>
+                <Border Grid.Row="12" HorizontalAlignment="Right" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="ButSearchPaper" Click="PaperSearch_Click" Content="Search" ></Button>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Column="1">
+            <Button Name="Button" Background="White" Click="Button_OnClick"></Button>
+        </Grid>
+        <Grid Column="2" Height="450">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="0" Width="650">
+                    <vcad:DockingManager x:Name="PanelManager" Style="{DynamicResource DockManageStyle}">
+                        <vcad:LayoutRoot>
+                            <vcad:LayoutPanel Orientation="Horizontal">
+                                <vcad:LayoutDocumentPane>
+                                    <vcad:LayoutAnchorable x:Name="PaperInfoTable" IsSelectedChanged="PaperInfoTable_IsSelectedChanged"  Title="Paper Information" ContentId="PaperInfoTable" CanFloat="False" CanClose="False">
+                                        <Border Style="{DynamicResource BorderPanelContent}">
+                                            <DockPanel LastChildFill="True">
+                                                <ListView Name="PaperInfoListTable" SelectionMode="Extended"  Style="{DynamicResource ListViewRecord}" >
+                                                    <ListView.ItemContainerStyle>
+                                                        <Style  TargetType="{x:Type ListViewItem}">
+                                                            <EventSetter Event="MouseLeftButtonUp" Handler="PapersListTable_MouseLeftButtonUp"></EventSetter>
+                                                            <EventSetter Event="MouseDoubleClick" Handler="PapersListTable_MouseDoubleClick"></EventSetter>
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                                                            <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                        </Border>
+                                                                        <ControlTemplate.Triggers>
+                                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                                <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                                                                <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                            </Trigger>
+                                                                            <Trigger Property="IsEnabled" Value="False">
+                                                                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                                                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                            </Trigger>
+                                                                            <Trigger Property="IsSelected" Value="True">
+                                                                                <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                                                                <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                            </Trigger>
+                                                                        </ControlTemplate.Triggers>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListView.ItemContainerStyle>
+                                                </ListView>
+                                            </DockPanel>
+                                        </Border>
+                                    </vcad:LayoutAnchorable>
+                                </vcad:LayoutDocumentPane>
+                            </vcad:LayoutPanel>
+                        </vcad:LayoutRoot>
+                    </vcad:DockingManager>
+                </Grid>
+                <Grid Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" HorizontalAlignment="Right" Style="{DynamicResource FormButtonStyle}">
+                        <Button Name="BtnAddPaper" Click="AddPaper_Click" Content="Add" ></Button>
+                    </Border>
+                    <Border Grid.Column="1" HorizontalAlignment="Right" Style="{DynamicResource FormButtonStyle}">
+                        <Button Name="BtnClose" Click="Close_Click" Content="Close" ></Button>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+        <umpc:PopupPanel Grid.Column="0" x:Name="PopupPanel" IsOpen="False" Style="{DynamicResource PopupInfo}"></umpc:PopupPanel>
+    </Grid>
+</umpc:UMPUserControl>

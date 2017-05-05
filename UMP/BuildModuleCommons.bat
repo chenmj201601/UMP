@@ -167,6 +167,14 @@ cd ..\..
 if %BuildSuc% == 0 goto error
 @echo %BuildProject% BUILD END
 
+@echo ====================
+@echo Common21061
+cd UMPS2106\Common21061
+@call Build.bat
+cd ..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
 
 @echo ====================
 @echo Common2400
@@ -255,8 +263,17 @@ if %BuildSuc% == 0 goto error
 
 
 @echo ====================
-@echo Common5100
-cd UMPS5100\Common5100
+@echo Common44101
+cd UMPS4410\Common44101
+@call Build.bat
+cd ..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
+
+@echo ====================
+@echo Common5102
+cd UMPS5102\Common5102
 @call Build.bat
 cd ..\..
 if %BuildSuc% == 0 goto error
@@ -356,12 +373,31 @@ if %BuildSuc% == 0 goto error
 
 
 @echo ====================
-@echo Common44101
-cd UMPS4410\Common44101
+@echo UMPClient
+cd UMPClient\UMPClient
 @call Build.bat
 cd ..\..
 if %BuildSuc% == 0 goto error
 @echo %BuildProject% BUILD END
+
+
+@echo ====================
+@echo UMPUninstall
+cd Other\UMPSetup\UMPUninstall
+@call Build.bat
+cd ..\..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
+
+@echo ====================
+@echo UUMP.MAMT
+cd UMP.MAMT\UMP.MAMT
+@call Build.bat
+cd ..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
 
 
 @echo Module Common Build End

@@ -1,0 +1,50 @@
+﻿<umpc:UMPUserControl x:Class="UMPS5102.EditKwInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      mc:Ignorable="d">
+
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS5102;component/Themes/Default/UMPS5102/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS5102;component/Themes/Default/UMPS5102/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS5102;component/Themes/Default/UMPS5102/MainStatic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Style="{DynamicResource FormItemText}">
+                <TextBlock Name="TbSelectContent" TextWrapping="Wrap" Text="Select Content"></TextBlock>
+            </Border>
+
+            <Border Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                <TextBox Name="TbSelectContent1" TextWrapping="Wrap" TextChanged="TbSelectContent1_OnTextChanged"></TextBox>
+            </Border>
+        </Grid>
+        
+        <Border Grid.Row="1">
+            <ListView Name="KwConnectListView" Style="{DynamicResource ListViewRecord}"></ListView>
+        </Border>
+
+        <Border Grid.Row="2" Style="{DynamicResource FormButtonStyle}" HorizontalAlignment="Right">
+            <Button Name="ButClose" Content="Close" Click="ButClose_OnClick"></Button>
+        </Border>
+    </Grid>
+</umpc:UMPUserControl>

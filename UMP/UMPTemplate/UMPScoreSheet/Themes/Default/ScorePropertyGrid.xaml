@@ -1,0 +1,180 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:VoiceCyber.UMP.ScoreSheets.Controls"
+                    >
+
+    <ControlTemplate x:Key="ExpanderToggleButton" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Rectangle Margin="0,0,0,0" x:Name="Rectangle" Fill="Transparent" />
+            <Path HorizontalAlignment="Center" x:Name="Up_Arrow" VerticalAlignment="Center" Fill="WhiteSmoke" Data="M 0 0 L 4 4 L 8 0 Z" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <SkewTransform AngleX="0" AngleY="0" />
+                        <RotateTransform Angle="-90" />
+                        <TranslateTransform X="0" Y="0" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Visibility="Collapsed" HorizontalAlignment="Center" x:Name="Down_Arrow" VerticalAlignment="Center" Fill="WhiteSmoke" Data="M 0 4 L 4 0 L 8 4 Z" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <SkewTransform AngleX="0" AngleY="0" />
+                        <RotateTransform Angle="135" />
+                        <TranslateTransform X="0" Y="0" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter Property="Visibility" Value="Visible" TargetName="Down_Arrow" />
+                <Setter Property="Visibility" Value="Collapsed" TargetName="Up_Arrow" />
+                <Setter Property="OpacityMask" TargetName="Down_Arrow" Value="#FF000000" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" x:Name="ContentRow" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="LightSkyBlue" Padding="0,2,0,2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton Template="{StaticResource ExpanderToggleButton}" IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" OverridesDefaultStyle="True" />
+                                <ContentPresenter Grid.Column="1" Margin="1" RecognizesAccessKey="True" ContentSource="Header" TextElement.Foreground="White" TextElement.FontWeight="Bold" />
+                            </Grid>
+                        </Border>
+                        <Border Visibility="Collapsed" Grid.Row="1" x:Name="ExpandSite" Background="Transparent">
+                            <Border BorderThickness="0" Margin="0" Padding="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="False" />
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ExpandSite" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ScorePropertyGrid}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ScorePropertyGrid}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Name="BorderTitle" Grid.Row="0" Background="LightSkyBlue">
+                            <TextBlock Text="{Binding SelectObject,RelativeSource={RelativeSource FindAncestor,AncestorType=local:ScorePropertyGrid}}" 
+                                       FontWeight="Bold" HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" Margin="5,0,5,0"></TextBlock>
+                        </Border>
+                        <Border Name="BorderList" Grid.Row="1">
+                            <Grid>
+                                <ListBox x:Name="PART_ListBox" VerticalAlignment="Top">
+                                    <ListBox.Style>
+                                        <Style TargetType="ListBox">
+                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                            <Setter Property="Background" Value="Transparent" />
+                                            <Setter Property="BorderBrush">
+                                                <Setter.Value>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                                                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                                                        <GradientStop Color="#FF718597" Offset="0.375" />
+                                                        <GradientStop Color="#FF617584" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+                                            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+                                            <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+                                        </Style>
+                                    </ListBox.Style>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate DataType="ListBoxItem">
+                                            <Border BorderThickness="0,0,0,1" BorderBrush="LightGray">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Name="BorderName" Grid.Column="0" 
+                                        BorderThickness="0,0,1,0"
+                                        Padding="5,3,2,3"
+                                        BorderBrush="LightGray"
+                                        Width="{Binding NameColumnWidth,RelativeSource={RelativeSource FindAncestor,AncestorType=local:ScorePropertyGrid}}">
+                                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Display}" FontWeight="Bold"></TextBlock>
+                                                    </Border>
+                                                    <Border Name="BorderValue" Grid.Column="1">
+                                                        <local:ScorePropertyEditor ScoreProperty="{Binding}" 
+                                                                                   ScoreObject="{Binding SelectObject, RelativeSource={RelativeSource FindAncestor,AncestorType=local:ScorePropertyGrid}}"
+                                                                                   ></local:ScorePropertyEditor>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.GroupStyle>
+                                        <GroupStyle>
+                                            <GroupStyle.ContainerStyle>
+                                                <Style TargetType="{x:Type GroupItem}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate>
+                                                                <Border >
+                                                                    <Expander Header="{Binding Name}" IsExpanded="True" Style="{StaticResource ExpanderStyle}">
+                                                                        <ItemsPresenter />
+                                                                    </Expander>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </GroupStyle.ContainerStyle>
+                                        </GroupStyle>
+                                    </ListBox.GroupStyle>
+                                </ListBox>
+
+                                <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" Width="5" Cursor="SizeWE">
+                                    <Thumb.RenderTransform>
+                                        <TranslateTransform X="{Binding NameColumnWidth,RelativeSource={RelativeSource FindAncestor,AncestorType=local:ScorePropertyGrid}}"></TranslateTransform>
+                                    </Thumb.RenderTransform>
+                                    <Thumb.Template>
+                                        <ControlTemplate>
+                                            <Border Background="Transparent"></Border>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

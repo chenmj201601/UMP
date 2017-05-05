@@ -16,6 +16,7 @@ xcopy /y /f ".\Library\VCDBAccess\VCDBAccess\bin\Release\VCDBAccess.dll" "%RootP
 xcopy /y /f ".\SDKs\DEC4Net\DEC4Net\bin\Release\DEC4Net.dll" "%RootPath%\WinServices\"
 xcopy /y /f ".\SDKs\NMon4Net\NMon4Net\bin\Release\NMon4Net.dll" "%RootPath%\WinServices\"
 xcopy /y /f ".\Library\VCWebSocket\VCWebSocket\bin\Release\VCWebSocket.dll" "%RootPath%\WinServices\"
+xcopy /y /f ".\Library\VCLDAP\VCLDAP\bin\Release\VCLDAP.dll" "%RootPath%\WinServices\"
 
 xcopy /y /f ".\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll" "%RootPath%\WinServices\"
@@ -34,6 +35,7 @@ xcopy /y /f ".\UMP.PF.Services\UMPService10\CommonService10\bin\Release\CommonSe
 xcopy /y /f ".\UMP.PF.Services\UMPService00\UMPService00\bin\Release\UMPService00.exe" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMP.PF.Services\UMPService01\UMPService01\bin\Release\UMPService01.exe" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMP.PF.Services\UMPService02\UMPService02\bin\Release\UMPService02.exe" "%RootPath%\WinServices\"
+xcopy /y /f ".\UMP.PF.Services\UMPService03\UMPService03\bin\Release\UMPService03.exe" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMP.PF.Services\UMPService04\UMPService04\bin\Release\UMPService04.exe" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMP.PF.Services\UMPService05\UMPService05\bin\Release\UMPService05.exe" "%RootPath%\WinServices\"
 xcopy /y /f ".\UMP.PF.Services\UMPService06\UMPService06\bin\Release\UMPService06.exe" "%RootPath%\WinServices\"
@@ -54,6 +56,9 @@ xcopy /y /f ".\UMP.PF.Services\UMPService09\UMPService09\bin\Release\UMPService0
 
 xcopy /y /f ".\SDKs\DEC4Net\DEC4Net\bin\Release\DEC4Net.dll" "%RootPath%\WinServices\"
 xcopy /y /f ".\SDKs\License4Net\License4Net\bin\Release\License4Net.dll" "%RootPath%\WinServices\"
+
+
+xcopy /y /f ".\UMP.PF.Services\UMPService13\UMPService13\bin\Release\UMPService13.exe" "%RootPath%\WinServices\"
 
 @date /t
 @time /t

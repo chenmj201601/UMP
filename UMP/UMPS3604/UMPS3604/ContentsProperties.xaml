@@ -1,0 +1,66 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3604.ContentsProperties"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      mc:Ignorable="d">
+
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3604/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                <RadioButton GroupName="GroupContents" Name="RbutOneContentsName" Content="One Contents Name" Click="ContentsName_OnClick"/>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" Width="250">
+                <TextBox Name="TxtOneContentsName" Margin="5"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource FormItemTitle}">
+                <RadioButton GroupName="GroupContents" Name="RbutMoreContentsName" Content="More Contents Name" Click="ContentsName_OnClick"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Width="250">
+                <TextBox Name="TxtMoreContentsName" Margin="5"/>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Margin="10">
+            <TextBlock Name="TbNote" Visibility="Collapsed" Text="Note: &#13; 1.One Contents: Name  &#13;2.More Contents: Name1\Name2\Name3"/>
+        </Border>
+
+        <Border Grid.Row="2" Style="{DynamicResource FormButtonSeperator}"></Border>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Style="{DynamicResource FormButtonStyle}" HorizontalAlignment="Right">
+                <Button Name="BtnOk"  Content="OK" Click="BtnOk_Click" Width="80"/>
+            </Border>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}" HorizontalAlignment="Right">
+                <Button Name="BtnCancel"  Content="Cancel" Click="BtnCancel_Click"/>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

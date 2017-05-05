@@ -1,0 +1,213 @@
+﻿<umpc:UMPMainView x:Class="UMPS5101.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcad="http://www.voicecyber.com/wpf/avalondock"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS5101;component/Themes/Default/UMPS5101/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS5101;component/Themes/Default/UMPS5101/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS5101;component/Themes/Default/UMPS5101/AvalonDock.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS5101;component/Themes/Default/UMPS5101/MainStatic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform></TranslateTransform>
+            <ScaleTransform></ScaleTransform>
+            <RotateTransform></RotateTransform>
+        </TransformGroup>
+    </UserControl.RenderTransform>
+    
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" Name="GridLeft"/>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Name="BasicOpt" Grid.Row="0" Style="{DynamicResource BorderBasicOpt}">
+                    <Expander Name="BasicExpandOpt" Header="BasicOpt" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Name="ButBasicOpt" Orientation="Vertical"/>
+                            <StackPanel Grid.Row="1" Name="ButEditOpt" Orientation="Vertical"/>
+                            <StackPanel Grid.Row="2" Name="ButEnableOpt" Orientation="Vertical"/>
+                            <StackPanel Grid.Row="3" Name="ButDeleteOpt" Orientation="Vertical"/>
+                        </Grid>
+                    </Expander>
+                </Border>
+            </Grid>
+
+            <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+
+            <Grid Grid.Column="2">
+                <Border Name="BorderMainBg" Style="{DynamicResource BorderMainBg}"></Border>
+                <Border Name="BoderMain" Style="{DynamicResource BorderMain}">
+                    <DockPanel LastChildFill="True">
+                        <Border Name="BorderToolBar" DockPanel.Dock="Top" Style="{DynamicResource ToolBarStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="3" Name="PanelToolButton" Orientation="Horizontal" Margin="0,0,5,0"></StackPanel>
+                            </Grid>
+                        </Border>
+                        <vcad:DockingManager x:Name="PanelManager" Style="{DynamicResource DockManageStyle}">
+                            <vcad:LayoutRoot>
+                                <vcad:LayoutPanel Orientation="Horizontal">
+                                    <vcad:LayoutDocumentPane>
+                                        <vcad:LayoutAnchorable x:Name="KeywordConnectTable" Title="Connect Information" ContentId="KeywordConnectTable" IsSelectedChanged="KeywordConnectTable_OnIsSelectedChanged" CanFloat="False" CanClose="False">
+                                            <Border Style="{DynamicResource BorderPanelContent}">
+                                                <DockPanel LastChildFill="True">
+                                                    <Border DockPanel.Dock="Bottom">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Name="TxtKwConPageInfo" Grid.Column="0" Style="{DynamicResource TxtPageInfoStyle}"></TextBlock>
+                                                            <StackPanel Name="PanelKwConPageButtons" Grid.Column="2" Orientation="Horizontal"></StackPanel>
+                                                            <TextBox Name="TxtKwConPage" Grid.Column="3" Style="{DynamicResource TxtPageStyle}"></TextBox>
+                                                        </Grid>
+                                                    </Border>
+                                                    <ListView Name="KwContentListView" Style="{DynamicResource ListViewRecord}">
+                                                        <ListView.ItemContainerStyle>
+                                                            <Style TargetType="{x:Type ListViewItem}">
+                                                                <EventSetter Event="MouseLeftButtonUp" Handler="KwConMouseLeftButtonUp_OnHandler"></EventSetter>
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="ListBoxItem">
+                                                                            <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                                                                <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                            </Border>
+                                                                            <ControlTemplate.Triggers>
+                                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                                    <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                                                                    <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                </Trigger>
+                                                                                <Trigger Property="IsEnabled" Value="False">
+                                                                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                                                                    <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                    <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                </Trigger>
+                                                                                <Trigger Property="IsSelected" Value="True">
+                                                                                    <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                                                                    <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                </Trigger>
+                                                                            </ControlTemplate.Triggers>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                        </ListView.ItemContainerStyle>
+                                                    </ListView>
+                                                </DockPanel>
+                                            </Border>
+                                        </vcad:LayoutAnchorable>
+                                        <vcad:LayoutAnchorable x:Name="KeywordTable" Title="Keyword Information" ContentId="KeywordTable" IsSelectedChanged="KeywordTable_OnIsSelectedChanged" CanFloat="False" CanClose="False">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="2"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Border Grid.Column="0" Style="{DynamicResource BorderPanelContent}">
+                                                    <DockPanel LastChildFill="True">
+                                                        <Border DockPanel.Dock="Bottom">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <TextBlock Name="TxtKwPageInfo" Grid.Column="0" Style="{DynamicResource TxtPageInfoStyle}"></TextBlock>
+                                                                <StackPanel Name="PanelKwPageButtons" Grid.Column="2" Orientation="Horizontal"></StackPanel>
+                                                                <TextBox Name="TxtKwPage" Grid.Column="3" Style="{DynamicResource TxtPageStyle}"></TextBox>
+                                                            </Grid>
+                                                        </Border>
+                                                        <ListView Name="KwListView" Style="{DynamicResource ListViewRecord}">
+                                                            <ListView.ItemContainerStyle>
+                                                                <Style TargetType="{x:Type ListViewItem}">
+                                                                    <EventSetter Event="MouseLeftButtonUp" Handler="KwMouseLeftButtonUp_OnHandler"></EventSetter>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="ListBoxItem">
+                                                                                <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                                                                    <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                                </Border>
+                                                                                <ControlTemplate.Triggers>
+                                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsEnabled" Value="False">
+                                                                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                                                                        <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="IsSelected" Value="True">
+                                                                                        <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                                                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                                                                    </Trigger>
+                                                                                </ControlTemplate.Triggers>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </ListView.ItemContainerStyle>
+                                                        </ListView>
+                                                    </DockPanel>
+                                                </Border>
+                                                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                                                <Border Grid.Column="2" Name="BorderKwContent" Visibility="Collapsed">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"></RowDefinition>
+                                                            <RowDefinition Height="*"></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Border Grid.Row="0" Style="{DynamicResource FormItemText}">
+                                                            <TextBlock Name="TxtKwName" Text="keyword"></TextBlock>
+                                                        </Border>
+                                                        <ListView Grid.Row="1" Name="ShowKwConListView" Style="{DynamicResource ListViewRecord}"></ListView>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                            </vcad:LayoutAnchorable>       
+                                    </vcad:LayoutDocumentPane>
+                                </vcad:LayoutPanel>
+                            </vcad:LayoutRoot>
+                        </vcad:DockingManager>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <umpc:PopupPanel x:Name="PopupPanel" IsOpen="False" Style="{DynamicResource PopupInfo}"></umpc:PopupPanel>
+
+    </Grid>
+</umpc:UMPMainView>

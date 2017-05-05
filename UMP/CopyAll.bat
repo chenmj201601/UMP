@@ -15,6 +15,8 @@ Set RootPath=D:\InstallPacket\UMP\8.03.002\UMP.PF.Site
 
 @call CopyWcf2Client.bat
 
+@call CopyWpf.bat
+
 
 @date /t
 @time /t

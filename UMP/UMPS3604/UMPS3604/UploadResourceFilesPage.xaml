@@ -1,0 +1,68 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3604.UploadResourceFilesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      Width="800" Height="400"
+      mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS3604;component/Themes/Default/UMPS3604/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3604;component/Themes/Default/UMPS3604/FormStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS3604;component/Themes/Default/UMPS3604/MainStatic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ListView Grid.Row="0" Margin="5" Name="UploadResourceFilesListView" SelectionMode="Extended" Style="{DynamicResource ListViewRecord}" Background="White">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border x:Name="Border"  Padding="3" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                    <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background"  Value="{DynamicResource SystemBrush9}"></Setter>
+                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}"></Setter>
+                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background"   Value="{DynamicResource SystemBrush8}"></Setter>
+                                        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Border  Style="{DynamicResource FormButtonStyle}">
+                <Button Name="ButOk" Content="OK" Click="Ok_OnClick"></Button>
+            </Border>
+            <Border  Style="{DynamicResource FormButtonStyle}">
+                <Button Name="ButCancel" Content="Cancel" Click="Cancel_OnClick"></Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</umpc:UMPUserControl>

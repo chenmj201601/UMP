@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61A7BF5B-53A6-4A32-AF0D-6FA4B23AB149}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPS6101</RootNamespace>
+    <AssemblyName>UMPS6101</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <EnableSecurityDebugging>true</EnableSecurityDebugging>
+    <StartAction>URL</StartAction>
+    <HostInBrowser>true</HostInBrowser>
+    <TargetZone>Internet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>True</SignManifests>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\myself\UMPRelease832\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationVersion>8.03.002.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common1102, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPS1102\Common1102\bin\Release\Common1102.dll</HintPath>
+    </Reference>
+    <Reference Include="Common61011">
+      <HintPath>..\Common61011\bin\Release\Common61011.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\公用dll\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\公用dll\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\公用dll\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PFShareClassesC, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMP.PF.Classes\PFShareClassesC\PFShareClassesC\bin\Release\PFShareClassesC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UMPCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPCommunications, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPControls, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPControls\bin\Release\UMPControls.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPScoreSheet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPTemplate\UMPScoreSheet\bin\Release\UMPScoreSheet.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VCCommon\VCCommon\bin\Release\VCCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCustomControls, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\VCCustomControls\VCCustomControls\bin\Release\VCCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="Converters\BooleanNullToVisibilityConverter.cs" />
+    <Compile Include="DataSource\DataSets\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSource\DataSets\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource\FormClasses\MaskedTextBox.cs" />
+    <Compile Include="DataSource\Models\RecordInfo.cs" />
+    <Compile Include="DataSource\ReportLang.cs" />
+    <Compile Include="DataSource\Models\AboutDateTime.cs" />
+    <Compile Include="DataSource\Models\BandingDemo.cs" />
+    <Compile Include="DataSource\Models\CacheInfo.cs" />
+    <Compile Include="DataSource\Models\ObjectItem.cs" />
+    <Compile Include="DataSource\Models\TabItemBackground.cs" />
+    <Compile Include="ReportQueryPage\Rp10query.xaml.cs">
+      <DependentUpon>Rp10query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp11query.xaml.cs">
+      <DependentUpon>Rp11query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp12query.xaml.cs">
+      <DependentUpon>Rp12query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp13query.xaml.cs">
+      <DependentUpon>Rp13query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp14query.xaml.cs">
+      <DependentUpon>Rp14query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp15query.xaml.cs">
+      <DependentUpon>Rp15query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp16query.xaml.cs">
+      <DependentUpon>Rp16query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp17query.xaml.cs">
+      <DependentUpon>Rp17query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp18query.xaml.cs">
+      <DependentUpon>Rp18query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp19query.xaml.cs">
+      <DependentUpon>Rp19query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp1query.xaml.cs">
+      <DependentUpon>Rp1query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp20query.xaml.cs">
+      <DependentUpon>Rp20query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp21query.xaml.cs">
+      <DependentUpon>Rp21query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp22query.xaml.cs">
+      <DependentUpon>Rp22query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp23query.xaml.cs">
+      <DependentUpon>Rp23query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp24query.xaml.cs">
+      <DependentUpon>Rp24query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp25query.xaml.cs">
+      <DependentUpon>Rp25query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp2query.xaml.cs">
+      <DependentUpon>Rp2query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp3query.xaml.cs">
+      <DependentUpon>Rp3query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp4query.xaml.cs">
+      <DependentUpon>Rp4query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp5query.xaml.cs">
+      <DependentUpon>Rp5query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp6query.xaml.cs">
+      <DependentUpon>Rp6query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp7query.xaml.cs">
+      <DependentUpon>Rp7query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp8query.xaml.cs">
+      <DependentUpon>Rp8query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQueryPage\Rp9query.xaml.cs">
+      <DependentUpon>Rp9query.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="S6101App.cs" />
+    <Compile Include="Service References\Wcf11012\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf11901\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf31021\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf61011\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf61012\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Sharing Classes\AgentScoreSheetCompare.cs" />
+    <Compile Include="Sharing Classes\AgentScoreSheetStatistics.cs" />
+    <Compile Include="Sharing Classes\CalendarFunctions.cs" />
+    <Compile Include="Sharing Classes\MaskedTextBox.cs" />
+    <Compile Include="Sharing Classes\QueryConditionInfo.cs" />
+    <Compile Include="Sharing Classes\ReportNameTree.cs" />
+    <Compile Include="Sharing Classes\UserControlDatepick.xaml.cs">
+      <DependentUpon>UserControlDatepick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ReportDisplayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportDisplayPage.xaml.cs">
+      <DependentUpon>ReportDisplayPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ReportQueryPage\Rp10query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp11query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp12query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp13query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp14query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp15query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp16query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp17query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp18query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp19query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp1query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp20query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp21query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp22query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp23query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp24query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp25query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp2query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp3query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp4query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp5query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp6query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp7query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp8query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportQueryPage\Rp9query.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sharing Classes\UserControlDatepick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS6101\FormStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS6101\QueryCondition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS6101\ReportDisplayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report1.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report11.rdlc" />
+    <EmbeddedResource Include="Report\Report12.rdlc" />
+    <EmbeddedResource Include="Report\Report13.rdlc" />
+    <EmbeddedResource Include="Report\Report14.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report15.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="UMP.PF.Certificate.pfx" />
+    <Resource Include="Report\Report16.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="Report\Report17.rdlc" />
+    <EmbeddedResource Include="Report\Report18.rdlc" />
+    <EmbeddedResource Include="Report\Report19.rdlc" />
+    <EmbeddedResource Include="Report\Report20.rdlc" />
+    <EmbeddedResource Include="Report\Report21.rdlc" />
+    <EmbeddedResource Include="Report\Report22.rdlc" />
+    <EmbeddedResource Include="Report\Report23.rdlc" />
+    <EmbeddedResource Include="Report\Report25.rdlc" />
+    <EmbeddedResource Include="Report\Report9.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report10.rdlc" />
+    <EmbeddedResource Include="Report\Report2.rdlc" />
+    <EmbeddedResource Include="Report\Report3.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report4.rdlc" />
+    <EmbeddedResource Include="Report\Report5.rdlc" />
+    <EmbeddedResource Include="Report\Report6.rdlc" />
+    <EmbeddedResource Include="Report\Report7.rdlc" />
+    <EmbeddedResource Include="Report\Report8.rdlc" />
+    <None Include="app.config" />
+    <None Include="DataSource\DataSets\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSource\DataSets\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSource\DataSets\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\VoiceCyber.UMP.Communications.WebReturn.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\Wcf11012\Service11012.wsdl" />
+    <None Include="Service References\Wcf11012\Service110121.wsdl" />
+    <None Include="Service References\Wcf11012\Service110126.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101261.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101262.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101263.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101264.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service1101265.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119011.wsdl" />
+    <None Include="Service References\Wcf11901\Service119016.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service1190161.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service1190162.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service1190163.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service1190164.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service1190165.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\UMPS6101.Wcf11901.OperationDataArgs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Wcf31021\Service31021.wsdl" />
+    <None Include="Service References\Wcf31021\Service31021.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310211.wsdl" />
+    <None Include="Service References\Wcf31021\Service310211.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310212.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310213.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310214.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310215.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service610111.wsdl" />
+    <None Include="Service References\Wcf61011\Service610116.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service6101161.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service6101162.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service6101163.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service6101164.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61011\Service6101165.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service61012.wsdl" />
+    <None Include="Service References\Wcf61012\Service61012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service610121.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service610122.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service610123.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service610124.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf61012\Service610125.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS6101\Images\locked.png" />
+    <Resource Include="Themes\Default\UMPS6101\Images\ump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Wcf11012\" />
+    <WCFMetadataStorage Include="Service References\Wcf11901\" />
+    <WCFMetadataStorage Include="Service References\Wcf31021\" />
+    <WCFMetadataStorage Include="Service References\Wcf61011\" />
+    <WCFMetadataStorage Include="Service References\Wcf61012\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61011\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61011\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61011\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61011\Service610111.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61012\Service61012.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61012\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61012\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf61012\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS6101\Images\agent.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\computer.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\extension.png" />
+    <Resource Include="Themes\Default\UMPS6101\Images\inspector.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\org.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\pfb.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\root.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\rootorg.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\user.ico" />
+    <Resource Include="Themes\Default\UMPS6101\Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Service110121.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS6101\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Service119011.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\Service31021.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <StartArguments />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UMP.PF.Certificate.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C3BBF9EA2C0DA7FEAA17043A0A6010A522ABAB87</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

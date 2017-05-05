@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="VoiceCyber.UMP.ScoreSheets.Controls.Design.ScoreItemTitleViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Loaded="ScoreItemTitleViewer_OnLoaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPScoreSheet;component/Themes/Default/Generic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Border Name="BorderPanel">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Name="PanelTitle" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="3,1">
+                    <StackPanel Name="PanelIcon" Orientation="Horizontal" VerticalAlignment="Center">
+                        
+                    </StackPanel>
+                    <TextBlock Name="LbTitle" VerticalAlignment="Center" Text="{Binding Title}" TextWrapping="Wrap" MaxWidth="280" ToolTip="{Binding Description}"></TextBlock>
+                    <StackPanel Name="PanelFags" Orientation="Horizontal" VerticalAlignment="Center">
+
+                    </StackPanel>
+                    <Popup Name="PopDescription" Style="{DynamicResource PoPDescription}">
+                        <Border Name="BorderDescription" Background="AliceBlue" Style="{DynamicResource BorderDescription}">
+                            <TextBlock Name="TxtDescription" MaxWidth="500" TextWrapping="Wrap" Text="{Binding Description}"></TextBlock>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+                <Border Name="BorderComment" Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Margin="3"  Visibility="Collapsed">
+                    <StackPanel Name="PanelComments" Orientation="Vertical">
+                        
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

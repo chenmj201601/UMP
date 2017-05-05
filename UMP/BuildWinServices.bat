@@ -35,6 +35,15 @@ if %BuildSuc% == 0 goto error
 
 
 @echo ====================
+@echo UMPService03
+cd UMP.PF.Services\UMPService03\UMPService03
+@call Build.bat
+cd ..\..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
+
+@echo ====================
 @echo UMPService04
 cd UMP.PF.Services\UMPService04\UMPService04
 @call Build.bat
@@ -89,6 +98,14 @@ if %BuildSuc% == 0 goto error
 @echo ====================
 @echo UMPService10
 cd UMP.PF.Services\UMPService10\UMPService10
+@call Build.bat
+cd ..\..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
+@echo ====================
+@echo UMPService13
+cd UMP.PF.Services\UMPService13\UMPService13
 @call Build.bat
 cd ..\..\..
 if %BuildSuc% == 0 goto error

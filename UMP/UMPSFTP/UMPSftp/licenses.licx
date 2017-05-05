@@ -1,0 +1,13 @@
+nsoftware.IPWorksSSH.Certmgr, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Psclient, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Scp, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sexec, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sftp, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sftpserver, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sshclient, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sshdaemon, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sshell, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sshreversetunnel, nsoftware.IPWorksSSH
+nsoftware.IPWorksSSH.Sshtunnel, nsoftware.IPWorksSSH
+
+

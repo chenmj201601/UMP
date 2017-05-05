@@ -157,6 +157,14 @@ cd ..\..
 if %BuildSuc% == 0 goto error
 @echo %BuildProject% BUILD END
 
+@echo ====================
+@echo Wcf21061
+cd UMPS2106\Wcf21061
+@call Build.bat
+cd ..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
 
 @echo ====================
 @echo Wcf24011
@@ -348,16 +356,16 @@ if %BuildSuc% == 0 goto error
 @echo %BuildProject% BUILD END
 
 @echo ====================
-@echo Wcf51001
-cd UMPS5100\Wcf51001
+@echo Wcf51021
+cd UMPS5102\Wcf51021
 @call Build.bat
 cd ..\..
 if %BuildSuc% == 0 goto error
 @echo %BuildProject% BUILD END
 
 @echo ====================
-@echo UMPS5100
-cd UMPS5100\UMPS5100
+@echo UMPS5102
+cd UMPS5102\UMPS5102
 @call Build.bat
 cd ..\..
 if %BuildSuc% == 0 goto error

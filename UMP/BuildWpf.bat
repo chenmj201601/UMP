@@ -117,6 +117,15 @@ if %BuildSuc% == 0 goto error
 
 
 @echo ====================
+@echo UMPS2106
+cd UMPS2106\UMPS2106
+@call Build.bat
+cd ..\..
+if %BuildSuc% == 0 goto error
+@echo %BuildProject% BUILD END
+
+
+@echo ====================
 @echo UMPS2400
 cd UMPS2400\UMPS2400
 @call Build.bat
@@ -224,15 +233,6 @@ if %BuildSuc% == 0 goto error
 @echo ====================
 @echo UMPS4601
 cd UMPS4601\UMPS4601
-@call Build.bat
-cd ..\..
-if %BuildSuc% == 0 goto error
-@echo %BuildProject% BUILD END
-
-
-@echo ====================
-@echo UMPS4601
-cd UMP.MAMT\UMP.MAMT
 @call Build.bat
 cd ..\..
 if %BuildSuc% == 0 goto error

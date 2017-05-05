@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a2c29cad-23bb-4561-a323-85fcd25c7888" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.6.7:8081/WcfServices/Service31021.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service31021.disco" MetadataType="Disco" ID="e619a5be-95ae-4554-9e94-01cd78984d52" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?disco" />
+    <MetadataFile FileName="Service31021.wsdl" MetadataType="Wsdl" ID="8b6037cf-a738-4eec-bc77-1d2751330d31" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?wsdl" />
+    <MetadataFile FileName="Service310211.wsdl" MetadataType="Wsdl" ID="9516677b-c077-4fa6-80ef-794bf6bb6de7" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service31021.xsd" MetadataType="Schema" ID="9d2f8eac-0bdb-4621-8292-dfc9824e529c" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service310211.xsd" MetadataType="Schema" ID="7a53383e-db38-460d-83e8-6e44fc55dd27" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service310212.xsd" MetadataType="Schema" ID="e55c3198-ae2d-4f3a-ab89-c692d814890b" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service310213.xsd" MetadataType="Schema" ID="4bf8e122-c008-4d9a-b0dd-f40225ac5e20" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service310214.xsd" MetadataType="Schema" ID="abac4e9d-df3f-40de-9317-0e21845ed07c" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service310215.xsd" MetadataType="Schema" ID="d7ae44cf-09d8-4e8d-9745-c629af63435c" SourceId="1" SourceUrl="http://192.168.6.7:8081/WCFServices/Service31021.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

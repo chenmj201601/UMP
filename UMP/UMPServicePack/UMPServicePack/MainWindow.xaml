@@ -1,0 +1,61 @@
+﻿<Window x:Class="UMPServicePack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vcc="clr-namespace:VoiceCyber.Wpf.CustomControls"
+        Title="" Height="500" Width="960" WindowStyle="None" BorderThickness="2" 
+        BorderBrush="LightGray" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>  
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="2"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--header-->
+        <Border x:Name="BorderApplicationHeader" Grid.Row="0" Grid.RowSpan="1" Style="{DynamicResource BorderApplicationHeaderStyle}">
+            <Grid Margin="0" x:Name="GridApplicationHeader">
+                <Image Name="ImageApplicationLog" Style="{DynamicResource ImageApplicationLogStyle}" Source="Images/ump.png"/>
+                <Label Name="LabelApplicationTitle" Style="{DynamicResource LabelApplicationTitleStyle}" Content="UMP Service Pack " />
+                <!--<Label Name="LableSPVersion" Content="8.03.001 P01.000" Style="{DynamicResource LableSPVerionStyle}"></Label>-->
+                <Button Name="ButtonApplicationMenu" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonApplicationMenuStyle}" VerticalAlignment="Top" Width="42" Margin="0,0,118,0"/>
+                <Button Name="ButtonMinimized" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonMinimizedStyle}" VerticalAlignment="Top" Width="35" Margin="0,0,83,0"/>
+                <Button Name="ButtonMaximized" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonRestoreStyle}" VerticalAlignment="Top" Width="35" Margin="0,0,47,0"/>
+                <Button Name="ButtonCloseApp" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonCloseStyle}" VerticalAlignment="Top" Width="46" Margin="0,0,0,0"/>
+            </Grid>
+        </Border>
+        <!--Content-->
+        <Border Name="BorderApplicationWorkArea" Grid.Row="2"  Grid.Column="0" Style="{DynamicResource BorderApplicationWorkAreaStyle}">
+            <Grid Margin="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Name="borderUpdater" Grid.Row="0" Grid.Column="0">
+                    <!--升级界面-->
+                    
+                </Border>
+                <GridSplitter  Grid.Column="1" ShowsPreview="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="LightGray"   Width="2"/>
+                <Border Name="BorderServerInfo" Grid.Row="0"  Grid.Column="2" Margin="0" Style="{DynamicResource BorderInChildeWindowDetail}">
+                    <Grid Name="grdServerInfo" Style="{DynamicResource GridServerBasicStyle}">
+                        <!--服务器信息界面-->
+                        <Label Name="lblCurrVersionTip" Content="{DynamicResource string16}" VerticalAlignment="Top" Margin="20"></Label>
+                        <Label Name="lblCurrVersion" VerticalAlignment="Top" Margin="40,47,20,20" Content="当前版本"></Label>
+                        <Label Name="lblUpdateVersionTip" Content="{DynamicResource string17}" VerticalAlignment="Top" Margin="20,90,20,20"></Label>
+                        <Label Name="lblUpdateVersion" VerticalAlignment="Top" Margin="40,115,20,20" Content="升级版本"></Label>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Name="BorderStatusBar" Grid.Row="3" Grid.Column="0" Style="{DynamicResource BorderStatusBarStyle}" Margin="0">
+            <Grid Name="GridStatusBar" Style="{DynamicResource GridStatusBarStyle}">
+                <vcc:MetroWaiter x:Name="myWaiter" ViewColor="LightBlue" ViewWidthHeight="10" VerticalAlignment="Center" Background="Transparent" Visibility="Collapsed"></vcc:MetroWaiter>
+                <DockPanel Name="docReady" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Image Source="Images/Ready.ico" HorizontalAlignment="Left" Width="16" Height="16" Margin="10,0,0,0"></Image>
+                    <Label Content="{DynamicResource string28}" HorizontalAlignment="Left" Margin="5,0,0,0"></Label>
+                    <Label Name="lblVersion" Content="{DynamicResource string29}" HorizontalAlignment="Right" Margin="0,0,15,0"></Label>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

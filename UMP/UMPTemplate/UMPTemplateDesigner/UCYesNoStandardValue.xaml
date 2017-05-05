@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="UMPTemplateDesigner.UCYesNoStandardValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Loaded="UCYesNoStandardValue_OnLoaded">
+    <Grid>
+        <Border Height="28">
+            <GroupBox BorderThickness="0">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Name="RadioYes" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Yes" Click="RadioYes_OnClick"></RadioButton>
+                    <RadioButton Name="RadioNo" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="No" Click="RadioYes_OnClick"></RadioButton>
+                </Grid>
+            </GroupBox>
+        </Border>
+    </Grid>
+</UserControl>

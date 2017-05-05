@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Common.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/IconButton.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreItemTitleViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreSheetCommentViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreItemTipViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreGroupViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/StandardViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreSheetViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/CommentViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/ScoreGroupStatisticsViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/UMPScoreSheet;;;component/Themes/Controls/StatisticalScoreSheetViewer.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

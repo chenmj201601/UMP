@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DB83780-536D-475F-9E4A-EBC2B3F6720C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPServicePack</RootNamespace>
+    <AssemblyName>UMPServicePack</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\公用dll\Oracle.DataAccess.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\..\Library\UMPEncryption\UMPEncryptionS\ServerAESEncryption.cs">
+      <Link>Encryption\ServerAESEncryption.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\UMPEncryption\UMPEncryptionS\ServerEncryptionUtils.cs">
+      <Link>Encryption\ServerEncryptionUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\UMPEncryption\UMPEncryptionS\ServerHashEncryption.cs">
+      <Link>Encryption\ServerHashEncryption.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\UMPEncryption\UMPEncryptionS\ServerIVs.cs">
+      <Link>Encryption\ServerIVs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\UMPEncryption\UMPEncryptionS\ServerKeys.cs">
+      <Link>Encryption\ServerKeys.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCCustomControls\VCCustomControls\Waiter\Implementation\CustomWaiter.cs">
+      <Link>UserControls\CustomWaiter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCCustomControls\VCCustomControls\Waiter\Implementation\MetroWaiter.xaml.cs">
+      <Link>UserControls\MetroWaiter.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\Adler32.cs">
+      <Link>Zips\Adler32.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\Crc32.cs">
+      <Link>Zips\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Checksums\IChecksum.cs">
+      <Link>Zips\IChecksum.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Encryption\PkzipClassicManaged.cs">
+      <Link>Zips\PkzipClassicManaged.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Encryption\ZipAESTransform.cs">
+      <Link>Zips\ZipAESTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\SharpZipBaseException.cs">
+      <Link>Zips\SharpZipBaseException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Deflater.cs">
+      <Link>Zips\Deflater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterConstants.cs">
+      <Link>Zips\DeflaterConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterEngine.cs">
+      <Link>Zips\DeflaterEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterHuffman.cs">
+      <Link>Zips\DeflaterHuffman.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\DeflaterPending.cs">
+      <Link>Zips\DeflaterPending.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Inflater.cs">
+      <Link>Zips\Inflater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\InflaterHuffmanTree.cs">
+      <Link>Zips\InflaterHuffmanTree.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\PendingBuffer.cs">
+      <Link>Zips\PendingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs">
+      <Link>Zips\DeflaterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\InflaterDynHeader.cs">
+      <Link>Zips\InflaterDynHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\InflaterInputStream.cs">
+      <Link>Zips\InflaterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\OutputWindow.cs">
+      <Link>Zips\OutputWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\Compression\Streams\StreamManipulator.cs">
+      <Link>Zips\StreamManipulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipConstants.cs">
+      <Link>Zips\ZipConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipEntry.cs">
+      <Link>Zips\ZipEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipException.cs">
+      <Link>Zips\ZipException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipExtraData.cs">
+      <Link>Zips\ZipExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipHelperStream.cs">
+      <Link>Zips\ZipHelperStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipInputStream.cs">
+      <Link>Zips\ZipInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Library\VCSharpZipLib\VCSharpZipLib\Zip\ZipOutputStream.cs">
+      <Link>Zips\ZipOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\UMPCommon\UMPCommon\DatabaseInfo.cs">
+      <Link>UMPCommon\DatabaseInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\UMPCommon\UMPCommon\EncryptionMode.cs">
+      <Link>UMPCommon\EncryptionMode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\VCCommon\VCCommon\Defines.cs">
+      <Link>VCCommon\Defines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\VCCommon\VCCommon\LogMode.cs">
+      <Link>VCCommon\LogMode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\VCCommon\VCCommon\LogOperator.cs">
+      <Link>VCCommon\LogOperator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\VCCommon\VCCommon\OperationReturn.cs">
+      <Link>VCCommon\OperationReturn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\VCCommon\VCCommon\XMLHelper.cs">
+      <Link>VCCommon\XMLHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\CommonFuncs.cs">
+      <Link>PackCommon\CommonFuncs.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ConstDefines.cs">
+      <Link>PackCommon\ConstDefines.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ErrorMode.cs">
+      <Link>PackCommon\ErrorMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\FileInstallMode.cs">
+      <Link>PackCommon\FileInstallMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\FollowDataType.cs">
+      <Link>PackCommon\FollowDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\IniOperation.cs">
+      <Link>PackCommon\IniOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\NodeItem.cs">
+      <Link>PackCommon\NodeItem.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\PackType.cs">
+      <Link>PackCommon\PackType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\RegistryOperator.cs">
+      <Link>PackCommon\RegistryOperator.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ServiceEnty.cs">
+      <Link>PackCommon\ServiceEnty.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ServiceInstallMode.cs">
+      <Link>PackCommon\ServiceInstallMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ServiceStartMode.cs">
+      <Link>PackCommon\ServiceStartMode.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ServiceStatusType.cs">
+      <Link>PackCommon\ServiceStatusType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ServiceType.cs">
+      <Link>PackCommon\ServiceType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\TargetPathType.cs">
+      <Link>PackCommon\TargetPathType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UMPAppInfo.cs">
+      <Link>PackCommon\UMPAppInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateConsts.cs">
+      <Link>PackCommon\UpdateConsts.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateFile.cs">
+      <Link>PackCommon\UpdateFile.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateFileType.cs">
+      <Link>PackCommon\UpdateFileType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateFollow.cs">
+      <Link>PackCommon\UpdateFollow.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateInfo.cs">
+      <Link>PackCommon\UpdateInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateModule.cs">
+      <Link>PackCommon\UpdateModule.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateModuleType.cs">
+      <Link>PackCommon\UpdateModuleType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateScript.cs">
+      <Link>PackCommon\UpdateScript.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateScriptType.cs">
+      <Link>PackCommon\UpdateScriptType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateService.cs">
+      <Link>PackCommon\UpdateService.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateSqlScript.cs">
+      <Link>PackCommon\UpdateSqlScript.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\UpdateSqlType.cs">
+      <Link>PackCommon\UpdateSqlType.cs</Link>
+    </Compile>
+    <Compile Include="..\UMPServicePackCommon\ZipHelper.cs">
+      <Link>PackCommon\ZipHelper.cs</Link>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PublicClasses\Common.cs" />
+    <Compile Include="PublicClasses\DatabaseXmlOperator.cs" />
+    <Compile Include="PublicClasses\EncryptOperations.cs" />
+    <Compile Include="PublicClasses\GridColumnClass.cs" />
+    <Compile Include="PublicClasses\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="PublicClasses\MssqlOperation.cs" />
+    <Compile Include="PublicClasses\OracleOperation.cs" />
+    <Compile Include="PublicClasses\DatabaseOperator.cs" />
+    <Compile Include="PublicClasses\DrawingBackground.cs" />
+    <Compile Include="PublicClasses\StringHexConver.cs" />
+    <Compile Include="PublicClasses\UpdateProgram.cs" />
+    <Compile Include="UserControls\GifAnimation.cs" />
+    <Compile Include="UserControls\GifImage.cs" />
+    <Compile Include="UserControls\UC_BackupPathChoose.xaml.cs">
+      <DependentUpon>UC_BackupPathChoose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Done.xaml.cs">
+      <DependentUpon>UC_Done.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_License.xaml.cs">
+      <DependentUpon>UC_License.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_UpdateContent.xaml.cs">
+      <DependentUpon>UC_UpdateContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Upgrade.xaml.cs">
+      <DependentUpon>UC_Upgrade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="..\..\Library\VCCustomControls\VCCustomControls\Waiter\Implementation\MetroWaiter.xaml">
+      <Link>UserControls\MetroWaiter.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\1028.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Languages\1033.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Languages\1041.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\2052.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\BasicStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Style01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\UC_UpdaterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UC_BackupPathChoose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UC_Done.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UC_License.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UC_UpdateContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UC_Upgrade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="UpdateFiles\Data.zip" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\0.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Level.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ready.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Languages\License_1033.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Languages\License_2052.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wait.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Done.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Languages\License_1041.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Languages\License_1028.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UpdateInfo.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,231 @@
+﻿<vcr:RibbonWindow x:Class="UMPScoreSheetDesigner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vcr="http://www.voicecyber.com/Ribbon"
+        xmlns:conv="clr-namespace:UMPScoreSheetDesigner.Converters" 
+        xmlns:cmd="clr-namespace:UMPScoreSheetDesigner.Commands"
+        xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+        xmlns:vcp="http://www.voicecyber.com/Wpf/PropertyGrids"
+        xmlns:local="clr-namespace:UMPScoreSheetDesigner"
+        xmlns:vcad="http://www.voicecyber.com/wpf/avalondock"
+        Title="MainWindow" Icon="ScoreSheet.ico" Height="500" Width="800">
+    <vcr:RibbonWindow.Resources>
+        <conv:VisibilityToBoolConverter x:Key="VisibilityToBoolConverter"></conv:VisibilityToBoolConverter>
+        <conv:InvalidCodeConverter x:Key="InvalidCodeConverter"></conv:InvalidCodeConverter>
+        <DataTemplate x:Key="LanguageItemTemplate">
+            <Grid>
+                <Label Content="{Binding Display}"></Label>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="MenuItemNewStyle" TargetType="{x:Type vcr:MenuItem}">
+            <Setter Property="Header" Value="{Binding Header}"></Setter>
+            <Setter Property="ToolTip" Value="{Binding ToolTip}"></Setter>
+        </Style>
+        <DataTemplate x:Key="EnumEditorItem" DataType="{x:Type ComboBoxItem}">
+            <TextBlock Text="{Binding Display}"></TextBlock>
+        </DataTemplate>
+        <Style x:Key="EnumEditorItemStyle" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="ToolTip" Value="{Binding Display}"></Setter>
+            <Setter Property="Margin" Value="3,2"></Setter>
+            <Setter Property="IsSelected" Value="{Binding IsSelected}"></Setter>
+        </Style>
+        <Style x:Key="MultiLineEditorStyle" TargetType="{x:Type vcc:MultiLineTextEditor}">
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsKeyboardFocusWithin" Value="False"/>
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="ShowDropDownButton" Value="False"></Setter>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </vcr:RibbonWindow.Resources>
+    <DockPanel LastChildFill="True">
+        <!--ToolBar-->
+        <vcr:Ribbon Name="RibbonTools" DockPanel.Dock="Top">
+            <vcr:Ribbon.QuickAccessItems>
+                <vcr:QuickAccessMenuItem IsChecked="True">
+                    <vcr:Button x:Name="BtnAbout" Header="About" ToolTip="About" Icon="Images/About.ico" LargeIcon="Images/About.ico" 
+                                Command="cmd:MainWindowCommands.ShowAboutCommand"></vcr:Button>
+                </vcr:QuickAccessMenuItem>
+                <vcr:QuickAccessMenuItem IsChecked="True">
+                    <vcr:Button x:Name="BtnClose" Header="Close" ToolTip="Close" Icon="Images/Close.png" LargeIcon="Images/Close.png" 
+                                Command="ApplicationCommands.Close"></vcr:Button>
+                </vcr:QuickAccessMenuItem>
+            </vcr:Ribbon.QuickAccessItems>
+            <vcr:RibbonTabItem x:Name="TabHome" Header="Home">
+                <vcr:RibbonGroupBox x:Name="GroupBasic" Header="Basic">
+                    <vcr:SplitButton x:Name="BtnNew" Header="New" ToolTip="New" Icon="Images/new.ico" LargeIcon="Images/new.ico" 
+                                     Command="ApplicationCommands.New"></vcr:SplitButton>
+                    <vcr:Button x:Name="BtnOpen" Header="Open" ToolTip="Open" Icon="Images/open.ico" LargeIcon="Images/open.ico" 
+                                Command="ApplicationCommands.Open"></vcr:Button>
+                    <vcr:SplitButton x:Name="BtnSave" Header="Save" ToolTip="Save" Icon="Images/save.ico" LargeIcon="Images/save.ico"
+                                     Command="ApplicationCommands.Save">
+                        <vcr:MenuItem x:Name="BtnSaveTo" Header="Save to" ToolTip="Save to" Icon="Images/save.ico" 
+                                      Command="ApplicationCommands.SaveAs"></vcr:MenuItem>
+                    </vcr:SplitButton>
+                    <vcr:Button x:Name="BtnDelete" Header="Delete" ToolTip="Delete" Icon="Images/delete.ico" LargeIcon="Images/delete.ico" 
+                                Command="ApplicationCommands.Delete"></vcr:Button>
+                </vcr:RibbonGroupBox>
+                <vcr:RibbonGroupBox x:Name="GroupView" Header="View" State="Middle">
+                    <vcr:CheckBox x:Name="CbObjects" Header="Objects" ToolTip="Score Object" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="Object"></vcr:CheckBox>
+                    <vcr:CheckBox x:Name="CbProperty" Header="Property" ToolTip="Property" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="Property"></vcr:CheckBox>
+                    <vcr:CheckBox x:Name="CbChildList" Header="Child List" ToolTip="Child List" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="ChildList"></vcr:CheckBox>
+                    <vcr:CheckBox x:Name="CbChildProperty" Header="Child Property" ToolTip="Child Property" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="ChildProperty"></vcr:CheckBox>
+                    <vcr:CheckBox x:Name="CbViewHead" Header="View Head" ToolTip="View Head" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="ViewHead"></vcr:CheckBox>
+                    <vcr:CheckBox x:Name="CbStatue" Header="Statue" ToolTip="Statue" Command="cmd:MainWindowCommands.SetViewCommand" CommandParameter="Status"></vcr:CheckBox>
+                </vcr:RibbonGroupBox>
+                <vcr:RibbonGroupBox x:Name="GroupTool" Header="Tools" State="Middle">
+                    <vcr:Button x:Name="BtnPrint" Header="Print" Icon="Images/print.ico" LargeIcon="Images/print.ico" Command="ApplicationCommands.Print"></vcr:Button>
+                    <vcr:Button x:Name="BtnCaculate" Header="Caculate" Icon="Images/caculate.ico" LargeIcon="Images/caculate.ico" Command="cmd:MainWindowCommands.CaculateCommand"></vcr:Button>
+                </vcr:RibbonGroupBox>
+                <vcr:RibbonGroupBox x:Name="GroupLanguage" Header="Languages">
+                    <vcr:InRibbonGallery x:Name="GalleryLanguages" Header="Languages" ItemTemplate="{StaticResource LanguageItemTemplate}"></vcr:InRibbonGallery>
+                </vcr:RibbonGroupBox>
+                <vcr:RibbonGroupBox x:Name="GroupDragDrop" Header="DragDrop" State="Middle">
+                    <vcr:RadioButton x:Name="RadioDown" Header="Move Down" Tag="0" Command="cmd:MainWindowCommands.SetDragDropCommand" CommandParameter="0"></vcr:RadioButton>
+                    <vcr:RadioButton x:Name="RadioUp" Header="Move Up" Tag="1" Command="cmd:MainWindowCommands.SetDragDropCommand" CommandParameter="1"></vcr:RadioButton>
+                    <vcr:RadioButton x:Name="RadioChild" Header="Move Child" Tag="2" Command="cmd:MainWindowCommands.SetDragDropCommand" CommandParameter="2"></vcr:RadioButton>
+                </vcr:RibbonGroupBox>
+                <vcr:RibbonGroupBox x:Name="GroupLayout" Header="Layout" State="Middle">
+                    <vcr:Button x:Name="BtnSaveLayout" Header="Save Layout" Icon="Images/savelayout.png" LargeIcon="Images/savelayout.png" Command="cmd:MainWindowCommands.SaveLayoutCommand"></vcr:Button>
+                    <vcr:Button x:Name="BtnResetLayout" Header="Reset Layout" Icon="Images/reset.png" LargeIcon="Images/reset.png" Command="cmd:MainWindowCommands.ResetLayoutCommand"></vcr:Button>
+                </vcr:RibbonGroupBox>
+            </vcr:RibbonTabItem>
+        </vcr:Ribbon>
+        <!--ToolBar-->
+        <DockPanel LastChildFill="True" Margin="2,5,2,1">
+            <StatusBar Name="StatusBar" DockPanel.Dock="Bottom" Height="30">
+                <Image Height="25" Stretch="Uniform"></Image>
+                <Label Content=""></Label>
+            </StatusBar>
+            <vcad:DockingManager Name="DockingManagerMain">
+                <vcad:LayoutRoot>
+                    <vcad:LayoutPanel Orientation="Horizontal">
+                        <vcad:LayoutAnchorablePane DockWidth="200">
+                            <vcad:LayoutAnchorable x:Name="PanelObject" Title="Object Browser" ContentId="PanelObject">
+                                <!--Score Objects-->
+                                <Border Margin="2,3,1,2">
+                                    <TreeView Name="TvObjects">
+                                        <TreeView.ItemTemplate>
+                                            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                                <Grid>
+                                                    <StackPanel Name="PanelObject" Orientation="Horizontal" Tag="{Binding}" Margin="3,2" AllowDrop="True" 
+                                                MouseMove="PanelObject_OnMouseMove" 
+                                                DragEnter="PanelObject_OnDragEnter" 
+                                                DragLeave="PanelObject_OnDragLeave" 
+                                                DragOver="PanelObject_OnDragOver"
+                                                Drop="PanelObject_OnDrop">
+                                                        <Image Width="15" Height="15" Source="{Binding Icon}"></Image>
+                                                        <TextBlock Text="{Binding Display}" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                                        <Image Stretch="Uniform" Height="20" Width="20" 
+                                               ToolTip="{Binding InvalidMessage}" 
+                                               Source="{Binding InvalidCode,Converter={StaticResource InvalidCodeConverter},IsAsync=True}"></Image>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </HierarchicalDataTemplate>
+                                        </TreeView.ItemTemplate>
+                                        <TreeView.ItemContainerStyle>
+                                            <Style TargetType="TreeViewItem">
+                                                <Setter Property="Margin" Value="2,3"></Setter>
+                                                <Setter Property="ToolTip" Value="{Binding ToolTip}"></Setter>
+                                                <Setter Property="IsExpanded" Value="{Binding IsExpanded}"></Setter>
+                                                <Setter Property="IsSelected" Value="{Binding IsSelected}"></Setter>
+                                            </Style>
+                                        </TreeView.ItemContainerStyle>
+                                    </TreeView>
+                                </Border>
+                                <!--Score Objects-->
+                            </vcad:LayoutAnchorable>
+                        </vcad:LayoutAnchorablePane>
+                        <vcad:LayoutDocumentPane>
+                            <vcad:LayoutDocument  x:Name="PanelScoreViewer" Title="Score Viewer" ContentId="PanelScoreViewer" CanClose="False" CanFloat="False">
+                                <!--Score Viewer-->
+                                <DockPanel LastChildFill="True">
+                                    <!--View Head-->
+                                    <Border Name="ViewHead" DockPanel.Dock="Top" Height="30">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal">
+                                                <Image Name="ImageObject" 
+                                                   Width="20" Height="20" 
+                                                   Stretch="Uniform" 
+                                                   Source="{Binding Icon}"></Image>
+                                                <Label Name="LbTitle" FontWeight="Bold" 
+                                                   FontFamily="SimSun" FontSize="18" 
+                                                   Content="{Binding Display}"></Label>
+                                            </StackPanel>
+                                            <Slider Name="SliderScale" 
+                                                Grid.Column="1" 
+                                                Width="80" 
+                                                Maximum="90" 
+                                                Minimum="10" 
+                                                TickFrequency="5" 
+                                                IsSnapToTickEnabled="True" 
+                                                Value="50" 
+                                                ToolTip="{Binding ElementName=SliderScale,Path=Tag}"></Slider>
+                                        </Grid>
+                                    </Border>
+                                    <!--View Head-->
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                        <Border Name="BorderViewer" Margin="1,3,2,1" 
+                                            RenderTransformOrigin="0.5,0.5" 
+                                            Background="AliceBlue" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center">
+                                        </Border>
+                                    </ScrollViewer>
+                                </DockPanel>
+                                <!--Score Viewer-->
+                            </vcad:LayoutDocument>
+                        </vcad:LayoutDocumentPane>
+                        <vcad:LayoutAnchorablePaneGroup DockWidth="250" Orientation="Vertical">
+                            <vcad:LayoutAnchorablePane>
+                                <vcad:LayoutAnchorable x:Name="PanelProperty" Title="Property Editor" ContentId="PanelProperty">
+                                    <!--Property-->
+                                    <Border>
+                                        <vcp:PropertyGrid x:Name="ScoreItemPropertyGrid" 
+                                                      AutoGenerateProperties="False" 
+                                                      ShowSearchBox="False" 
+                                                      ShowAdvancedOptions="False"
+                                                      ShowSortOptions="False">
+                                        </vcp:PropertyGrid>
+                                    </Border>
+                                    <!--Property-->
+                                </vcad:LayoutAnchorable>
+                            </vcad:LayoutAnchorablePane>
+                            <vcad:LayoutAnchorablePane>
+                                <vcad:LayoutAnchorable x:Name="PanelChildList" Title="ChildList Management" ContentId="PanelChildList">
+                                    <!--ChildList-->
+                                    <Border>
+                                        <local:PropertyChildList x:Name="PropertyChildList"></local:PropertyChildList>
+                                    </Border>
+                                    <!--ChildList-->
+                                </vcad:LayoutAnchorable>
+                            </vcad:LayoutAnchorablePane>
+                            <vcad:LayoutAnchorablePane>
+                                <vcad:LayoutAnchorable x:Name="PanelChildProperty" Title="ChildProperty Editor" ContentId="PanelChildProperty">
+                                    <!--ChildProperty-->
+                                    <Border>
+                                        <vcp:PropertyGrid x:Name="ChildPropertyGrid" 
+                                                      AutoGenerateProperties="False" 
+                                                      ShowSearchBox="False" 
+                                                      ShowAdvancedOptions="False"
+                                                      ShowSortOptions="False">
+                                        </vcp:PropertyGrid>
+                                    </Border>
+                                    <!--ChildProperty-->
+                                </vcad:LayoutAnchorable>
+                            </vcad:LayoutAnchorablePane>
+                        </vcad:LayoutAnchorablePaneGroup>
+                    </vcad:LayoutPanel>
+                </vcad:LayoutRoot>
+            </vcad:DockingManager>
+        </DockPanel>
+    </DockPanel>
+</vcr:RibbonWindow>
