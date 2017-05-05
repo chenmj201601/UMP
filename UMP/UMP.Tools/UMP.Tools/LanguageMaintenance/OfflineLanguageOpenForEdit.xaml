@@ -1,0 +1,42 @@
+﻿<Window x:Class="UMP.Tools.LanguageMaintenance.OfflineLanguageOpenForEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OfflineLanguageOpenForEdit" Height="335" Width="550" WindowState="Normal" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderThickness="1" BorderBrush="LightGray" ShowInTaskbar="False" WindowStyle="None">
+    <Grid Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2"></RowDefinition>
+            <RowDefinition Height="38"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Name="ImageOpenOfflineLanguage" Style="{DynamicResource ImageInChildWinodwHeader}"/>
+        <Label Grid.Row="0" Name="LabelOpenOfflineLanguageTip" Style="{DynamicResource LabelInChildWinodwHeader}"/>
+        <Button Grid.Row="0" Name="ButtonCloseThis" HorizontalAlignment="Right" Height="24" Style="{DynamicResource ButtonCloseStyle}" VerticalAlignment="Top" Width="46" Margin="0"/>
+
+        <Border Grid.Row="1" Grid.RowSpan="3" Style="{DynamicResource BorderInChildeWindowDetail}">
+            <TabControl Margin="5,3,5,35" Background="Transparent">
+                <TabItem Name="TabItemLanguageFileOpen" Header="  " Background="Transparent" Style="{DynamicResource NormalFontStyle}" Height="26">
+                    <Grid Name="GridImportLanguageFileOpen">
+                        <DockPanel Margin="10,20,10,0" Height="26" VerticalAlignment="Top">
+                            <Label Height="26" Margin="0" Name="LabelOLanguagePackagePath" Style="{DynamicResource LabelNormalStyle}" VerticalAlignment="Top" Background="Transparent" Content="语言包文件"/>
+                            <Label Margin="8,12,0,0" Height="1" Background="LightGray" VerticalAlignment="Top"/>
+                        </DockPanel>
+                        <TextBox x:Name="TextBoxOLanguagePackagePath" Margin="40,60,50,0" Height="26" VerticalAlignment="Top" Background="White" Style="{DynamicResource TextBoxNormalStyle}" IsReadOnly="True" />
+                        <Button x:Name="ButtonOLanguagePackagePath" Margin="0,60,10,0" VerticalAlignment="Top" Width="35" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" HorizontalAlignment="Right">...</Button>
+
+                        <DockPanel Margin="10,110,10,0" Height="24" VerticalAlignment="Top">
+                            <Label Height="26" Margin="0" Name="LabelODecryptionPassword" Style="{DynamicResource LabelNormalStyle}" VerticalAlignment="Top" Background="Transparent" Content="解密密码"/>
+                            <Label Margin="8,12,0,0" Height="1" Background="LightGray" VerticalAlignment="Top"/>
+                        </DockPanel>
+                        <PasswordBox x:Name="PasswordBoxODecryptPassword" Margin="40,150,50,0" VerticalAlignment="Top" Height="26" PasswordChar="*" VerticalContentAlignment="Center" Background="White" IsEnabled="False"/>
+                        <Button x:Name="ButtonODecryptionFile" Margin="0,150,10,0" VerticalAlignment="Top" Width="35" Style="{DynamicResource ButtonLayoutStyle}" BorderThickness="0" HorizontalAlignment="Right" IsEnabled="False">...</Button>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+        
+        <Button x:Name="ButtonOpenFile" Grid.Row="3" Margin="0,2,122,10" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonLayoutStyle}" IsEnabled="False">打开(_O)</Button>
+        <Button x:Name="ButtonCloseWindow" Grid.Row="3" Margin="0,2,12,10" HorizontalAlignment="Right" Width="100" Style="{DynamicResource ButtonLayoutStyle}">取消(_Q)</Button>
+    </Grid>
+</Window>
