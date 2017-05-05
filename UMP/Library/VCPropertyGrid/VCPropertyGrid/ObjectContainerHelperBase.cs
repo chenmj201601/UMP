@@ -377,7 +377,11 @@ namespace VoiceCyber.Wpf.PropertyGrids
 
                 Debug.Assert(editor != null);
 
-                editorElement = editor.ResolveEditor(propertyItem);
+                if (editor != null)
+                {
+                    editorElement = editor.ResolveEditor(propertyItem);
+                }
+                
             }
 
             return editorElement;

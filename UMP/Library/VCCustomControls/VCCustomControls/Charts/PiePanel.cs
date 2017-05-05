@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -67,6 +68,9 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
             if (GetValues(this) != null)
             {
                 double total = 0.0;
+                int leftCount = 0;      //饼的左侧拥有的扇形数
+                int rightCount = 0;     //饼的右侧拥有的扇形数
+
                 for (int i = 0; i < InternalChildren.Count; i++)
                 {
                     total += GetValues(this)[i];
@@ -81,6 +85,10 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
                 for (int i = 0; i < InternalChildren.Count; i++)
                 {
                     ContentControl container = InternalChildren[i] as ContentControl;
+                    if (container == null)
+                    {
+                        throw new NoNullAllowedException(string.Format("Child control is null."));
+                    }
                     double proportion = GetValues(this)[i] / total * 1.0;
                     double wedgeAngle = proportion * 360;
                     RotateTransform rt = new RotateTransform(offsetAngle, beginFigure.X, beginFigure.Y);
@@ -95,6 +103,17 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
                     container.SetValue(CenterPointProperty, centerPoint);
                     container.SetValue(TranslateXProperty, centerPoint.X - beginFigure.X);
                     container.SetValue(TranslateYProperty, centerPoint.Y - beginFigure.Y);
+
+                    if (centerPoint.X < 0)
+                    {
+                        leftCount++;
+                    }
+                    if (centerPoint.X >= 0)
+                    {
+                        rightCount++;
+                    }
+                    container.SetValue(LeftCountProperty, leftCount);
+                    container.SetValue(RightCountProperty, rightCount);
 
                     offsetAngle += wedgeAngle;
                     Rect r = new Rect(finalSize);
@@ -238,11 +257,7 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
         /// </summary>
         public static readonly DependencyProperty CenterPointProperty =
             DependencyProperty.RegisterAttached("CenterPoint", typeof(Point), typeof(PiePanel), new PropertyMetadata(null));
-        /// <summary>
-        /// 
-        /// </summary>
-        public static readonly DependencyProperty TranslateXProperty =
-            DependencyProperty.RegisterAttached("TranslateX", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+
         /// <summary>
         /// 
         /// </summary>
@@ -257,6 +272,7 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
 
             return (double)obj.GetValue(TranslateXProperty);
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -271,11 +287,13 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
 
             obj.SetValue(TranslateXProperty, value);
         }
+
         /// <summary>
         /// 
         /// </summary>
-        public static readonly DependencyProperty TranslateYProperty =
-            DependencyProperty.RegisterAttached("TranslateY", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+        public static readonly DependencyProperty TranslateXProperty =
+            DependencyProperty.RegisterAttached("TranslateX", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+
         /// <summary>
         /// 
         /// </summary>
@@ -290,6 +308,7 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
 
             return (double)obj.GetValue(TranslateYProperty);
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -304,11 +323,13 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
 
             obj.SetValue(TranslateYProperty, value);
         }
+
         /// <summary>
         /// 
         /// </summary>
-        public static readonly DependencyProperty ProportionProperty =
-            DependencyProperty.RegisterAttached("Proportion", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+        public static readonly DependencyProperty TranslateYProperty =
+            DependencyProperty.RegisterAttached("TranslateY", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+
         /// <summary>
         /// 
         /// </summary>
@@ -322,6 +343,7 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
             }
             return (double)obj.GetValue(ProportionProperty);
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -336,6 +358,153 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
             }
             obj.SetValue(ProportionProperty, value);
         }
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty ProportionProperty =
+            DependencyProperty.RegisterAttached("Proportion", typeof(double), typeof(PiePanel), new PropertyMetadata(default(double)));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static int GetLeftCount(DependencyObject obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+            return (int)obj.GetValue(LeftCountProperty);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetLeftCount(DependencyObject obj, int value)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+            obj.SetValue(LeftCountProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty LeftCountProperty =
+            DependencyProperty.RegisterAttached("LeftCount", typeof(int), typeof(PiePanel), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static int GetRightCount(DependencyObject obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+            return (int)obj.GetValue(RightCountProperty);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetRightCount(DependencyObject obj, int value)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+            obj.SetValue(RightCountProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty RightCountProperty =
+            DependencyProperty.Register("RightCount", typeof (int), typeof (PiePanel), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static double GetTipX(DependencyObject obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+
+            return (double)obj.GetValue(TipXProperty);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetTipX(DependencyObject obj, double value)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+
+            obj.SetValue(TipXProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty TipXProperty =
+            DependencyProperty.Register("TipX", typeof (double), typeof (PiePanel), new PropertyMetadata(default(double)));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static double GetTipY(DependencyObject obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+
+            return (double)obj.GetValue(TipYProperty);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetTipY(DependencyObject obj, double value)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("obj");
+            }
+
+            obj.SetValue(TipYProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty TipYProperty =
+            DependencyProperty.Register("TipY", typeof (double), typeof (PiePanel), new PropertyMetadata(default(double)));
+
 
         /// <summary>
         /// 
@@ -345,6 +514,7 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
             get { return (PropertyPath)GetValue(ValuePathProperty); }
             set { SetValue(ValuePathProperty, value); }
         }
+
         /// <summary>
         /// 
         /// </summary>

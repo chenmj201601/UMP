@@ -1,0 +1,26 @@
+﻿create table T_51_006_00000
+(
+  c001 NUMBER(20) not null,
+  c002 NVARCHAR2(20) not null,
+  c003 VARCHAR2(512) not null,
+  c004 NVARCHAR2(1024),
+  c005 CHAR(1) default 0,
+  c006 DATE not null,
+  c007 DATE not null,
+  c008 NUMBER(20) not null,
+  c009 NVARCHAR2(1024) not null,
+  c010 CHAR(1) default 0,
+  c011 DATE,
+  c012 DATE,
+  c013 NUMBER(20),
+  c014 NVARCHAR2(1024),
+  c015 DATE,
+  c016 DATE,
+  c017 NUMBER(20),
+  c018 NVARCHAR2(1024),
+  c019 DATE,
+  c020 DATE,
+  c021 NUMBER(20),
+  c022 NVARCHAR2(1024),
+  constraint PK_51_006 primary key (C001)
+);

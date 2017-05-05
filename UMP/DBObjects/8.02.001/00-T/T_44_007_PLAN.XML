@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDefine P01="T_44_007_PLAN" P02="8.02.002" P03="0" P04="0" P05="0" P06="" P07="备用">
+  <ColumnDefine>
+    <Column P01="PLANID" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="PLANNAME" P02="14" P03="2000" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="STATUS" P02="14" P03="10" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="REMARK" P02="14" P03="2000" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="CREATEID" P02="03" P03="20" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="CREATEDATE" P02="21" P03="0" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="MODIFYID" P02="03" P03="20" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="MODIFYDATE" P02="21" P03="0" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="LOCKFLAG" P02="11" P03="1" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="LOCKUSERID" P02="03" P03="20" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="LOCKDATE" P02="21" P03="0" P04="0" P05="1" P06="" P07=""/>
+  </ColumnDefine>
+  <IndexDefine>
+     <Index P01="PK_T_44_007_PLAN" P02="1" P03="1">
+      <Column P01="PLANID" P02="A"/>
+    </Index>
+  </IndexDefine>
+</TableDefine>

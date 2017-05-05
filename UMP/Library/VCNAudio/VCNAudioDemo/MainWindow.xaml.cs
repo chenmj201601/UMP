@@ -3,6 +3,7 @@ using System.Windows;
 using Microsoft.Win32;
 using VoiceCyber.NAudio;
 using VoiceCyber.NAudio.Controls;
+using VoiceCyber.NAudio.Wave;
 
 namespace VCNAudioDemo
 {
@@ -70,7 +71,32 @@ namespace VCNAudioDemo
 
         void BtnTest_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                //var count = WaveOut.DeviceCount;
+                //ShowMessage(string.Format("Count:{0}", count), 1);
+                //for (int i = 0; i < count; i++)
+                //{
+                //    var device = WaveOut.GetCapabilities(i);
+                //    ShowMessage(string.Format("Name:{0}", device.ProductName), 1);
+                //}
 
+                string strFile = TxtUrl.Text;
+                WaveStream reader = new WaveFileReader(strFile);
+                if (reader.WaveFormat.Encoding != WaveFormatEncoding.Pcm &&
+                           reader.WaveFormat.Encoding != WaveFormatEncoding.IeeeFloat)
+                {
+                    reader = WaveFormatConversionStream.CreatePcmStream(reader);
+                    reader = new BlockAlignReductionStream(reader);
+                }
+                WaveOut waveOut = new WaveOut();
+                waveOut.Init(reader);
+                waveOut.Play();
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, 0);
+            }
         }
 
         void MyPlayer_PlayerEvent(object sender, RoutedPropertyChangedEventArgs<PlayerEventArgs> e)

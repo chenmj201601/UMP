@@ -1,0 +1,6 @@
+﻿--添加下载参数的下载方式，其中SFTP暂未实现，先不可见	 by Charley at 2016/11/24
+delete from T_00_003 where c001=111000115  and c002=0;
+INSERT INTO T_00_003 VALUES (111000115, 0, 0, '1', 0, '0', 'FTP');
+INSERT INTO T_00_003 VALUES (111000115, 1, 0, '0', 0, '1', 'SFTP');
+INSERT INTO T_00_003 VALUES (111000115, 10, 0, '1', 0, '10', 'Share');
+INSERT INTO T_00_003 VALUES (111000115, 11, 0, '1', 0, '11', 'NFS');

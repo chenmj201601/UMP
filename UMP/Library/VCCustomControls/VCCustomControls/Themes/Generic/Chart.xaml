@@ -251,8 +251,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:PieChart}">
                     <Border Background="{TemplateBinding Background}"
-                  BorderThickness="{TemplateBinding BorderThickness}"
-                  BorderBrush="{TemplateBinding BorderBrush}">
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          BorderBrush="{TemplateBinding BorderBrush}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -278,9 +278,9 @@
                                 <ContentPresenter Grid.Row="1" Grid.Column="1" ContentSource="LabelTitle"/>
                                 <ItemsPresenter Grid.Row="0" Grid.Column="0" local:PiePanel.Values="{Binding Source={StaticResource extractor}, Path=Values}"/>
                                 <ItemsControl Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"
-                         ItemsSource="{Binding Source={StaticResource labelextractor}, Path=Labels}"
-                         ItemTemplate="{TemplateBinding LegendItemTemplate}"
-                         ItemTemplateSelector="{TemplateBinding LegendItemTemplateSelector}"/>
+                                     ItemsSource="{Binding Source={StaticResource labelextractor}, Path=Labels}"
+                                     ItemTemplate="{TemplateBinding LegendItemTemplate}"
+                                     ItemTemplateSelector="{TemplateBinding LegendItemTemplateSelector}"/>
                             </Grid>
                         </Grid>
                     </Border>
@@ -293,12 +293,19 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type local:ChartItem}">
-                                <local:ClipWedge WedgeAngle ="{TemplateBinding local:PiePanel.WedgeAngle}"
-                  BeginFigurePoint ="{TemplateBinding local:PiePanel.BeginFigurePoint}"
-                  LineToPoint="{TemplateBinding local:PiePanel.LineToPoint}"
-                  Content="{TemplateBinding Content}"
-                  ContentTemplate="{TemplateBinding ContentTemplate}">
-                                </local:ClipWedge>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <local:ClipWedge Grid.Column="1" WedgeAngle ="{TemplateBinding local:PiePanel.WedgeAngle}"
+                                          BeginFigurePoint ="{TemplateBinding local:PiePanel.BeginFigurePoint}"
+                                          LineToPoint="{TemplateBinding local:PiePanel.LineToPoint}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}">
+                                    </local:ClipWedge>
+                                </Grid>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>

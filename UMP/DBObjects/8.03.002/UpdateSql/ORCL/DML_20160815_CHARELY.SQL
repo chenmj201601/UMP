@@ -1,0 +1,2 @@
+﻿--20160815 charely
+DELETE FROM T_00_102 WHERE C001 = 2102001 AND C002 = 'CallState';

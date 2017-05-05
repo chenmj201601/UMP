@@ -1,0 +1,24 @@
+﻿create table T_00_302
+(
+  c001 VARCHAR(64) not null,
+  c002 SMALLINT default 0 not null,
+  c003 SMALLINT default 0 not null,
+  c004 VARCHAR(1024),
+  c005 BIGINT default 0 not null,
+  c006 SMALLINT default 0 not null,
+  c007 VARCHAR(1024),
+  c008 VARCHAR(1024),
+  c009 VARCHAR(1024),
+  c010 VARCHAR(1024),
+  c101 CHAR(1),
+  c102 CHAR(1),
+  c103 NVARCHAR(32),
+  c104 NVARCHAR(32),
+  c105 NVARCHAR(32),
+  c106 NVARCHAR(1024),
+  c107 NVARCHAR(1024),
+  c108 NVARCHAR(1024),
+  c109 NVARCHAR(1024),
+  c110 NVARCHAR(1024),  
+  CONSTRAINT PK_00_302 PRIMARY KEY(c001)
+);

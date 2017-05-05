@@ -272,7 +272,52 @@ namespace VoiceCyber.NAudio.Controls
                     mSliderPosition.Maximum = mWaveStream.TotalTime.TotalSeconds;
                 }
 
-                if (!CreateWaveStream()) { return; }
+                if (!CreateWaveStream()) { return;}
+
+                if (!CreateWaveOut()) { return; }
+                if (mWaveOut != null)
+                {
+                    mWaveOut.Play();
+                    mTimer.Start();
+
+                    OnPlayerEventEvent(Defines.EVT_PLAYBACKSTARTED, mUrl);
+                }
+            }
+            catch (Exception ex)
+            {
+                optReturn = new OptReturn();
+                optReturn.Code = Defines.RET_FAIL;
+                optReturn.Message = ex.Message;
+                ShowException(optReturn);
+            }
+        }
+
+        public void Play(WaveStream waveStream)
+        {
+            OptReturn optReturn;
+            try
+            {
+                var reader = waveStream;
+                if (reader.WaveFormat.Encoding != WaveFormatEncoding.Pcm &&
+                             reader.WaveFormat.Encoding != WaveFormatEncoding.IeeeFloat)
+                {
+                    reader = WaveFormatConversionStream.CreatePcmStream(reader);
+                    reader = new BlockAlignReductionStream(reader);
+                }
+                if (mWaveStream != null) { mWaveStream.Dispose(); }
+                mWaveStream = reader;
+                OnPlayerEventEvent(Defines.EVT_MEDIAOPENED, mWaveStream.TotalTime);
+
+                if (!CreateWaveImage(mWaveStream)) { return; }
+
+                LbTotalTime = GetTimeString(mWaveStream.TotalTime);
+                LbCurrentTime = "00:00:00";
+                if (mSliderPosition != null)
+                {
+                    mSliderPosition.Minimum = 0;
+                    mSliderPosition.Maximum = mWaveStream.TotalTime.TotalSeconds;
+                }
+
                 if (!CreateWaveOut()) { return; }
                 if (mWaveOut != null)
                 {
@@ -318,7 +363,8 @@ namespace VoiceCyber.NAudio.Controls
                     mWaveStream.Dispose();
                     mWaveStream = null;
                 }
-            }catch{}
+            }
+            catch { }
         }
 
         public void SetPosition(TimeSpan ts)
@@ -326,7 +372,7 @@ namespace VoiceCyber.NAudio.Controls
             OptReturn optReturn;
             try
             {
-                int intValue = (int) ts.TotalSeconds;
+                int intValue = (int)ts.TotalSeconds;
                 if (mWaveStream != null)
                 {
                     mWaveStream.CurrentTime = TimeSpan.FromSeconds(intValue);
@@ -378,9 +424,7 @@ namespace VoiceCyber.NAudio.Controls
             {
                 WaveStream waveStream = new CustomRateWaveStream(mWaveStream, mRate);
                 var waveChannel = new SampleChannel(waveStream, true);
-                waveChannel.PreVolumeMeter += waveChannel_PreVolumeMeter;
                 var postVolumeMeter = new MeteringSampleProvider(waveChannel);
-                postVolumeMeter.StreamVolume += postVolumeMeter_StreamVolume;
                 mSampleProvider = postVolumeMeter;
                 return true;
             }
@@ -397,11 +441,11 @@ namespace VoiceCyber.NAudio.Controls
         private bool CreateWaveOut()
         {
             OptReturn optReturn;
-            if (mSampleProvider == null)
+            if (mWaveStream == null)
             {
                 return false;
             }
-            if (mWaveStream == null)
+            if (mSampleProvider == null)
             {
                 return false;
             }
@@ -800,16 +844,6 @@ namespace VoiceCyber.NAudio.Controls
             OnPlayerEventEvent(Defines.EVT_PLAYBACKSTOPPED, null);
         }
 
-        void postVolumeMeter_StreamVolume(object sender, StreamVolumeEventArgs e)
-        {
-
-        }
-
-        void waveChannel_PreVolumeMeter(object sender, StreamVolumeEventArgs e)
-        {
-
-        }
-
         void mSliderPosition_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (mIsDraging)
@@ -902,11 +936,11 @@ namespace VoiceCyber.NAudio.Controls
         #region IsImageLeftVisible
 
         public static readonly DependencyProperty IsImageLeftVisibleProperty =
-            DependencyProperty.Register("IsImageLeftVisible", typeof (bool), typeof (CustomAudioPlayer), new PropertyMetadata(default(bool)));
+            DependencyProperty.Register("IsImageLeftVisible", typeof(bool), typeof(CustomAudioPlayer), new PropertyMetadata(default(bool)));
 
         public bool IsImageLeftVisible
         {
-            get { return (bool) GetValue(IsImageLeftVisibleProperty); }
+            get { return (bool)GetValue(IsImageLeftVisibleProperty); }
             set { SetValue(IsImageLeftVisibleProperty, value); }
         }
 
@@ -916,11 +950,11 @@ namespace VoiceCyber.NAudio.Controls
         #region IsImageRightVisible
 
         public static readonly DependencyProperty IsImageRightVisibleProperty =
-            DependencyProperty.Register("IsImageRightVisible", typeof (bool), typeof (CustomAudioPlayer), new PropertyMetadata(default(bool)));
+            DependencyProperty.Register("IsImageRightVisible", typeof(bool), typeof(CustomAudioPlayer), new PropertyMetadata(default(bool)));
 
         public bool IsImageRightVisible
         {
-            get { return (bool) GetValue(IsImageRightVisibleProperty); }
+            get { return (bool)GetValue(IsImageRightVisibleProperty); }
             set { SetValue(IsImageRightVisibleProperty, value); }
         }
 
@@ -930,11 +964,11 @@ namespace VoiceCyber.NAudio.Controls
         #region IsVolumeVisible
 
         public static readonly DependencyProperty IsVolumeVisibleProperty =
-            DependencyProperty.Register("IsVolumeVisible", typeof (bool), typeof (CustomAudioPlayer), new PropertyMetadata(default(bool)));
+            DependencyProperty.Register("IsVolumeVisible", typeof(bool), typeof(CustomAudioPlayer), new PropertyMetadata(default(bool)));
 
         public bool IsVolumeVisible
         {
-            get { return (bool) GetValue(IsVolumeVisibleProperty); }
+            get { return (bool)GetValue(IsVolumeVisibleProperty); }
             set { SetValue(IsVolumeVisibleProperty, value); }
         }
 

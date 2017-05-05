@@ -1,0 +1,26 @@
+CREATE PROCEDURE P_25_001
+(
+	@AInParam01				  VARCHAR(20),
+	@AInParam02				  VARCHAR(20),
+	@AOutParam01        VARCHAR(20)     OUTPUT,
+	@AOutErrorNumber		INT				      OUTPUT,
+	@AOutErrorString		NVARCHAR(4000)	OUTPUT
+)
+AS
+BEGIN TRY
+
+  UPDATE T_25_005 
+	   SET C004=(CASE C003 WHEN 0 THEN GETUTCDATE() ELSE C004 END), 
+	   C003=C003+1, 
+	   C005=GETUTCDATE()
+	WHERE  C001=@AInParam01 AND C002=@AInParam02;
+
+  SELECT @AOutParam01=CONVERT(BIGINT ,@@ROWCOUNT)
+
+  SET @AOutErrorNumber = '0';
+  SET @AOutErrorString = 'successful';
+
+END TRY
+BEGIN CATCH
+  SELECT @AOutErrorNumber = ERROR_NUMBER() , @AOutErrorString = ERROR_MESSAGE();
+END CATCH

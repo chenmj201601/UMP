@@ -1,0 +1,5 @@
+﻿--修改关键词模块Page字段错误			by Charley at 2016/11/30
+UPDATE T_11_003_00000 SET C009 = 'UMPS5102.xbap' WHERE C002 = 5102;
+
+--租户管理员角色832暂未启用，此处把租户角色删掉			by Charley at 2016/11/30
+DELETE FROM T_11_004_00000 WHERE C001 = 1060000000000000005;

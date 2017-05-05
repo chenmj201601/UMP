@@ -672,9 +672,9 @@ namespace VoiceCyber.Wpf.CustomControls.Charts
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
-/// <summary>
-/// 
-/// </summary>
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly DependencyProperty OrientationProperty =
             DependencyProperty.Register("Orientation", typeof(Orientation), typeof(ContinuousAxisPanel), new UIPropertyMetadata(Orientation.Vertical));
 

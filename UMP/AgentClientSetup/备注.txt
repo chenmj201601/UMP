@@ -1,0 +1,7 @@
+这个程序适用于831版本及以前的UMP，座席客户端安装证书有时会莫名失败，所以将安装证书的步骤放到这个程序中执行。
+
+该程序生成的日志放在program data/ump/3104路径下，会同时生成安装日志（InstallCertificate.log）跟服务器配置xml（AgentServerInfo.xml）可以让座席客户端读取，免除二次设置服务器信息的步骤。
+
+注意事项：没有语言切换功能，全是英文提示；在清单文件app.manifest中requestedPrivileges节点下添加<requestedExecutionLevel level="requireAdministrator" uiAccess="false" />，生成该exe时需要以管理员身份运行VS。
+
+生成的exe放到C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\Bootstrapper\Packages目录中的UMPClientTest文件夹中。

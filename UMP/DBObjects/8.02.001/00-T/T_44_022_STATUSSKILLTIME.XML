@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDefine P01="T_44_022_STATUSSKILLTIME" P02="8.02.002" P03="0" P04="0" P05="0" P06="" P07="备用">
+  <ColumnDefine>
+    <Column P01="ID" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="SID" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="SKID" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="ALARMTIMELENGTH" P02="02" P03="11" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="TWOALARMTIMELENGTH" P02="02" P03="11" P04="0" P05="1" P06="" P07=""/>
+    <Column P01="CREATEID" P02="03" P03="20" P04="0" P05="0" P06="" P07=""/>
+    <Column P01="CREATEDATE" P02="21" P03="0" P04="0" P05="1" P06="" P07=""/>
+  </ColumnDefine>
+  <IndexDefine>
+     <Index P01="PK_T_44_022_STATUSSKILLTIME" P02="1" P03="1">
+      <Column P01="ID" P02="A"/>
+    </Index>
+  </IndexDefine>
+</TableDefine>
