@@ -1,0 +1,20 @@
+﻿<Window x:Class="DECDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Name="BtnTest" Header="Test"></MenuItem>
+                <MenuItem Name="BtnConnect" Header="Connect"></MenuItem>
+                <MenuItem Name="BtnAddSubscribe" Header="AddSubscribe"></MenuItem>
+                <MenuItem Name="BtnClearSubscribe" Header="ClearSubscribe"></MenuItem>
+                <MenuItem Name="BtnPublishMessage" Header="PublishMessage"></MenuItem>
+                <MenuItem Name="BtnClose" Header="Close"></MenuItem>
+            </Menu>
+            <Grid>
+                <TextBox Name="TxtMsg" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" IsReadOnly="True"></TextBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
