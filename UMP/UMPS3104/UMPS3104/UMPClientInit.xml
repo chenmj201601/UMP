@@ -1,0 +1,64 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+  <WcfConfig>
+    <Protocol>http</Protocol>
+    <IP></IP>
+    <Port></Port>
+    <WebAccess>www.google.com</WebAccess>
+    <Account></Account>
+  </WcfConfig>
+  <DatabaseConnects DatabaseType="">
+    <DatabaseOracle>
+      <TypeName></TypeName>
+      <Host></Host>
+      <Port></Port>
+      <DBName></DBName>
+      <LoginName></LoginName>
+      <Password></Password>
+    </DatabaseOracle>
+    <DatabaseMSSQL>
+      <TypeName></TypeName>
+      <Host></Host>
+      <Port></Port>
+      <DBName></DBName>
+      <LoginName></LoginName>
+      <Password></Password>
+    </DatabaseMSSQL>
+  </DatabaseConnects>
+  <SupportStyle Name="Default" Color="Brown">
+    <style Name="Style01" Color="Green" />
+    <style Name="Style02" Color="Yellow" />
+    <style Name="Style03" Color="Brown" />
+    <style Name="Style04" Color="Blue" />
+  </SupportStyle>
+  <LanguagesType LocalLanguage="">
+    <language name="简体中文" code="2052" key="zh-CN" />
+    <language name="繁體中文" code="1028" key="tc-CN" />
+    <language name="日本语" code="1041" key="jp-JP" />
+    <language name="English(U.S.)" code="1033" key="en-US" />
+  </LanguagesType>
+  <Languages value="2052">
+    <language name="枯木逢春" key="S0000Style01" />
+    <language name="浮瓜避暑" key="S0000Style02" />
+    <language name="层林尽染" key="S0000Style03" />
+    <language name="寒蝉凄切" key="S0000Style04" />
+  </Languages>
+  <Languages value="1028">
+    <language name="枯木逢春" key="S0000Style01" />
+    <language name="浮瓜避暑" key="S0000Style02" />
+    <language name="層林盡染" key="S0000Style03" />
+    <language name="寒蟬淒切" key="S0000Style04" />
+  </Languages>
+  <Languages value="1033">
+    <language name="枯木逢春" key="S0000Style01" />
+    <language name="浮瓜避暑" key="S0000Style02" />
+    <language name="层林尽染" key="S0000Style03" />
+    <language name="寒蝉凄切" key="S0000Style04" />
+  </Languages>
+  <Languages value="1041">
+    <language name="枯木逢春" key="S0000Style01" />
+    <language name="浮瓜避暑" key="S0000Style02" />
+    <language name="层林尽染" key="S0000Style03" />
+    <language name="寒蝉凄切" key="S0000Style04" />
+  </Languages>
+</root>

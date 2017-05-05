@@ -1,0 +1,43 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3102.UCPlayBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:umpp="http://www.voicecyber.com/ump/controls/players"
+             xmlns:local="clr-namespace:UMPS3102"
+                     mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+            <umpp:UMPMediaPlayer x:Name="VoicePlayer" State="11011111110"></umpp:UMPMediaPlayer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="48"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Name="BorderKeywords" Grid.Row="0">
+                    <ListBox Name="ListBoxKeywords"
+                             Style="{DynamicResource ListBoxKeywordListStyle}"
+                             ItemContainerStyle="{DynamicResource ListBoxItemKeywordStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type ListBoxItem}">
+                                <Button Command="local:UCPlayBox.KeywordClickCommand"
+                                        CommandParameter="{Binding}"
+                                        Width="10"
+                                        Height="10"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Style="{DynamicResource ButtonKeywordItemStyle}">
+                                    <Ellipse Stroke="Red"
+                                         StrokeThickness="1"
+                                         Fill="Red"></Ellipse>
+                                </Button>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

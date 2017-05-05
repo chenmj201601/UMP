@@ -1,0 +1,142 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3108.ABCDConfigPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+           >
+    <umpc:UMPUserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3108/CombStatiParaItemsDesigner.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3108/CombinedDesignerStatic.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Default/UMPS3108/SCMainPage.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </umpc:UMPUserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ComboBox x:Name="CombABCD" ItemTemplate="{DynamicResource ListBoxItemTemplateConfig}"></ComboBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <GroupBox x:Name="GBStatistic" Margin="5"  BorderBrush="{DynamicResource SystemBrush8}">
+                <GroupBox.Header>
+                    <TextBlock x:Name="TxtGBHeader" FontWeight="Bold" Margin="5"></TextBlock>
+                </GroupBox.Header>
+                <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="TexCycleTime" Grid.Column="0" Grid.Row="0" Margin="5" VerticalAlignment="Center">aa</TextBlock>
+                    
+                    <TextBlock x:Name="TexUpdate" Grid.Column="0" Grid.Row="1" Margin="5" VerticalAlignment="Center">aa</TextBlock>
+                    <!--<TextBlock x:Name="TexSTime" Grid.Column="0" Grid.Row="2" Margin="5"></TextBlock>
+                    <TextBlock x:Name="TexETime" Grid.Column="0" Grid.Row="3" Margin="5"></TextBlock>-->
+                    <TextBlock x:Name="TexStatisticWay" Grid.Column="0" Grid.Row="2" Margin="5" VerticalAlignment="Center">aa</TextBlock>
+                    <TextBlock x:Name="TexApplyAll" Grid.Column="0" Grid.Row="3" Margin="5"></TextBlock>
+
+                    
+                    <Grid Grid.Column="1" Grid.Row="0" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="CycleUnit" Grid.Column="0" Width="80" Margin="5"></ComboBox>
+                        <ComboBox x:Name="CycleDay" Grid.Column="1" Width="80" Margin="5" Visibility="Hidden"></ComboBox>
+                        <ComboBox x:Name="CycleTime" Grid.Column="2" Width="80" Margin="5"></ComboBox>
+                    </Grid>
+                    
+                    
+                    <Grid Grid.Column="1" Grid.Row="1" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="UpdateTime" Grid.Column="0" Width="80" Margin="5,0"></TextBox>
+                        <ComboBox x:Name="UpdateUnit" Grid.Column="1" Width="80" Margin="5,0"></ComboBox>
+                    </Grid>
+
+                    <!--<vcc:DateTimePicker Name="ST" Grid.Column="1" Grid.Row="2" Margin="5"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"
+                                Width="220" Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+
+                    <vcc:DateTimePicker Name="ET" Grid.Column="1" Grid.Row="3" Margin="5"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"
+                                Width="220" Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>-->
+
+                    <Grid Grid.Column="1" Grid.Row="2" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="17*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="ParallelWay" Grid.Column="0"></RadioButton>
+                        <TextBlock x:Name="Parallel" Grid.Column="1" Margin="10,0"></TextBlock>
+                        <RadioButton x:Name="DrillWay" Grid.Column="2" Margin="50,0,0,0"></RadioButton>
+                        <TextBlock x:Name="Drill" Grid.Column="3" Margin="10,0"></TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="3" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="StartCheck" Grid.Column="0"></RadioButton>
+                        <TextBlock x:Name="Start" Grid.Column="1" Margin="10,0"></TextBlock>
+                        <RadioButton x:Name="StopCheck" Grid.Column="2" Margin="50,0,0,0"></RadioButton>
+                        <TextBlock x:Name="Stop" Grid.Column="3" Margin="10,0"></TextBlock>
+                    </Grid>
+
+                </Grid>
+                </ScrollViewer>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Border x:Name="BorderABCD" MaxWidth="620">
+                <StackPanel>
+                    <ListBox x:Name="ListBoxStatisticItems" Style="{DynamicResource ListBoxConditionTabItem}"
+                                         ItemContainerStyle="{DynamicResource ListBoxABCDItem}"></ListBox>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnConfirm" Content="Confirm" ></Button>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                <Button Name="BtnClose" Content="Close"></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

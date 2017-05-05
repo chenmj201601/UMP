@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+                    xmlns:conv="clr-namespace:UMPS2501.Converters"
+                    xmlns:cmd="clr-namespace:UMPS2501.Commands"
+                    xmlns:local="clr-namespace:UMPS2501">
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+    <conv:BooleanNullToVisibilityConverter x:Key="BooleanNullToVisibilityConverter"></conv:BooleanNullToVisibilityConverter>
+    <conv:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"></conv:InverseBooleanToVisibilityConverter>
+    <conv:LevelToMarginConverter x:Key="LevelToMarginConverter"></conv:LevelToMarginConverter>
+
+    <DataTemplate x:Key="StateCellTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{DynamicResource CellOperationButton}"
+                    Command="cmd:MainPageCommands.DisableCommand"
+                    CommandParameter="{Binding}"
+                    Visibility="{Binding IsEnabled,Converter={StaticResource BooleanNullToVisibilityConverter}}"
+                    ToolTip="{Binding StrIsEnabled}">
+                <Image Style="{DynamicResource StateEnabledImageStyle}"></Image>
+            </Button>
+            <Button Style="{DynamicResource CellOperationButton}"
+                    Command="cmd:MainPageCommands.EnableCommand"
+                    CommandParameter="{Binding}"
+                    Visibility="{Binding IsEnabled,Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                    ToolTip="{Binding StrIsEnabled}">
+                <Image Style="{DynamicResource StateDisabledImageStyle}"></Image>
+            </Button>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="NameColumnTemplate">
+        <DockPanel>
+            <ToggleButton x:Name="Expander" 
+                      Style="{DynamicResource ExpandCollaspToggleStyle}" 
+                      Margin="{Binding Level,Converter={StaticResource LevelToMarginConverter},
+                             RelativeSource={RelativeSource AncestorType={x:Type vcc:GridTreeItem}}}"
+                      IsChecked="{Binding Path=IsExpanded,
+                                 RelativeSource={RelativeSource AncestorType={x:Type vcc:GridTreeItem}}}"
+                      ClickMode="Press"/>
+            <CheckBox x:Name="CbName" Margin="2,0,5,0" IsChecked="{Binding IsChecked}" 
+                      Command="cmd:MainPageCommands.TreeItemCheckCommand"
+                      CommandParameter="{Binding}"
+                      VerticalAlignment="Center"
+                      Visibility="{Binding Path=IsShowCheckBox,
+                    Converter={StaticResource BooleanToVisibilityConverter},
+                    RelativeSource={RelativeSource 
+                    AncestorType=vcc:GridTree}}">
+            </CheckBox>
+            <Image x:Name="Icon" Stretch="Uniform" Height="18" Margin="2" 
+                   VerticalAlignment="Center"
+                   Visibility="{Binding IsShowIcon, 
+                    Converter={StaticResource BooleanToVisibilityConverter}, 
+                    RelativeSource={RelativeSource AncestorType=vcc:GridTree}}" 
+                    Source="{Binding Icon}"></Image>
+            <TextBlock Text="{Binding Name}" 
+                       FontSize="12" FontWeight="Bold" 
+                       VerticalAlignment="Center"/>
+        </DockPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=HasItems,
+                               RelativeSource={RelativeSource 
+                               AncestorType={x:Type vcc:GridTreeItem}}}" 
+                     Value="False">
+                <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SendMethodTemplate">
+        <Border HorizontalAlignment="Stretch">
+            <local:UCSendMethodViewer ObjectItem="{Binding}" HorizontalAlignment="Stretch"
+                                      MainPage="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=local:AlarmMessageMainView}}"></local:UCSendMethodViewer>
+        </Border>
+    </DataTemplate>
+
+
+</ResourceDictionary>

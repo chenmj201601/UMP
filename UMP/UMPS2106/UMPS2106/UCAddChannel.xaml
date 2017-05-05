@@ -1,0 +1,68 @@
+﻿<umpc:UMPUserControl x:Class="UMPS2106.UCAddChannel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:local="clr-namespace:UMPS2106"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="350"
+             Width="350" Height="320">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <GroupBox Name="GroupVoiceServer" Grid.Column="0" Margin="3,2,2,2" Header="Voice Server">
+                    <ListBox Name="ListBoxVoiceServers" Style="{DynamicResource ListBoxChannelListStyle}"
+                             ItemContainerStyle="{DynamicResource ListBoxItemChannelListStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type ListBoxItem}">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding IsChecked}" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                              Command="local:UCAddChannel.ItemClickCommand" CommandParameter="{Binding}"></CheckBox>
+                                    <TextBlock Text="{Binding Display}" VerticalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
+                <GroupBox Name="GroupChannel" Grid.Column="1" Margin="2,2,3,2" Header="Channel">
+                    <ListBox Name="ListBoxChannels" Style="{DynamicResource ListBoxChannelListStyle}"
+                             ItemContainerStyle="{DynamicResource ListBoxItemChannelListStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type ListBoxItem}">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding IsChecked}" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                              Command="local:UCAddChannel.ItemClickCommand" CommandParameter="{Binding}"></CheckBox>
+                                    <TextBlock Text="{Binding Display}" VerticalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
+            </Grid>
+            <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnConfirm" Content="Confirm" ></Button>
+                </Border>
+                <Border Grid.Column="2" Style="{DynamicResource FormButtonStyle}">
+                    <Button Name="BtnClose" Content="Close"></Button>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</umpc:UMPUserControl>

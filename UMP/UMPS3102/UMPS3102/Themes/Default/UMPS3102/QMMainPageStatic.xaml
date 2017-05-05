@@ -1,0 +1,311 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+                    xmlns:cmd="clr-namespace:UMPS3102.Commands"
+                    xmlns:conv="clr-namespace:UMPS3102.Converters">
+    
+    <conv:ScoreSheetOperationVisibilityConverter x:Key="ScoreSheetOperationVisibilityConverter"></conv:ScoreSheetOperationVisibilityConverter>
+    <conv:MediaTypeToImageConverter x:Key="MediaTypeToImageConverter"></conv:MediaTypeToImageConverter>
+    <conv:EncryptFlagToIconConverter x:Key="EncryptFlagToIconConverter"></conv:EncryptFlagToIconConverter>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+
+    <Style x:Key="ListItemTextBoxStyle" TargetType="{x:Type vcc:AutoSelectTextBox}">
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="IsReadOnly" Value="True"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <DataTemplate x:Key="CellRecordListSerialIDTemplate" DataType="{x:Type Control}">
+        <Grid>
+            <TextBlock Name="Txb" Text="{Binding SerialID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding SerialID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellRecordListCallerIDTemplate" DataType="{x:Type Control}">
+        <Grid>
+            <TextBlock Name="Txb" Text="{Binding CallerID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CallerID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellRecordListCalledIDTemplate" DataType="{x:Type Control}">
+        <Grid>
+            <TextBlock Name="Txb" Text="{Binding CalledID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CalledID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellMediaTypeTemplate" DataType="{x:Type Control}">
+        <Border>
+            <Grid HorizontalAlignment="Left">
+                <Image Style="{DynamicResource ImageMediaTypeVoice}"
+                       Visibility="{Binding MediaType,Converter={StaticResource MediaTypeToImageConverter},ConverterParameter=V}"></Image>
+                <Image Style="{DynamicResource ImageMediaTypeScreen}"
+                       Visibility="{Binding MediaType,Converter={StaticResource MediaTypeToImageConverter},ConverterParameter=S}"></Image>
+                <Image Style="{DynamicResource ImageMediaTypeVoiceScreen}"
+                       Visibility="{Binding MediaType,Converter={StaticResource MediaTypeToImageConverter},ConverterParameter=A}"></Image>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellRowNumberTemplate" DataType="{x:Type Control}">
+        <Border>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding RowNumber}" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <Grid HorizontalAlignment="Left" Margin="2,0">
+                    <Image Style="{DynamicResource ImageEncryptFlag2}"
+                       Visibility="{Binding EncryptFlag,Converter={StaticResource EncryptFlagToIconConverter}}"></Image>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+
+    <Style x:Key="CellOperationButton" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="20"></Setter>
+        <Setter Property="Height" Value="15"></Setter>
+        <Setter Property="Margin" Value="2,1"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border">
+                        <Grid>
+                            <Border Name="Over" Background="{DynamicResource SystemBrush7}" Visibility="Hidden"></Border>
+                            <ContentPresenter></ContentPresenter>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="CellPlayOperationTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource CellOperationButton}" 
+                    Command="cmd:QMMainPageCommands.DeletePlayItemCommand" 
+                    CommandParameter="{Binding}">
+                <Image Stretch="Uniform" Source="Images/remove.png"></Image>
+            </Button>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellScoreSheetOperationTemplate">
+        <StackPanel Orientation="Horizontal" Visibility="{Binding IsVisible,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Button Style="{StaticResource CellOperationButton}" 
+                    Visibility="{Binding Flag,Converter={StaticResource ScoreSheetOperationVisibilityConverter},ConverterParameter=Add}"
+                    Command="cmd:QMMainPageCommands.AddScoreCommand" 
+                    CommandParameter="{Binding}">
+                <Image Stretch="Uniform" Source="Images/add.png"></Image>
+            </Button>
+            <Button Style="{StaticResource CellOperationButton}" 
+                    Visibility="{Binding Flag,Converter={StaticResource ScoreSheetOperationVisibilityConverter},ConverterParameter=Modify}"
+                    Command="cmd:QMMainPageCommands.ModifyScoreCommand" 
+                    CommandParameter="{Binding}">
+                <Image Stretch="Uniform" Source="Images/modify.png"></Image>
+            </Button>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellSerialIDTemplate">
+        <!--方式1-->
+        <!--缺陷：会屏蔽ListViewItem本的选中事件-->
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding SerialID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding SerialID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--方式2-->
+        <!--缺点：占用资源太大，拖动ListView的滚动条时会卡顿-->
+        <!--<vcc:ListItemEditBox Value="{Binding SerialID}"></vcc:ListItemEditBox>-->
+        <!--方式3-->
+        <vcc:EditableTextBlock Text="{Binding SerialID}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellRecordReferenceTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding RecordReference}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding RecordReference}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding RecordReference}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding RecordReference}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellVoiceIPTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding VoiceIP}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding VoiceIP}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding VoiceIP}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding VoiceIP}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellExtensionTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding Extension}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding Extension}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding Extension}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding Extension}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellAgentTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding Agent}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding Agent}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding Agent}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding Agent}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellCallerIDTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding CallerID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CallerID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding CallerID}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding CallerID}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellCalledIDTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding CalledID}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CalledID}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding CalledID}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding CalledID}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellRealExtensionTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding RealExtension}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding RealExtension}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding RealExtension}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding RealExtension}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellCTIReferenceTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding CTIReference}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CTIReference}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding CTIReference}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding CTIReference}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellCallerDTMFTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding CallerDTMF}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CallerDTMF}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding CallerDTMF}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding CallerDTMF}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CellCalledDTMFTemplate">
+        <!--<Grid>
+            <TextBlock Name="Txb" Text="{Binding CalledDTMF}"></TextBlock>
+            <vcc:AutoSelectTextBox Name="Txt" Text="{Binding CalledDTMF}" Style="{DynamicResource ListItemTextBoxStyle}" Visibility="Collapsed"></vcc:AutoSelectTextBox>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Txt" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="Txb" Property="Visibility" Value="Collapsed"></Setter>
+            </Trigger>
+        </DataTemplate.Triggers>-->
+        <!--<vcc:ListItemEditBox Value="{Binding CalledDTMF}"></vcc:ListItemEditBox>-->
+        <vcc:EditableTextBlock Text="{Binding CalledDTMF}" IsReadOnly="True"></vcc:EditableTextBlock>
+    </DataTemplate>
+
+</ResourceDictionary>

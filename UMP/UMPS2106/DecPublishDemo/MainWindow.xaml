@@ -1,0 +1,16 @@
+﻿<Window x:Class="DecPublishDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Name="BtnTest" Header="Test"></MenuItem>
+            </Menu>
+            <TextBox Name="TxtMsg" 
+                     HorizontalScrollBarVisibility="Disabled"
+                     VerticalScrollBarVisibility="Auto"
+                     TextWrapping="Wrap"></TextBox>
+        </DockPanel>
+    </Grid>
+</Window>

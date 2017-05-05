@@ -1,0 +1,862 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC20DFBD-B298-4A28-9B9E-B97267D641F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPS3102</RootNamespace>
+    <AssemblyName>UMPS3102</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <EnableSecurityDebugging>true</EnableSecurityDebugging>
+    <StartAction>URL</StartAction>
+    <HostInBrowser>true</HostInBrowser>
+    <TargetZone>Internet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>True</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\UMPRelease832\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>http://www.voicecyber.com</SupportUrl>
+    <ProductName>UMPS3102</ProductName>
+    <PublisherName>VoiceCyber</PublisherName>
+    <SuiteName>UMPS3102</SuiteName>
+    <WebPage>index.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationVersion>8.03.002.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonService03, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMP.PF.Services\UMPService03\CommonService03\bin\Release\CommonService03.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\公用dll\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="PFShareClassesC, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMP.PF.Classes\PFShareClassesC\PFShareClassesC\bin\Release\PFShareClassesC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UMPCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommon\bin\Release\UMPCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPCommunications, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPCommunications\bin\Release\UMPCommunications.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPControls, Version=8.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UMPCommon\UMPControls\bin\Release\UMPControls.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPEncryptionC">
+      <HintPath>..\..\Library\UMPEncryption\UMPEncryptionC\bin\Release\UMPEncryptionC_Secure\UMPEncryptionC.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPPlayers">
+      <HintPath>..\..\UMPCommon\UMPPlayers\bin\Release\UMPPlayers.dll</HintPath>
+    </Reference>
+    <Reference Include="UMPScoreSheet">
+      <HintPath>..\..\UMPTemplate\UMPScoreSheet\bin\Release\UMPScoreSheet.dll</HintPath>
+    </Reference>
+    <Reference Include="VCAvalonDock, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\VCAvalonDock\VCAvalonDock\bin\Release\VCAvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCommon, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VCCommon\VCCommon\bin\Release\VCCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="VCCustomControls">
+      <HintPath>..\..\Library\VCCustomControls\VCCustomControls\bin\Release\VCCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VCNAudio, Version=8.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\VCNAudio\VCNAudio\bin\Release\VCNAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="VCNAudioControls">
+      <HintPath>..\..\Library\VCNAudio\VCNAudioControls\bin\Release\VCNAudioControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="Codes\DrawingCanvas.cs" />
+    <Compile Include="Codes\ExportDataHelper.cs" />
+    <Compile Include="Codes\RecordOperator.cs" />
+    <Compile Include="Codes\Service03Helper.cs" />
+    <Compile Include="Codes\Service06Helper.cs" />
+    <Compile Include="Commands\QMMainPageCommands.cs" />
+    <Compile Include="Converters\BookmarkRankToBackgroundConverter.cs" />
+    <Compile Include="Converters\BooleanNullToVisibilityConverter.cs" />
+    <Compile Include="Converters\CellDatetimeConverter.cs" />
+    <Compile Include="Converters\ConditionPreViewItemConverter.cs" />
+    <Compile Include="Converters\DirectionToHorizontalAlignmentConvert.cs" />
+    <Compile Include="Converters\EncryptFlagToIconConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\MediaTypeToImageConverter.cs" />
+    <Compile Include="Converters\MilliSecondToTimeConverter.cs" />
+    <Compile Include="Converters\ScoreSheetOperationVisibilityConverter.cs" />
+    <Compile Include="Converters\SecondToTimeConverter.cs" />
+    <Compile Include="Converters\StringColorToBackgroundConverter.cs" />
+    <Compile Include="Converters\StringValueToDateTimeConverter.cs" />
+    <Compile Include="InspectorConditionTree.xaml.cs">
+      <DependentUpon>InspectorConditionTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyWordList.xaml.cs">
+      <DependentUpon>KeyWordList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BasicScoreSheetItem.cs" />
+    <Compile Include="Models\BasicUserItem.cs" />
+    <Compile Include="Models\BookmarkLineInfo.cs" />
+    <Compile Include="Models\BookmarkRankItem.cs" />
+    <Compile Include="Models\CallInfoPropertyItem.cs" />
+    <Compile Include="Models\ConditionItemItem.cs" />
+    <Compile Include="Models\ConditionItemSubItem.cs" />
+    <Compile Include="Models\ConditionTabItem.cs" />
+    <Compile Include="Models\ConversationInfoItem.cs" />
+    <Compile Include="Models\DownloadServerItem.cs" />
+    <Compile Include="Models\EncryptInfoConfig.cs" />
+    <Compile Include="Models\KeywordItem.cs" />
+    <Compile Include="Models\KeywordResultItem.cs" />
+    <Compile Include="Models\PlayDateTypeItem.cs" />
+    <Compile Include="Models\QueryStateInfo.cs" />
+    <Compile Include="Models\RecordBookmarkItem.cs" />
+    <Compile Include="Models\RecordDownloadItem.cs" />
+    <Compile Include="Models\RecordEncryptConfig.cs" />
+    <Compile Include="Models\ViewColumnInfoItem.cs" />
+    <Compile Include="Models\ObjectItem.cs" />
+    <Compile Include="Models\PanelItem.cs" />
+    <Compile Include="Models\RecordInfoItem.cs" />
+    <Compile Include="Models\RecordMemoItem.cs" />
+    <Compile Include="Models\RecordPlayItem.cs" />
+    <Compile Include="Models\RememberConditionInfo.cs" />
+    <Compile Include="Models\ToolButtonItem.cs" />
+    <Compile Include="QMMainView.xaml.cs">
+      <DependentUpon>QMMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecordScoreDetail.xaml.cs">
+      <DependentUpon>RecordScoreDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="S3102App.cs" />
+    <Compile Include="Service References\Wcf11012\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf11901\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf31021\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Wcf31022\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SkillGroupTree.xaml.cs">
+      <DependentUpon>SkillGroupTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCBookmarkRankSetting.xaml.cs">
+      <DependentUpon>UCBookmarkRankSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCConditionItem.xaml.cs">
+      <DependentUpon>UCConditionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCConditionPreViewItem.xaml.cs">
+      <DependentUpon>UCConditionPreViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCConversationInfo.xaml.cs">
+      <DependentUpon>UCConversationInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomConditionDesigner.xaml.cs">
+      <DependentUpon>UCCustomConditionDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomSetting.xaml.cs">
+      <DependentUpon>UCCustomSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCExportDataOption.xaml.cs">
+      <DependentUpon>UCExportDataOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCExportRecordOption.xaml.cs">
+      <DependentUpon>UCExportRecordOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCLibraryTree.xaml.cs">
+      <DependentUpon>UCLibraryTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCPasswordManagement.xaml.cs">
+      <DependentUpon>UCPasswordManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCPlayBox.xaml.cs">
+      <DependentUpon>UCPlayBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCQueryCondition.xaml.cs">
+      <DependentUpon>UCQueryCondition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCRecordBookmark.xaml.cs">
+      <DependentUpon>UCRecordBookmark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCRecordMemo.xaml.cs">
+      <DependentUpon>UCRecordMemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCScoreDetail.xaml.cs">
+      <DependentUpon>UCScoreDetail.xaml</DependentUpon>
+    </Compile>
+    <Page Include="InspectorConditionTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyWordList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SkillGroupTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\InspectorConditionTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\QMAvalonDock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\QMMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QMMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\QMMainPageStatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCBookmarkRankSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCConditionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCConditionPreViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCConversationInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCCustomConditionDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCCustomSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCExportDataOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCExportRecordOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCLibraryTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCQueryCondition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCRecordBookmark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCRecordMemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\UCScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Default\UMPS3102\RecordScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCBookmarkRankSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCConditionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCConditionPreViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCConversationInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCCustomConditionDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCCustomSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCExportDataOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCExportRecordOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCLibraryTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCPasswordManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCPlayBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCQueryCondition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCRecordBookmark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCRecordMemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\VoiceCyber.UMP.Communications.WebReturn.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\Wcf11012\Service11012.wsdl" />
+    <None Include="Service References\Wcf11012\Service11012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110121.wsdl" />
+    <None Include="Service References\Wcf11012\Service110121.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110122.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110123.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110124.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11012\Service110125.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service11901.wsdl" />
+    <None Include="Service References\Wcf11901\Service11901.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119011.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119013.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119014.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\Service119015.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf11901\UMPS3102.Wcf11901.OperationDataArgs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Wcf31021\Service31021.wsdl" />
+    <None Include="Service References\Wcf31021\Service31021.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310211.wsdl" />
+    <None Include="Service References\Wcf31021\Service310211.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310212.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310213.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310214.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310215.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31021\Service310216.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service31022.wsdl" />
+    <None Include="Service References\Wcf31022\Service31022.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service310221.wsdl" />
+    <None Include="Service References\Wcf31022\Service310221.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service310222.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service310223.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service310224.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Wcf31022\Service310225.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UMP.PF.Certificate.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\startposition.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\stopposition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\ump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\playlist.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\recordlist.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\playbox.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\memobox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\callinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\objectbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\resetlayout.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\savelayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\save.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\remove.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\pre.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\first.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\last.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\scoredetail.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\scorebox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\restorelayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\rootorg.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\agent.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\org.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\up.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\left.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\listcircle.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\singlecircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\nocircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Wcf11012\" />
+    <WCFMetadataStorage Include="Service References\Wcf11901\" />
+    <WCFMetadataStorage Include="Service References\Wcf31021\" />
+    <WCFMetadataStorage Include="Service References\Wcf31022\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Service11012.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11012\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Service11901.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf11901\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31022\Service31022.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31022\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31022\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31022\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\media1.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\media2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\media0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\extension.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\0.ico" />
+    <Resource Include="Themes\Default\UMPS3102\Images\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\RealExtension.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\Play.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\Record.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\StopPlay.png" />
+    <Resource Include="Themes\Default\UMPS3102\Images\StopRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Default\UMPS3102\Images\speechinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common31021\Common31021.csproj">
+      <Project>{2be707d9-1f5d-4aa9-b830-bc5c2f627522}</Project>
+      <Name>Common31021</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\Service31021.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Wcf31021\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <StartArguments />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UMP.PF.Certificate.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C3BBF9EA2C0DA7FEAA17043A0A6010A522ABAB87</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

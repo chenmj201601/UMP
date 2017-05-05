@@ -1,0 +1,4 @@
+832之前的版本均需要添加必备组件，必备组件修改路径C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\Bootstrapper\Packages（VS2013的路径）。
+
+
+UMPS3104工程中配置文件UMPClientInit.xml的说明，WebAccess节点存储的是WFM跳转的地址。这个xml中保存的这个地址要么在发布前修改，要么安装后在apps/2.0中找到相应的exe所在路径中的xml进行修改。

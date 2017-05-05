@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cmd="clr-namespace:UMPS3101.Commands"
+                    xmlns:conv="clr-namespace:UMPS3101.Converters">
+
+    <conv:ScoreSheetStateConverter x:Key="ScoreSheetStateConverter"></conv:ScoreSheetStateConverter>
+    <conv:ScoreSheetViewClassConverter x:Key="ScoreSheetViewClassConverter"></conv:ScoreSheetViewClassConverter>
+    <conv:ScoreSheetScoreTypeConverter x:Key="ScoreSheetScoreTypeConverter"></conv:ScoreSheetScoreTypeConverter>
+    <conv:CellOperationVisibilityConverter x:Key="CellOperationVisibilityConverter"></conv:CellOperationVisibilityConverter>
+
+    <DataTemplate x:Key="CellStateTemplate">
+        <StackPanel ToolTip="{Binding TipState}" HorizontalAlignment="Center">
+            <Image Height="18" Stretch="Uniform"
+                   Source="{Binding State,Converter={StaticResource ScoreSheetStateConverter}}"></Image>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellViewClassicTemplate">
+        <StackPanel ToolTip="{Binding TipViewClassic}" HorizontalAlignment="Center">
+            <Image Height="18" Stretch="Uniform"
+                   Source="{Binding ViewClassic,Converter={StaticResource ScoreSheetViewClassConverter}}"></Image>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellScoreTypeTemplate">
+        <StackPanel ToolTip="{Binding TipScoreType}" HorizontalAlignment="Center">
+            <Image Height="18" Stretch="Uniform"
+                   Source="{Binding ScoreType,Converter={StaticResource ScoreSheetScoreTypeConverter}}"></Image>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CellOperationTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{DynamicResource CellOperationModifyScoreSheet}" 
+                    Visibility="{Binding Converter={StaticResource CellOperationVisibilityConverter},ConverterParameter=3101002}"
+                    Command="cmd:SSMMainPageCommands.ModifyScoreSheetCommand"
+                    CommandParameter="{Binding}"
+                    ToolTip="{Binding TipOptModify}">
+            </Button>
+            <Button Style="{DynamicResource CellOperationDeleteScoreSheet}"
+                    Visibility="{Binding Converter={StaticResource CellOperationVisibilityConverter},ConverterParameter=3101003}"
+                    Command="cmd:SSMMainPageCommands.DeleteScoreSheetCommand"
+                    CommandParameter="{Binding}"
+                    ToolTip="{Binding TipOptDelete}">
+            </Button>
+            <Button Style="{DynamicResource CellOperationSetManageUser}"
+                    Visibility="{Binding Converter={StaticResource CellOperationVisibilityConverter},ConverterParameter=3101004}"
+                    Command="cmd:SSMMainPageCommands.SetManageUserCommand"
+                    CommandParameter="{Binding}"
+                    ToolTip="{Binding TipOptSetUser}">
+            </Button>
+            <Button Style="{DynamicResource CellOperationExportScoreSheet}"
+                    Visibility="{Binding Converter={StaticResource CellOperationVisibilityConverter},ConverterParameter=3101006}"
+                    Command="cmd:SSMMainPageCommands.ExportScoreSheetCommand"
+                    CommandParameter="{Binding}"
+                    ToolTip="{Binding TipOptExport}">
+            </Button>
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

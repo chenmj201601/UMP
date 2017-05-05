@@ -1,0 +1,170 @@
+﻿<umpc:UMPMainView x:Class="UMPS2101.FilterConditionMainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:umpc="http://www.voicecyber.com/ump/controls"
+      xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+      xmlns:vcad="http://www.voicecyber.com/wpf/avalondock"  
+      xmlns:vcn="http://www.voicecyber.com/NAudio/Controls"
+      mc:Ignorable="d"  d:DesignHeight="600" d:DesignWidth="800" 
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="Themes/Default/Control.xaml"></ResourceDictionary>-->
+                <ResourceDictionary Source="/UMPS2101;component/Themes/Default/UMPS2101/MainPageStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/UMPS2101;component/Themes/Default/UMPS2101/AvalonDock.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StatusBar DockPanel.Dock="Bottom" Style="{DynamicResource StatusBar}">
+            </StatusBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" Name="GridLeft"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                    <ColumnDefinition  Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Name="BorderLeft" Grid.Column="0" Style="{DynamicResource BorderLeft}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Name="BorderLeftBg" Grid.RowSpan="3" Style="{DynamicResource BorderLeftBg}"></Border>
+                        <Border Name="BorderBasicOpt" Grid.Row="0" Style="{DynamicResource BorderBasicOpt}">
+                            <Expander Header="Basic Operations" Name="ExpanderBasic" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                                <StackPanel Name="PanelBasicOpts" Orientation="Vertical"></StackPanel>
+                            </Expander>
+                        </Border>
+                        <Border Name="BorderOtherPosition" Grid.Row="1" Style="{DynamicResource BorderOtherPosition}">
+                            <Expander Header="Other Position" Name="ExpanderOther" VerticalAlignment="Top" IsExpanded="True" Style="{DynamicResource ExpandStyle}">
+                            </Expander>
+                        </Border>
+                        <Border Name="BorderDetail" Grid.Row="1" Style="{DynamicResource BorderDetail}">
+                            <umpc:ObjectDetailViewer x:Name="ObjectDetail"></umpc:ObjectDetailViewer>
+                        </Border>
+                    </Grid>
+                </Border>
+                <GridSplitter Grid.Column="1" Style="{DynamicResource GridSpliterLeft}"></GridSplitter>
+                <Grid Grid.Column="2">
+                    <Border Grid.Column="2" Style="{DynamicResource BorderMainBg}"/>
+                    <Border Name="BorderMain" Style="{DynamicResource BorderMain}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <DockPanel LastChildFill="True">
+                                <Border Name="BorderToolBarQ" DockPanel.Dock="Top" Style="{DynamicResource ToolBarStyle}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="2" Name="PanelToolButton" 
+                                                    Orientation="Horizontal" Margin="0,0,5,0"></StackPanel>
+                                    </Grid>
+                                </Border>
+                                <Grid>
+                                    <vcad:DockingManager x:Name="PanelManager" Style="{DynamicResource DockManageStyle}">
+                                        <vcad:LayoutRoot>
+                                            <vcad:LayoutPanel Orientation="Horizontal">
+                                                <vcad:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300">
+                                                    <vcad:LayoutAnchorablePane>
+                                                        <vcad:LayoutAnchorable x:Name="PanelStrategyList" Title="Strategy List" ContentId="PanelStrategyList" CanAutoHide="False" CanClose="False" CanFloat="False" CanHide="False">
+                                                            <Border>
+                                                                <ListView ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Name="LvStrategy" Style="{DynamicResource ListViewRecord}"
+                                                                          ItemContainerStyle="{DynamicResource ListViewItemRecord}"></ListView>
+                                                            </Border>
+                                                        </vcad:LayoutAnchorable>
+                                                    </vcad:LayoutAnchorablePane>
+                                                </vcad:LayoutAnchorablePaneGroup>
+                                                <vcad:LayoutDocumentPane>
+                                                    <vcad:LayoutAnchorable x:Name="PanelStrategySet" Title="Strategy Set" ContentId="PanelStrategySet" CanClose="False" CanFloat="False">
+                                                        <Border>
+                                                            <Grid HorizontalAlignment="Left">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="180"/>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="30"/>
+                                                                    <RowDefinition Height="30"/>
+                                                                    <RowDefinition Height="30"/>
+                                                                    <RowDefinition Height="30"/>
+                                                                    <RowDefinition Height="30"/>
+                                                                    <RowDefinition Height="82"/>
+                                                                    <RowDefinition Height="*"/>
+                                                                </Grid.RowDefinitions>
+                                                                <Border Grid.Row="0" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lblsttype" Content="Strategy Type" />
+                                                                </Border>
+                                                                <Border Grid.Row="0" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <ComboBox Name="cmbsttype" Width="180"  />
+                                                                </Border>
+                                                                <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lblstname" Content="Strategy Name" />
+                                                                </Border>
+                                                                <Border Grid.Row="1" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <TextBox Name="txtstname" Width="180" />
+                                                                </Border>
+                                                                <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lblisvalid" Content="IsValid" />
+                                                                </Border>
+                                                                <Border Grid.Row="2" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <DockPanel HorizontalAlignment="Left">
+                                                                        <RadioButton Name="rdbValid" Content="Valid"  GroupName="Valid" IsChecked="True" Width="90"></RadioButton>
+                                                                        <RadioButton Name="rdbInValid"   Content="Invalid"  GroupName="Valid"></RadioButton>
+                                                                    </DockPanel>
+                                                                </Border>
+                                                                <Border Grid.Row="3" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lblstarttime" Content="Strategy StartTime" />
+                                                                </Border>
+                                                                <Border Grid.Row="3" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <vcc:DateTimePicker Name="DateStart" Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+                                                                </Border>
+                                                                <Border Grid.Row="4" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lblendtime" Content="Strategy EndTime" />
+                                                                </Border>
+                                                                <Border Grid.Row="4" Grid.Column="1" Style="{DynamicResource FormItemValue}">
+                                                                    <vcc:DateTimePicker Name="DateEnd" Format="Custom" FormatString="yyyy-MM-dd HH:mm:ss"></vcc:DateTimePicker>
+                                                                </Border>
+                                                                <Border Grid.Row="5" Grid.Column="0" Style="{DynamicResource FormItemValue}">
+                                                                    <Label Name="lbldiscription" Content="Remarks" />
+                                                                </Border>
+                                                                <Border Grid.Row="5" Grid.Column="1" Style="{DynamicResource FormItemValueDesc}">
+                                                                    <TextBox Name="txtdes" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                    </vcad:LayoutAnchorable>
+                                                    <vcad:LayoutAnchorable x:Name="PanelConditionSet" Title="Condition Set" ContentId="PanelConditionSet" CanClose="False" CanFloat="False">
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*" />
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="100" />
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Name="SPAllParameters" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="0" ></StackPanel>
+                                                            <Border Grid.Row="1" Style="{DynamicResource FormButtonSeperator}"></Border>
+                                                            <Label Name="labDiscription" Content="" Grid.Row="2"></Label>
+                                                        </Grid>
+                                                    </vcad:LayoutAnchorable>
+                                                </vcad:LayoutDocumentPane>
+                                            </vcad:LayoutPanel>
+                                        </vcad:LayoutRoot>
+                                    </vcad:DockingManager>
+                                </Grid>
+                            </DockPanel>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </Grid>
+        </DockPanel>
+        <umpc:PopupPanel x:Name="PopupPanel" IsOpen="False" Style="{DynamicResource PopupAssign2QA}">
+        </umpc:PopupPanel>
+    </Grid>
+</umpc:UMPMainView>

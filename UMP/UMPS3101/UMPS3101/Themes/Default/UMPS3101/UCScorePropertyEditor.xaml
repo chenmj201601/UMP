@@ -1,0 +1,500 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+                    xmlns:local="clr-namespace:UMPS3101"
+                    xmlns:conv="clr-namespace:UMPS3101.Converters">
+    
+    <conv:BooleanNullToVisibilityConverter x:Key="BooleanNullToVisibilityConverter"></conv:BooleanNullToVisibilityConverter>
+
+    <Style x:Key="EditorListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Name="Border"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <StackPanel Orientation="Horizontal" IsItemsHost="True"></StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SystemBrush2}">
+                            </Setter>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush3}">
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Border"
+                              Padding="2"
+                              SnapsToDevicePixels="true"
+                            Background="Transparent">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background"
+                                    Value="{DynamicResource SystemBrush2}"></Setter>
+                            <Setter TargetName="Border" Property="BorderBrush"
+                                    Value="{DynamicResource SystemBrush3}"></Setter>
+                            <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="EditorComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="Border"
+              Grid.ColumnSpan="2"
+              BorderThickness="0"
+                    Background="WhiteSmoke"
+                    BorderBrush="{DynamicResource SystemBrush8}">
+            </Border>
+            <Border Grid.Column="0"
+                    Background="WhiteSmoke">
+            </Border>
+            <Path x:Name="Arrow"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Data="M 0 0 L 4 4 L 8 0 Z"
+                  Fill="{DynamicResource SystemBrush8}">
+            </Path>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background"
+                        Value="{DynamicResource SystemBrush7}"></Setter>
+                <Setter TargetName="Border" Property="BorderBrush"
+                        Value="{DynamicResource SystemBrush7}"></Setter>
+                <Setter TargetName="Arrow" Property="Fill"
+                        Value="{DynamicResource SystemBrush1}"></Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Border" Property="Background"
+                        Value="{DynamicResource SystemBrush2}"></Setter>
+                <Setter TargetName="Border" Property="BorderBrush"
+                        Value="{DynamicResource SystemBrush3}"></Setter>
+                <Setter TargetName="Arrow" Property="Fill"
+                        Value="{DynamicResource SystemBrush3}"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="EditorComboBoxTextBox" TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost"
+            Focusable="False"
+            Background="{TemplateBinding Background}" />
+    </ControlTemplate>
+
+    <Style x:Key="EditorComboBoxStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <ToggleButton x:Name="ToggleButton"
+                          Template="{StaticResource EditorComboBoxToggleButton}"
+                          Focusable="false"
+                          ClickMode="Press"
+                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, 
+                RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <ContentPresenter x:Name="ContentSite"
+                              IsHitTestVisible="False"
+                              Content="{TemplateBinding SelectionBoxItem}"
+                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                              Margin="3,3,23,3"
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Left">
+                        </ContentPresenter>
+                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 Template="{StaticResource EditorComboBoxTextBox}"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Bottom"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
+                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                            <Grid x:Name="DropDown"
+                                    SnapsToDevicePixels="True"
+                                    MinWidth="{TemplateBinding ActualWidth}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder" 
+                                        BorderThickness="1"
+                                        BorderBrush="{DynamicResource SystemBrush3}"
+                                        Background="{DynamicResource SystemBrush1}">
+                                </Border>
+                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" 
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder"
+                                  Property="MinHeight"
+                                  Value="95" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping"
+                                 Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll"
+                                  Value="false" />
+                        </Trigger>
+                        <Trigger SourceName="Popup"
+                                Property="AllowsTransparency"
+                                Value="true">
+                            <Setter TargetName="DropDownBorder"
+                                Property="CornerRadius"
+                                Value="4" />
+                            <Setter TargetName="DropDownBorder"
+                                  Property="Margin"
+                                  Value="0,2,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsEditable" Value="True">
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorComboBoxMultiStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <ToggleButton x:Name="ToggleButton"
+                          Template="{StaticResource EditorComboBoxToggleButton}"
+                          Focusable="false"
+                          ClickMode="Press"
+                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, 
+                RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <TextBlock x:Name="ContentSite" 
+                                   IsHitTestVisible="False"
+                                   Margin="3,3,23,3"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Text="{Binding Text,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:UCScorePropertyEditor}}}">
+                        </TextBlock>
+                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 Template="{StaticResource EditorComboBoxTextBox}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Bottom"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
+                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                            <Grid x:Name="DropDown"
+                                    SnapsToDevicePixels="True"
+                                    MinWidth="{TemplateBinding ActualWidth}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder" 
+                                        BorderThickness="1"
+                                        BorderBrush="{DynamicResource SystemBrush3}"
+                                        Background="{DynamicResource SystemBrush1}">
+                                </Border>
+                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" 
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder"
+                                  Property="MinHeight"
+                                  Value="95" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping"
+                                 Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll"
+                                  Value="false" />
+                        </Trigger>
+                        <Trigger SourceName="Popup"
+                                Property="AllowsTransparency"
+                                Value="true">
+                            <Setter TargetName="DropDownBorder"
+                                Property="CornerRadius"
+                                Value="4" />
+                            <Setter TargetName="DropDownBorder"
+                                  Property="Margin"
+                                  Value="0,2,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsEditable" Value="True">
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+        <Setter Property="ToolTip" Value="{Binding Description}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border x:Name="Border"
+                          Padding="2"
+                          SnapsToDevicePixels="true"
+                          Background="Transparent">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background"
+                                    Value="{DynamicResource SystemBrush2}"></Setter>
+                            <Setter TargetName="Border" Property="BorderBrush"
+                                    Value="{DynamicResource SystemBrush3}"></Setter>
+                            <Setter Property="Foreground" Value="{DynamicResource SystemBrush3}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" 
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="DefaultTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <TextBlock Name="PART_TextBlock"  Text="{Binding Value,RelativeSource={RelativeSource TemplatedParent}}" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center"></TextBlock>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="MStringTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <vcc:AutoSelectTextBox Name="PART_TextBox"
+                               Text="{Binding Value,RelativeSource={RelativeSource TemplatedParent}}"
+                               HorizontalAlignment="Stretch"
+                               HorizontalContentAlignment="Left"
+                               VerticalAlignment="Center"
+                               Background="Transparent"
+                               BorderThickness="0"></vcc:AutoSelectTextBox>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="IntTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <vcc:IntegerUpDown Name="PART_IntTextBox" Text="{Binding Value,RelativeSource={RelativeSource TemplatedParent}}"
+                           HorizontalAlignment="Stretch"
+                           HorizontalContentAlignment="Left"
+                           Background="Transparent"
+                           BorderThickness="0"
+                           ShowButtonSpinner="False"
+                           TextAlignment="Left"
+                           AllowSpin="False"
+                           DefaultValue="0"
+                           DisplayDefaultValueOnEmptyText="True"></vcc:IntegerUpDown>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DoubleTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <vcc:DoubleUpDown Name="PART_DoubleTextBox" Text="{Binding Value,RelativeSource={RelativeSource TemplatedParent}}"
+                           HorizontalAlignment="Stretch"
+                           HorizontalContentAlignment="Left"
+                           Background="Transparent"
+                           BorderThickness="0"
+                           ShowButtonSpinner="False"
+                           TextAlignment="Left"
+                           AllowSpin="False"
+                           DefaultValue="0"
+                           FormatString="0.00"
+                           DisplayDefaultValueOnEmptyText="True"></vcc:DoubleUpDown>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="YesNoTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <CheckBox Name="PART_BoolCheckBox" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0" IsChecked="{Binding BoolValue,RelativeSource={RelativeSource TemplatedParent}}"></CheckBox>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="DatetimeTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <vcc:DateTimePicker Name="PART_DateTimeTextBox" Value="{Binding Value,RelativeSource={RelativeSource TemplatedParent}}"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ShowButtonSpinner="False"
+                            TextAlignment="Left"
+                            Format="Custom"
+                            FormatString="yyyy-MM-dd HH:mm:ss"
+                            AllowSpin="False">
+                <vcc:DateTimePicker.Style>
+                    <Style TargetType="{x:Type vcc:DateTimePicker}">
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsKeyboardFocusWithin" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="False" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="ShowButtonSpinner" Value="False" />
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </vcc:DateTimePicker.Style>
+            </vcc:DateTimePicker>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="EnumTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <ComboBox Name="PART_ItemsSelectControl"
+                      Style="{DynamicResource EditorComboBoxStyle}"
+                      ItemContainerStyle="{DynamicResource EditorComboBoxItemStyle}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type ComboBoxItem}">
+                        <TextBlock Text="{Binding Display}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="ColorTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <vcc:ColorPicker Name="PART_ColorTextBox"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Center"
+                             SelectedColor="{Binding ColorValue,RelativeSource={RelativeSource TemplatedParent}}">
+                <vcc:ColorPicker.Style>
+                    <Style TargetType="{x:Type vcc:ColorPicker}">
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsKeyboardFocusWithin" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="False" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="ShowDropDownButton" Value="False" />
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </vcc:ColorPicker.Style>
+            </vcc:ColorPicker>
+        </Border>
+    </ControlTemplate>
+   
+    <ControlTemplate x:Key="SubPanelTemplate" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Border Name="PART_Panel"
+                Background="{TemplateBinding Background}">
+            <TextBlock Text="(...)" Margin="2,0" HorizontalAlignment="Left"></TextBlock>
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="UCScorePropertyEditorStyle" TargetType="{x:Type local:UCScorePropertyEditor}">
+        <Setter Property="Margin" Value="2"></Setter>
+        <Style.Triggers>
+            <Trigger Property="ConvertFormat" Value="SString">
+                <Setter Property="Template" Value="{StaticResource DefaultTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="MString">
+                <Setter Property="Template" Value="{StaticResource MStringTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Int">
+                <Setter Property="Template" Value="{StaticResource IntTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Double">
+                <Setter Property="Template" Value="{StaticResource DoubleTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Bool">
+                <Setter Property="Template" Value="{StaticResource YesNoTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="DateTime">
+                <Setter Property="Template" Value="{StaticResource DatetimeTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Enum">
+                <Setter Property="Template" Value="{StaticResource EnumTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="FontFamily">
+                <Setter Property="Template" Value="{StaticResource EnumTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="ScoreItem">
+                <Setter Property="Template" Value="{StaticResource EnumTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="FontWeight">
+                <Setter Property="Template" Value="{StaticResource EnumTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Color">
+                <Setter Property="Template" Value="{StaticResource ColorTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="Style">
+                <Setter Property="Template" Value="{StaticResource SubPanelTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="ControlItem">
+                <Setter Property="Template" Value="{StaticResource SubPanelTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="StandardItem">
+                <Setter Property="Template" Value="{StaticResource SubPanelTemplate}"></Setter>
+            </Trigger>
+            <Trigger Property="ConvertFormat" Value="CommentItem">
+                <Setter Property="Template" Value="{StaticResource SubPanelTemplate}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>

@@ -1,0 +1,58 @@
+﻿<umpc:UMPUserControl x:Class="UMPS3103.UCRecordMemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Default/UMPS3103/UCRecordMemo.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="TxtSerialID" Style="{DynamicResource TxtMemoSerialID}"></TextBlock>
+                    <TextBlock Name="TxtStartRecordTime" Style="{DynamicResource TxtMemoStartRecordTime}" ></TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.RowSpan="2">
+                <TabControl Name="TabMemoContent" Style="{DynamicResource TabControlMemo}">
+                    <TabItem Name="TabMyMemo" Header="My Memo" Style="{DynamicResource TabItemMemo}">
+                        <TextBox Name="TxtMemoContent" MaxLength="300" Background="Transparent" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                    </TabItem>
+                    <TabItem Name="TabOtherMemo" Header="Other Memo" Style="{DynamicResource TabItemMemo}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ListBox Name="ListBoxMemoUsers" Grid.Column="0"
+                                     Style="{DynamicResource ListBoxMemoUsers}"
+                                     ItemContainerStyle="{DynamicResource ListBoxItemUser}"
+                                     ItemTemplate="{DynamicResource MemoUserTemplate}"></ListBox>
+                            <TextBox Name="TxtOtherMemoContent" Grid.Column="1" 
+                                     Background="Transparent" IsReadOnly="True" BorderThickness="0"
+                                      AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Border>
+            <Border Grid.Row="2">
+                <StackPanel Name="PanelToolButton" Orientation="Horizontal" Style="{DynamicResource PanelToolButton}">
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+    </umpc:UMPUserControl>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VoiceCyber.UMP.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.6.74:8081/Wcf2Client/Service21061.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SessionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppServerInfo" nillable="true" type="tns:AppServerInfo" />
+      <xs:element minOccurs="0" name="AppType" type="xs:int" />
+      <xs:element minOccurs="0" name="AppVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DBConnectionString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DBType" type="xs:int" />
+      <xs:element minOccurs="0" name="DatabaseInfo" nillable="true" type="tns:DatabaseInfo" />
+      <xs:element minOccurs="0" name="DomainID" type="xs:long" />
+      <xs:element minOccurs="0" name="DomainInfo" nillable="true" type="tns:DomainInfo" />
+      <xs:element minOccurs="0" name="InstallPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMonitor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LangTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="LangTypeInfo" nillable="true" type="tns:LangTypeInfo" />
+      <xs:element minOccurs="0" name="LastActiveTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ListPartitionTables" nillable="true" type="tns:ArrayOfPartitionTableInfo" />
+      <xs:element minOccurs="0" name="LocalMachineInfo" nillable="true" type="tns:LocalHostInfo" />
+      <xs:element minOccurs="0" name="LoginID" type="xs:long" />
+      <xs:element minOccurs="0" name="LoginInfo" nillable="true" type="tns:LoginInfo" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrgID" type="xs:long" />
+      <xs:element minOccurs="0" name="OrgInfo" nillable="true" type="tns:OrgInfo" />
+      <xs:element minOccurs="0" name="RentID" type="xs:long" />
+      <xs:element minOccurs="0" name="RentInfo" nillable="true" type="tns:RentInfo" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportLangTypes" nillable="true" type="tns:ArrayOfLangTypeInfo" />
+      <xs:element minOccurs="0" name="SupportThemes" nillable="true" type="tns:ArrayOfThemeInfo" />
+      <xs:element minOccurs="0" name="ThemeInfo" nillable="true" type="tns:ThemeInfo" />
+      <xs:element minOccurs="0" name="ThemeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionInfo" nillable="true" type="tns:SessionInfo" />
+  <xs:complexType name="AppServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportHttps" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SupportNetTcp" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppServerInfo" nillable="true" type="tns:AppServerInfo" />
+  <xs:complexType name="DatabaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DBName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatabaseInfo" nillable="true" type="tns:DatabaseInfo" />
+  <xs:complexType name="DomainInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowAutoLogin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DomainID" type="xs:long" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomainInfo" nillable="true" type="tns:DomainInfo" />
+  <xs:complexType name="LangTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangID" type="xs:int" />
+      <xs:element minOccurs="0" name="LangName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LangTypeInfo" nillable="true" type="tns:LangTypeInfo" />
+  <xs:complexType name="ArrayOfPartitionTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartitionTableInfo" nillable="true" type="tns:PartitionTableInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartitionTableInfo" nillable="true" type="tns:ArrayOfPartitionTableInfo" />
+  <xs:complexType name="PartitionTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Other1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartType" type="tns:TablePartType" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartitionTableInfo" nillable="true" type="tns:PartitionTableInfo" />
+  <xs:simpleType name="TablePartType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unkown" />
+      <xs:enumeration value="DatetimeRange" />
+      <xs:enumeration value="VoiceID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TablePartType" nillable="true" type="tns:TablePartType" />
+  <xs:complexType name="LocalHostInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StrCommonApplicationData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StrHostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StrLastLoginAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StrLocalApplicationData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalHostInfo" nillable="true" type="tns:LocalHostInfo" />
+  <xs:complexType name="LoginInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginID" type="xs:long" />
+      <xs:element minOccurs="0" name="LoginTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OnlineTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Terminal" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginInfo" nillable="true" type="tns:LoginInfo" />
+  <xs:complexType name="OrgInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgID" type="xs:long" />
+      <xs:element minOccurs="0" name="OrgTypeID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrgInfo" nillable="true" type="tns:OrgInfo" />
+  <xs:complexType name="RentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentInfo" nillable="true" type="tns:RentInfo" />
+  <xs:complexType name="RoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListIntRoleID" nillable="true" type="q1:ArrayOflong" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListStrRoleName" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+  <xs:complexType name="ArrayOfLangTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LangTypeInfo" nillable="true" type="tns:LangTypeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLangTypeInfo" nillable="true" type="tns:ArrayOfLangTypeInfo" />
+  <xs:complexType name="ArrayOfThemeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeInfo" nillable="true" type="tns:ThemeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThemeInfo" nillable="true" type="tns:ArrayOfThemeInfo" />
+  <xs:complexType name="ThemeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThemeInfo" nillable="true" type="tns:ThemeInfo" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+</xs:schema>

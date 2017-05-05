@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5122558b-e23b-495e-9cde-8f0d7bf29ac2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.6.55:8081/WcfServices/Service25011.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service25011.xsd" MetadataType="Schema" ID="f0d48edb-3122-41e9-9dd9-0549c83d24c8" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service250111.xsd" MetadataType="Schema" ID="ab2e0cf1-985b-4220-838b-235f9d4c3302" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service250112.xsd" MetadataType="Schema" ID="1dff9e16-7a86-458a-b58a-97993028bad2" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service250113.xsd" MetadataType="Schema" ID="70ff2054-682a-4fd3-895e-cacaff400e29" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service250114.xsd" MetadataType="Schema" ID="657d8de3-827f-4663-853f-7de00efa0761" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service25011.wsdl" MetadataType="Wsdl" ID="c603a405-f324-4bf5-adaa-85708b16a9ff" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?wsdl" />
+    <MetadataFile FileName="Service25011.disco" MetadataType="Disco" ID="8d2cda13-8c08-48ea-9de2-3e83351f3627" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?disco" />
+    <MetadataFile FileName="Service250111.wsdl" MetadataType="Wsdl" ID="58746d9d-4869-4315-b30b-539d0df41685" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service250115.xsd" MetadataType="Schema" ID="5b6adf48-3d20-404c-9f77-1d71d8189e15" SourceId="1" SourceUrl="http://192.168.6.55:8081/WCFServices/Service25011.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
