@@ -1,0 +1,445 @@
+﻿<Window x:Class="UMPTools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vcc="http://www.voicecyber.com/Wpf/Controls"
+        Title="UMP Tools" Height="600" Width="800">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Border DockPanel.Dock="Top">
+                <TabControl Name="TabControlConfig">
+
+                    <TabItem Name="TabSessionInfo" Header="Session Info">
+                        <StackPanel Orientation="Vertical">
+                            <Menu>
+                                <MenuItem Name="BtnGenerate" Header="Generate"></MenuItem>
+                            </Menu>
+                            <Grid IsSharedSizeScope="True">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <GroupBox Grid.Row="0" Grid.Column="0" Header="Basic">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="SessionInfoItem"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Session ID"></Label>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="App Name"></Label>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Last Active Time"></Label>
+                                        <Label Grid.Column="0" Grid.Row="3" Content="Is Monitor"></Label>
+                                        <TextBox Name="TxtSessionID" Grid.Column="1" Grid.Row="0" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtAppName" Grid.Column="1" Grid.Row="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtLastActiveTime" Grid.Column="1" Grid.Row="2" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <CheckBox Name="CbIsMonitor" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Grid.Row="0" Grid.Column="1" Header="App Server Info">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="SessionInfoItem"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Protocol"></Label>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Host"></Label>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Port"></Label>
+                                        <Label Grid.Column="0" Grid.Row="3" Content="Support Https"></Label>
+                                        <TextBox Name="TxtProtocol" Grid.Column="1" Grid.Row="0" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtAppHost" Grid.Column="1" Grid.Row="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtAppPort" Grid.Column="1" Grid.Row="2" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <CheckBox Name="CbSupportHttps" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Grid.Row="1" Grid.Column="0" Header="Database Info">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="SessionInfoItem"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Type"></Label>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Address"></Label>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Port"></Label>
+                                        <Label Grid.Column="0" Grid.Row="3" Content="DB Name"></Label>
+                                        <Label Grid.Column="0" Grid.Row="4" Content="Login User"></Label>
+                                        <Label Grid.Column="0" Grid.Row="5" Content="Password"></Label>
+                                        <ComboBox Name="ComboDBType" Grid.Column="1" Grid.Row="0" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate DataType="ComboBoxItem">
+                                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
+                                        <TextBox Name="TxtDBHost" Grid.Column="1" Grid.Row="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtDBPort" Grid.Column="1" Grid.Row="2" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtDBName" Grid.Column="1" Grid.Row="3" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtDBLoginUser" Grid.Column="1" Grid.Row="4" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtDBPassword" Grid.Column="1" Grid.Row="5" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Grid.Row="1" Grid.Column="1" Header="Global Settings">
+                                    <Grid>
+                                        <ListBox Name="ListBoxGlobalSettings">
+                                            <ListBox.Style>
+                                                <Style TargetType="{x:Type ListBox}">
+                                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                                    <Setter Property="BorderThickness" Value="0"></Setter>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type ListBox}">
+                                                                <Border Name="Border"
+                                                                    CornerRadius="2"
+                                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                                    Background="{TemplateBinding Background}">
+                                                                    <ScrollViewer Margin="0" Focusable="false">
+                                                                        <StackPanel Margin="2" IsItemsHost="True" />
+                                                                    </ScrollViewer>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </ListBox.Style>
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="{x:Type ListBoxItem}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                                <Border x:Name="Border"
+                                                                      Padding="3"
+                                                                      SnapsToDevicePixels="true"
+                                                                    Background="Transparent">
+                                                                    <ContentPresenter />
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type ListBoxItem}">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" SharedSizeGroup="SessionInfoItem"></ColumnDefinition>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Key}"></TextBlock>
+                                                        <TextBox HorizontalAlignment="Stretch" Grid.Column="1" Text="{Binding Value,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabMonitor" Header="Monitor">
+                        <StackPanel Orientation="Vertical">
+                            <Menu>
+                                <MenuItem Name="BtnGetAppSession" Header="GetAppSession"></MenuItem>
+                                <MenuItem Name="BtnDealCommand" Header="DealCommand"></MenuItem>
+                            </Menu>
+                            <Grid IsSharedSizeScope="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <GroupBox Grid.Column="0" Grid.Row="0" Header="Monitor Param">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="MonitorItem"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="App Session ID"></Label>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Command"></Label>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Object Type"></Label>
+                                        <Label Grid.Column="0" Grid.Row="3" Content="Object Name"></Label>
+                                        <Label Grid.Column="0" Grid.Row="4" Content="Index"></Label>
+                                        <TextBox Name="TxtAppSessionID" Grid.Column="1" Grid.Row="0" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtCommand" Grid.Column="1" Grid.Row="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text="1"></TextBox>
+                                        <TextBox Name="TxtType" Grid.Column="1" Grid.Row="2" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text="10"></TextBox>
+                                        <TextBox Name="TxtName" Grid.Column="1" Grid.Row="3" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtIndex" Grid.Column="1" Grid.Row="4" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text="0"></TextBox>
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Grid.Column="1" Grid.Row="0" Header="Description">
+                                    <TextBox Name="TxtDescription" Margin="5" TextWrapping="Wrap" Background="Transparent" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                    </TextBox>
+                                </GroupBox>
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabColManager" Header="Column Management">
+                        <DockPanel LastChildFill="True">
+                            <Menu DockPanel.Dock="Top">
+                                <MenuItem Name="BtnColumnTest" Header="Test"></MenuItem>
+                                <MenuItem Name="BtnSaveConfig" Header="Save"></MenuItem>
+                                <MenuItem Name="BtnColumnGenerate" Header="Generate"></MenuItem>
+                            </Menu>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="15,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*"></ColumnDefinition>
+                                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Entity View"></Label>
+                                    <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="View ID"></Label>
+                                    <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="User ID"></Label>
+                                    <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <ComboBox Name="ComboColumnModule" Width="80" Margin="5,0" DisplayMemberPath="Name"></ComboBox>
+                                        <ComboBox Name="ComboColumnSubModule" Width="80" Margin="5,0" DisplayMemberPath="Name"></ComboBox>
+                                    </StackPanel>
+                                    <TextBox Name="TxtColumnViewID" Grid.Column="1" Grid.Row="1" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center" Text="1"></TextBox>
+                                    <TextBox Name="TxtColumnUserID" Grid.Column="1" Grid.Row="2" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center" Text="0"></TextBox>
+                                </Grid>
+                                <ListView Name="LvColumnData" Grid.Row="1" MinHeight="120">
+
+                                </ListView>
+                                <Grid Grid.Row="2" Margin="15,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="180"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="CbColumnIsVisible" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="IsVisible"></CheckBox>
+                                    <Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Width"></Label>
+                                    <TextBox Name="TxtColumnWidth" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120"></TextBox>
+                                    <Button Name="BtnColumnApply" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Apply" Width="80"></Button>
+                                </Grid>
+                            </Grid>
+                        </DockPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabLangTool" Header="Language Tool">
+                        <DockPanel LastChildFill="True">
+                            <Menu DockPanel.Dock="Top">
+                                <MenuItem Name="BtnLangInit" Header="Lang Generate"></MenuItem>
+                            </Menu>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Entity"></Label>
+                                <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Module"></Label>
+                                <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Replace"></Label>
+                                <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Chinese Simple Only"></Label>
+                                <ComboBox Name="ComboEntities" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" DisplayMemberPath="Display"></ComboBox>
+                                <ComboBox Name="ComboModules" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" DisplayMemberPath="Display"></ComboBox>
+                                <CheckBox Name="CbReqplace" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                                <CheckBox Name="Cb2052Only" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"></CheckBox>
+                            </Grid>
+                        </DockPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabNetPipeDemo" Header="NetPipe Demo">
+                        <StackPanel Orientation="Vertical">
+                            <Menu>
+                                <MenuItem Name="BtnNetPipeTest" Header="Test"></MenuItem>
+                                <MenuItem Name="BtnNetPipeSend" Header="Send"></MenuItem>
+                            </Menu>
+                            <Grid IsSharedSizeScope="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <GroupBox Grid.Column="0" Grid.Row="0" Header="NetPipe Param">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="MonitorItem"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="App Session ID"></Label>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Command"></Label>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Data"></Label>
+                                        <Label Grid.Column="0" Grid.Row="3" Content="ListData1"></Label>
+                                        <Label Grid.Column="0" Grid.Row="4" Content="ListData2"></Label>
+                                        <TextBox Name="TxtNetPipeAppSession" Grid.Column="1" Grid.Row="0" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                        <TextBox Name="TxtNetPipeCommand" Grid.Column="1" Grid.Row="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text="0"></TextBox>
+                                        <TextBox Name="TxtNetPipeData" Grid.Column="1" Grid.Row="2" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                        <TextBox Name="TxtNetPipeData1" Grid.Column="1" Grid.Row="3" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                        <TextBox Name="TxtNetPipeData2" Grid.Column="1" Grid.Row="4" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                        <TextBox Name="TxtNetPipeData3" Grid.Column="1" Grid.Row="5" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                        <TextBox Name="TxtNetPipeData4" Grid.Column="1" Grid.Row="6" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                        <TextBox Name="TxtNetPipeData5" Grid.Column="1" Grid.Row="7" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text=""></TextBox>
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Grid.Column="1" Grid.Row="0" Header="Description">
+                                    <TextBox Name="TxtNetPipeDescription" Margin="5" TextWrapping="Wrap" Background="Transparent" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                    </TextBox>
+                                </GroupBox>
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabConfigInfoGenerator" Header="ConfigInfo Generator">
+                        <DockPanel LastChildFill="True">
+                            <Menu DockPanel.Dock="Top">
+                                <MenuItem Name="BtnConfigInfoGenerate" Header="Generate"></MenuItem>
+                            </Menu>
+                            <ListView Name="LvConfigInfoList" DockPanel.Dock="Top">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Key}" Width="80"></GridViewColumn>
+                                        <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Value}" Width="180"></GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Border DockPanel.Dock="Top" Margin="5,2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Value" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <!--<TextBox Name="TxtConfigName" Grid.Column="1" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>-->
+                                    <ComboBox Name="ComboConfigName" Grid.Column="1" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" IsEditable="True">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate DataType="ComboBoxItem">
+                                                <TextBlock Text="{Binding Name}" ToolTip="{Binding Description}"></TextBlock>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                    <TextBox Name="TxtConfigValue" Grid.Column="3" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                                </Grid>
+                            </Border>
+                            <StackPanel DockPanel.Dock="Top" Margin="5,2" Orientation="Horizontal">
+                                <Button Name="BtnConfigInfoApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"></Button>
+                                <Button Name="BtnConfigInfoRemove" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"></Button>
+                            </StackPanel>
+                        </DockPanel>
+                    </TabItem>
+
+                    <TabItem Name="TabWcfTest" Header="Wcf Tester">
+                        <DockPanel LastChildFill="True">
+                            <Menu DockPanel.Dock="Top">
+                                <MenuItem Name="BtnWcfTest" Header="Test"></MenuItem>
+                            </Menu>
+                            <Border DockPanel.Dock="Top" Margin="5,2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*"></ColumnDefinition>
+                                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="Service ID" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request Code" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request Data" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request ListData 1" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request ListData 2" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request ListData 3" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request ListData 4" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="Request ListData 5" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                    <TextBox Name="TxtWcfServiceID" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfCode" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfData" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfListData1" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfListData2" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfListData3" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfListData4" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                    <TextBox Name="TxtWcfListData5" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280"></TextBox>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                    </TabItem>
+
+                </TabControl>
+            </Border>
+            <Border DockPanel.Dock="Bottom" Height="30">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="LbMsg" HorizontalAlignment="Left" Margin="10,2" VerticalAlignment="Center"></Label>
+                    <vcc:CustomWaiter Name="MyWaiter" Grid.Column="2" ViewColor="Gray" Visibility="Hidden"></vcc:CustomWaiter>
+                </Grid>
+            </Border>
+            <Grid>
+                <TextBox Name="TxtMsg" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
