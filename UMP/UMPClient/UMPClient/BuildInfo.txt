@@ -1,4 +1,0 @@
-1>------ 已启动全部重新生成:  项目: UMPClient, 配置: Release Any CPU ------
-1>  UMPClient -> D:\GitRoot\ump20\8.03.002\UMP\UMPClient\UMPClient\bin\Release\UMPClient.exe
-========== 全部重新生成:  成功 1 个，失败 0 个，跳过 0 个 ==========
-
