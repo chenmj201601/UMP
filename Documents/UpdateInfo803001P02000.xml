@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpdateInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="UMP8.03.001P01.001" Version="8.03.001 P01.000" BaseVersion="8.03.001" Type="3" PublishDate="2016-05-12T17:00:10.1152345+08:00" Description="" xmlns="http://www.voicecyber.com/UMP/Updaters/2016/05">
+  <Modules>
+    <Modules>
+      <!--基础模块-->
+      <Module SerialNo="803001P020000001" Name="803001P020000001" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="Resource path error" Lang="MC00000001" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000002" Name="803001P020000002" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="IM not read message" Lang="MC00000002" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000003" Name="803001P020000003" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="Get module directory sorting error" Lang="MC00000003" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000004" Name="803001P020000004" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="Copyright message error" Lang="MC00000004" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000005" Name="803001P020000005" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="Database not exist alert message error" Lang="MC00000005" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000006" Name="803001P020000006" Description="" ErrorReply="0" Type="2" Level="3" ModuleID="0" ModuleName="Basic" Content="IM license control" Lang="MC00000006" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000015" Name="803001P020000015" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Basic" Content="UMP create oracle database error" Lang="MC00000007" ModuleLangID="M0000" />
+      <Module SerialNo="803001P020000019" Name="803001P020000019" Description="" ErrorReply="0" Type="1" Level="3" ModuleID="0" ModuleName="Basic" Content="Support http and https by configuration in MAMT" Lang="MC00000008" ModuleLangID="M0000" />
+      <!--评分表维护-->
+      <Module SerialNo="803001P020000007" Name="803001P020000007" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="3101" ModuleName="ScoreSheet Management" Content="Child item panel icon button not exist error" Lang="MC00000007" ModuleLangID="M3101" />
+      <Module SerialNo="803001P020000008" Name="803001P020000008" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="3101" ModuleName="ScoreSheet Management" Content="Delete ScoreSheet then page breakdown" Lang="MC00000008" ModuleLangID="M3101" />
+      <Module SerialNo="803001P020000009" Name="803001P020000009" Description="" ErrorReply="0" Type="2" Level="3" ModuleID="3101" ModuleName="ScoreSheet Management" Content="YesNoStandard add Reverse property" Lang="MC00000009" ModuleLangID="M3101" />
+      <!--查询管理-->
+      <Module SerialNo="803001P020000010" Name="803001P020000010" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="BookmarkRank add button not exist error" Lang="MC00000010" ModuleLangID="M3102" />
+      <Module SerialNo="803001P020000011" Name="803001P020000011" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="Query condition child window breakdown" Lang="MC00000011" ModuleLangID="M3102" />
+      <Module SerialNo="803001P020000012" Name="803001P020000012" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="Play record from PlayList then page breakdown" Lang="MC00000012" ModuleLangID="M3102" />
+      <Module SerialNo="803001P020000013" Name="803001P020000013" Description="" ErrorReply="0" Type="2" Level="3" ModuleID="0" ModuleName="Query Management" Content="File export setting save directory empty, gave default directory" Lang="MC00000013" ModuleLangID="M3102" />
+      <Module SerialNo="803001P020000014" Name="803001P020000014" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="StartRecordTime display error in scoresheet list" Lang="MC00000014" ModuleLangID="M3102" />
+    <Module SerialNo="803001P020000020" Name="803001P020000020" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="GroupWay is applying ABCD" Lang="MC00000020" ModuleLangID="M3102" />
+    <Module SerialNo="803001P020000021" Name="803001P020000021" Description="" ErrorReply="0" Type="3" Level="3" ModuleID="0" ModuleName="Query Management" Content="Voice Content is synchronous with Voice" Lang="MC00000021" ModuleLangID="M3102" />
+      <!--报表管理-->
+      <Module SerialNo="803001P020000016" Name="803001P020000016" Description="" ErrorReply="0" Type="1" Level="3" ModuleID="6101" ModuleName="Report Management" Content="Add No.22-26Report,fix some logic problem" Lang="MC61010001" ModuleLangID="M6101" />
+      <!--密钥服务-->
+      <Module SerialNo="803001P020000018" Name="803001P020000018" Description="" ErrorReply="0" Type="1" Level="7" ModuleID="2400" ModuleName="Key Generation Service Management" Content="Key service management module to switch to other modules, and then switch back, the original green state will be displayed as red" Lang="MC24000001" ModuleLangID="M2400" />
+      <!--资源管理-->
+      <Module SerialNo="803001P020000017" Name="803001P020000017" Description="" ErrorReply="0" Type="1" Level="7" ModuleID="2400" ModuleName="Resourcees Management" Content="Fixed PBXDevices to add the bug, can not be loaded based on the PBXDevices, the synchronization error or no synchronization, adding 2, the number is 0" Lang="MC11100001" ModuleLangID="M1110" />
+    </Modules>
+      <!--任务管理-->
+      <Module SerialNo="803001P020000023" Name="803001P020000023" Description="" ErrorReply="0" Type="1" Level="7" ModuleID="3103" ModuleName="Task Management" Content="Add some query to temp table" Lang="MC31030001" ModuleLangID="M3103" />
+    </Modules>
+  </Modules>
+  <Files>
+    <File Name="UMPMain" Description="" ErrorReply="0" Type="2" FileName="UMPMain_8_03_001_63" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"  />
+    <File Name="UMPS1102" Description="" ErrorReply="0" Type="2" FileName="UMPS1102_8_03_001_20" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1106" Description="" ErrorReply="0" Type="2" FileName="UMPS1106_8_03_001_20" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1110" Description="" ErrorReply="0" Type="2" FileName="UMPS1110_8_03_001_49" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1203" Description="" ErrorReply="0" Type="2" FileName="UMPS1203_8_03_001_36" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS1206" Description="" ErrorReply="0" Type="2" FileName="UMPS1206_8_03_001_33" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3101" Description="" ErrorReply="0" Type="2" FileName="UMPS3101_8_03_001_11" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3102" Description="" ErrorReply="0" Type="2" FileName="UMPS3102_8_03_001_42" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3103" Description="" ErrorReply="0" Type="2" FileName="UMPS3103_8_03_001_17" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3104" Description="" ErrorReply="0" Type="2" FileName="UMPS3104_8_03_001_11" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3105" Description="" ErrorReply="0" Type="2" FileName="UMPS3105_8_03_001_12" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3106" Description="" ErrorReply="0" Type="2" FileName="UMPS3106_8_03_001_18" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3107" Description="" ErrorReply="0" Type="2" FileName="UMPS3107_8_03_001_6" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3601" Description="" ErrorReply="0" Type="2" FileName="UMPS3601_8_03_001_57" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="UMPS3602" Description="" ErrorReply="0" Type="2" FileName="UMPS3602_8_03_01_36" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3603" Description="" ErrorReply="0" Type="2" FileName="UMPS3603_8_03_01_49" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS6101" Description="" ErrorReply="0" Type="2" FileName="UMPS6101_8_03_001_47" SourcePath="UMP/Application Files" TargetPath="Application Files" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="Wcf2Client" Description="" ErrorReply="0" Type="2" FileName="Wcf2Client" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="WcfServices" Description="" ErrorReply="0" Type="2" FileName="WcfServices" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="WinServices" Description="" ErrorReply="0" Type="2" FileName="WinServices" SourcePath="UMP" TargetPath="" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="ManagementMaintenance" Description="" ErrorReply="0" Type="2" FileName="ManagementMaintenance" SourcePath="UMP" TargetPath="" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="MAMT" Description="" ErrorReply="0" Type="2" FileName="MAMT" SourcePath="UMP" TargetPath="" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="dotnetfx40" Description="" ErrorReply="0" Type="2" FileName="dotnetfx40" SourcePath="UMP" TargetPath="" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="dotnetfx40_3104" Description="" ErrorReply="0" Type="2" FileName="dotnetfx40_3104" SourcePath="UMP" TargetPath="" InstallMode="4"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="umpcomponents" Description="" ErrorReply="0" Type="2" FileName="umpcomponents" SourcePath="UMP" TargetPath="" InstallMode="1"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="umpclienttest" Description="" ErrorReply="0" Type="2" FileName="umpclienttest" SourcePath="UMP" TargetPath="" InstallMode="4"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="windowsinstaller4_5" Description="" ErrorReply="0" Type="2" FileName="windowsinstaller4_5" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="windowsinstaller4_5_3104" Description="" ErrorReply="0" Type="2" FileName="windowsinstaller4_5_3104" SourcePath="UMP" TargetPath="" InstallMode="4"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="setup.exe" Description="" ErrorReply="0" Type="1" FileName="setup.exe" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="ClientSetup.exe" Description="" ErrorReply="0" Type="1" FileName="ClientSetup.exe" SourcePath="UMP" TargetPath="" InstallMode="4"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="UMP.PF.html" Description="" ErrorReply="0" Type="1" FileName="UMP.PF.html" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPMain.xbap" Description="" ErrorReply="0" Type="1" FileName="UMPMain.xbap" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+    <File Name="UMPS3104.application" Description="" ErrorReply="0" Type="1" FileName="UMPS3104.application" SourcePath="UMP" TargetPath="" InstallMode="4"   Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap" />
+    <File Name="umpcomponents.zip" Description="" ErrorReply="0" Type="1" FileName="umpcomponents.zip" SourcePath="UMP" TargetPath="" InstallMode="1"    Package="UMP" TargetPathType="0" DependFile="UMPMain.xbap"/>
+  </Files>
+  <SqlScripts>
+    <SqlScript Name="DDL" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="DDL.SQL" />
+        <Script DBType="3" Path="DDL.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="DML" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="DML.SQL" />
+        <Script DBType="3" Path="DML.SQL" />
+      </Scripts>
+    </SqlScript>
+     <SqlScript Name="LANG" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="LANG_2052.SQL" />
+        <Script DBType="2" Path="LANG_1028.SQL" />
+        <Script DBType="2" Path="LANG_1033.SQL" />
+        <Script DBType="2" Path="LANG_1041.SQL" />        
+        <Script DBType="3" Path="LANG_2052.SQL" />
+        <Script DBType="3" Path="LANG_1028.SQL" />
+        <Script DBType="3" Path="LANG_1033.SQL" />
+        <Script DBType="3" Path="LANG_1041.SQL" />               
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="P_31_002" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="P_31_002.SQL" />
+        <Script DBType="3" Path="P_31_002.SQL" />
+      </Scripts>
+    </SqlScript>
+    <SqlScript Name="P_51_001" Description="" ErrorReply="1" SqlType="3" ScriptType="0">
+      <Scripts>
+        <Script DBType="2" Path="P_51_0021.SQL" />
+        <Script DBType="3" Path="P_51_0021.SQL" />
+      </Scripts>
+    </SqlScript>
+  </SqlScripts>
+  <Services>
+    <Service Name="UMPService00" Description="" ErrorReply="0" ServiceName="UMP Service 00" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+             TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService01" Description="" ErrorReply="0" ServiceName="UMP Service 01" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService02" Description="" ErrorReply="0" ServiceName="UMP Service 02" InstallMode="0" StartMode="0" DelayTime="0" Package="UMP" 
+             TargetPathType="0" TargetPath="WinServices\UMPService02.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService03" Description="" ErrorReply="0" ServiceName="UMP Service 03" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService04" Description="" ErrorReply="0" ServiceName="UMP Service 04" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService05" Description="" ErrorReply="0" ServiceName="UMP Service 05" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService06" Description="" ErrorReply="0" ServiceName="UMP Service 06" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService07" Description="" ErrorReply="0" ServiceName="UMP Service 07" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService08" Description="" ErrorReply="0" ServiceName="UMP Service 08" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+    <Service Name="UMPService09" Description="" ErrorReply="0" ServiceName="UMP Service 09" InstallMode="1" StartMode="0" DelayTime="0" Package="UMP"
+            TargetPathType="0" TargetPath="WinServices\UMPService00.exe" InstallCommand="" UnInstallCommand="" ServiceType="1"/>
+  </Services>
+  <Follows>
+    <Follow Name="RebindSite" ErrorReply="0" Key="101" DataType="1" Value="1" />
+  </Follows>
+</UpdateInfo>
