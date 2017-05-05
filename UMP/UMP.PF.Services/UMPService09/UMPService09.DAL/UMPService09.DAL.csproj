@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44BD12DD-F28C-4A1C-9471-A7EB2B9F397C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMPService09.DAL</RootNamespace>
+    <AssemblyName>UMPService09.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="oracle.dataaccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_64\Oracle.DataAccess\v4.0_4.112.3.0__89b483f429c47342\oracle.dataaccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PFShareClassesS">
+      <HintPath>..\..\..\UMP.PF.Classes\PFShareClassesS\PFShareClassesS\bin\Release\PFShareClassesS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VCCommon">
+      <HintPath>..\..\..\公用dll\VCCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DALAgentInfo.cs" />
+    <Compile Include="DALCommon.cs" />
+    <Compile Include="DALExtensionInfo.cs" />
+    <Compile Include="DALFirstStatisticsQM.cs" />
+    <Compile Include="DALGlobalSetting.cs" />
+    <Compile Include="DALKPIDefine.cs" />
+    <Compile Include="DALKPIFormulaChar.cs" />
+    <Compile Include="DALKPIFormulaColumn.cs" />
+    <Compile Include="DALKPIMapping.cs" />
+    <Compile Include="DALKPIStatistics.cs" />
+    <Compile Include="DALOrgInfo.cs" />
+    <Compile Include="DALQMInfo.cs" />
+    <Compile Include="DALRecordInfo.cs" />
+    <Compile Include="DALFirstStatisticsRecord.cs" />
+    <Compile Include="DALSkillInfo.cs" />
+    <Compile Include="DALUserInfo.cs" />
+    <Compile Include="DataOperations01.cs" />
+    <Compile Include="MssqlOperation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OracleOperation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UMPLog\UMPService09.Log.csproj">
+      <Project>{02c3dc52-19ed-4af6-a39e-d33243ed91ae}</Project>
+      <Name>UMPService09.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMPService09.Model\UMPService09.Model.csproj">
+      <Project>{f9dd5a4b-cc81-438f-a7d6-c73a9ad01ef3}</Project>
+      <Name>UMPService09.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMPService09.Utility\UMPService09.Utility.csproj">
+      <Project>{4c0b116e-c058-41c9-8517-f2336f0b8d05}</Project>
+      <Name>UMPService09.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
