@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <Style x:Key="ListBoxAppListStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Name="Border"
+                            CornerRadius="2"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" 
+                                      VerticalScrollBarVisibility="Auto">
+                            <WrapPanel Orientation="Horizontal" IsItemsHost="True"></WrapPanel>
+                        </ScrollViewer>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"
+                     Value="false">
+                            <Setter TargetName="Border"
+                      Property="Background" Value="{DynamicResource SystemBrush2}">
+                            </Setter>
+                            <Setter TargetName="Border"
+                      Property="BorderBrush" Value="{DynamicResource SystemBrush3}">
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsGrouping"
+                     Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll"
+                      Value="false" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ListBoxItemAppListStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Border"
+                              Padding="2"
+                              SnapsToDevicePixels="true"
+                            Background="Transparent">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ListBoxGroupListStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Name="Border"
+                            CornerRadius="2"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True"></WrapPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ListBoxItemGroupListStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Border"
+                              Padding="10"
+                              SnapsToDevicePixels="true"
+                            Background="Transparent">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonAppStyle" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="2"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        x:Name="Border"
+                        CornerRadius="2"
+                        Padding="{TemplateBinding Padding}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}"
+                        Cursor="Hand">
+                        <ContentPresenter Margin="2"
+                              RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ImageAppIconStyle" TargetType="{x:Type Image}">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+    </Style>
+    
+    <Style x:Key="TxtAppTitleStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="11"></Setter>
+        <Setter Property="FontFamily" Value="Microsoft Yahei"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="Margin" Value="2,3"></Setter>
+    </Style>
+    
+    <Style x:Key="TxtGroupTitleStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Microsoft Yahei"></Setter>
+        <Setter Property="Margin" Value="15,5"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+    </Style>
+    
+</ResourceDictionary>

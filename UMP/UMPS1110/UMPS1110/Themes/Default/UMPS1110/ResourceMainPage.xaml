@@ -1,0 +1,334 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:umpc="http://www.voicecyber.com/ump/controls"
+                    xmlns:vcc="http://www.voicecyber.com/Wpf/Controls">
+    
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+    
+    <Style x:Key="ResourceMainPage" TargetType="{x:Type Page}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush11}"></Setter>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
+        <!--<Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[0].X"
+                                             From="500" To="0" AccelerationRatio="1" Duration="0:0:0.8"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                            From="0" To="1" Duration="0:0:0.8"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>-->
+    </Style>
+
+    <Style x:Key="MainPageBg" TargetType="{x:Type Border}">
+
+    </Style>
+
+    <Style x:Key="PageHead" TargetType="{x:Type umpc:UMPPageHead}">
+        <Setter Property="AppName" Value="UMP Resource Management"></Setter>
+        <Setter Property="Height" Value="80"></Setter>
+    </Style>
+
+    <Style x:Key="StatusBar" TargetType="{x:Type StatusBar}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush2}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+    </Style>
+
+    <Style x:Key="" TargetType="{x:Type vcc:MetroWaiter}">
+        <Setter Property="Width" Value="500"></Setter>
+        <Setter Property="Height" Value="10"></Setter>
+    </Style>
+
+    <Style x:Key="BorderMainBg" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource SystemBrush1}"></Setter>
+        <Setter Property="Opacity" Value="0.8"></Setter>
+    </Style>
+
+    <Style x:Key="PopupInfo" TargetType="{x:Type umpc:PopupPanel}">
+        <Setter Property="Icon" Value="Images/ump.png"></Setter>
+    </Style>
+
+    <Style x:Key="OptButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border">
+                        <Grid>
+                            <Border Name="Over" Background="{DynamicResource SystemBrush9}" Visibility="Collapsed"></Border>
+                            <StackPanel Orientation="Horizontal" Margin="10,5">
+                                <StackPanel Name="Panel"  Orientation="Horizontal">
+                                    <Image Width="18" Stretch="Uniform" 
+                                           Margin="2,0,0,0" 
+                                           Source="{Binding Icon}"
+                                           VerticalAlignment="Center"></Image>
+                                    <TextBlock Margin="2,0" VerticalAlignment="Center"
+                                            Text="{Binding Display}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                            <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="OptObjectListButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border">
+                        <Grid>
+                            <Border Name="Over" Background="{DynamicResource SystemBrush9}" Visibility="Collapsed"></Border>
+                            <StackPanel Orientation="Horizontal" Margin="2,0">
+                                <StackPanel Name="Panel"  Orientation="Horizontal">
+                                    <Image Width="18" Stretch="Uniform" 
+                                           Margin="1" 
+                                           Source="{Binding Icon}"
+                                           VerticalAlignment="Center"></Image>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                            <Setter Property="Foreground" Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GridSpilitVertical" TargetType="{x:Type GridSplitter}">
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Width" Value="3"></Setter>
+        <Setter Property="Background" Value="{DynamicResource SystemBrush9}"></Setter>
+    </Style>
+
+    <Style x:Key="GridSpilitHorizental" TargetType="{x:Type GridSplitter}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Height" Value="3"></Setter>
+        <Setter Property="Background" Value="{DynamicResource SystemBrush9}"></Setter>
+    </Style>
+    
+    <Style x:Key="BorderTitleStyle" TargetType="{x:Type Border}">
+        <Setter Property="Height" Value="30"></Setter>
+        <!--<Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource SystemColor10}" Opacity="0.5"></SolidColorBrush>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="Background" Value="{DynamicResource SystemBrush10}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBrush9}"></Setter>
+        <Setter Property="BorderThickness" Value="0,0,0,1"></Setter>
+    </Style>
+    
+    <Style x:Key="LbTitleStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SystemBrush7}"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Margin" Value="5,0"></Setter>
+        <Setter Property="TextTrimming" Value="CharacterEllipsis"></Setter>
+    </Style>
+    
+    <Style x:Key="TreeResourceObjectStyle" TargetType="{x:Type TreeView}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TreeView">
+                    <Border Name="Border"
+                          CornerRadius="1"
+                          BorderThickness="1"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ScrollViewer Focusable="False"
+                                  CanContentScroll="False"
+                                  Padding="4">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="TreeItemResourceObjectStyle" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="3,2,2,2" />
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="ToolTip" Value="{Binding Description}"></Setter>
+        <Setter Property="IsExpanded" Value="{Binding IsExpanded,Mode=TwoWay}"></Setter>
+        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="19" Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ToggleButton x:Name="Expander"
+                              Style="{DynamicResource ExpandCollaspToggleStyle}"
+                              ClickMode="Press"
+                              IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <Border x:Name="Bd"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_Header"
+                                ContentSource="Header"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Visibility="Collapsed" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="Expander"
+                                  Property="Visibility"
+                                  Value="Hidden" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false" />
+                                <Condition Property="Width" Value="Auto" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header"
+                                  Property="MinWidth"
+                                  Value="75" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false" />
+                                <Condition Property="Height" Value="Auto" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header"
+                                  Property="MinHeight"
+                                  Value="19" />
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{DynamicResource SystemBrush7}"></Setter>
+                            <Setter TargetName="PART_Header" Property="Control.Foreground"
+                                    Value="{DynamicResource SystemBrush1}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsExpanded" Value="True">
+                            <Setter TargetName="ItemsHost" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <HierarchicalDataTemplate x:Key="TreeResourceObjectTemplate" DataType="{x:Type TreeViewItem}" 
+                              ItemsSource="{Binding Children}">
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="18" Height="18" Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Source="{Binding Icon}"></Image>
+                <TextBlock HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="5,0"
+                           Text="{Binding Name}"></TextBlock>
+                <Image Width="15" Height="15" Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Source="Images/lock.png"
+                       Visibility="{Binding IsMultiSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+            </StackPanel>
+        </Grid>
+    </HierarchicalDataTemplate>
+    
+    <Style x:Key="TxtDescriptionStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+    </Style>
+
+    <Style x:Key="CellOperationButton" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="18"></Setter>
+        <Setter Property="Height" Value="18"></Setter>
+        <Setter Property="Margin" Value="5,2"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border">
+                        <Grid>
+                            <Border Name="Over" Background="{DynamicResource SystemBrush7}" Visibility="Hidden"></Border>
+                            <ContentPresenter></ContentPresenter>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Over" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Margin" Value="1"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ListerModifyButtonStyle" TargetType="{x:Type Image}">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/modify.png"></Setter>
+    </Style>
+
+    <Style x:Key="ListerDeleteButtonStyle" TargetType="{x:Type Image}">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/remove.png"></Setter>
+    </Style>
+    
+    <Style x:Key="StateEnabledImageStyle" TargetType="{x:Type Image}">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/00002.ico"></Setter>
+    </Style>
+
+    <Style x:Key="StateDisabledImageStyle" TargetType="{x:Type Image}">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="Source" Value="Images/00001.ico"></Setter>
+    </Style>
+
+</ResourceDictionary>

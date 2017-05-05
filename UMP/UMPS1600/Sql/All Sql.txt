@@ -1,0 +1,50 @@
+-----获得可以管我的用户-------------------------------------------------------------------
+oracle
+
+select a.C001 UserID,a.C002 UserNaame,a.C003 FullName,b.C002 OrgName
+FROM t_11_005_00000 a left join t_11_006_00000 b on a.C006 = b.C001 inner join t_11_101_00000 c  
+on a.c001 = c.c001 
+where a.C001 in 
+(select C003 from t_11_201_00000 where C004 =1020000000000000001 and C003 >1020000000000000000 and C003 <1030000000000000000 and C003 !=C004)
+
+sqlserver
+select c.UserID,c.UserName,c.fullName,c.OrgID,c.OrgName,d.C015 as OnLineStatus from 
+(select a.C001 as UserID,a.C002 as UserName,a.C003 as fullName,b.C001 as OrgID,b.C002 as OrgName
+FROM t_11_005_00000 a left join t_11_006_00000 b 
+on a.C006 = b.C001 where a.C001 in (select C003 from t_11_201_00000 where C004 =1021511191400000001 and C003 >1020000000000000000  
+and C003 <1030000000000000000  and C003 !=C004)) as c left join t_11_101_00000 as d 
+on c.UserID = d.C001 
+
+--------------------可以管理的用户和坐席------------------------------------------------------------------------------------------------------
+sqlserver
+
+select a.C001 UserID,a.C002 UserName,a.C003 FullName,b.C002 OrgName,c.C015 as OnlineStatus
+FROM t_11_005_00000 a left join t_11_006_00000 b
+on a.C006 = b.C001
+left join T_11_101_00000 as c
+on a.C001 =  c.C001
+ where a.C001 in (select C004 from t_11_201_00000 where C003 =1020000000000000001 and C004 >1020000000000000000 
+and C004 <1030000000000000000 and C003 !=C004)
+union
+select a.C001 as UserID,a.C017 as UserName,a.C018 as FullName,c.C002 as OrgName,b.C020 as OnlineStatus
+from t_11_101_00000 as a  left join t_11_101_00000 as b
+on a.C001 = b.C001
+left join T_11_006_00000 as c
+on a.C011 = c.C001
+where a.C002<b.C002 and a.C001 in 
+(select C004 from t_11_201_00000 where C003 =1020000000000000001 and C004 >1030000000000000000 
+and C004 <1040000000000000000 and C003 !=C004)
+
+oracle
+
+SELECT C.UserID,c.UserName,c.FullName,c.OrgName,c.orgID,D.C015 as OnlineStatus FROM 
+(select a.C001 UserID,a.C002 UserName,a.C003 FullName,b.C002 OrgName,a.C006 as orgID
+FROM t_11_005_00000 a left join t_11_006_00000 b on a.C006 = b.C001 where a.C001 in 
+(select C004 from t_11_201_00000 where C003 =1020000000000000001 and C004 >1020000000000000000 
+and C004 <1030000000000000000 and C003 !=C004)) C ,T_11_101_00000 D WHERE C.UserID=D.C001(+)
+union
+select c.UserID,c.UserName,c.FullName,d.c002 OrgName,d.c001 as orgID,c.OnlineStatus from 
+(select a.C001 UserID,a.C017 UserName,a.C018 FullName,b.C020 OnlineStatus,to_number(a.C011) as OrgID
+from t_11_101_00000  a  left join t_11_101_00000  b on a.C001 = b.C001 where a.C002<b.C002 and a.C001 in 
+(select C004 from t_11_201_00000 where C003 =1020000000000000001 and C004 >1030000000000000000 
+and C004 <1040000000000000000 and C003 !=C004)) c ,t_11_006_00000 d where c.orgID = TO_CHAR(d.c001)

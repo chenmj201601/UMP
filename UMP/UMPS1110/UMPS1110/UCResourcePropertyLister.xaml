@@ -1,0 +1,62 @@
+﻿<umpc:UMPUserControl x:Class="UMPS1110.UCResourcePropertyLister"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:umpc="http://www.voicecyber.com/ump/controls"
+             xmlns:local="clr-namespace:UMPS1110"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UMPS1110;component/Themes/Default/UMPS1110/UCResourcePropertyLister.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+            <umpc:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"></umpc:InverseBoolToVisibilityConverter>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <ListBox Name="ListBoxPropertyList"
+                 Style="{DynamicResource ListBoxPropertyStyle}"
+                 ItemContainerStyle="{DynamicResource ListBoxItemPropertyStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type ListBoxItem}">
+                    <Border Style="{DynamicResource BorderPropertyItemStyle}"
+                            IsEnabled="{Binding IsProp6Enabled}"
+                            Visibility="{Binding IsHidden,Converter={StaticResource InverseBoolToVisibilityConverter}}">
+                        <DockPanel LastChildFill="True">
+                            <Border Width="{Binding NameWidth,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:UCResourcePropertyLister}}}" DockPanel.Dock="Left" Style="{DynamicResource BorderPropertyNameStyle}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding PropertyID}"
+                                               Style="{DynamicResource TxtPropertyIDStyle}"
+                                               Visibility="Collapsed"></TextBlock>
+                                    <TextBlock Text="{Binding StrPropertyName}" 
+                                           ToolTip="{Binding StrPropertyName}"
+                                           Style="{DynamicResource TxtPropertyNameStyle}"></TextBlock>
+                                    <TextBlock Text="*"
+                                               Style="{DynamicResource TxtKeyPropertyStyle}"
+                                               Visibility="{Binding IsKeyProperty,Converter={StaticResource BooleanToVisibilityConverter}}"></TextBlock>
+                                </StackPanel>
+                            </Border>
+                            <Thumb DockPanel.Dock="Left" Style="{DynamicResource ThumbSpliter}"
+                                   DragDelta="Thumb_OnDragDelta"></Thumb>
+                            <Border Style="{DynamicResource BroderPropertyValueStyle}">
+                                <Grid>
+                                    <local:UCResourcePropertyEditor PropertyInfoItem="{Binding}" 
+                                                                    IsEnabled="{Binding IsEnabled}"
+                                                                    PropertyValueChanged="UCResourcePropertyEditor_OnPropertyValueChanged"></local:UCResourcePropertyEditor>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.GroupStyle>
+                <GroupStyle ContainerStyle="{StaticResource ListBoxGroupStyle}">
+                </GroupStyle>
+            </ListBox.GroupStyle>
+        </ListBox>
+    </Grid>
+</umpc:UMPUserControl>
